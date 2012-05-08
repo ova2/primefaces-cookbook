@@ -1,18 +1,17 @@
-Getting Started
-===============
+== Getting Started ==
 
-== Prerequisites ==
+=== Prerequisites ===
 
 - Install Git as described in the [http://git-scm.com/book/en/Getting-Started-Installing-Git Pro Git book].
 - Install [http://maven.apache.org/ Maven] if you don't have it as this project is a Maven based project.
 
-== Compile and Run Project ==
+=== Compile and Run Project ===
 
 Open your console / terminal window and clone the repository with
 {{{
 git clone git://github.com/ova2/primefaces-cookbook.git
 }}}
-You can now explore the source code, compile and run the project. To install the project, go to the project root folder and type the following command
+You can now explore the source code with samples, compile and run the project. To install the project, go to the project root folder and type the following command
 {{{
 mvn install
 }}}
