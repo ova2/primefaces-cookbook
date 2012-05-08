@@ -37,4 +37,4 @@ This starts Jetty server and the demo app is available under the following URL i
 http://localhost:8080/primefaces-cookbook/
 </pre>
 
-Jetty will continue to run until you stop it with a <tt><Ctrl+C></tt> in the console / terminal window where it is running.
+Jetty will continue to run until you stop it with a <tt>Ctrl+C</tt> in the console / terminal window where it is running.
