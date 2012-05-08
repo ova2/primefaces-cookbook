@@ -1,0 +1,8 @@
+.*
+target
+*.?ar
+*.iml
+*.ipr
+*.iws
+*.NavData
+*.navData
