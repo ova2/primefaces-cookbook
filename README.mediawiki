@@ -9,11 +9,11 @@
 
 Open your console / terminal window and clone the repository with
 
-<code>
+<code><pre style="font-size: 1.5em;">
 git clone git://github.com/ova2/primefaces-cookbook.git
-</code>
+</pre></code>
 
-You can now explore the source code with samples, compile and run the project. To install the project, go to the project root folder and type the following command
+You can now explore the source code with samples, compile and run the project. To install the project, go to the project root folder <code>primefaces-cookbook</code> and type the following command
 
 <code>
 mvn install
@@ -37,4 +37,4 @@ This starts Jetty server and the demo app is available under the following URL i
 http://localhost:8080/primefaces-cookbook/
 </code>
 
-Jetty will continue to run until you stop it with a <Ctrl+C> in the console / terminal window where it is running.
+Jetty will continue to run until you stop it with a <code><Ctrl+C></code> in the console / terminal window where it is running.
