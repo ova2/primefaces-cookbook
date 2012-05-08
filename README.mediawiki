@@ -15,26 +15,26 @@ git clone git://github.com/ova2/primefaces-cookbook.git
 
 You can now explore the source code with samples, compile and run the project. To install the project, go to the project root folder <tt>primefaces-cookbook</tt> and type the following command
 
-<code>
+<pre>
 mvn install
-</code>
+</pre>
 
 The demo web application is prepared to run with Jetty 8 server. To run it with JSF Mojarra implementation, type in the console / terminal window
 
-<code>
+<pre>
 mvn jetty:run
-</code>
+</pre>
 
 To run it with JSF MyFaces implementation, type
 
-<code>
+<pre>
 mvn jetty:run -Pmyfaces
-</code>
+</pre>
 
 This starts Jetty server and the demo app is available under the following URL in a web browser
 
-<code>
+<pre>
 http://localhost:8080/primefaces-cookbook/
-</code>
+</pre>
 
-Jetty will continue to run until you stop it with a <code><Ctrl+C></code> in the console / terminal window where it is running.
+Jetty will continue to run until you stop it with a <tt><Ctrl+C></tt> in the console / terminal window where it is running.
