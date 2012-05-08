@@ -9,11 +9,11 @@
 
 Open your console / terminal window and clone the repository with
 
-<code style="font-size: 13px;">
+<pre>
 git clone git://github.com/ova2/primefaces-cookbook.git
-</code>
+</pre>
 
-You can now explore the source code with samples, compile and run the project. To install the project, go to the project root folder <code>primefaces-cookbook</code> and type the following command
+You can now explore the source code with samples, compile and run the project. To install the project, go to the project root folder <tt>primefaces-cookbook</tt> and type the following command
 
 <code>
 mvn install
