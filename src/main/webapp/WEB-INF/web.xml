@@ -8,15 +8,15 @@
     <!-- Context parameters -->
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>${jsf.projectStage}</param-value>
+        <param-value>Production</param-value>
     </context-param>
     <context-param>
         <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
-        <param-value>${jsf.faceletsRefreshPeriod}</param-value>
+        <param-value>2</param-value>
     </context-param>
     <context-param>
         <param-name>com.sun.faces.resourceUpdateCheckPeriod</param-name>
-        <param-value>${jsf.resourceUpdateCheckPeriod}</param-value>
+        <param-value>2</param-value>
     </context-param>
     <context-param>
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
