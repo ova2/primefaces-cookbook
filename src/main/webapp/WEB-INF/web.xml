@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <description>PrimeFaces Cookbook Showcase</description>
+
+    <!-- Context parameters -->
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>${jsf.projectStage}</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+        <param-value>${jsf.faceletsRefreshPeriod}</param-value>
+    </context-param>
+    <context-param>
+        <param-name>com.sun.faces.resourceUpdateCheckPeriod</param-name>
+        <param-value>${jsf.resourceUpdateCheckPeriod}</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.SEPARATOR_CHAR</param-name>
+        <param-value>_</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>com.sun.faces.allowTextChildren</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>com.sun.faces.defaultResourceMaxAge</param-name>
+        <param-value>1209600000</param-value>
+    </context-param>
+    <context-param>
+        <param-name>com.sun.faces.enableMissingResourceLibraryDetection</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>home</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>${jsf.startupListener}</listener-class>
+    </listener>
+
+    <!-- Character Encoding Filter -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.primefaces.cookbook.webapp.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <description>override any encodings from client</description>
+            <param-name>ignore</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <description>the encoding to use</description>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>*.jsf</url-pattern>
+    </filter-mapping>
+
+    <!-- Faces Servlet -->
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session timeout -->
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+    <!-- Welcome files -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>
