@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, "Trebuchet MS", Verdana, sans-serif;
+    font-size: 12px;
+    padding: 0 !important;
+    margin: 0;
+}
+
+input,
+select,
+textarea,
+button,
+.ui-widget,
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+    font-family: Arial, "Trebuchet MS", Verdana, sans-serif;
+    font-size: 12px !important;
+}
+
+.ui-widget-header,
+.ui-widget-content,
+.ui-widget-header .ui-widget-header,
+.ui-widget-content .ui-widget-content {
+    font-family: Arial, "Trebuchet MS", Verdana, sans-serif;
+    font-size: 12px !important;
+}
+
+.logo {
+    margin: 10px 0 18px 0;
+}
+
+.chaptersMenuColumn {
+    padding-left: 10px;    
+}
+
+.chaptersContentColumn {
+    vertical-align: top;
+    padding: 120px 10px 0 40px;    
+}
