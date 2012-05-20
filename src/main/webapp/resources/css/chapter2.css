@@ -1,0 +1,30 @@
+#disabledStyles .ui-inputfield {
+    background: #ffffff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #000000;
+}
+
+#disabledStyles .ui-inputfield.ui-state-focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#disabledStyles .ui-inputfield.ui-state-default {
+    background: none;
+    border: 1px inset;
+}
+
+#disabledStyles .ui-inputfield.ui-corner-all {
+    border-radius: 0;
+}
+
+#disabledStyles .ui-inputfield.ui-state-disabled {
+
+}
+
+#disabledStyles .ui-inputfield.ui-state-error {
+
+}

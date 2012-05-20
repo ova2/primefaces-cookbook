@@ -26,15 +26,63 @@ button,
     font-size: 12px !important;
 }
 
+.ui-tree {
+    width: 340px;
+}
+
+.ui-tree .ui-tree-nodes .ui-tree-node .ui-tree-node-content .ui-tree-node-label {
+    white-space: nowrap;
+}
+
+.ui-chkbox {
+    vertical-align: middle;
+}
+
+.ui-selectonemenu {
+    display: block;
+}
+
+.ui-selectoneradio label,
+.ui-selectmanycheckbox label {
+    margin-top: 2px;
+}
+
 .logo {
     margin: 10px 0 18px 0;
 }
 
 .chaptersMenuColumn {
-    padding-left: 10px;    
+    vertical-align: top;
+    padding-left: 10px;
 }
 
 .chaptersContentColumn {
     vertical-align: top;
-    padding: 120px 10px 0 40px;    
+    padding: 120px 10px 0 40px;
+}
+
+.slogan {
+    position: absolute;
+    color: #A2A1A1;
+    font-weight: bold;
+    top: 30px;
+    right: 40px;
+}
+
+table .formLabel,
+table .formEdit {
+    vertical-align: middle;
+    padding: 2px 20px 2px 0;
+}
+
+table .formLabel {
+    padding: 2px 7px 2px 0;
+    text-align: right;
+    white-space: nowrap;
+    width: 1%;
+}
+
+table .formEdit input,
+table .formEdit textarea {
+    width: 180px;
 }

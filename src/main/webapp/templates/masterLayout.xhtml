@@ -19,6 +19,10 @@
         <pe:ajaxErrorHandler type="javax.faces.application.ViewExpiredException" button="Reload"
                              buttonOnclick="document.location.href=document.location.href;"/>
 
+        <h:panelGroup layout="block" styleClass="slogan">
+            <h:outputText value="Live samples to the first PrimeFaces book"/>
+        </h:panelGroup>
+
         <h:form id="mainForm" prependId="false">
             <h:panelGrid columns="2" columnClasses="chaptersMenuColumn,chaptersContentColumn">
                 <h:panelGroup layout="block">
@@ -42,7 +46,7 @@
         </h:form>
 
         <h:outputStylesheet library="css" name="layout.css"/>
-        <h:outputScript library="js" name="menu.js" target="head"/>
+        <ui:insert name="appResources"/>
     </h:body>
 </f:view>
 </html>
