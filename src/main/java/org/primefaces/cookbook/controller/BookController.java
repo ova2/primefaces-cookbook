@@ -66,6 +66,8 @@ public class BookController implements Serializable {
 		// chapter 5
 
 		// chapter 6
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),
+		                    chapter6);
 
 		// chapter 7
 
