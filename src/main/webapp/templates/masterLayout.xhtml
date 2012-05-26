@@ -3,22 +3,17 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:pe="http://primefaces.org/ui/extensions">
+      xmlns:p="http://primefaces.org/ui">
 <f:view contentType="text/html" locale="en">
-    <pe:head title="PrimeFaces Cookbook - ShowCase">
+    <h:head title="PrimeFaces Cookbook - ShowCase">
         <f:facet name="first">
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <meta http-equiv="pragma" content="no-cache"/>
             <meta http-equiv="cache-control" content="no-cache"/>
             <meta http-equiv="expires" content="0"/>
         </f:facet>
-    </pe:head>
+    </h:head>
     <h:body>
-        <pe:ajaxErrorHandler widgetVar="ajaxErrorHandler" button="Hide" buttonOnclick="ajaxErrorHandler.hide();"/>
-        <pe:ajaxErrorHandler type="javax.faces.application.ViewExpiredException" button="Reload"
-                             buttonOnclick="document.location.href=document.location.href;"/>
-
         <h:panelGroup layout="block" styleClass="slogan">
             <h:outputText value="Live samples to the first PrimeFaces book"/>
         </h:panelGroup>
