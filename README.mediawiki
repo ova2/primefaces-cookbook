@@ -44,4 +44,4 @@ Jetty will continue to run until you stop it with a <tt>Ctrl+C</tt> in the conso
 We use Jenkins as continuous integration tool. It builds the project after each commit. You can download the runnable showcase from the [https://buildhive.cloudbees.com/view/Dashboard/job/ova2/job/primefaces-cookbook/lastBuild/org.primefaces.cookbook$showcase/ Jenkins' last build].
 It's deployable on every Servlet 2.5 compatible servlet container.
 
-https://raw.github.com/wiki/ova2/primefaces-cookbook/src/main/webapp/resources/images/pfcookbook.png
+https://raw.github.com/wiki/ova2/primefaces-cookbook/master/src/main/webapp/resources/images/pfcookbook.png
