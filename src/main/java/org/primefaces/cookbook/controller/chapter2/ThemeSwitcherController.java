@@ -15,5 +15,5 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class ThemeSwitcherController implements Serializable {
 
-	private static final long serialVersionUID = 20121705L;
+	private static final long serialVersionUID = 20120517L;
 }

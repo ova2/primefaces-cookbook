@@ -10,5 +10,5 @@ import java.io.Serializable;
  */
 public class AvailableThemes implements Serializable {
 
-	private static final long serialVersionUID = 20121705L;
+	private static final long serialVersionUID = 20120517L;
 }

@@ -263,7 +263,7 @@
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.0.RC4</version>
+                <version>8.1.0.RC2</version>
                 <configuration>
                     <webAppConfig>
                         <contextPath>/primefaces-cookbook</contextPath>

@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class BookTreeNode implements Serializable {
 
-	private static final long serialVersionUID = 20121705L;
+	private static final long serialVersionUID = 20120517L;
 
 	private String name;
 

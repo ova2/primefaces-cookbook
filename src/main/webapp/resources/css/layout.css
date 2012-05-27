@@ -38,9 +38,10 @@ button,
     vertical-align: middle;
 }
 
+/*
 .ui-selectonemenu {
     display: block;
-}
+}*/
 
 .ui-selectoneradio label,
 .ui-selectmanycheckbox label {
@@ -84,5 +85,5 @@ table .formLabel {
 
 table .formEdit input,
 table .formEdit textarea {
-    width: 180px;
+    width: 160px;
 }

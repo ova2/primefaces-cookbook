@@ -5,8 +5,27 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        
-        <h:outputText value="Customizing theme styles"/>
-        
+
+        <h:panelGrid id="customStyles">
+            <h3 style="margin-top:0;">Customized p:selectOneMenu</h3>
+            
+            <p:selectOneMenu value="dummy">
+                <f:selectItem itemLabel="English" itemValue="en"/>
+                <f:selectItem itemLabel="German" itemValue="de"/>
+                <f:selectItem itemLabel="Russian" itemValue="ru"/>
+            </p:selectOneMenu>
+            
+            <h3 style="margin:20px 0 0 0;">Customized p:tree</h3>
+            
+            <p:tree value="#{treeController.root}" var="node">
+                <p:treeNode>
+                    <h:outputText value="#{node}"/>
+                </p:treeNode>
+            </p:tree>
+        </h:panelGrid>
+
+    </ui:define>
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter2.css"/>
     </ui:define>
 </ui:composition>

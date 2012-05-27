@@ -5,25 +5,25 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">Styled elements</h3>
+        <h3 style="margin-top:0">Default styles for input components</h3>
+        
+        <p:messages id="msgDefaultStyles"/>        
 
-        <h:panelGrid id="enabledStyles" columns="4" columnClasses="formLabel,formEdit,formLabel,formEdit">
+        <h:panelGrid id="defaultInputStyles" columns="4" columnClasses="formLabel,formEdit,formLabel,formEdit">
             <ui:include src="/views/chapter2/formElements.xhtml"/>
             <f:facet name="footer">
-                <p:commandButton value="Submit" process="enabledStyles" update="enabledStyles"/>
+                <p:commandButton value="Submit" process="defaultInputStyles" update="defaultInputStyles msgDefaultStyles"/>
             </f:facet>
         </h:panelGrid>
 
-        <h3 style="margin-top:20px">Disabled styling</h3>
+        <h3 style="margin-top:20px">Customized styles for input components</h3>
+        
+        <p:messages id="msgCustomStyles"/>
 
-        <h:panelGrid id="disabledStyles" columns="4" columnClasses="formLabel,formEdit,formLabel,formEdit">
-            <!-- activate to try to figure out the same styling as default
-            <h:outputText value="InputText"/>
-            <h:inputText required="true" label="First value"/>
-            -->
+        <h:panelGrid id="customInputStyles" columns="4" columnClasses="formLabel,formEdit,formLabel,formEdit">
             <ui:include src="/views/chapter2/formElements.xhtml"/>
             <f:facet name="footer">
-                <p:commandButton value="Submit" process="disabledStyles" update="disabledStyles"/>
+                <p:commandButton value="Submit" process="customInputStyles" update="customInputStyles msgCustomStyles"/>
             </f:facet>
         </h:panelGrid>
     </ui:define>

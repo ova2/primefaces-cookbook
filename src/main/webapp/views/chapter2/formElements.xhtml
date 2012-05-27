@@ -4,35 +4,20 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui">
     <h:outputText value="InputText"/>
-    <p:inputText required="true" label="First value"/>
+    <p:inputText required="true" label="InputText"/>
 
     <h:outputText value="Spinner"/>
-    <p:spinner required="true"/>
+    <p:spinner required="true" label="Spinner"/>
 
-    <h:outputText value="SelectOneMenu"/>
-    <p:selectOneMenu value="dummy">
-        <f:selectItem itemLabel="Value A" itemValue="Value A"/>
-        <f:selectItem itemLabel="Value B" itemValue="Value B"/>
-    </p:selectOneMenu>
+    <h:outputText value="Disabled InputText"/>
+    <p:inputText label="Disabled InputText" disabled="true"/>
 
-    <h:outputText value="Calendar"/>
-    <p:calendar required="true" showOn="both"/>
-
-    <!--
-    <h:outputText value="SelectOneRadio"/>
-    <p:selectOneRadio value="dummy">
-        <f:selectItem itemLabel="Option 1" itemValue="1"/>
-        <f:selectItem itemLabel="Option 2" itemValue="2"/>
-    </p:selectOneRadio>
-
-    <h:outputText value="SelectManyCheckbox"/>
-    <p:selectManyCheckbox>
-        <f:selectItem itemLabel="Option 1" itemValue="Option 1"/>
-        <f:selectItem itemLabel="Option 2" itemValue="Option 2"/>
-        <f:selectItem itemLabel="Option 3" itemValue="Option 3"/>
-    </p:selectManyCheckbox>
-    -->
+    <h:outputText value="Spinner"/>
+    <p:spinner label="Spinner" disabled="true"/>
 
     <h:outputText value="Textarea"/>
-    <p:inputTextarea required="true" label="Second value"/>
+    <p:inputTextarea required="true" label="Textarea"/>
+
+    <h:outputText value="Calendar"/>
+    <p:calendar required="true" showOn="both" label="Calendar"/>
 </ui:composition>

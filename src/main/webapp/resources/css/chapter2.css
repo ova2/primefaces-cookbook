@@ -1,4 +1,22 @@
-#disabledStyles .ui-inputfield {
+#customStyles .ui-selectonemenu {
+    width: 157px !important;
+}
+
+#customStyles .ui-selectonemenu .ui-selectonemenu-label {
+    width: 130px !important;
+}
+
+#customStyles .ui-tree {
+    border: none;
+    width: auto;
+    background: none;
+}
+
+#customStyles .ui-tree .ui-tree-nodes .ui-tree-node .ui-tree-node-content .ui-tree-node-label {
+    white-space: nowrap;
+}
+
+#customInputStyles .ui-inputfield {
     background: #ffffff;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -6,25 +24,28 @@
     color: #000000;
 }
 
-#disabledStyles .ui-inputfield.ui-state-focus {
+#customInputStyles .ui-inputfield.ui-state-focus {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
-#disabledStyles .ui-inputfield.ui-state-default {
+#customInputStyles .ui-inputfield.ui-state-default {
     background: none;
     border: 1px inset;
 }
 
-#disabledStyles .ui-inputfield.ui-corner-all {
+#customInputStyles .ui-inputfield.ui-corner-all {
     border-radius: 0;
 }
 
-#disabledStyles .ui-inputfield.ui-state-disabled {
-
+#customInputStyles .ui-inputfield.ui-state-disabled,
+#customInputStyles .ui-state-disabled .ui-inputfield {
+    background-color: #8F8F8F;
+    border: solid 1px gray;
 }
 
-#disabledStyles .ui-inputfield.ui-state-error {
-
+#customInputStyles .ui-inputfield.ui-state-error,
+#customInputStyles .ui-state-error .ui-inputfield {
+    background-color: #F43939;
 }
