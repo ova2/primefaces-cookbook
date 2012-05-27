@@ -1,24 +1,23 @@
 #statefulSwitcher2 {
-	font-size: 11px !important;
 	padding: 0 !important;
 	vertical-align: middle !important;
 	width: 170px !important;
-	line-height: 18px !important;
-	height: 18px !important;
+	line-height: 20px !important;
+	height: 20px !important;
 	display: block !important    
 }
 
 #statefulSwitcher2 .ui-selectonemenu-label {
     padding: 0 0 0 5px !important;
     font-weight: normal !important;
-	line-height: 18px !important;
-	height: 18px !important;
+	line-height: 20px !important;
+	height: 20px !important;
 }
 
 #statefulSwitcher2 .ui-selectonemenu-trigger {
     padding: 0 1px !important;
-	line-height: 18px !important;
-	height: 18px !important;
+	line-height: 20px !important;
+	height: 20px !important;
 }
 
 #statefulSwitcher2 .ui-selectonemenu-trigger .ui-icon {

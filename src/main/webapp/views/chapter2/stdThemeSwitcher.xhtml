@@ -5,8 +5,13 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        
-        <h:outputText value="Standard Theme Switcher"/>
-        
+
+        <h3 style="margin-top:0">Standard Theme Switcher</h3>
+
+        <p:themeSwitcher style="width:165px" effect="fade">
+            <f:selectItem itemLabel="Choose Theme" itemValue=""/>
+            <f:selectItems value="#{userSettingsController.themes}"/>
+        </p:themeSwitcher>
+
     </ui:define>
 </ui:composition>
