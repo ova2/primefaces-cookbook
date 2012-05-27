@@ -7,7 +7,7 @@
     <ui:define name="chapterItem">
 
         <h:panelGrid id="customStyles">
-            <h3 style="margin-top:0;">Customized p:selectOneMenu</h3>
+            <h3 style="margin-top:0;">p:selectOneMenu (fix width)</h3>
             
             <p:selectOneMenu value="dummy">
                 <f:selectItem itemLabel="English" itemValue="en"/>
@@ -15,7 +15,7 @@
                 <f:selectItem itemLabel="Russian" itemValue="ru"/>
             </p:selectOneMenu>
             
-            <h3 style="margin:20px 0 0 0;">Customized p:tree</h3>
+            <h3 style="margin:20px 0 0 0;">p:tree (no background, no border, auto width, non breaking text)</h3>
             
             <p:tree value="#{treeController.root}" var="node">
                 <p:treeNode>
@@ -25,7 +25,8 @@
         </h:panelGrid>
 
     </ui:define>
+    
     <ui:define name="appResources">
-        <h:outputStylesheet library="css" name="chapter2.css"/>
+        <h:outputStylesheet library="css" name="chapter2/customStyles.css"/>
     </ui:define>
 </ui:composition>

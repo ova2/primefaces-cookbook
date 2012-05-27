@@ -56,7 +56,11 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Standard theme switcher of PrimeFaces", "chapter2/stdThemeSwitcher.xhtml"),
 		                    chapter2);
-		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Alternative stateful theme switcher", "chapter2/altThemeSwitcher.xhtml"),
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Stateful theme switcher (AJAX)", "chapter2/altThemeSwitcher1.xhtml"),
+		                    chapter2);
+
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Stateful theme switcher (Full page refresh)", "chapter2/altThemeSwitcher2.xhtml"),
 		                    chapter2);
 
 		// chapter 3

@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <h3 style="margin-top:0">Stateful Switcher (Full page refresh)</h3>
+
+        <p:selectOneMenu id="statefulSwitcher2" value="#{userSettingsController.currentTheme}" var="theme" effect="drop"
+                         onchange="$('#mainForm').submit()">
+            <f:converter converterId="org.primefaces.cookbook.converter.ThemeConverter"/>
+            <f:selectItems var="t"
+                           value="#{userSettingsController.availableThemes}"
+                           itemLabel="#{t.name}"
+                           itemValue="#{t}"/>
+            <p:column>
+                <p:graphicImage value="#{theme.image}"/>
+            </p:column>
+            <p:column>
+                <h:outputText value="#{theme.name}"/>
+            </p:column>
+        </p:selectOneMenu>
+
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter2/themeSwitcher.css"/>
+    </ui:define>
+</ui:composition>

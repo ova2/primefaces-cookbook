@@ -1,0 +1,17 @@
+#customStyles .ui-selectonemenu {
+    width: 157px !important;
+}
+
+#customStyles .ui-selectonemenu .ui-selectonemenu-label {
+    width: 130px !important;
+}
+
+#customStyles .ui-tree {
+    border: none;
+    width: auto;
+    background: none;
+}
+
+#customStyles .ui-tree .ui-tree-nodes .ui-tree-node .ui-tree-node-content .ui-tree-node-label {
+    white-space: nowrap;
+}

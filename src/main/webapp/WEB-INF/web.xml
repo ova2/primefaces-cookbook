@@ -44,7 +44,7 @@
     </context-param>
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>home</param-value>
+        <param-value>#{userSettingsController.currentTheme.name}</param-value>
     </context-param>
 
     <listener>
