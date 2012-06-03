@@ -54,7 +54,7 @@ public class BookController implements Serializable {
 		                    new BookTreeNode("Customizing default styles on input components",
 		                                     "chapter2/customInputStyles.xhtml"), chapter2);
 		new DefaultTreeNode(NODE_TYPE,
-		                    new BookTreeNode("Standard theme switcher of PrimeFaces", "chapter2/stdThemeSwitcher.xhtml"),
+		                    new BookTreeNode("Default stateless theme switcher (Client-side)", "chapter2/stdThemeSwitcher.xhtml"),
 		                    chapter2);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Stateful theme switcher (AJAX)", "chapter2/altThemeSwitcher1.xhtml"),
 		                    chapter2);

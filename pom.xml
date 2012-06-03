@@ -235,7 +235,7 @@
                     </webResources>
                     <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
                     <filters>
-                        <filter>${basedir}/src/main/filter/${pc.jsf.impl}.properties</filter>
+                        <filter>${basedir}/src/main/filter/${jsf.impl}.properties</filter>
                     </filters>
                     <nonFilteredFileExtensions>
                         <nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
@@ -268,7 +268,7 @@
                 <configuration>
                     <webAppConfig>
                         <contextPath>/primefaces-cookbook</contextPath>
-                        <overrideDescriptor>src/main/resources/overrideweb-${pc.jsf.impl}.xml</overrideDescriptor>
+                        <overrideDescriptor>src/main/resources/overrideweb-${jsf.impl}.xml</overrideDescriptor>
                     </webAppConfig>
                     <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
                     <scanIntervalSeconds>1</scanIntervalSeconds>
@@ -282,9 +282,9 @@
                         <version>2.2</version>
                     </dependency>
                     <dependency>
-                        <groupId>${pc.jsf.group}</groupId>
-                        <artifactId>${pc.jsf.artifact}-api</artifactId>
-                        <version>${pc.jsf.version}</version>
+                        <groupId>${jsf.group}</groupId>
+                        <artifactId>${jsf.artifact}-api</artifactId>
+                        <version>${jsf.version}</version>
                         <exclusions>
                             <exclusion>
                                 <groupId>jstl</groupId>
@@ -293,9 +293,9 @@
                         </exclusions>
                     </dependency>
                     <dependency>
-                        <groupId>${pc.jsf.group}</groupId>
-                        <artifactId>${pc.jsf.artifact}-impl</artifactId>
-                        <version>${pc.jsf.version}</version>
+                        <groupId>${jsf.group}</groupId>
+                        <artifactId>${jsf.artifact}-impl</artifactId>
+                        <version>${jsf.version}</version>
                         <exclusions>
                             <exclusion>
                                 <groupId>jstl</groupId>
@@ -336,9 +336,9 @@
             <version>3.1</version>
         </dependency>
         <dependency>
-            <groupId>${pc.jsf.group}</groupId>
-            <artifactId>${pc.jsf.artifact}-api</artifactId>
-            <version>${pc.jsf.version}</version>
+            <groupId>${jsf.group}</groupId>
+            <artifactId>${jsf.artifact}-api</artifactId>
+            <version>${jsf.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>jstl</groupId>
@@ -347,9 +347,9 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>${pc.jsf.group}</groupId>
-            <artifactId>${pc.jsf.artifact}-impl</artifactId>
-            <version>${pc.jsf.version}</version>
+            <groupId>${jsf.group}</groupId>
+            <artifactId>${jsf.artifact}-impl</artifactId>
+            <version>${jsf.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>jstl</groupId>
@@ -625,16 +625,13 @@
 
     <profiles>
         <profile>
-            <id>myfaces</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <id>mojarra</id>
             <properties>
-                <pc.jsf.impl>myfaces</pc.jsf.impl>
-                <pc.jsf.displayname>MyFaces</pc.jsf.displayname>
-                <pc.jsf.group>org.apache.myfaces.core</pc.jsf.group>
-                <pc.jsf.artifact>myfaces</pc.jsf.artifact>
-                <pc.jsf.version>2.1.6</pc.jsf.version>
+                <jsf.impl>mojarra</jsf.impl>
+                <jsf.displayname>Mojarra</jsf.displayname>
+                <jsf.group>com.sun.faces</jsf.group>
+                <jsf.artifact>jsf</jsf.artifact>
+                <jsf.version>2.1.6</jsf.version>
             </properties>
         </profile>
     </profiles>
@@ -643,11 +640,11 @@
         <java.version.source>1.5</java.version.source>
         <java.version.target>1.5</java.version.target>
         <project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
-        <pc.jsf.impl>mojarra</pc.jsf.impl>
-        <pc.jsf.displayname>Mojarra</pc.jsf.displayname>
-        <pc.jsf.group>com.sun.faces</pc.jsf.group>
-        <pc.jsf.artifact>jsf</pc.jsf.artifact>
-        <pc.jsf.version>2.1.6</pc.jsf.version>
+        <jsf.impl>myfaces</jsf.impl>
+        <jsf.displayname>MyFaces</jsf.displayname>
+        <jsf.group>org.apache.myfaces.core</jsf.group>
+        <jsf.artifact>myfaces</jsf.artifact>
+        <jsf.version>2.1.6</jsf.version>
         <primefaces.theme.version>1.0.5</primefaces.theme.version>
     </properties>
 </project>
