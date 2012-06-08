@@ -26,7 +26,6 @@
             <id>prime-repo-new</id>
             <name>PrimeFaces Maven Repository</name>
             <url>http://repository.primefaces.org</url>
-            <layout>default</layout>
         </repository>
     </repositories>
 
@@ -625,6 +624,19 @@
 
     <profiles>
         <profile>
+            <id>myfaces</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <jsf.impl>myfaces</jsf.impl>
+                <jsf.displayname>MyFaces</jsf.displayname>
+                <jsf.group>org.apache.myfaces.core</jsf.group>
+                <jsf.artifact>myfaces</jsf.artifact>
+                <jsf.version>2.1.6</jsf.version>
+            </properties>
+        </profile>
+        <profile>
             <id>mojarra</id>
             <properties>
                 <jsf.impl>mojarra</jsf.impl>
@@ -637,14 +649,9 @@
     </profiles>
 
     <properties>
-        <java.version.source>1.5</java.version.source>
-        <java.version.target>1.5</java.version.target>
+        <java.version.source>1.6</java.version.source>
+        <java.version.target>1.6</java.version.target>
         <project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
-        <jsf.impl>myfaces</jsf.impl>
-        <jsf.displayname>MyFaces</jsf.displayname>
-        <jsf.group>org.apache.myfaces.core</jsf.group>
-        <jsf.artifact>myfaces</jsf.artifact>
-        <jsf.version>2.1.6</jsf.version>
         <primefaces.theme.version>1.0.5</primefaces.theme.version>
     </properties>
 </project>

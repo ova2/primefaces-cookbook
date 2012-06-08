@@ -46,6 +46,8 @@ public class BookController implements Serializable {
 		TreeNode chapter12 = new DefaultTreeNode(new BookTreeNode("PrimeFaces Extensions in Action", null), root);
 
 		// chapter 1
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Your first page with Primefaces Component", "chapter1/yourFirstPage.xhtml"),
+                chapter1);
 
 		// chapter 2
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Customizing theme styles", "chapter2/customThemeStyles.xhtml"),
