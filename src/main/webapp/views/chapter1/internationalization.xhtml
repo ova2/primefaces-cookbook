@@ -1,0 +1,13 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Internationalization of the Faces Messages</h3>
+
+        <p:growl id="growl" />
+        <p:commandButton action="#{localizationController.addMessage}" value="Display Message" update="growl" />
+    </ui:define>
+</ui:composition>

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import org.primefaces.cookbook.controller.BaseController;
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 
@@ -16,7 +17,7 @@ import org.primefaces.model.TreeNode;
  */
 @ManagedBean
 @ViewScoped
-public class TreeController implements Serializable {
+public class TreeController extends BaseController {
 
 	private static final long serialVersionUID = 20120527L;
 
