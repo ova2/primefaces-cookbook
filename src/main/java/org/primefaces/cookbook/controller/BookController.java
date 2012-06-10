@@ -60,6 +60,8 @@ public class BookController extends BaseController {
                 chapter1);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization with Resources", "chapter1/localizationWithResources.xhtml"),
                 chapter1);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Improved Resource Ordering", "chapter1/resourceOrdering.xhtml"),
+                chapter1);
     }
 
     private void constructChapter2(TreeNode chapter2) {
