@@ -302,6 +302,34 @@
                             </exclusion>
                         </exclusions>
                     </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-jcl</artifactId>
+                        <version>1.6.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                        <version>1.2.16</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>javax.mail</groupId>
+                                <artifactId>mail</artifactId>
+                            </exclusion>
+                            <exclusion>
+                                <groupId>javax.jms</groupId>
+                                <artifactId>jms</artifactId>
+                            </exclusion>
+                            <exclusion>
+                                <groupId>com.sun.jdmk</groupId>
+                                <artifactId>jmxtools</artifactId>
+                            </exclusion>
+                            <exclusion>
+                                <groupId>com.sun.jmx</groupId>
+                                <artifactId>jmxri</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>                    
                 </dependencies>
             </plugin>
             <plugin>
@@ -390,16 +418,6 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.6.4</version>
-        </dependency>
-         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.0.3</version>
-        </dependency>        
 
         <!--
         TODO Oleg
@@ -407,13 +425,13 @@
         <dependency>
             <groupId>org.primefaces.extensions</groupId>
             <artifactId>primefaces-extensions</artifactId>
-            <version>0.5.0-SNAPSHOT</version>
+            <version>0.5.0</version>
         </dependency>
         -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>3.3</version>
+            <version>3.3.1</version>
         </dependency>
 
         <dependency>

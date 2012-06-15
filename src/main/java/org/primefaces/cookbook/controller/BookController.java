@@ -19,7 +19,7 @@ import org.primefaces.model.TreeNode;
  */
 @ManagedBean
 @SessionScoped
-public class BookController extends BaseController {
+public class BookController implements Serializable {
 
 	private static final long serialVersionUID = 20121705L;
 
@@ -45,51 +45,53 @@ public class BookController extends BaseController {
 		TreeNode chapter11 = new DefaultTreeNode(new BookTreeNode("Writing of Custom Components", null), root);
 		TreeNode chapter12 = new DefaultTreeNode(new BookTreeNode("PrimeFaces Extensions in Action", null), root);
 
-        constructChapter1(chapter1);
-        constructChapter2(chapter2);
-        constructChapter6(chapter6);
+		constructChapter1(chapter1);
+		constructChapter2(chapter2);
+		constructChapter6(chapter6);
 	}
 
-    private void constructChapter1(TreeNode chapter1) {
-        // chapter 1
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Your first page with Primefaces Component", "chapter1/yourFirstPage.xhtml"),
-                chapter1);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
-                chapter1);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"),
-                chapter1);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization with Resources", "chapter1/localizationWithResources.xhtml"),
-                chapter1);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Improved Resource Ordering", "chapter1/resourceOrdering.xhtml"),
-                chapter1);
-    }
+	private void constructChapter1(TreeNode chapter1) {
+		// chapter 1
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Your first page with Primefaces Component", "chapter1/yourFirstPage.xhtml"),
+		                    chapter1);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
+		                    chapter1);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"),
+		                    chapter1);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Localization with Resources", "chapter1/localizationWithResources.xhtml"),
+		                    chapter1);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Improved Resource Ordering", "chapter1/resourceOrdering.xhtml"),
+		                    chapter1);
+	}
 
-    private void constructChapter2(TreeNode chapter2) {
-        // chapter 2
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Customizing theme styles", "chapter2/customThemeStyles.xhtml"),
-                            chapter2);
-        new DefaultTreeNode(NODE_TYPE,
-                            new BookTreeNode("Customizing default styles on input components",
-                                             "chapter2/customInputStyles.xhtml"), chapter2);
-        new DefaultTreeNode(NODE_TYPE,
-                            new BookTreeNode("Default stateless theme switcher (Client-side)", "chapter2/stdThemeSwitcher.xhtml"),
-                            chapter2);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Stateful theme switcher (AJAX)", "chapter2/altThemeSwitcher1.xhtml"),
-                            chapter2);
+	private void constructChapter2(TreeNode chapter2) {
+		// chapter 2
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Customizing theme styles", "chapter2/customThemeStyles.xhtml"),
+		                    chapter2);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Customizing default styles on input components",
+		                                     "chapter2/customInputStyles.xhtml"), chapter2);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Default stateless theme switcher (Client-side)", "chapter2/stdThemeSwitcher.xhtml"),
+		                    chapter2);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Stateful theme switcher (AJAX)", "chapter2/altThemeSwitcher1.xhtml"),
+		                    chapter2);
 
-        new DefaultTreeNode(NODE_TYPE,
-                            new BookTreeNode("Stateful theme switcher (Full page refresh)", "chapter2/altThemeSwitcher2.xhtml"),
-                            chapter2);
-    }
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Stateful theme switcher (Full page refresh)", "chapter2/altThemeSwitcher2.xhtml"),
+		                    chapter2);
+	}
 
+	private void constructChapter6(TreeNode chapter6) {
+		// chapter 6
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),
+		                    chapter6);
+	}
 
-    private void constructChapter6(TreeNode chapter6) {
-        // chapter 6
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),
-                chapter6);
-    }
-
-    public TreeNode getRoot() {
+	public TreeNode getRoot() {
 		return root;
 	}
 
@@ -102,6 +104,10 @@ public class BookController extends BaseController {
 	}
 
 	public void onNodeSelect(NodeSelectEvent event) {
+		if (root == event.getTreeNode().getParent()) {
+			return;
+		}
+
 		for (TreeNode treeNode : root.getChildren()) {
 			if (treeNode.equals(selectedNode.getParent())) {
 				treeNode.setExpanded(true);

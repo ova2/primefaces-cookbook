@@ -9,7 +9,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import org.primefaces.cookbook.controller.BaseController;
 import org.primefaces.cookbook.model.chapter2.AvailableThemes;
 import org.primefaces.cookbook.model.chapter2.Theme;
 import org.primefaces.cookbook.model.chapter2.UserPreferences;
@@ -22,7 +21,7 @@ import org.primefaces.cookbook.model.chapter2.UserPreferences;
  */
 @ManagedBean
 @SessionScoped
-public class UserSettingsController extends BaseController {
+public class UserSettingsController implements Serializable {
 
 	private static final long serialVersionUID = 20120527L;
 
