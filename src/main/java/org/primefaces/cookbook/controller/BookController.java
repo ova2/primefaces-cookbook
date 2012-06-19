@@ -58,6 +58,9 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
 		                    chapter1);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"),
+                chapter1);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"),
 		                    chapter1);
 		new DefaultTreeNode(NODE_TYPE,
@@ -79,7 +82,6 @@ public class BookController implements Serializable {
 		                    chapter2);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Stateful theme switcher (AJAX)", "chapter2/altThemeSwitcher1.xhtml"),
 		                    chapter2);
-
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Stateful theme switcher (Full page refresh)", "chapter2/altThemeSwitcher2.xhtml"),
 		                    chapter2);

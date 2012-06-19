@@ -5,6 +5,11 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">TBD</h3>
+        <h3 style="margin-top:0">Auto Suggestion with AutoComplete</h3>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Simple: " />
+            <p:autoComplete id="simple" value="#{autoCompleteController.txt1}"
+                    completeMethod="#{autoCompleteController.completeMethod}" />
+        </h:panelGrid>
     </ui:define>
 </ui:composition>

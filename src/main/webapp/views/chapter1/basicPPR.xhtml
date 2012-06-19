@@ -5,6 +5,10 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">Usable Features of InputTextArea</h3>
+        <h3 style="margin-top:0">Basic Partial Page Rendering</h3>
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:commandButton update="display" action="#{basicPPRController.updateValue}" />
+            <h:outputText id="display" value="#{basicPPRController.value}"/>
+        </h:panelGrid>
     </ui:define>
 </ui:composition>

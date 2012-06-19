@@ -5,6 +5,19 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">TBD</h3>
+        <h3 style="margin-top:0">Formatted input with InputMask</h3>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Phone: " />
+            <p:inputMask value="#{inputMaskController.phone}" mask="(999) 999-9999" />
+
+            <h:outputText value="Phone with Placeholder: " />
+            <p:inputMask value="#{inputMaskController.phone}" mask="(999) 999-9999" placeHolder="X" />
+
+            <h:outputText value="Product key: " />
+            <p:inputMask value="#{inputMaskController.productKey}" mask="a999-a9" />
+
+            <h:outputText value="Product key with Wildcard: " />
+            <p:inputMask value="#{inputMaskController.productKey}" mask="a*-999-a999" />
+        </h:panelGrid>
     </ui:define>
 </ui:composition>
