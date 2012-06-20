@@ -670,7 +670,7 @@
         <java.version.source>1.6</java.version.source>
         <java.version.target>1.6</java.version.target>
         <project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
-        <primefaces.theme.version>1.0.5</primefaces.theme.version>
+        <primefaces.theme.version>1.0.6</primefaces.theme.version>
     </properties>
 </project>
  

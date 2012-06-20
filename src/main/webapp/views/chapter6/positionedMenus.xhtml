@@ -6,10 +6,32 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText value="Positioned Menus"/>
+        <p:growl id="growl"/>
 
-    </ui:define>
-    <ui:define name="appResources">
-        <h:outputScript library="js" name="menu.js" target="head"/>
+        <h3 style="margin-top:0">Static menu</h3>
+
+        <p:menu>
+            <p:submenu label="JavaScript Libraries">
+                <p:menuitem value="jQuery" url="http://jquery.com"/>
+                <p:menuitem value="Yahoo UI" url="http://yuilibrary.com"/>
+                <p:menuitem value="Prototype" url="http://prototypejs.org"/>
+            </p:submenu>
+            <p:submenu label="Operations">
+                <p:menuitem value="Save" actionListener="#{positionedMenuController.save}" update="growl"/>
+                <p:menuitem value="Update" actionListener="#{positionedMenuController.update}" update="growl"/>
+                <p:menuitem value="Delete" actionListener="#{positionedMenuController.delete}" update="growl"/>
+            </p:submenu>
+        </p:menu>
+
+        <h3 style="margin-top:20px">Dynamic menu</h3>
+
+        <p:menu overlay="true" trigger="btn" my="left top" at="bottom left">
+            <p:menuitem value="Do something (ajax)" action="#{positionedMenuController.doSomething}" update="growl"/>
+            <p:menuitem value="Do something (non ajax)" action="#{positionedMenuController.doSomething}" ajax="false"/>
+            <p:menuitem value="Navigate" url="http://primefaces.org"/>
+        </p:menu>
+
+        <p:commandButton id="btn" value="Show dynamic menu" type="button"/>
+
     </ui:define>
 </ui:composition>
