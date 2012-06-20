@@ -7,7 +7,7 @@
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Basic Partial Page Rendering</h3>
         <h:panelGrid columns="2" cellpadding="5">
-            <p:commandButton update="display" action="#{basicPPRController.updateValue}" />
+            <p:commandButton update="display" action="#{basicPPRController.updateValue}" value="Update" />
             <h:outputText id="display" value="#{basicPPRController.value}"/>
         </h:panelGrid>
     </ui:define>

@@ -51,7 +51,6 @@ public class BookController implements Serializable {
 	}
 
 	private void constructChapter1(TreeNode chapter1) {
-		// chapter 1
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Your first page with Primefaces Component", "chapter1/yourFirstPage.xhtml"),
 		                    chapter1);
@@ -59,8 +58,11 @@ public class BookController implements Serializable {
 		                    new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
 		                    chapter1);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"),
-                chapter1);
+                            new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"),
+                            chapter1);
+        new DefaultTreeNode(NODE_TYPE,
+                            new BookTreeNode("Update Component in Different Naming Container", "chapter1/componentInDifferentNamingContainer.xhtml"),
+                            chapter1);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"),
 		                    chapter1);
 		new DefaultTreeNode(NODE_TYPE,
@@ -71,7 +73,6 @@ public class BookController implements Serializable {
 	}
 
 	private void constructChapter2(TreeNode chapter2) {
-		// chapter 2
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Customizing theme styles", "chapter2/customThemeStyles.xhtml"),
 		                    chapter2);
 		new DefaultTreeNode(NODE_TYPE,
@@ -88,7 +89,6 @@ public class BookController implements Serializable {
 	}
 
 	private void constructChapter6(TreeNode chapter6) {
-		// chapter 6
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),
 		                    chapter6);
 	}

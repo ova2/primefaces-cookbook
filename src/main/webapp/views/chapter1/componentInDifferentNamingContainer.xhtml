@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head />
+        <h:body>
+            <h:form id="form1">
+                <p:commandButton update=":form2:display" action="#{basicPPRController.updateValue}" value="Update" />
+            </h:form>
+            <h:form id="form2">
+                <h:outputText id="display" value="#{basicPPRController.value}"/>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
