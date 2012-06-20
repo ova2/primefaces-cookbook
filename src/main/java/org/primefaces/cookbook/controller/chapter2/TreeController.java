@@ -18,8 +18,6 @@ import org.primefaces.model.TreeNode;
 @ViewScoped
 public class TreeController implements Serializable {
 
-	private static final long serialVersionUID = 20120527L;
-
 	private TreeNode root;
 
 	public TreeController() {

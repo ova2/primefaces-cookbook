@@ -58,9 +58,7 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
 		                    chapter1);
-        new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"),
-                chapter1);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"), chapter1);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"),
 		                    chapter1);
 		new DefaultTreeNode(NODE_TYPE,
@@ -91,6 +89,22 @@ public class BookController implements Serializable {
 		// chapter 6
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),
 		                    chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Creating programmatic menu", "chapter6/programmaticMenu.xhtml"),
+		                    chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Context menu with nested items", "chapter6/contextMenu.xhtml"),
+		                    chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Context menu integration", "chapter6/contextMenuIntergration.xhtml"),
+		                    chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Slide Menu - menu in iPod style", "chapter6/slideMenu.xhtml"), chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Tiered Menu - submenus in nested overlays", "chapter6/tieredMenu.xhtml"),
+		                    chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mega Menu - multi-column menu", "chapter6/megaMenu.xhtml"), chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("PanelMenu - hybrid of accordion and tree", "chapter6/panelMenu.xhtml"),
+		                    chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Accessing commands via Menubar", "chapter6/menubar.xhtml"), chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying checkboxes in overlay menu", "chapter6/checkboxMenu.xhtml"),
+		                    chapter6);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dock menu for Mac OS fans", "chapter6/dockMenu.xhtml"), chapter6);
 	}
 
 	public TreeNode getRoot() {

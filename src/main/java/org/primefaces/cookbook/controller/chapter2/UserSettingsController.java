@@ -23,8 +23,6 @@ import org.primefaces.cookbook.model.chapter2.UserPreferences;
 @SessionScoped
 public class UserSettingsController implements Serializable {
 
-	private static final long serialVersionUID = 20120527L;
-
 	// Stateful Switcher (AJAX)
 
 	private Map<String, String> themes;
