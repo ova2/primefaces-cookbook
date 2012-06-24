@@ -6,7 +6,11 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText value="Programmatic Menu"/>
+        <h3 style="margin-top:0">Programmatic menu</h3>
+
+        <p:growl id="growl"/>
+
+        <p:menu model="#{programmaticMenuController.model}"/>
 
     </ui:define>
 </ui:composition>
