@@ -47,6 +47,7 @@ public class BookController implements Serializable {
 
 		constructChapter1(chapter1);
 		constructChapter2(chapter2);
+		constructChapter3(chapter3);
 		constructChapter6(chapter6);
 	}
 
@@ -91,7 +92,16 @@ public class BookController implements Serializable {
 		                    chapter2);
 	}
 
-	private void constructChapter6(TreeNode chapter6) {
+    private void constructChapter3(TreeNode chapter3) {
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Formatted input with InputMask", "chapter3/inputMask.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Usable Features of InputTextArea", "chapter3/inputTextArea.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Discovering SelectBooleanCheckbox and SelectManyCheckbox", "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"),
+                chapter3);
+    }
+
+    private void constructChapter6(TreeNode chapter6) {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),
 		                    chapter6);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Creating programmatic menu", "chapter6/programmaticMenu.xhtml"),
