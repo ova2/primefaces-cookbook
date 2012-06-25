@@ -6,7 +6,27 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText value="Context Menu Integration"/>
+        <p:growl id="growl" showDetail="true"/>
+
+        <p:contextMenu for="fileSystem">
+            <p:menuitem value="View" update="growl"
+                        actionListener="#{contextMenuController.viewNode}"
+                        icon="ui-icon-search"/>
+            <p:menuitem value="Delete" update="fileSystem"
+                        actionListener="#{contextMenuController.deleteNode}"
+                        icon="ui-icon-close"/>
+        </p:contextMenu>
+
+        <p:tree id="fileSystem" value="#{contextMenuController.root}"
+                var="node" dynamic="true"
+                cache="false" selectionMode="single"
+                selection="#{contextMenuController.selectedNode}">
+            <p:ajax event="select" listener="#{contextMenuController.onNodeSelect}"/>
+            <p:ajax event="unselect" listener="#{contextMenuController.onNodeUnselect}"/>
+            <p:treeNode>
+                <h:outputText value="#{node}"/>
+            </p:treeNode>
+        </p:tree>
 
     </ui:define>
 </ui:composition>

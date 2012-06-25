@@ -6,7 +6,25 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText value="Context Menu"/>
+        <p:growl id="growl"/>
+
+        <p:panel id="dummyPanel" header="Please click somewhere on panel to see a context menu">
+            <h:panelGroup layout="block" style="height:100px;"/>
+        </p:panel>
+
+        <p:contextMenu for="dummyPanel">
+            <p:submenu label="JavaScript Libraries">
+                <p:menuitem value="jQuery" url="http://jquery.com"/>
+                <p:menuitem value="Yahoo UI" url="http://yuilibrary.com"/>
+                <p:menuitem value="Prototype" url="http://prototypejs.org"/>
+            </p:submenu>
+            <p:separator/>
+            <p:submenu label="Operations">
+                <p:menuitem value="Save" actionListener="#{contextMenuController.save}" update="growl"/>
+                <p:menuitem value="Update" actionListener="#{contextMenuController.update}" update="growl"/>
+                <p:menuitem value="Delete" actionListener="#{contextMenuController.delete}" update="growl"/>
+            </p:submenu>
+        </p:contextMenu>
 
     </ui:define>
 </ui:composition>
