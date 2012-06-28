@@ -97,7 +97,11 @@ public class BookController implements Serializable {
                 chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Usable Features of InputTextArea", "chapter3/inputTextArea.xhtml"),
                 chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Discovering SelectBooleanCheckbox and SelectManyCheckbox", "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"),
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("SelectBooleanCheckbox and SelectManyCheckbox", "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("SelectBooleanButton and SelectManyButton", "chapter3/selectBooleanButtonSelectManyButton.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic and Advanced Calendar Scenarios", "chapter3/calendar.xhtml"),
                 chapter3);
     }
 

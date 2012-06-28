@@ -3,6 +3,7 @@ package org.primefaces.cookbook.controller.chapter3;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  */
 @ManagedBean
 @ViewScoped
-public class AutoCompleteController {
+public class AutoCompleteController implements Serializable {
     
     private String txt1;
 

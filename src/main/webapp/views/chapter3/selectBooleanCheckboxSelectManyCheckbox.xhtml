@@ -5,6 +5,25 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
+        <p:growl id="msg"/>
         <h3 style="margin-top:0">Discovering SelectBooleanCheckbox and SelectManyCheckbox</h3>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Basic Selection:" />
+            <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}" />
+
+            <h:outputText value="Selection with Custom Label:" />
+            <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}" itemLabel="#{msg['selectBooleanCheckbox.label']}" />
+
+            <h:outputText value="Getting Selection via JavaScript" />
+            <h:panelGroup>
+                <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}" widgetVar="mySelection" />
+                <p:commandLink value="Alert Selection" onclick="alert(mySelection.input.prop('checked'));" />
+            </h:panelGroup>
+
+            <h:outputText value="Selection with Ajax Behaviour:" />
+            <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}">
+                <p:ajax update="msg" listener="#{selectCheckboxController.addMessage}"/>
+            </p:selectBooleanCheckbox>
+        </h:panelGrid>
     </ui:define>
 </ui:composition>
