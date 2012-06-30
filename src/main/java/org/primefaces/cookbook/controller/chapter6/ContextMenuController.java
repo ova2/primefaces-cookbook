@@ -1,7 +1,5 @@
 package org.primefaces.cookbook.controller.chapter6;
 
-import java.io.Serializable;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -20,7 +18,7 @@ import org.primefaces.model.TreeNode;
  */
 @ManagedBean
 @ViewScoped
-public class ContextMenuController implements Serializable {
+public class ContextMenuController extends BaseMenuController {
 
 	private TreeNode root;
 	private TreeNode selectedNode;
@@ -81,28 +79,5 @@ public class ContextMenuController implements Serializable {
 		selectedNode.setParent(null);
 
 		selectedNode = null;
-	}
-
-	public void save() {
-		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", null);
-		FacesContext.getCurrentInstance().addMessage(null, msg);
-	}
-
-	public void update() {
-		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Updated", null);
-		FacesContext.getCurrentInstance().addMessage(null, msg);
-	}
-
-	public void delete() {
-		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Deleted", null);
-		FacesContext.getCurrentInstance().addMessage(null, msg);
-	}
-
-	public String doSomething() {
-		// do something
-		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Done", null);
-		FacesContext.getCurrentInstance().addMessage(null, msg);
-
-		return null;
 	}
 }
