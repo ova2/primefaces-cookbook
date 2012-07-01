@@ -95,13 +95,27 @@ public class BookController implements Serializable {
     private void constructChapter3(TreeNode chapter3) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Formatted input with InputMask", "chapter3/inputMask.xhtml"),
                 chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Auto Suggestion with AutoComplete", "chapter3/autoComplete.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Advanced AutoComplete Scenarios", "chapter3/advancedAutoComplete.xhtml"),
+                chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Usable Features of InputTextArea", "chapter3/inputTextArea.xhtml"),
                 chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("SelectBooleanCheckbox and SelectManyCheckbox", "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"),
                 chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("SelectBooleanButton and SelectManyButton", "chapter3/selectBooleanButtonSelectManyButton.xhtml"),
                 chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Discovering Radio Selections", "chapter3/selectOneRadioRadioButton.xhtml"),
+                chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic and Advanced Calendar Scenarios", "chapter3/calendar.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Spinner - Different ways to provide input", "chapter3/spinner.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Slider - Different ways to provide input", "chapter3/slider.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Rich Text Editing with the Editor", "chapter3/editor.xhtml"),
+                chapter3);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Advanced Editing with in-place Editor", "chapter3/inPlaceEditor.xhtml"),
                 chapter3);
     }
 

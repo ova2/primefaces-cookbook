@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Spinner - Different ways to provide input</h3>
+        <h:panelGrid columns="1" cellpadding="5">
+            <h:outputText value="Basic Spinner" />
+            <p:spinner value="#{spinnerController.intValue}" />
+            <hr/>
+
+            <h:outputText value="Spinner with Step Factor" />
+            <p:spinner value="#{spinnerController.doubleValue}" stepFactor="0.5" />
+            <hr/>
+
+            <h:outputText value="Spinner with Prefix" />
+            <p:spinner value="#{spinnerController.intValue}" prefix="$" />
+            <hr/>
+
+            <h:outputText value="Spinner with Suffix" />
+            <p:spinner value="#{spinnerController.intValue}" suffix="%" />
+            <hr/>
+
+            <h:outputText value="Spinner with min-max values" />
+            <p:spinner value="#{spinnerController.intValue}" suffix="%" min="1" max="100" onkeydown="return false;" />
+            <hr/>
+
+            <h:outputText value="Defining Size of Spinner" />
+            <p:spinner value="#{spinnerController.intValue}" size="3" />
+            <hr/>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

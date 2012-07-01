@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Rich Text Editing with the Editor</h3>
+        <h:panelGrid columdns="2" cellpadding="5">
+            <h:outputText value="Default Editor" />
+            <p:editor value="#{editorController.text}" />
+
+            <h:outputText value="Editor with Custom Controls" />
+            <p:editor value="#{editorController.text}" controls="bold italic strikethrough" />
+
+            <h:outputText value="Clearing Contents of Editor" />
+            <h:panelGroup>
+                <p:editor value="#{editorController.text}" widgetVar="editor" />
+                <p:commandButton type="button" value="Clear" onclick="editor.clear()" icon="ui-icon-close" />
+            </h:panelGroup>
+
+            <h:outputText value="Selecting all of the text in Editor" />
+            <h:panelGroup>
+                <p:editor value="#{editorController.text}" widgetVar="editor" />
+                <p:commandButton type="button" value="Select" onclick="editor.selectAll()" />
+            </h:panelGroup>
+
+            <h:outputText value="Editor inside Dialog Box" />
+            <h:panelGroup>
+                <p:dialog widgetVar="editorDialog" modal="true">
+                    <p:editor />
+                </p:dialog>
+                <p:commandButton value="Show" onclick="editorDialog.show()" />
+            </h:panelGroup>
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

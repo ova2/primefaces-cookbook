@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Advanced Editing with in-place Editor</h3>
+        <h:panelGrid columdns="2" cellpadding="5">
+
+            <h:outputText value="Basic in-place Editing" />
+            <p:inplace>
+                <h:inputText value="Edit Me!" />
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place Editing with Drop Down" />
+            <p:inplace label="Countries">
+                <h:selectOneMenu>
+                    <f:selectItem itemLabel="Turkey" itemValue="Turkey" />
+                    <f:selectItem itemLabel="Germany" itemValue="Germany" />
+                </h:selectOneMenu>
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place Editing with Label" />
+            <p:inplace label="My Input Field">
+                <h:inputText value="Edit Me!" />
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place Editing with Empty Label" />
+            <p:inplace emptyLabel="My Empty Input Field">
+                <h:inputText value="" />
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place Editing with editor='true'" />
+            <p:inplace editor="true">
+                <h:inputText value="Edit Me!" />
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place Editing with slide effect" />
+            <p:inplace effect="slide">
+                <h:inputText value="Edit Me!" />
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place Editing with slow slide effect" />
+            <p:inplace effect="slide" effectSpeed="slow">
+                <h:inputText value="Edit Me!" />
+            </p:inplace>
+            <hr/>
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

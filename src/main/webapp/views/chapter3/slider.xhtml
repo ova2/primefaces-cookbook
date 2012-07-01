@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Slider - Different ways to provide input</h3>
+        <h:panelGrid columns="1" cellpadding="5">
+            <h:outputText value="Basic Slider" />
+            <h:inputText id="basicSlider" value="#{sliderController.intValue}" />
+            <p:slider for="basicSlider" />
+            <hr/>
+
+            <h:outputText value="Slider with Display" />
+            <h:inputText id="displaySlider" value="#{sliderController.intValue}" />
+            <p:slider for="displaySlider" display="output"/>
+            <h:outputText id="output" value="#{sliderController.intValue}" />
+            <hr/>
+
+            <h:outputText value="Slider without Animation" />
+            <h:inputText id="nonAnimatedSlider" value="#{sliderController.intValue}" />
+            <p:slider for="nonAnimatedSlider" animate="false" />
+            <hr/>
+
+            <h:outputText value="Slider with stepping value" />
+            <h:inputText id="steppingSlider" value="#{sliderController.intValue}" />
+            <p:slider for="steppingSlider" step="10" minValue="0" maxValue="100"  />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
