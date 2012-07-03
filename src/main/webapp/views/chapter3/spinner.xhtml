@@ -6,30 +6,32 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Spinner - Different ways to provide input</h3>
-        <h:panelGrid columns="1" cellpadding="5">
+        <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic Spinner" />
             <p:spinner value="#{spinnerController.intValue}" />
-            <hr/>
 
             <h:outputText value="Spinner with Step Factor" />
             <p:spinner value="#{spinnerController.doubleValue}" stepFactor="0.5" />
-            <hr/>
 
             <h:outputText value="Spinner with Prefix" />
             <p:spinner value="#{spinnerController.intValue}" prefix="$" />
-            <hr/>
 
             <h:outputText value="Spinner with Suffix" />
             <p:spinner value="#{spinnerController.intValue}" suffix="%" />
-            <hr/>
 
             <h:outputText value="Spinner with min-max values" />
-            <p:spinner value="#{spinnerController.intValue}" suffix="%" min="1" max="100" onkeydown="return false;" />
-            <hr/>
+            <p:spinner value="#{spinnerController.intValue}" suffix="%" min="0" max="100" onkeydown="return false;" />
+
+            <h:outputText value="AJAX update with Spinner" />
+            <h:panelGrid columns="2" cellpadding="2">
+                <p:spinner value="#{spinnerController.intValue2}" >
+                    <p:ajax update="output" process="@this" />
+                </p:spinner>
+                <h:outputText id="output" value="#{spinnerController.intValue2}" />
+            </h:panelGrid>
 
             <h:outputText value="Defining Size of Spinner" />
             <p:spinner value="#{spinnerController.intValue}" size="3" />
-            <hr/>
         </h:panelGrid>
     </ui:define>
 </ui:composition>

@@ -1,6 +1,7 @@
 package org.primefaces.cookbook.controller.chapter3;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
 
@@ -13,6 +14,7 @@ import java.io.Serializable;
 public class SpinnerController implements Serializable {
 
     private int intValue = 0;
+    private int intValue2 = 0;
     private double doubleValue = 0.0;
 
     public int getIntValue() {
@@ -21,6 +23,14 @@ public class SpinnerController implements Serializable {
 
     public void setIntValue(int intValue) {
         this.intValue = intValue;
+    }
+
+    public int getIntValue2() {
+        return intValue2;
+    }
+
+    public void setIntValue2(int intValue2) {
+        this.intValue2 = intValue2;
     }
 
     public double getDoubleValue() {

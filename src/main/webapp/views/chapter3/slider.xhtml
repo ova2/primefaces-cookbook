@@ -6,26 +6,37 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Slider - Different ways to provide input</h3>
-        <h:panelGrid columns="1" cellpadding="5">
+        <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic Slider" />
-            <h:inputText id="basicSlider" value="#{sliderController.intValue}" />
-            <p:slider for="basicSlider" />
-            <hr/>
+            <h:panelGrid columns="1" cellpadding="3">
+                <h:inputText id="basicSlider" value="#{sliderController.intValue}" />
+                <p:slider for="basicSlider" />
+            </h:panelGrid>
 
             <h:outputText value="Slider with Display" />
-            <h:inputText id="displaySlider" value="#{sliderController.intValue}" />
-            <p:slider for="displaySlider" display="output"/>
-            <h:outputText id="output" value="#{sliderController.intValue}" />
-            <hr/>
+            <h:panelGroup>
+                <h:inputHidden id="displaySlider" value="#{sliderController.intValue}" />
+                <p:slider for="displaySlider" display="output"/>
+                <h:outputText id="output" value="#{sliderController.intValue}" />
+            </h:panelGroup>
 
             <h:outputText value="Slider without Animation" />
-            <h:inputText id="nonAnimatedSlider" value="#{sliderController.intValue}" />
-            <p:slider for="nonAnimatedSlider" animate="false" />
-            <hr/>
+            <h:panelGrid columns="1" cellpadding="3">
+                <h:inputText id="nonAnimatedSlider" value="#{sliderController.intValue}" />
+                <p:slider for="nonAnimatedSlider" animate="false" />
+            </h:panelGrid>
 
-            <h:outputText value="Slider with stepping value" />
-            <h:inputText id="steppingSlider" value="#{sliderController.intValue}" />
-            <p:slider for="steppingSlider" step="10" minValue="0" maxValue="100"  />
+            <h:outputText value="Slider with Stepping Value" />
+            <h:panelGrid columns="1" cellpadding="3">
+                <h:inputText id="steppingSlider" value="#{sliderController.intValue}" />
+                <p:slider for="steppingSlider" step="10" />
+            </h:panelGrid>
+
+            <h:outputText value="Slider with min-max Value" />
+            <h:panelGrid columns="1" cellpadding="3">
+                <h:inputText id="minMaxSlider" value="#{sliderController.intValue}" onfocus="this.readOnly=true;" />
+                <p:slider for="minMaxSlider" step="10" minValue="0" maxValue="100"  />
+            </h:panelGrid>
 
         </h:panelGrid>
     </ui:define>

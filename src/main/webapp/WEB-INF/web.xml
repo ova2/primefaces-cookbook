@@ -22,10 +22,12 @@
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
         <param-value>true</param-value>
     </context-param>
+    <!-- Breaking p:ajax on spinner and slider
     <context-param>
         <param-name>javax.faces.SEPARATOR_CHAR</param-name>
         <param-value>_</param-value>
     </context-param>
+    -->
     <context-param>
         <param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
         <param-value>true</param-value>

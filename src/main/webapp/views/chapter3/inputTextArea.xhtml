@@ -7,6 +7,9 @@
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Usable Features of InputTextArea</h3>
         <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Basic InputTextArea:" />
+            <p:inputTextarea value="#{inputTextAreaController.value}" />
+
             <h:outputText value="Text Area with auto resizing:" />
             <p:inputTextarea value="#{inputTextAreaController.value}" autoResize="true"/>
 
