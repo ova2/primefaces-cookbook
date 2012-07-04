@@ -24,7 +24,7 @@
 
             <h:outputText value="AJAX update with Spinner" />
             <h:panelGrid columns="2" cellpadding="2">
-                <p:spinner value="#{spinnerController.intValue2}" >
+                <p:spinner id="ajaxSpinner" value="#{spinnerController.intValue2}" >
                     <p:ajax update="output" process="@this" />
                 </p:spinner>
                 <h:outputText id="output" value="#{spinnerController.intValue2}" />
