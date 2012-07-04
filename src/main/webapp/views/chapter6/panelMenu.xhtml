@@ -6,7 +6,43 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText value="Panel Menu"/>
+        <p:growl id="messages" autoUpdate="true"/>
 
+        <p:panelMenu style="width:200px">
+            <p:submenu label="Ajax Operations">
+                <p:menuitem value="Save" actionListener="#{panelMenuController.save}"
+                            icon="ui-icon-disk"/>
+                <p:menuitem value="Update" actionListener="#{panelMenuController.update}"
+                            icon="ui-icon-arrowrefresh-1-w"/>
+            </p:submenu>
+            <p:submenu label="Non-Ajax Operations">
+                <p:menuitem value="Delete" actionListener="#{panelMenuController.delete}"
+                            ajax="false" icon="ui-icon-close"/>
+            </p:submenu>
+            <p:separator/>
+            <p:submenu label="Navigations">
+                <p:submenu label="Links" icon="ui-icon-extlink">
+                    <p:submenu label="Prime Products">
+                        <p:menuitem value="Prime UI" icon="ui-icon-home"
+                                    url="http://primefaces.org/showcase-labs"/>
+                        <p:menuitem value="Prime Mobile" icon="ui-icon-signal"
+                                    url="http://primefaces.org/showcase-labs/mobile"/>
+                        <p:menuitem value="Prime Push" icon="ui-icon-arrowreturnthick-1-n"
+                                    url="http://primefaces.org/showcase-labs/push"/>
+                    </p:submenu>
+                    <p:submenu label="Prime Resources">
+                        <p:menuitem value="Docs" url="http://primefaces.org/documentation.html"
+                                    icon="ui-icon-document"/>
+                        <p:menuitem value="Download" url="http://primefaces.org/downloads.html"
+                                    icon="ui-icon-arrowthick-1-s"/>
+                    </p:submenu>
+                </p:submenu>
+            </p:submenu>
+        </p:panelMenu>
+
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter6/panelMenu.css"/>
     </ui:define>
 </ui:composition>
