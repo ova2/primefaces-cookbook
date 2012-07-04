@@ -6,7 +6,57 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText value="Menubar"/>
+        <p:growl id="growl"/>
+
+        <p:menubar>
+            <p:submenu label="File" icon="ui-icon-document">
+                <p:submenu label="Create New">
+                    <p:menuitem value="Folder" actionListener="#{menubarController.createFolder}"
+                                icon="ui-icon-folder-collapsed" update="growl"/>
+                    <p:menuitem value="Video File" actionListener="#{menubarController.createVideo}"
+                                icon="ui-icon-video" update="growl"/>
+                    <p:menuitem value="HTML File" actionListener="#{menubarController.createHTML}"
+                                icon="ui-icon-script" update="growl"/>
+                </p:submenu>
+                <p:separator/>
+                <p:menuitem value="Quit" url="#"/>
+            </p:submenu>
+            <p:submenu label="Edit" icon="ui-icon-pencil">
+                <p:menuitem value="Cut" actionListener="#{menubarController.cut}"
+                            icon="ui-icon-scissors" update="growl"/>
+                <p:menuitem value="Copy" actionListener="#{menubarController.copy}"
+                            icon="ui-icon-copy" update="growl"/>
+                <p:menuitem value="Paste" actionListener="#{menubarController.paste}"
+                            icon="ui-icon-clipboard" update="growl"/>
+            </p:submenu>
+            <p:submenu label="View" icon="ui-icon-pencil">
+                <p:menuitem value="Zoom In" actionListener="#{menubarController.zoomIn}"
+                            icon="ui-icon-zoomin" update="growl"/>
+                <p:menuitem value="Zoom Out" actionListener="#{menubarController.zoomOut}"
+                            icon="ui-icon-zoomout" update="growl"/>
+                <p:submenu label="View Mode" icon="ui-icon-search">
+                    <p:menuitem value="View Icons" actionListener="#{menubarController.viewIcons}"
+                                update="growl"/>
+                    <p:menuitem value="View Compact" actionListener="#{menubarController.viewCompact}"
+                                update="growl"/>
+                    <p:menuitem value="View Details" actionListener="#{menubarController.viewDetails}"
+                                update="growl"/>
+                </p:submenu>
+            </p:submenu>
+            <p:submenu label="Go" icon="ui-icon-extlink">
+                <p:menuitem value="Source" url="https://github.com/ova2/primefaces-cookbook"
+                            icon="ui-icon-star"/>                
+                <p:menuitem value="Home" url="http://ova2.github.com/primefaces-cookbook"
+                            icon="ui-icon-home"/>
+            </p:submenu>
+            <p:menuitem value="Info" action="#{menubarController.info}" ajax="false"
+                        icon="ui-icon-help"/>
+        </p:menubar>
+
+        <p:dialog visible="#{flash.helpVisible}" header="Info Dialog">
+            PrimeFaces Menubar brings desktop menubar to JSF applications.<br/>
+            Combine submenus and menu items to execute ajax, non-ajax and navigations.
+        </p:dialog>
 
     </ui:define>
 </ui:composition>
