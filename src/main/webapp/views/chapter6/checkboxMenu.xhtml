@@ -1,12 +1,40 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:p="http://primefaces.org/ui"
+                xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText value="Checkbox Menu"/>
+        <h3 style="margin-top:0">Simple SelectCheckboxMenu</h3>
+
+        <p:selectCheckboxMenu value="#{checkboxMenu.selectedColors}"
+                              label="Colors">
+            <f:selectItems value="#{checkboxMenu.colors}"/>
+        </p:selectCheckboxMenu>
+
+        <h3 style="margin-top:20px">
+            Advanced SelectCheckboxMenu with filter and converter
+        </h3>
+
+        <p:selectCheckboxMenu value="#{checkboxMenu.selectedLanguages}"
+                              label="Languages" filter="true" filterText="Filter languages">
+            <f:selectItems value="#{checkboxMenu.languages}"/>
+            <f:converter converterId="org.primefaces.cookbook.converter.LocaleConverter"/>
+        </p:selectCheckboxMenu>
+
+        <p:commandButton value="Submit" update="display" oncomplete="dlg.show()"
+                         style="margin-top:20px; display:block;"/>
+
+        <p:dialog header="Selected colors and languages" widgetVar="dlg">
+            <h:panelGroup id="display">
+                <p:dataList value="#{checkboxMenu.selectedColors}" var="color">
+                    #{color}
+                </p:dataList>
+                <p:dataList value="#{checkboxMenu.selectedLanguages}" var="lang">
+                    #{lang}
+                </p:dataList>
+            </h:panelGroup>
+        </p:dialog>
 
     </ui:define>
 </ui:composition>
