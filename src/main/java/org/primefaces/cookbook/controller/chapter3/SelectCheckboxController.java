@@ -36,8 +36,8 @@ public class SelectCheckboxController implements Serializable {
     }
 
     public void addMessage() {
-        String summary = selectedValue ? "Checked" : "Unchecked";
+        String summaryKey = selectedValue ? "checkbox.checked" : "checkbox.unchecked";
 
-        MessageUtil.addInfoMessage(summary);
+        MessageUtil.addInfoMessage(summaryKey);
     }
 }

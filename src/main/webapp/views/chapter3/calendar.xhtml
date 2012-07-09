@@ -6,23 +6,11 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Basic and Advanced Calendar Scenarios</h3>
+        <p:growl id="growl"/>
         <h:panelGrid columns="2" cellpadding="5">
-            <h:outputText value="Basic Selection" />
-            <p:calendar id="default" value="#{calendarController.date}" />
+            <h:outputText value="Picking Time with Calendar" />
+            <p:calendar id="timeCalendar" value="#{calendarController.date}" pattern="dd/MM/yyyy HH:mm:ss" />
 
-            <h:outputText value="With Inline Mode" />
-            <p:calendar id="inline" value="#{calendarController.date}" mode="inline" />
-
-            <h:outputText value="With Paging" />
-            <p:calendar id="paging" value="#{calendarController.date}" pages="3" />
-
-            <h:outputText value="With Show on" />
-            <p:calendar id="showOn" value="#{calendarController.date}" showOn="button" />
-
-            <h:outputText value="Date Selection with Restricted Date Range" />
-            <p:calendar id="restrictedDates" value="#{calendarController.date}" mode="inline"
-                        mindate="#{calendarController.yesterday}"
-                        maxdate="#{calendarController.tomorrow}" />
         </h:panelGrid>
     </ui:define>
 </ui:composition>

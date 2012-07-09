@@ -1,6 +1,8 @@
 package org.primefaces.cookbook.controller.chapter3;
 
 import org.apache.commons.lang3.time.DateUtils;
+import org.primefaces.cookbook.utils.MessageUtil;
+import org.primefaces.event.DateSelectEvent;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -31,5 +33,10 @@ public class CalendarController implements Serializable {
 
     public Date getTomorrow() {
         return DateUtils.addDays(new Date(), 1);
+    }
+
+    public void onDateSelect(DateSelectEvent event) {
+        Date date = event.getDate();
+        MessageUtil.addInfoMessage("selected.date", date);
     }
 }

@@ -1,5 +1,8 @@
 package org.primefaces.cookbook.controller.chapter3;
 
+import org.primefaces.cookbook.utils.MessageUtil;
+import org.primefaces.event.SlideEndEvent;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
@@ -20,5 +23,10 @@ public class SliderController implements Serializable {
 
     public void setIntValue(int intValue) {
         this.intValue = intValue;
+    }
+
+    public void onSlideEnd(SlideEndEvent event) {
+        int value = event.getValue();
+        MessageUtil.addInfoMessage("selected.sliderValue", value);
     }
 }

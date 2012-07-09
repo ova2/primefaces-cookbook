@@ -26,6 +26,7 @@ public class AutoCompleteController implements Serializable {
 
         return result;
     }
+
     public String getTxt1() {
         return txt1;
     }
