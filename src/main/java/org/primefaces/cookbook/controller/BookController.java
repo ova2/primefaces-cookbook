@@ -49,6 +49,7 @@ public class BookController implements Serializable {
 		constructChapter2(chapter2);
 		constructChapter3(chapter3);
 		constructChapter6(chapter6);
+		constructChapter8(chapter8);
 	}
 
 	private void constructChapter1(TreeNode chapter1) {
@@ -58,15 +59,11 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
 		                    chapter1);
-        new DefaultTreeNode(NODE_TYPE,
-                            new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"),
-                            chapter1);
-        new DefaultTreeNode(NODE_TYPE,
-                            new BookTreeNode("Update Component in Different Naming Container", "chapter1/componentInDifferentNamingContainer.xhtml"),
-                            chapter1);
-        new DefaultTreeNode(NODE_TYPE,
-                            new BookTreeNode("Partial Processing", "chapter1/partialProcessing.xhtml"),
-                            chapter1);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"), chapter1);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Update Component in Different Naming Container",
+		                                     "chapter1/componentInDifferentNamingContainer.xhtml"), chapter1);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Partial Processing", "chapter1/partialProcessing.xhtml"), chapter1);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"),
 		                    chapter1);
 		new DefaultTreeNode(NODE_TYPE,
@@ -92,28 +89,27 @@ public class BookController implements Serializable {
 		                    chapter2);
 	}
 
-    private void constructChapter3(TreeNode chapter3) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Formatted input with InputMask", "chapter3/inputMask.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Auto Suggestion with AutoComplete", "chapter3/autoComplete.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Usable Features of InputTextArea", "chapter3/inputTextArea.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("SelectBooleanCheckbox and SelectManyCheckbox", "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic and Advanced Calendar Scenarios", "chapter3/calendar.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Spinner - Different ways to provide input", "chapter3/spinner.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Slider - Different ways to provide input", "chapter3/slider.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Rich Text Editing with the Editor", "chapter3/editor.xhtml"),
-                chapter3);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Advanced Editing with in-place Editor", "chapter3/inPlaceEditor.xhtml"),
-                chapter3);
-    }
+	private void constructChapter3(TreeNode chapter3) {
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Formatted input with InputMask", "chapter3/inputMask.xhtml"), chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Auto Suggestion with AutoComplete", "chapter3/autoComplete.xhtml"),
+		                    chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Usable Features of InputTextArea", "chapter3/inputTextArea.xhtml"),
+		                    chapter3);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("SelectBooleanCheckbox and SelectManyCheckbox",
+		                                     "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"), chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic and Advanced Calendar Scenarios", "chapter3/calendar.xhtml"),
+		                    chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Spinner - Different ways to provide input", "chapter3/spinner.xhtml"),
+		                    chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Slider - Different ways to provide input", "chapter3/slider.xhtml"),
+		                    chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Rich Text Editing with the Editor", "chapter3/editor.xhtml"), chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Advanced Editing with in-place Editor", "chapter3/inPlaceEditor.xhtml"),
+		                    chapter3);
+	}
 
-    private void constructChapter6(TreeNode chapter6) {
+	private void constructChapter6(TreeNode chapter6) {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),
 		                    chapter6);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Creating programmatic menu", "chapter6/programmaticMenu.xhtml"),
@@ -132,6 +128,21 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying checkboxes in overlay menu", "chapter6/checkboxMenu.xhtml"),
 		                    chapter6);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dock menu for Mac OS fans", "chapter6/dockMenu.xhtml"), chapter6);
+	}
+
+	private void constructChapter8(TreeNode chapter8) {
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Making component Draggable", "chapter8/draggable.xhtml"), chapter8);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Restricting dragging by axis, grid and containment",
+		                                     "chapter8/advancedDraggable.xhtml"), chapter8);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Defining droppable targets", "chapter8/droppable.xhtml"), chapter8);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Restricting dropping by tolerance and acceptance",
+		                                     "chapter8/advancedDroppable.xhtml"), chapter8);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("AJAX enhanced drag & drop", "chapter8/ajaxDragDrop.xhtml"), chapter8);
+		new DefaultTreeNode(NODE_TYPE,
+		                    new BookTreeNode("Integrating drag & drop with data iteration components",
+		                                     "chapter8/dragDropIntegration.xhtml"), chapter8);
 	}
 
 	public TreeNode getRoot() {
