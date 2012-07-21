@@ -135,6 +135,8 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Restricting dragging by axis, grid and containment",
 		                                     "chapter8/advancedDraggable.xhtml"), chapter8);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Snapping to edges of near elements", "chapter8/snapping.xhtml"),
+		                    chapter8);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Defining droppable targets", "chapter8/droppable.xhtml"), chapter8);
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Restricting dropping by tolerance and acceptance",
