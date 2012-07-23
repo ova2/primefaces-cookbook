@@ -1,0 +1,17 @@
+.dragDiv {
+    width: 150px;
+    height: 60px;
+    padding: 5px;
+    margin: 0;
+}
+
+.dropTarget {
+    height: 120px;
+    width: 200px;
+    margin: 0;
+}
+
+.dropTarget > p {
+    margin: 0;
+    padding: 5px;
+}

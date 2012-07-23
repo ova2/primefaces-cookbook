@@ -5,7 +5,63 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        Advanced Droppable
+        <h3 style="margin-top:0">Tolerance</h3>
 
+        <h:panelGrid columns="4">
+            <h:panelGroup id="dropFit" layout="block" styleClass="dropTarget ui-widget-content">
+                <p class="ui-widget-header">Drop here (tolerance = fit)</p>
+                <p:droppable onDrop="handleDrop" tolerance="fit"/>
+            </h:panelGroup>
+
+            <h:panelGroup id="dropIntersect" layout="block" styleClass="dropTarget ui-widget-content">
+                <p class="ui-widget-header">Drop here (tolerance = intersect)</p>
+                <p:droppable onDrop="handleDrop" tolerance="intersect"/>
+            </h:panelGroup>
+
+            <h:panelGroup id="dropPointer" layout="block" styleClass="dropTarget ui-widget-content">
+                <p class="ui-widget-header">Drop here (tolerance = pointer)</p>
+                <p:droppable onDrop="handleDrop" tolerance="pointer"/>
+            </h:panelGroup>
+
+            <h:panelGroup id="dropTouch" layout="block" styleClass="dropTarget ui-widget-content">
+                <p class="ui-widget-header">Drop here (tolerance = touch)</p>
+                <p:droppable onDrop="handleDrop" tolerance="touch"/>
+            </h:panelGroup>
+        </h:panelGrid>
+        
+        <br/>
+
+        <h:panelGroup id="drag" layout="block" styleClass="dragDiv ui-widget-content">
+            <p>Drag me to my target</p>
+            <p:draggable/>
+        </h:panelGroup>
+
+        <h3 style="margin-top:20px">Acceptance</h3>
+
+        <h:panelGroup id="dropTarget2" layout="block" styleClass="ui-widget-content"
+                      style="height:120px;width:300px;">
+            <p class="ui-widget-header" style="margin:0;padding:5px;">Drop here</p>
+            <p:droppable onDrop="handleDrop" scope="dnd"/>
+        </h:panelGroup>
+        
+        <br/>
+
+        <h:panelGrid columns="2">
+            <h:panelGroup id="drag1" layout="block" styleClass="dragDiv ui-widget-content">
+                <p>Drag me to my target</p>
+                <p:draggable scope="dnd"/>
+            </h:panelGroup>
+
+            <h:panelGroup id="drag2" layout="block" styleClass="dragDiv ui-widget-content">
+                <p>I'm draggable, but can't be dropped</p>
+                <p:draggable scope="dummy"/>
+            </h:panelGroup>
+        </h:panelGrid>
+
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter8/droppable.css"/>
+        <h:outputScript library="js" name="chapter8/dragDrop.js" target="body"/>
     </ui:define>
 </ui:composition>
