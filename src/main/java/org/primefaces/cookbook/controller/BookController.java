@@ -107,6 +107,10 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Rich Text Editing with the Editor", "chapter3/editor.xhtml"), chapter3);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Advanced Editing with in-place Editor", "chapter3/inPlaceEditor.xhtml"),
 		                    chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Enhanced Password Input", "chapter3/password.xhtml"),
+		                    chapter3);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Star Based Rating Input", "chapter3/rating.xhtml"),
+		                    chapter3);
 	}
 
 	private void constructChapter6(TreeNode chapter6) {

@@ -7,19 +7,19 @@
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Formatted input with InputMask</h3>
         <h:panelGrid columns="2" cellpadding="5">
-            <h:outputText value="Phone number with numeric mask:" />
+            <h:outputText value="Phone number with numeric mask" />
             <p:inputMask value="#{inputMaskController.phone}" mask="(999) 999-9999" />
 
-            <h:outputText value="Product key with Alphabetic mask:" />
+            <h:outputText value="Product key with Alphabetic mask" />
             <p:inputMask value="#{inputMaskController.productKey}" mask="a999-a9" />
 
-            <h:outputText value="Phone number with Placeholder:" />
+            <h:outputText value="Phone number with Placeholder" />
             <p:inputMask value="#{inputMaskController.phone}" mask="(999) 999-9999" placeHolder="X" />
 
-            <h:outputText value="Product key with Alphanumeric mask:" />
+            <h:outputText value="Product key with Alphanumeric mask" />
             <p:inputMask value="#{inputMaskController.productKey}" mask="a*-999-a999" />
 
-            <h:outputText value="Phone number with optional extension:" />
+            <h:outputText value="Phone number with optional extension" />
             <p:inputMask value="#{inputMaskController.phoneExt}" mask="(999) 999-9999? x99999" />
         </h:panelGrid>
     </ui:define>

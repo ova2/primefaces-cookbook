@@ -6,10 +6,29 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Auto Suggestion with AutoComplete</h3>
+        <p:growl id="growl"/>
         <h:panelGrid columns="2" cellpadding="5">
-            <h:outputText value="Simple: " />
-            <p:autoComplete id="simple" value="#{autoCompleteController.txt1}"
-                    completeMethod="#{autoCompleteController.complete}" />
+            <h:outputText value="Simple" />
+            <p:autoComplete id="simple" value="#{autoCompleteController.txt1}" completeMethod="#{autoCompleteController.complete}" />
+
+            <h:outputText value="POJO Support" />
+            <p:autoComplete id="carPOJO" value="#{autoCompleteController.selectedCar}" completeMethod="#{autoCompleteController.completeCar}"
+                            var="car" itemLabel="#{car.name}" itemValue="#{car}" forceSelection="true">
+                <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
+                <p:column>
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="80" height="50"/>
+                </p:column>
+                <p:column>#{car.name}</p:column>
+            </p:autoComplete>
+
+            <h:outputText value="Instant AJAX Selection" />
+            <p:autoComplete id="simpleItemSelect" value="#{autoCompleteController.txt1}" completeMethod="#{autoCompleteController.complete}">
+                <p:ajax event="itemSelect" listener="#{autoCompleteController.handleSelect}" update="growl" />
+            </p:autoComplete>
+
+            <h:outputText value="Multiple Selection" />
+            <p:autoComplete id="multipleSelect" value="#{autoCompleteController.selectedTexts}" completeMethod="#{autoCompleteController.complete}" multiple="true" />
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

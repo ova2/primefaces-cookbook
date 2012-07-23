@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Star Based Rating Input</h3>
+        <p:growl id="growl"/>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Basic Rating" />
+            <p:rating value="#{ratingController.rate}" />
+
+            <h:outputText value="Rating with 10 stars" />
+            <p:rating value="#{ratingController.rate}" stars="10" />
+
+            <h:outputText value="Instant AJAX Selection" />
+            <p:rating id="instantRating" value="#{ratingController.rate}">
+                <p:ajax event="rate" listener="#{ratingController.handleRate}" update="growl" />
+                <p:ajax event="cancel" listener="#{ratingController.cancelRate}" update="growl" />
+            </p:rating>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
