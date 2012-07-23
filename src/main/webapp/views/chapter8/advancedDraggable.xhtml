@@ -5,7 +5,30 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        Advanced Draggable
+        <p:panel id="hpnl" header="Only horizontal draggable panel">
+            <h:outputText value="I can be only dragged horizontally."/>
+        </p:panel>
+        <p:draggable for="hpnl" axis="x"/>
 
+        <p:panel id="vpnl" header="Only vertical draggable panel">
+            <h:outputText value="I can be only dragged vertically"/>
+        </p:panel>
+        <p:draggable for="vpnl" axis="y"/>
+
+        <p:panel id="gpnl" header="Draggable panel in grid [40,50]">
+            <h:outputText value="I can be only dragged in a grid"/>
+        </p:panel>
+        <p:draggable for="gpnl" grid="40,50"/>
+
+        <h:outputText value="The image below can be only dragged within its parent's boundaries"/>
+        <h:panelGroup layout="block" styleClass="dragContainer ui-widget-content">
+            <h:graphicImage id="pic" library="images" name="logo.png"/>
+        </h:panelGroup>
+        <p:draggable for="pic" containment="parent"/>
+
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter8/draggable.css"/>
     </ui:define>
 </ui:composition>

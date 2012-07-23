@@ -5,7 +5,32 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        Snapping
+        <h:panelGroup id="snaptarget" layout="block" styleClass="ui-widget-content"
+                      style="height:150px;width:450px;">
+            <p class="ui-widget-header" style="margin:0;padding:5px;">
+                I'm a snap target to play with me
+            </p>
+            <p:draggable/>
+        </h:panelGroup>
 
+        <h:panelGroup id="defsnap" layout="block" styleClass="dragSnap ui-widget-content">
+            <p>I'm with default snap and snap to all edges of other draggable elements</p>
+        </h:panelGroup>
+        <p:draggable for="defsnap" snap="true"/>
+
+        <h:panelGroup id="outersnap" layout="block" styleClass="dragSnap ui-widget-content">
+            <p>I only snap to the outer edges - try with the big box</p>
+        </h:panelGroup>
+        <p:draggable for="outersnap" snap="true" snapMode="outer"/>
+
+        <h:panelGroup id="innersnap" layout="block" styleClass="dragSnap ui-widget-content">
+            <p>I only snap to the inner edges - try with the big box</p>
+        </h:panelGroup>
+        <p:draggable for="innersnap" snap="true" snapMode="inner"/>
+
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter8/draggable.css"/>
     </ui:define>
 </ui:composition>

@@ -1,0 +1,19 @@
+.ui-panel {
+    margin-bottom: 15px;
+    width: 300px;
+}
+
+.dragContainer {
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dragSnap {
+    width: 150px;
+    height: 60px;
+    margin-top: 15px;
+    margin-right: 5px;
+    padding: 5px;
+}

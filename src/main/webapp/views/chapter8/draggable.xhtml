@@ -5,7 +5,34 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        Draggable
+        <p:panel id="pnl" header="Draggable panel with default settings">
+            <h:outputText value="Drag me around"/>
+        </p:panel>
+        <p:draggable for="pnl"/>
+
+        <p:panel id="hpnl" header="Draggable panel by handle">
+            <h:outputText value="I can be only dragged by my header"/>
+        </p:panel>
+        <p:draggable for="hpnl" handle=".ui-panel-titlebar"/>
+
+        <p:panel id="cpnl" header="Draggable panel with clone">
+            <h:outputText value="I display a clone as helper while being dragged"/>
+        </p:panel>
+        <p:draggable for="cpnl" helper="clone"/>
+
+        <p:panel id="rpnl" header="Draggable panel with revert">
+            <h:outputText value="I will be returned to my start position when dragging stops"/>
+        </p:panel>
+        <p:draggable for="rpnl" revert="true"/>
+
+        <p:panel id="opnl" header="Draggable panel with opacity">
+            <h:outputText value="I use opacity for helper while being dragged"/>
+        </p:panel>
+        <p:draggable for="opnl" opacity="0.5"/>
 
     </ui:define>
+    
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter8/draggable.css"/>
+    </ui:define>    
 </ui:composition>
