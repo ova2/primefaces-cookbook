@@ -5,7 +5,102 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        AJAX Drag and Drop
+        <h3 style="margin-top:0">Turkish Pizza</h3>
 
+        <p:growl id="growl" escape="false"/>
+
+        <h:panelGrid columns="2" columnClasses="col1,col2,col3">
+            <h:panelGroup>
+                <h:panelGrid id="selectPizza" columns="1">
+                    <h:outputText value="Kiymali Pide" styleClass="text"/>
+                    <h:graphicImage id="pizza1" styleClass="pizzaimage"
+                                    library="images" name="dragdrop/pizza1.png"
+                                    title="Kiymali Pide"/>
+
+                    <h:outputText value="Kusbasi Pide" styleClass="text"/>
+                    <h:graphicImage id="pizza2" styleClass="pizzaimage"
+                                    library="images" name="dragdrop/pizza2.png"
+                                    title="Kusbasi Pide"/>
+
+                    <h:outputText value="Sucuklu Ve Yumurtali Pide" styleClass="text"/>
+                    <h:graphicImage id="pizza3" styleClass="pizzaimage"
+                                    library="images" name="dragdrop/pizza3.png"
+                                    title="Sucuklu Ve Yumurtali Pide"/>
+
+                    <h:outputText value="Peynirli Pide" styleClass="text"/>
+                    <h:graphicImage id="pizza4" styleClass="pizzaimage"
+                                    library="images" name="dragdrop/pizza4.png"
+                                    title="Peynirli Pide"/>
+
+                    <h:outputText value="Ispanakli Pide" styleClass="text"/>
+                    <h:graphicImage id="pizza5" styleClass="pizzaimage"
+                                    library="images" name="dragdrop/pizza5.png"
+                                    title="Ispanakli Pide"/>
+                </h:panelGrid>
+
+                <p:draggable for="pizza1" helper="clone" revert="true" cursor="move"/>
+                <p:draggable for="pizza2" helper="clone" revert="true" cursor="move"/>
+                <p:draggable for="pizza3" helper="clone" revert="true" cursor="move"/>
+                <p:draggable for="pizza4" helper="clone" revert="true" cursor="move"/>
+                <p:draggable for="pizza5" helper="clone" revert="true" cursor="move"/>
+            </h:panelGroup>
+
+            <h:panelGroup>
+                <h:panelGroup id="order" layout="block" styleClass="ui-widget-content"
+                              style="width:350px; padding:1px;">
+                    <p class="ui-widget-header" style="margin:0;padding:5px;">Order</p>
+
+                    <h:panelGroup layout="block" style="padding:10px;"
+                                  rendered="#{empty ajaxDragDrop.orderedPizza}">
+                        Please drag and drop any available pizza to order it
+                    </h:panelGroup>
+
+                    <p:dataList id="orderedPizza" value="#{ajaxDragDrop.orderedPizza}" var="op"
+                                rendered="#{not empty ajaxDragDrop.orderedPizza}">
+                        <h:panelGroup id="op" styleClass="text" layout="block">
+                            <f:attribute name="pizza" value="#{op}"/>
+                            <h:outputText value="#{op}"/>
+                        </h:panelGroup>
+
+                        <p:draggable for="op" revert="true" cursor="move" scope="trash"/>
+                    </p:dataList>
+
+                    <p:droppable id="drop1" for="order" accept=".pizzaimage" tolerance="touch"
+                                 activeStyleClass="ui-state-default" hoverStyleClass="ui-state-hover">
+                        <p:ajax listener="#{ajaxDragDrop.onPizzaDrop}" update="order growl"/>
+                    </p:droppable>
+                </h:panelGroup>
+
+                <p:commandButton value="Send order" action="#{ajaxDragDrop.sendOrder}" update="growl"
+                                 style="margin:10px 0 20px 0;"/>
+
+                <h:panelGroup id="trash" layout="block" styleClass="ui-widget-content"
+                              style="width:350px; padding:1px;">
+                    <p class="ui-widget-header" style="margin:0;padding:5px;">Trash</p>
+                    
+                    <h:panelGroup layout="block" style="padding:10px;"
+                                  rendered="#{empty ajaxDragDrop.removedPizza}">
+                        Drag and drop a pizza from the ordered list to remove it
+                    </h:panelGroup>                    
+
+                    <p:dataList value="#{ajaxDragDrop.removedPizza}" var="rp"
+                                rendered="#{not empty ajaxDragDrop.removedPizza}">
+                        <h:panelGroup styleClass="text" layout="block">
+                            <h:outputText value="#{rp}"/>
+                        </h:panelGroup>
+                    </p:dataList>
+
+                    <p:droppable id="drop2" for="trash" scope="trash" tolerance="touch"
+                                 activeStyleClass="ui-state-default" hoverStyleClass="ui-state-hover">
+                        <p:ajax listener="#{ajaxDragDrop.onPizzaRemove}" update="order trash growl"/>
+                    </p:droppable>
+                </h:panelGroup>
+            </h:panelGroup>
+        </h:panelGrid>
+
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter8/ajaxDragDrop.css"/>
     </ui:define>
 </ui:composition>

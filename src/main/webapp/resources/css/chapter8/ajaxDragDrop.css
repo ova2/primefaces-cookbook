@@ -1,0 +1,21 @@
+.col1, .col2, .col3 {
+    vertical-align: top;
+}
+
+.col2 {
+    padding-left: 50px;
+}
+
+.text {
+    font-weight: bold;
+    padding: 2px 0 2px 0;
+}
+
+.ui-datalist-content ul {
+    list-style-type: none;
+}
+
+#selectPizza img,
+#orderedPizza ul li {
+    cursor: move;
+}
