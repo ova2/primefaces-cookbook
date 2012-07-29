@@ -1,11 +1,58 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        Drag and Drop Integration
+        <p:fieldset legend="Available Documents">
+            <p:dataGrid id="availableDocs" var="doc"
+                        value="#{integrationDragDrop.availableDocs}" columns="3">
+                <p:column>
+                    <p:panel id="pnl" header="#{doc.title}" style="text-align:center">
+                        <h:graphicImage library="images" name="dragdrop/#{doc.extension}.png"/>
+                    </p:panel>
+                    <p:draggable for="pnl" revert="true" handle=".ui-panel-titlebar"
+                                 stack=".ui-panel" cursor="move"/>
+                </p:column>
+            </p:dataGrid>
+        </p:fieldset>
+
+        <p:fieldset id="deletedDocs" legend="Recycle Bin" style="margin-top:20px">
+            <p:outputPanel id="dropArea">
+                <h:outputText value="Drop documents into the recycle bin to delete them"
+                              rendered="#{empty integrationDragDrop.deletedDocs}"
+                              style="font-size:20px;"/>
+
+                <p:dataTable var="doc" value="#{integrationDragDrop.deletedDocs}"
+                             rendered="#{not empty integrationDragDrop.deletedDocs}">
+
+                    <p:column headerText="Title">
+                        <h:outputText value="#{doc.title}"/>
+                    </p:column>
+                    <p:column headerText="Size (bytes)">
+                        <h:outputText value="#{doc.size}"/>
+                    </p:column>
+                    <p:column headerText="Creator">
+                        <h:outputText value="#{doc.creator}"/>
+                    </p:column>
+                    <p:column headerText="Creation Date">
+                        <h:outputText value="#{doc.creationDate}"/>
+                    </p:column>
+                </p:dataTable>
+            </p:outputPanel>
+        </p:fieldset>
+
+        <p:droppable id="droppable" for="deletedDocs" tolerance="touch"
+                     activeStyleClass="ui-state-highlight" datasource="availableDocs">
+            <p:ajax listener="#{integrationDragDrop.onDocumentDrop}"
+                    update="dropArea availableDocs"/>
+        </p:droppable>
 
     </ui:define>
+    
+    <ui:define name="appResources">
+        <h:outputStylesheet library="css" name="chapter8/integrationDragDrop.css"/>
+    </ui:define>    
 </ui:composition>

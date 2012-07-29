@@ -1,0 +1,7 @@
+.ui-panel .ui-panel-titlebar {
+    cursor: move;
+}
+
+.ui-panel .ui-panel-content {
+    padding-bottom: 0;
+}
