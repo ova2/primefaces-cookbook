@@ -48,6 +48,7 @@ public class BookController implements Serializable {
 		constructChapter1(chapter1);
 		constructChapter2(chapter2);
 		constructChapter3(chapter3);
+		constructChapter4(chapter4);
 		constructChapter6(chapter6);
 		constructChapter8(chapter8);
 	}
@@ -112,6 +113,19 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Star Based Rating Input", "chapter3/rating.xhtml"),
 		                    chapter3);
 	}
+
+    private void constructChapter4(TreeNode chapter4) {
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Grouping content with Standard Panel", "chapter4/panel.xhtml"),
+                chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Vertical Stacked Panels with Accordion", "chapter4/accordionPanel.xhtml"),
+                chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying overflowed content with ScrollPanel", "chapter4/scrollPanel.xhtml"),
+                chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Working with Tabbed Panel", "chapter4/tabView.xhtml"),
+                chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Grouping Buttons and More with Toolbar", "chapter4/toolbar.xhtml"),
+                chapter4);
+    }
 
 	private void constructChapter6(TreeNode chapter6) {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"),

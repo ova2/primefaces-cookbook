@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Grouping content with Standard Panel</h3>
+        <p:growl id="growl"/>
+
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Simple" />
+            <p:panel id="simple" header="PrimeFaces" footer="The Cookbook">
+                <h:outputText value="asas aosoaos oaisi aoisoai oasio" />
+            </p:panel>
+
+            <h:outputText value="Closeable and Toggleable" />
+            <p:panel id="closeableToggleable" header="PrimeFaces" footer="The Cookbook" closable="true" toggleable="true">
+                <h:outputText value="asas aosoaos oaisi aoisoai oasio" />
+            </p:panel>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
