@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Panel Grid with colspan and rowspan support</h3>
+        <p:growl id="growl"/>
+
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:panelGrid columns="2">
+                <f:facet name="header">User Information</f:facet>
+
+                <h:outputLabel for="firstname" value="First Name" />
+                <p:inputText id="firstname" value="" label="firstname" />
+
+                <h:outputLabel for="lastname" value="Last Name" />
+                <p:inputText id="lastname" value="" required="true" label="lastname"/>
+
+                <f:facet name="footer">
+                    <p:commandButton type="button" value="Save" icon="ui-icon-check" style="margin:0"/>
+                </f:facet>
+            </p:panelGrid>
+
+            <h:outputText value="With rowspan and colspan" />
+            <h:outputText value="TBD" />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

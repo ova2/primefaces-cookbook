@@ -4,11 +4,48 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
+    <ui:define name="head">
+        <style type="text/css">
+            .ui-dashboard-column {
+                width:200px;
+            }
+        </style>
+    </ui:define>
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Simulating Portal Environment with Dashboard</h3>
-        <p:growl id="growl"/>
+        <p:growl id="growl" showDetail="true"/>
         <h:panelGrid columns="2" cellpadding="5">
 
+            <h:outputText value="Simple" />
+            <p:dashboard id="board" model="#{dashboardController.model}">
+                <p:ajax event="reorder" listener="#{dashboardController.handleReorder}" update="growl" />
+
+                <p:panel id="calculator" header="Calculator">
+                    <h:outputText value="Content for Calculator" />
+                </p:panel>
+
+                <p:panel id="calendar" header="Calendar">
+                    <h:outputText value="Content for Calendar" />
+                </p:panel>
+
+                <p:panel id="contact" header="Contacts">
+                    <h:outputText value="Content for Contacts"  />
+                </p:panel>
+
+                <p:panel id="dictionary" header="Dictionary">
+                    <h:outputText value="Weather Content for Dictionary" />
+                </p:panel>
+
+                <p:panel id="weather" header="Weather">
+                    <h:outputText value="Content for Weather" />
+                </p:panel>
+
+                <p:panel id="translation" header="Translation">
+                    <h:outputText value="Content for Translation" />
+                </p:panel>
+            </p:dashboard>
+
+            <h:commandButton value="Submit"  />
         </h:panelGrid>
     </ui:define>
 </ui:composition>

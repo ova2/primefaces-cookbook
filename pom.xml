@@ -643,9 +643,6 @@
     <profiles>
         <profile>
             <id>myfaces</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <jsf.impl>myfaces</jsf.impl>
                 <jsf.displayname>MyFaces</jsf.displayname>
@@ -656,6 +653,9 @@
         </profile>
         <profile>
             <id>mojarra</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <jsf.impl>mojarra</jsf.impl>
                 <jsf.displayname>Mojarra</jsf.displayname>

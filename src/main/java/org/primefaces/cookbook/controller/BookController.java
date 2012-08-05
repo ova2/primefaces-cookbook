@@ -117,6 +117,8 @@ public class BookController implements Serializable {
     private void constructChapter4(TreeNode chapter4) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Grouping content with Standard Panel", "chapter4/panel.xhtml"),
                 chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Panel Grid with colspan and rowspan support", "chapter4/panelGrid.xhtml"),
+                chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Vertical Stacked Panels with Accordion", "chapter4/accordionPanel.xhtml"),
                 chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying overflowed content with ScrollPanel", "chapter4/scrollPanel.xhtml"),
@@ -124,6 +126,10 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Working with Tabbed Panel", "chapter4/tabView.xhtml"),
                 chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Grouping Buttons and More with Toolbar", "chapter4/toolbar.xhtml"),
+                chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Simulating Portal Environment with Dashboard", "chapter4/dashboard.xhtml"),
+                chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Nested layout ? layout in layout", "chapter4/nestedLayout.xhtml"),
                 chapter4);
     }
 

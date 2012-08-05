@@ -6,17 +6,39 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Grouping content with Standard Panel</h3>
-        <p:growl id="growl"/>
+        <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Simple" />
             <p:panel id="simple" header="PrimeFaces" footer="The Cookbook">
-                <h:outputText value="asas aosoaos oaisi aoisoai oasio" />
+                <h:outputText value="Open Source Primefaces is the leading JSF Component Suite in the industry, which is adopted widely and being used in production ready projects around the globe." />
             </p:panel>
 
             <h:outputText value="Closeable and Toggleable" />
             <p:panel id="closeableToggleable" header="PrimeFaces" footer="The Cookbook" closable="true" toggleable="true">
-                <h:outputText value="asas aosoaos oaisi aoisoai oasio" />
+                <h:outputText value="Open Source Primefaces is the leading JSF Component Suite in the industry, which is adopted widely and being used in production ready projects around the globe." />
+            </p:panel>
+
+            <h:outputText value="With Menu" />
+            <p:panel id="panelWithMenu" header="PrimeFaces" footer="The Cookbook" widgetVar="panel" closable="true" toggleable="true">
+                <h:outputText value="Open Source Primefaces is the leading JSF Component Suite in the industry, which is adopted widely and being used in production ready projects around the globe." />
+
+                <f:facet name="options">
+                    <p:menu>
+                        <p:submenu label="Settings">
+                            <p:menuitem value="Toggle" url="#" icon="ui-icon-newwin" onclick="panel.toggle()"/>
+                            <p:menuitem value="Remove" url="#" icon="ui-icon-close" onclick="panel.close()"/>
+                        </p:submenu>
+                    </p:menu>
+                </f:facet>
+            </p:panel>
+
+            <h:outputText value="AJAX Update with Panel" />
+            <p:panel id="ajaxPanel" header="PrimeFaces" footer="The Cookbook" closable="true" toggleable="true">
+                <p:ajax event="close" listener="#{panelController.handleClose}" update="growl" />
+                <p:ajax event="toggle" listener="#{panelController.handleToggle}" update="growl" />
+
+                <h:outputText value="Open Source Primefaces is the leading JSF Component Suite in the industry, which is adopted widely and being used in production ready projects around the globe." />
             </p:panel>
         </h:panelGrid>
     </ui:define>
