@@ -49,6 +49,7 @@ public class BookController implements Serializable {
 		constructChapter2(chapter2);
 		constructChapter3(chapter3);
 		constructChapter4(chapter4);
+		constructChapter5(chapter5);
 		constructChapter6(chapter6);
 		constructChapter8(chapter8);
 	}
@@ -133,6 +134,38 @@ public class BookController implements Serializable {
                 chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Element Layout with AJAX Listeners", "chapter4/elementLayout.xhtml"),
                 chapter4);
+    }
+
+    private void constructChapter5(TreeNode chapter5) {
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Selecting rows in DataTable", "chapter5/dataTableSelectRow.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Sorting and Filtering data in DataTable", "chapter5/dataTableSortFilter.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("In-cell editing with DataTable", "chapter5/dataTableInCellEdit.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Conditional Coloring in DataTable", "chapter5/dataTableColoring.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Deleting datatable rows with ConfirmDialog", "chapter5/dataTableConfirmDialog.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Handling millions of data ? LazyDataModel", "chapter5/dataTableLazyDataModel.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with DataList", "chapter5/dataList.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with PickList", "chapter5/pickList.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with OrderList", "chapter5/orderList.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Tree", "chapter5/tree.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with TreeTable", "chapter5/treeTable.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Exporting data in various formats", "chapter5/dataExport.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Carousel", "chapter5/carousel.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Ring", "chapter5/ring.xhtml"),
+                chapter5);
+
     }
 
 	private void constructChapter6(TreeNode chapter6) {
