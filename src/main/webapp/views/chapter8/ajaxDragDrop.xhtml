@@ -68,7 +68,7 @@
 
                     <p:droppable id="drop1" for="order" accept=".pizzaimage" tolerance="touch"
                                  activeStyleClass="ui-state-default" hoverStyleClass="ui-state-hover">
-                        <p:ajax listener="#{ajaxDragDrop.onPizzaDrop}" update="order growl"/>
+                        <p:ajax listener="#{ajaxDragDrop.onPizzaOrder}" update="order growl"/>
                     </p:droppable>
                 </h:panelGroup>
 
