@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Element Layout with AJAX Listeners</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:layout id="elementLayout" style="min-width:600px;min-height:400px;">
+                <p:ajax event="toggle" listener="#{layoutController.handleToggle}" update="growl" />
+                <p:ajax event="close" listener="#{layoutController.handleClose}" update="growl" />
+                <p:ajax event="resize" listener="#{layoutController.handleResize}" update="growl" />
+
+                <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="Layout content for North" />
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="Layout content for South" />
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="200" header="Left" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="Layout content for West" />
+                </p:layoutUnit>
+
+                <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="fade">
+                    <h:outputText value="Layout content for Right" />
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h:outputText value="Layout content for Center" />
+                </p:layoutUnit>
+            </p:layout>
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

@@ -129,7 +129,9 @@ public class BookController implements Serializable {
                 chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Simulating Portal Environment with Dashboard", "chapter4/dashboard.xhtml"),
                 chapter4);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Nested layout ? layout in layout", "chapter4/nestedLayout.xhtml"),
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Full Page Layout", "chapter4/fullPageLayout.xhtml"),
+                chapter4);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Element Layout with AJAX Listeners", "chapter4/elementLayout.xhtml"),
                 chapter4);
     }
 

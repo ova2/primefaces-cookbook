@@ -26,7 +26,55 @@
             </p:panelGrid>
 
             <h:outputText value="With rowspan and colspan" />
-            <h:outputText value="TBD" />
+            <p:panelGrid>
+                <f:facet name="header">
+                    <p:row>
+                        <p:column colspan="6">Time Chart</p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column/>
+                        <p:column>Monday</p:column>
+                        <p:column>Tuesday</p:column>
+                        <p:column>Wednesday</p:column>
+                        <p:column>Thursday</p:column>
+                        <p:column>Friday</p:column>
+                    </p:row>
+                </f:facet>
+
+                <p:row>
+                    <p:column rowspan="6">Hours</p:column>
+                    <p:column>Science</p:column>
+                    <p:column>Math</p:column>
+                    <p:column rowspan="2" style="text-align:center">Project</p:column>
+                    <p:column>Math</p:column>
+                    <p:column>Arts</p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>Social</p:column>
+                    <p:column>History</p:column>
+                    <p:column>Sports</p:column>
+                    <p:column>Math</p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column colspan="6" style="text-align:center">Lunch</p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>Math</p:column>
+                    <p:column>History</p:column>
+                    <p:column>English</p:column>
+                    <p:column>Science</p:column>
+                    <p:column>Arts</p:column>
+                </p:row>
+
+                <f:facet name="footer">
+                    <p:row>
+                        <p:column  colspan="6">Duration: 40 minutes</p:column>
+                    </p:row>
+                </f:facet>
+            </p:panelGrid>
 
         </h:panelGrid>
     </ui:define>
