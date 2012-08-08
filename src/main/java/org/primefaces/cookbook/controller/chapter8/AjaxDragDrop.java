@@ -38,7 +38,7 @@ public class AjaxDragDrop implements Serializable {
 		return removedPizza;
 	}
 
-	public void onPizzaDrop(DragDropEvent event) {
+	public void onPizzaOrder(DragDropEvent event) {
 		HtmlGraphicImage image = (HtmlGraphicImage) event.getComponent().findComponent(event.getDragId());
 		String pizza = image != null ? image.getTitle() : "";
 
@@ -53,17 +53,17 @@ public class AjaxDragDrop implements Serializable {
 
 		dataList.invokeOnComponent(FacesContext.getCurrentInstance(), event.getDragId(), new ContextCallback() {
 
-				public void invokeContextCallback(FacesContext fc, UIComponent component) {
-					HtmlPanelGroup panelGroup = (HtmlPanelGroup) component;
-					String pizza = panelGroup != null ? (String) panelGroup.getAttributes().get("pizza") : "";
+            public void invokeContextCallback(FacesContext fc, UIComponent component) {
+                HtmlPanelGroup panelGroup = (HtmlPanelGroup) component;
+                String pizza = panelGroup != null ? (String) panelGroup.getAttributes().get("pizza") : "";
 
-					orderedPizza.remove(pizza);
-					removedPizza.add(pizza);
+                orderedPizza.remove(pizza);
+                removedPizza.add(pizza);
 
-					FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Removed pizza: " + pizza, null);
-					fc.addMessage(null, msg);
-				}
-			});
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Removed pizza: " + pizza, null);
+                fc.addMessage(null, msg);
+            }
+        });
 	}
 
 	public String sendOrder() {
