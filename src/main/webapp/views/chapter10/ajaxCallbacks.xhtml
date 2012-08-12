@@ -5,8 +5,28 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
+        
+        <p:growl id="growl" autoUpdate="true"/>
+        
+        <p:dialog header="What is the name of this book?" visible="true"
+                  widgetVar="dlgWidget">
+            <h:inputText id="name" value="#{ajaxCallbackParamController.name}"/>
+            
+            <p:commandButton id="save" value="Save" style="margin:10px;"
+                             process="@this name" update="name"
+                             actionListener="#{ajaxCallbackParamController.save}"
+                             oncomplete="handleComplete(xhr, status, args)"/>
+        </p:dialog>
+        
+        <h:outputScript id="handleCompleteScript" target="body">
+        /* <![CDATA[ */
+            function handleComplete(xhr, status, args) {
+                if(args && args.validName) {
+                    dlgWidget.hide();
+                }
+            }
+        /* ]]> */
+        </h:outputScript>
 
-        Ajax Callbacks
-
-    </ui:define>  
+    </ui:define>
 </ui:composition>
