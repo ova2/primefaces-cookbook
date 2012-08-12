@@ -214,9 +214,6 @@ public class BookController implements Serializable {
 		                    new BookTreeNode("Adding AJAX callbacks parameters - validation within dialog",
 		                                     "chapter10/ajaxCallbacks.xhtml"), chapter10);
 		new DefaultTreeNode(NODE_TYPE,
-		                    new BookTreeNode("Conditional display of dialog depending on action result",
-		                                     "chapter10/conditionalDisplay.xhtml"), chapter10);
-		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Navigating to another page in AJAX calls", "chapter10/navigationAjax.xhtml"),
 		                    chapter10);
 		new DefaultTreeNode(NODE_TYPE,
