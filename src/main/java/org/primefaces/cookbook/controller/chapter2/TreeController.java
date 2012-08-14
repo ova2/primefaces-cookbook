@@ -23,27 +23,27 @@ public class TreeController implements Serializable {
 	public TreeController() {
 		root = new DefaultTreeNode("Root", null);
 
-		TreeNode node0 = new DefaultTreeNode("Very long not breaking tree node 0", root);
+		TreeNode node0 = new DefaultTreeNode("Tree node 0", root);
 		node0.setExpanded(true);
 
-		TreeNode node1 = new DefaultTreeNode("Very long not breaking tree node 1", root);
-		new DefaultTreeNode("Very long not breaking tree node 2", root);
+		TreeNode node1 = new DefaultTreeNode("Tree node 1", root);
+		new DefaultTreeNode("Tree node 2", root);
 
-		TreeNode node00 = new DefaultTreeNode("Very long not breaking tree node 0.0", node0);
+		TreeNode node00 = new DefaultTreeNode("Tree node 0.0", node0);
 		node00.setExpanded(true);
 
-		TreeNode node01 = new DefaultTreeNode("Very long not breaking tree node 0.1", node0);
+		TreeNode node01 = new DefaultTreeNode("Tree node 0.1", node0);
 
-		TreeNode node10 = new DefaultTreeNode("Very long not breaking tree node 1.0", node1);
-		new DefaultTreeNode("Very long not breaking tree node 1.1", node1);
+		TreeNode node10 = new DefaultTreeNode("Tree node 1.0", node1);
+		new DefaultTreeNode("Tree node 1.1", node1);
 
-		TreeNode node000 = new DefaultTreeNode("Very long not breaking tree node 0.0.0", node00);
+		TreeNode node000 = new DefaultTreeNode("Tree node 0.0.0", node00);
 		node000.setExpanded(true);
 
-		new DefaultTreeNode("Very long not breaking tree node 0.0.1", node00);
-		new DefaultTreeNode("Very long not breaking tree node 0.1.0", node01);
+		new DefaultTreeNode("Tree node 0.0.1", node00);
+		new DefaultTreeNode("Tree node 0.1.0", node01);
 
-		new DefaultTreeNode("Very long not breaking tree node 1.0.0", node10);
+		new DefaultTreeNode("Tree node 1.0.0", node10);
 	}
 
 	public TreeNode getRoot() {
