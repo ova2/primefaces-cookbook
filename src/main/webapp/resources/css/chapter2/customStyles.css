@@ -8,10 +8,5 @@
 
 #customStyles .ui-tree {
     border: none;
-    width: auto;
     background: none;
-}
-
-#customStyles .ui-tree .ui-tree-nodes .ui-tree-node .ui-tree-node-content .ui-tree-node-label {
-    white-space: nowrap;
 }
