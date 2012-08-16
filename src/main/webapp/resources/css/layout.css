@@ -22,6 +22,10 @@ button,
     font-size: 12px !important;
 }
 
+#bookTree {
+    width: auto;
+}
+
 .ui-treenode {
     padding: 2px 0 0;
 }

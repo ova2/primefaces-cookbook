@@ -431,7 +431,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>3.4-SNAPSHOT</version>
+            <version>3.4.RC1</version>
         </dependency>
 
         <dependency>
@@ -670,7 +670,7 @@
         <java.version.source>1.6</java.version.source>
         <java.version.target>1.6</java.version.target>
         <project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
-        <primefaces.theme.version>1.0.6</primefaces.theme.version>
+        <primefaces.theme.version>1.0.7</primefaces.theme.version>
     </properties>
 </project>
  
