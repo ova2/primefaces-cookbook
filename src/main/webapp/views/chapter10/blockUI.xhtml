@@ -6,7 +6,46 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        BlockUI
+        <!-- Panel -->
+        <p:panel id="panel" header="Blockable Panel" style="height:90px;">
+        
+            <h:outputText value="Click on Save to block me."/>
+        
+            <p:commandButton id="saveBtn" value="Save" style="margin:10px;"
+                             actionListener="#{blockUIController.doSomething}"/>
+        </p:panel>
+        
+        <p:blockUI block="panel" trigger="saveBtn"/>
 
-    </ui:define>  
+        <!-- DataTable -->
+        <p:dataTable id="dataTable" var="message" value="#{blockUIController.messages}"
+                     paginator="true" rows="5" rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
+                     paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     style="margin-top:20px;">
+            <p:ajax event="page" listener="#{blockUIController.doSomething}"/>
+            <p:ajax event="sort" listener="#{blockUIController.doSomething}"/>
+            <p:column sortBy="#{message.subject}">
+                <f:facet name="header">
+                    <h:outputText value="Subject"/>
+                </f:facet>
+                <h:outputText value="#{message.subject}"/>
+            </p:column>
+            <p:column sortBy="#{message.text}">
+                <f:facet name="header">
+                    <h:outputText value="Text"/>
+                </f:facet>
+                <h:outputText value="#{message.text}"/>
+            </p:column>
+        </p:dataTable>
+        
+        <p:blockUI block="dataTable" trigger="dataTable">
+            <h:panelGrid id="blockContent" columns="2">
+                <h:graphicImage library="images" name="ajax-loader.gif"
+                                style="margin-right:12px; vertical-align:middle;"/>
+                <h:outputText value="Please wait, data is being processed..."
+                              style="white-space:nowrap;"/>
+            </h:panelGrid>
+        </p:blockUI>
+
+    </ui:define>
 </ui:composition>
