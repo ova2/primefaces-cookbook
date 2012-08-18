@@ -227,10 +227,7 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Clever focus management in forms", "chapter10/focusManagement.xhtml"),
 		                    chapter10);
 		new DefaultTreeNode(NODE_TYPE,
-		                    new BookTreeNode("Working with drop downs and menus in layout units", "chapter10/menusLayout.xhtml"),
-		                    chapter10);
-		new DefaultTreeNode(NODE_TYPE,
-		                    new BookTreeNode("Taking care with nested panel components", "chapter10/nestedPanels.xhtml"),
+		                    new BookTreeNode("Layout pitfalls with menus and dialogs", "chapter10/layoutPitfalls.xhtml"),
 		                    chapter10);
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Targetable messages with severity levels", "chapter10/targetableMessages.xhtml"),

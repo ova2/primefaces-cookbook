@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html" locale="en">
+    <h:head title="PrimeFaces Cookbook - ShowCase">
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="pragma" content="no-cache"/>
+            <meta http-equiv="cache-control" content="no-cache"/>
+            <meta http-equiv="expires" content="0"/>
+        </f:facet>
+        <f:facet name="last">
+            <style type="text/css">
+                .ui-layout-pane-north .ui-layout-unit-content {
+                    overflow: visible;
+                }
+            </style>
+        </f:facet>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="center">
+            
+                <p:dialog header="Dialog in layout" modal="true"
+                          widgetVar="dlgWidget" appendToBody="true">
+                    <h:form>
+                        <h:inputText/>
+                        <p:commandButton value="Save" style="margin:10px;"/>
+                    </h:form>
+                </p:dialog>
+            
+                <p:commandButton value="Show dialog" type="button"
+                                 onclick="dlgWidget.show()"/>
+            </p:layoutUnit>
+            <p:layoutUnit position="north" size="80" resizable="false">
+                <h:form>
+                    <p:menubar>
+                        <p:submenu label="JavaScript Libraries">
+                            <p:menuitem value="jQuery" url="#"/>
+                            <p:menuitem value="Yahoo UI" url="#"/>
+                            <p:menuitem value="Prototype" url="#"/>
+                        </p:submenu>
+                        <p:menuitem value="Go Back" url="#"/>
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+        </p:layout>
+
+        <h:outputStylesheet library="css" name="layout.css"/>
+    </h:body>
+</f:view>
+</html>
