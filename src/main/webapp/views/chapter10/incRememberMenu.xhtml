@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    
+    <p:menu id="viewList">
+        <p:menuitem value="View 1" styleClass="#{naviController.getMenuitemStyleClass('page1')}"
+                    onclick="selectMenuitemLink(this)" ajax="false" url="/views/chapter10/page1.jsf"/>
+        <p:menuitem value="View 2" styleClass="#{naviController.getMenuitemStyleClass('page2')}"
+                    onclick="selectMenuitemLink(this)" ajax="false" url="/views/chapter10/page2.jsf"/>
+        <p:menuitem value="View 3" styleClass="#{naviController.getMenuitemStyleClass('page3')}"
+                    onclick="selectMenuitemLink(this)" ajax="false" url="/views/chapter10/page3.jsf"/>
+    </p:menu>
+    
+</ui:composition>

@@ -1,12 +1,30 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:h="http://java.sun.com/jsf/html"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        Focus
+        <p:messages/>
+        
+        <p:focus context="secondGrid"/>
+        
+        <h:panelGrid columns="2" style="margin-bottom:10px;">
+            <h:outputLabel value="Dummy"/>
+            <p:inputText/>
+        </h:panelGrid>
+        
+        <h:panelGrid id="secondGrid" columns="2">
+            <h:outputLabel for="firstname" value="Firstname *"/>
+            <p:inputText id="firstname" required="true" label="Firstname"/>
+        
+            <h:outputLabel for="surname" value="Surname *"/>
+            <p:inputText id="surname" required="true" label="Surname"/>
+        </h:panelGrid>
+        
+        <br/>
+        
+        <p:commandButton value="Submit" update="@form"/>
 
-    </ui:define>  
+    </ui:define>
 </ui:composition>

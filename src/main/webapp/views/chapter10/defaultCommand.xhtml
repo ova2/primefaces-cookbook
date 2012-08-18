@@ -1,12 +1,40 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        DefaultCommand
+        <p:growl id="growl" autoUpdate="true"/>
+        
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputLabel for="btnSelect" value="Select default button:"/>
+            <p:selectOneMenu id="btnSelect" value="#{defaultCommandController.btn}">
+                <p:ajax update="@form"/>
+                <f:selectItem itemValue="btn1" itemLabel="Button 1"/>
+                <f:selectItem itemValue="btn2" itemLabel="Button 2"/>
+                <f:selectItem itemValue="btn3" itemLabel="Button 3"/>
+            </p:selectOneMenu>
+        </h:panelGrid>
+        
+        <h:panelGrid columns="3" cellpadding="5" style="margin:15px 0 15px 0;">
+            <h:outputLabel for="text" value="Text:"/>
+            <p:inputText id="text" value="#{defaultCommandController.text}"/>
+            <h:outputText id="display" value="#{defaultCommandController.text}"/>
+        </h:panelGrid>
+        
+        <p:commandButton id="btn1" value="Button1"
+                         actionListener="#{defaultCommandController.showMessage('Button1')}"
+                         update="display"/>
+        <p:commandButton id="btn2" value="Button2"
+                         actionListener="#{defaultCommandController.showMessage('Button2')}"
+                         update="display"/>
+        <h:commandButton id="btn3" value="Button3"
+                         actionListener="#{defaultCommandController.showMessage('Button3')}"
+                         update="display"/>
+        
+        <p:defaultCommand id="defCommand" target="#{defaultCommandController.btn}"/>
 
-    </ui:define>  
+    </ui:define>
 </ui:composition>
