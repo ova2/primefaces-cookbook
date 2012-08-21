@@ -6,7 +6,31 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        Targetable Msg
+        <h3 style="margin-top:0">Targetable Messages</h3>
 
-    </ui:define>  
+        <h:panelGroup id="msg1">
+            <p:messages for="save" showDetail="true"/>
+            <p:growl for="change" showDetail="true"/>
+            <p:growl globalOnly="true" showDetail="true"/>
+        </h:panelGroup>
+
+        <p:commandButton value="Save" update="msg1"
+                         action="#{targetableMessagesController.addSaveMessage}"/>
+        <p:commandButton value="Change" update="@form"
+                         action="#{targetableMessagesController.addChangeMessage}"/>
+        <p:commandButton value="Delete" update="@form"
+                         action="#{targetableMessagesController.addDeleteMessage}"/>
+
+        <h3 style="margin-top:20px">Severity Levels</h3>
+
+        <h:panelGroup id="msg2">
+            <p:messages severity="error" showDetail="true"/>
+            <p:growl severity="info, warn" showDetail="true"/>
+            <p:growl showDetail="true"/>
+        </h:panelGroup>
+        
+        <p:commandButton value="Generate error message" update="msg2"
+                         action="#{targetableMessagesController.addErrorMessage}"/>
+
+    </ui:define>
 </ui:composition>
