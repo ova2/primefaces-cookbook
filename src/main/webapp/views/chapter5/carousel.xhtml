@@ -3,12 +3,83 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Visualizing data with Carousel</h3>
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:carousel id="simple" value="#{carouselController.cars}" var="car" headerText="Cars">
+                <h:panelGrid columns="1">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+                    <h:outputText value="#{car.name}" />
+                </h:panelGrid>
+            </p:carousel>
+
+            <h:outputText value="With Continuous Scrolling" />
+            <p:carousel id="continous" value="#{carouselController.cars}" var="car" circular="true">
+                <f:facet name="header">Cars</f:facet>
+                <h:panelGrid columns="1">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+                    <h:outputText value="#{car.name}" />
+                </h:panelGrid>
+            </p:carousel>
+
+            <h:outputText value="With Vertical Scrolling" />
+            <p:carousel id="vertical" value="#{carouselController.cars}" var="car" vertical="true">
+                <f:facet name="header">Cars</f:facet>
+                <h:panelGrid columns="1">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+                    <h:outputText value="#{car.name}" />
+                </h:panelGrid>
+            </p:carousel>
+
+            <h:outputText value="With Auto Play" />
+            <p:carousel id="autoPlay" value="#{carouselController.cars}" var="car" autoPlayInterval="1000" circular="true">
+                <f:facet name="header">Cars</f:facet>
+                <h:panelGrid columns="1">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+                    <h:outputText value="#{car.name}" />
+                </h:panelGrid>
+            </p:carousel>
+
+            <h:outputText value="With Effect" />
+            <p:carousel id="withEffect" value="#{carouselController.cars}" var="car" effect="fade">
+                <f:facet name="header">Cars</f:facet>
+                <h:panelGrid columns="1">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+                    <h:outputText value="#{car.name}" />
+                </h:panelGrid>
+            </p:carousel>
+
+            <h:outputText value="With Easing" />
+            <p:carousel id="withEasing" value="#{carouselController.cars}" var="car" easing="easeBothStrong">
+                <f:facet name="header">Cars</f:facet>
+                <h:panelGrid columns="1">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+                    <h:outputText value="#{car.name}" />
+                </h:panelGrid>
+            </p:carousel>
+
+            <h:outputText value="Sliding Tabs" />
+            <p:carousel id="tabsCarousel" rows="1" itemStyle="width:600px;">
+                <p:tab id="tab1" title="Volkswagen CC">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:graphicImage library="images" name="autocomplete/CC.png" />
+                        <h:outputText value="The Volkswagen CC (also known as the Volkswagen Passat CC) is a four-door coupé version of the Volkswagen Passat." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="tab2" title="Volkswagen Golf">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:graphicImage library="images" name="autocomplete/Golf.png" />
+                        <h:outputText value="The Volkswagen Golf is a small family car manufactured by Volkswagen since 1974 and marketed worldwide across six generations, in various body configurations and under various nameplates" />
+                    </h:panelGrid>
+                </p:tab>
+            </p:carousel>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

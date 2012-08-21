@@ -9,6 +9,59 @@
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:dataList id="simple" value="#{dataListController.countriesShort}" var="country" itemType="disc">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Roman Alphabet" />
+            <p:dataList id="withItemType" value="#{dataListController.countriesShort}" var="country" itemType="i">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="Numbered" />
+            <p:dataList id="orderedNumbered" value="#{dataListController.countriesShort}"
+                        type="ordered" var="country">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Description" />
+            <p:dataList id="withDescription" value="#{dataListController.cars}" var="car"
+                    type="definition">
+                Name: #{car.name}
+                <f:facet name="description">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="60" height="40" />
+                </f:facet>
+            </p:dataList>
+
+            <h:outputText value="With Paginator" />
+            <p:dataList id="withPaginator" value="#{dataListController.countries}" var="country" rows="10" paginator="true">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Paginator defined with template" />
+            <p:dataList id="withPaginatorTemplate" value="#{dataListController.countries}" var="country" rows="10" paginator="true" pageLinks="3"
+                    paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    rowsPerPageTemplate="5,10,15">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

@@ -8,7 +8,37 @@
         <h3 style="margin-top:0">Listing data with PickList</h3>
         <p:growl id="growl" showDetail="true"/>
 
+        <script type="text/javascript">
+            function handleTransfer(e) {
+                alert(e.item);
+                alert(e.from);
+                alert(e.toList);
+                alert(e.type);
+            }
+        </script>
+
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:pickList id="simple" value="#{pickListController.countries}"
+                        var="country" itemLabel="#{country}" itemValue="#{country}" />
+
+            <h:outputText value="With Caption" />
+            <p:pickList id="withCaption" value="#{pickListController.countries}"
+                        var="country" itemLabel="#{country}" itemValue="#{country}">
+                <f:facet name="sourceCaption">Available</f:facet>
+                <f:facet name="targetCaption">Selected</f:facet>
+            </p:pickList>
+
+            <h:outputText value="With Animation and Controls" />
+            <p:pickList id="withAnimation" value="#{pickListController.countries}"
+                        showSourceControls="true" showTargetControls="true"
+                        effect="explode" effectSpeed="slow"
+                        var="country" itemLabel="#{country}" itemValue="#{country}" />
+
+            <h:outputText value="With Custom Javascript" />
+            <p:pickList id="withCustomScript" value="#{pickListController.countries}" onTransfer="handleTransfer(e)"
+                        var="country" itemLabel="#{country}" itemValue="#{country}" />
         </h:panelGrid>
     </ui:define>
 </ui:composition>

@@ -7,8 +7,32 @@
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Listing data with OrderList</h3>
         <p:growl id="growl" showDetail="true"/>
-
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:orderList id="simple" value="#{orderListController.countries}"
+                         var="country" itemLabel="#{country}" itemValue="#{country}" />
+
+            <h:outputText value="With Controls on the Right" />
+            <p:orderList id="controls" value="#{orderListController.countries}" controlsLocation="right"
+                         var="country" itemLabel="#{country}" itemValue="#{country}" />
+
+            <h:outputText value="With Effect" />
+            <p:orderList id="withEffect" value="#{orderListController.countries}" effect="explode"
+                         var="country" itemLabel="#{country}" itemValue="#{country}" />
+
+            <h:outputText value="POJO Support" />
+            <p:orderList id="pojo" value="#{orderListController.cars}" var="car"
+                         itemValue="#{car}">
+                <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
+                <f:facet name="caption">Cars</f:facet>
+                <p:column>
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="40" height="30"/>
+                </p:column>
+
+                <p:column>#{car.name}</p:column>
+            </p:orderList>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>
