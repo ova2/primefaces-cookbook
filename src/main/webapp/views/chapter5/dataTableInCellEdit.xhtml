@@ -9,6 +9,43 @@
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="In cell editing" />
+            <p:dataTable id="inCellEditing" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}" editable="true">
+
+                <p:ajax event="rowEdit" listener="#{dataTableController.onEdit}" update="_mainForm_growl" />
+                <p:ajax event="rowEditCancel" listener="#{dataTableController.onCancel}" update="_mainForm_growl" />
+
+                <p:column headerText="Year">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{car.year}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{car.year}" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column headerText="Name">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{car.name}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <h:selectOneMenu value="#{car.name}" >
+                                <f:selectItems value="#{dataTableController.carNames}"
+                                               var="name"
+                                               itemLabel="#{name}"
+                                               itemValue="#{name}" />
+                            </h:selectOneMenu>
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column headerText="Actions">
+                    <p:rowEditor />
+                </p:column>
+            </p:dataTable>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

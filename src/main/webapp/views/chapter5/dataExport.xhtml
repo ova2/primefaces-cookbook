@@ -8,7 +8,101 @@
         <h3 style="margin-top:0">Exporting data in various formats</h3>
         <p:growl id="growl" showDetail="true"/>
 
+        <script type="text/javascript">
+            function showStatus() {
+                statusDialog.show();
+            }
+            function hideStatus() {
+                statusDialog.hide();
+            }
+        </script>
+
+        <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false">
+            <p:graphicImage value="/resources/images/ajax-loader.gif" />
+        </p:dialog>
+
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Data Export" />
+            <h:panelGrid columns="1">
+
+                <p:dataTable id="countriesTable" var="country" value="#{dataExportController.countries}" rows="10" paginator="true">
+                    <p:column headerText="Name">
+                        <h:outputText value="#{country}" />
+                    </p:column>
+                </p:dataTable>
+
+                <h:panelGrid columns="4">
+                    <h:panelGrid columns="2">
+                        <p:panel header="Export All Data">
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/excel.png" />
+                                <p:dataExporter type="xls" target="countriesTable" fileName="countries" />
+                            </h:commandLink>
+
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/pdf.png" />
+                                <p:dataExporter type="pdf" target="countriesTable" fileName="countries" />
+                            </h:commandLink>
+
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/csv.png" />
+                                <p:dataExporter type="csv" target="countriesTable" fileName="countries" />
+                            </h:commandLink>
+
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/xml.png" />
+                                <p:dataExporter type="xml" target="countriesTable" fileName="countries" />
+                            </h:commandLink>
+                        </p:panel>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <p:panel header="Export Page Data">
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/excel.png" />
+                                <p:dataExporter type="xls" target="countriesTable" fileName="countries" pageOnly="true" />
+                            </h:commandLink>
+
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/pdf.png" />
+                                <p:dataExporter type="pdf" target="countriesTable" fileName="countries" pageOnly="true" />
+                            </h:commandLink>
+
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/csv.png" />
+                                <p:dataExporter type="csv" target="countriesTable" fileName="countries" pageOnly="true" />
+                            </h:commandLink>
+
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/xml.png" />
+                                <p:dataExporter type="xml" target="countriesTable" fileName="countries" pageOnly="true" />
+                            </h:commandLink>
+                        </p:panel>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <p:panel header="With PreProcess">
+                            <h:commandLink>
+                                <p:graphicImage value="/resources/images/export/pdf.png" />
+                                <p:dataExporter type="pdf" target="countriesTable" fileName="countries"
+                                                preProcessor="#{dataExportController.preProcessPDF}" />
+                            </h:commandLink>
+                        </p:panel>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <p:panel header="With Monitoring">
+                            <h:commandLink onclick="PrimeFaces.monitorDownload(showStatus, hideStatus)">
+                                <p:graphicImage value="/resources/images/export/csv.png" />
+                                <p:dataExporter type="csv" target="countriesTable" fileName="countries" />
+                            </h:commandLink>
+                        </p:panel>
+                    </h:panelGrid>
+
+                </h:panelGrid>
+            </h:panelGrid>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

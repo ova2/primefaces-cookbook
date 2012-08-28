@@ -8,7 +8,29 @@
         <h3 style="margin-top:0">Visualizing data with Ring</h3>
         <p:growl id="growl" showDetail="true"/>
 
+        <style type="text/css">
+            .image-ring .ui-ring-item {
+                border:0 none;
+            }
+
+            .image-ring .ui-ring-item img {
+                width: 100%;
+            }
+        </style>
+
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:ring id="simple" value="#{ringController.cars}" var="car">
+                <p:column>
+                    <p:outputPanel layout="block">
+                        #{car.name}
+                        <p:commandButton icon="ui-icon-search" title="View">
+                        </p:commandButton>
+                    </p:outputPanel>
+                </p:column>
+            </p:ring>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

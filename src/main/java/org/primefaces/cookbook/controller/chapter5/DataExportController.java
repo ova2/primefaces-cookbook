@@ -1,11 +1,11 @@
 package org.primefaces.cookbook.controller.chapter5;
 
-import org.primefaces.cookbook.converter.CarConverter;
-import org.primefaces.cookbook.model.chapter3.Car;
+import com.lowagie.text.*;
 import org.primefaces.cookbook.model.chapter5.CountryList;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,21 +13,19 @@ import java.util.List;
 
 /**
  * User: mertcaliskan
- * Date: 8/19/12
+ * Date: 8/28/12
  */
 @ManagedBean
 @ViewScoped
-public class DataListController implements Serializable {
-
-    public Collection<Car> getCars() {
-        return new ArrayList<Car>(CarConverter.cars.values());
-    }
-
-    public List<String> getCountriesShort() {
-        return CountryList.countriesShort;
-    }
+public class DataExportController implements Serializable {
 
     public List<String> getCountries() {
         return CountryList.countries;
+    }
+
+    public void preProcessPDF(Object document) {
+        Document pdf = (Document) document;
+        HeaderFooter footer = new HeaderFooter(new Phrase("This is page: "), true);
+        pdf.setFooter(footer);
     }
 }

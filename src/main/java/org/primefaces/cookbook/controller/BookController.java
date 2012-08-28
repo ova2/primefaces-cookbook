@@ -151,7 +151,7 @@ public class BookController implements Serializable {
 		                    new BookTreeNode("Deleting datatable rows with ConfirmDialog",
 		                                     "chapter5/dataTableConfirmDialog.xhtml"), chapter5);
 		new DefaultTreeNode(NODE_TYPE,
-		                    new BookTreeNode("Handling millions of data ? LazyDataModel",
+		                    new BookTreeNode("Handling millions of data - LazyDataModel",
 		                                     "chapter5/dataTableLazyDataModel.xhtml"), chapter5);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with DataList", "chapter5/dataList.xhtml"), chapter5);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with PickList", "chapter5/pickList.xhtml"), chapter5);

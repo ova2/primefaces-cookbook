@@ -9,6 +9,92 @@
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Single Selection with a Command Component" />
+            <p:dataTable id="withCommand" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
+                         selection="#{dataTableController.selectedCar}">
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <p:column>
+                    <p:commandButton value="Select" update="_mainForm_display" oncomplete="carDialog.show()">
+                        <f:setPropertyActionListener value="#{car}"
+                                                     target="#{dataTableController.selectedCar}" />
+                    </p:commandButton>
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Single Selection with Row Click" />
+            <p:dataTable id="singleSelection" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
+                         selection="#{dataTableController.selectedCars}" selectionMode="single">
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <f:facet name="footer">
+                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                                     update="_mainForm_display" oncomplete="carDialog.show()"/>
+                </f:facet>
+            </p:dataTable>
+
+            <h:outputText value="Single Selection with Radio Button" />
+            <p:dataTable id="withRadioButton" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
+                         selection="#{dataTableController.selectedCar}">
+                <p:column selectionMode="single"/>
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <f:facet name="footer">
+                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                                     update="_mainForm_display" oncomplete="carDialog.show()"/>
+                </f:facet>
+            </p:dataTable>
+
+            <h:outputText value="Multiple Selection with Row Click" />
+            <p:dataTable id="multipleSelection" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
+                         selection="#{dataTableController.selectedCars}" selectionMode="multiple">
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <f:facet name="footer">
+                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                                     update="_mainForm_displayMultiple" oncomplete="carDialogMultiple.show()"/>
+                </f:facet>
+            </p:dataTable>
+
+            <h:outputText value="Multiple Selection with Checkbox" />
+            <p:dataTable id="multipleSelectionCheckbox" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
+                         selection="#{dataTableController.selectedCars}">
+                <p:column selectionMode="multiple" />
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <f:facet name="footer">
+                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                                     update="_mainForm_displayMultiple" oncomplete="carDialogMultiple.show()"/>
+                </f:facet>
+            </p:dataTable>
+
         </h:panelGrid>
+
+        <p:dialog id="dialog" header="Car Detail" widgetVar="carDialog" resizable="false"
+                  width="200" showEffect="clip" hideEffect="fold">
+            <h:panelGrid id="display" columns="2" cellpadding="4">
+                <f:facet name="header">
+                    <p:graphicImage value="/resources/images/autocomplete/#{dataTableController.selectedCar.name}.png" width="60" height="40" />
+                </f:facet>
+
+                <h:outputText value="Name:" />
+                <h:outputText value="#{dataTableController.selectedCar.name}" />
+
+                <h:outputText value="Year:" />
+                <h:outputText value="#{dataTableController.selectedCar.year}" />
+            </h:panelGrid>
+        </p:dialog>
+
+        <p:dialog id="dialogMultiple" header="Car Detail" widgetVar="carDialogMultiple" showEffect="clip" hideEffect="fold">
+            <p:dataList id="displayMultiple"
+                        value="#{dataTableController.selectedCars}"
+                        var="selectedCar" type="definition">
+                <p:graphicImage value="/resources/images/autocomplete/#{selectedCar.name}.png" width="60" height="40" />
+                <br/>
+                Name: #{selectedCar.name}, Year: #{selectedCar.year}
+            </p:dataList>
+        </p:dialog>
+
     </ui:define>
 </ui:composition>

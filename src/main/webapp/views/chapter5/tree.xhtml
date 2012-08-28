@@ -9,6 +9,14 @@
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Basic Tree" />
+            <p:tree value="#{treeController.root}" var="node">
+                <p:treeNode>
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>
