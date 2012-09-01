@@ -17,7 +17,17 @@ import java.util.Collection;
 @ViewScoped
 public class RingController implements Serializable {
 
+    private Car selectedCar;
+
     public Collection<Car> getCars() {
         return new ArrayList<Car>(CarConverter.cars.values());
+    }
+
+    public Car getSelectedCar() {
+        return selectedCar;
+    }
+
+    public void setSelectedCar(Car selectedCar) {
+        this.selectedCar = selectedCar;
     }
 }

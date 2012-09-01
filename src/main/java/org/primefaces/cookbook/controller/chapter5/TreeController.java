@@ -11,7 +11,7 @@ import java.io.Serializable;
  * User: mertcaliskan
  * Date: 8/28/12
  */
-@ManagedBean
+@ManagedBean(name = "treeDataController")
 @ViewScoped
 public class TreeController implements Serializable {
 

@@ -677,7 +677,7 @@
                 <jsf.displayname>Mojarra</jsf.displayname>
                 <jsf.group>com.sun.faces</jsf.group>
                 <jsf.artifact>jsf</jsf.artifact>
-                <jsf.version>2.1.10</jsf.version>
+                <jsf.version>2.1.12</jsf.version>
             </properties>
         </profile>
     </profiles>

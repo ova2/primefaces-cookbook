@@ -7,9 +7,12 @@ import org.primefaces.event.RowEditEvent;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.model.SelectItem;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * User: mertcaliskan
@@ -21,13 +24,30 @@ public class DataTableController implements Serializable {
 
     private Car selectedCar;
     private Car[] selectedCars;
-    
+    private SelectItem[] carNamesOptions;
+
     public Collection<Car> getCars() {
         return new ArrayList<Car>(CarConverter.cars.values());
     }
 
     public String[] getCarNames() {
         return CarConverter.cars.keySet().toArray(new String[0]);
+    }
+
+    public SelectItem[] getCarNamesAsOptions() {
+        carNamesOptions = createFilterOptions(CarConverter.cars.keySet().toArray(new String[0]));
+        return carNamesOptions;
+    }
+
+    private SelectItem[] createFilterOptions(String[] data) {
+        SelectItem[] options = new SelectItem[data.length + 1];
+
+        options[0] = new SelectItem("", "Select");
+        for(int i = 0; i < data.length; i++) {
+            options[i + 1] = new SelectItem(data[i], data[i]);
+        }
+
+        return options;
     }
 
     public void onEdit(RowEditEvent event) {

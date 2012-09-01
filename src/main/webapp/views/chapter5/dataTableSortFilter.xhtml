@@ -9,6 +9,50 @@
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Sorting" />
+            <p:dataTable id="sorting" var="car" value="#{dataTableController.cars}">
+                <f:facet name="header">
+                    Ajax Sorting
+                </f:facet>
+                <p:column headerText="Year" sortBy="#{car.year}">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name" sortBy="#{car.name}">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Filtering" />
+            <p:dataTable id="filtering" var="car" value="#{dataTableController.cars}">
+                    <p:column headerText="Year" filterBy="#{car.year}" filterMatchMode="startsWith">
+                        <h:outputText value="#{car.year}" />
+                    </p:column>
+                    <p:column headerText="Name" filterBy="#{car.name}">
+                        <h:outputText value="#{car.name}" />
+                    </p:column>
+            </p:dataTable>
+
+            <h:outputText value="With Filter Options" />
+            <p:dataTable id="withFilterOptions" var="car" value="#{dataTableController.cars}">
+                    <p:column headerText="Year" filterBy="#{car.year}" filterMatchMode="startsWith">
+                        <h:outputText value="#{car.year}" />
+                    </p:column>
+                    <p:column headerText="Name" filterBy="#{car.name}" filterOptions="#{dataTableController.carNamesAsOptions}">
+                        <h:outputText value="#{car.name}" />
+                    </p:column>
+            </p:dataTable>
+
+            <h:outputText value="With Global Filter" />
+            <p:dataTable id="withGlobalFilter" var="car" value="#{dataTableController.cars}">
+                    <p:column headerText="Year" filterBy="#{car.year}" filterMatchMode="startsWith">
+                        <h:outputText value="#{car.year}" />
+                    </p:column>
+                    <p:column headerText="Name" filterBy="#{car.name}">
+                        <h:outputText value="#{car.name}" />
+                    </p:column>
+            </p:dataTable>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

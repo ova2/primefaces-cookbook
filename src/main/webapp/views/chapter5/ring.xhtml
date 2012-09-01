@@ -8,24 +8,25 @@
         <h3 style="margin-top:0">Visualizing data with Ring</h3>
         <p:growl id="growl" showDetail="true"/>
 
-        <style type="text/css">
-            .image-ring .ui-ring-item {
-                border:0 none;
-            }
+        <h:panelGrid columns="2" cellpadding="5" width="600px">
 
-            .image-ring .ui-ring-item img {
-                width: 100%;
-            }
-        </style>
-
-        <h:panelGrid columns="2" cellpadding="5">
-
-            <h:outputText value="Simple" />
-            <p:ring id="simple" value="#{ringController.cars}" var="car">
+            <h:outputText value="Simple" style="width:80px" />
+            <p:ring id="simple" value="#{ringController.cars}" var="car" style="width:100%">
                 <p:column>
-                    <p:outputPanel layout="block">
+                    <p:outputPanel style="text-align:center;" layout="block">
                         #{car.name}
+                    </p:outputPanel>
+                </p:column>
+            </p:ring>
+
+            <h:outputText value="With Easing" style="width:80px" />
+            <p:ring id="withEasing" value="#{ringController.cars}" var="car" style="width:100%">
+                <p:column>
+                    <p:outputPanel style="text-align:center;" layout="block">
+                        #{car.name}
+                        <br/>
                         <p:commandButton icon="ui-icon-search" title="View">
+                            <f:setPropertyActionListener value="#{car}" target="#{ringController.selectedCar}" />
                         </p:commandButton>
                     </p:outputPanel>
                 </p:column>
