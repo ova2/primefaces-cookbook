@@ -7,9 +7,9 @@ import java.io.Serializable;
  * Date: 7/9/12
  */
 public class Car implements Serializable {
-    
-    private String name;
-    private int year;
+
+    public String name;
+    public int year;
 
     public Car(String name, int year) {
         this.name = name;
@@ -22,5 +22,13 @@ public class Car implements Serializable {
 
     public int getYear() {
         return year;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                '}';
     }
 }

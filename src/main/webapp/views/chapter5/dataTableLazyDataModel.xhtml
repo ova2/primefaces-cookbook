@@ -9,6 +9,21 @@
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="With Lazy Data Model" />
+            <p:dataTable id="lazyModel" var="car" value="#{lazyDataTableController.lazyModel}"
+                         paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                         paginator="true" rows="10" lazy="true">
+
+                <p:column headerText="Name" sortBy="#{car.name}" filterBy="#{car.name}">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+
+                <p:column headerText="Year" sortBy="#{car.year}" filterBy="#{car.year}">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+            </p:dataTable>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

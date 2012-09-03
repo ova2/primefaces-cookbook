@@ -36,6 +36,18 @@
                         effect="explode" effectSpeed="slow"
                         var="country" itemLabel="#{country}" itemValue="#{country}" />
 
+            <h:outputText value="With POJO Support" />
+            <p:pickList id="pojoSupport" value="#{pickListController.cars}"
+                        var="car" itemLabel="#{car.name}" itemValue="#{car}">
+                <p:column>
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+                </p:column>
+
+                <p:column>
+                    #{car.name}
+                </p:column>
+            </p:pickList>
+
             <h:outputText value="With Custom Javascript" />
             <p:pickList id="withCustomScript" value="#{pickListController.countries}" onTransfer="handleTransfer(e)"
                         var="country" itemLabel="#{country}" itemValue="#{country}" />

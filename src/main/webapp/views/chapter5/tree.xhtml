@@ -6,17 +6,115 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Visualizing data with Tree</h3>
-        <p:growl id="growl" showDetail="true"/>
+        <p:growl id="growl" showDetail="true" escape="false" />
 
         <h:panelGrid columns="2" cellpadding="5">
 
-            <h:outputText value="Basic Tree" />
-            <p:tree value="#{treeDataController.root}" var="node">
+            <h:outputText value="Simple Tree" />
+            <p:tree id="simple" value="#{treeDataController.root}" var="node">
                 <p:treeNode>
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
 
+            <h:outputText value="Dynamic Tree" />
+            <p:tree id="dynamic" value="#{treeDataController.root}" var="node" dynamic="true" cache="true">
+                <p:treeNode>
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
+            <h:outputText value="With Custom Node Types" />
+            <p:tree id="simple" value="#{treeDataController.rootWithType}" var="node">
+
+                <p:treeNode type="node"  icon="ui-icon-plusthick">
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+
+                <p:treeNode type="leaf"  icon="ui-icon-minusthick">
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
+
+            <h:outputText value="Single Selection" />
+            <p:tree id="single" value="#{treeDataController.root}" var="node"
+                    selectionMode="single"
+                    selection="#{treeDataController.selectedNode}">
+                <p:treeNode>
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
+            <h:outputText value="Multiple Selection" />
+            <p:tree id="multiple" value="#{treeDataController.root}" var="node"
+                    selectionMode="multiple"
+                    selection="#{treeDataController.selectedNodes}">
+                <p:treeNode>
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
+            <h:outputText value="Checkbox Selection" />
+            <p:tree id="checkbox" value="#{treeDataController.root}" var="node"
+                    selectionMode="checkbox"
+                    selection="#{treeDataController.selectedNodes}">
+                <p:treeNode>
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
+            <h:outputText value="With AJAX Listeners" />
+            <p:tree id="withAJAX" value="#{treeDataController.root}" var="node"
+                    selectionMode="single"
+                    selection="#{treeDataController.selectedNode}">
+
+                <p:ajax event="expand" listener="#{treeDataController.onNodeExpand}" update="_mainForm_growl" />
+                <p:ajax event="collapse" listener="#{treeDataController.onNodeCollapse}" update="_mainForm_growl" />
+                <p:ajax event="select" listener="#{treeDataController.onNodeSelect}" update="_mainForm_growl" />
+                <p:ajax event="unselect" listener="#{treeDataController.onNodeUnselect}" update="_mainForm_growl" />
+
+                <p:treeNode>
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
+            <h:outputText value="With Context Menu" />
+            <p:tree id="withContextMenu" value="#{treeDataController.rootWithType}" var="node"
+                    selectionMode="single"
+                    selection="#{treeDataController.selectedNode}">
+
+                <p:treeNode type="node">
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+
+                <p:treeNode type="leaf">
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
         </h:panelGrid>
+
+        <p:contextMenu for="withContextMenu" nodeType="node">
+            <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="nodeDialog.show()"/>
+        </p:contextMenu>
+
+        <p:contextMenu for="withContextMenu" nodeType="leaf">
+            <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="nodeDialog.show()"/>
+            <p:menuitem value="Delete" actionListener="#{treeTableController.deleteNode}" update="withContextMenu" icon="ui-icon-close"/>
+        </p:contextMenu>
+
+        <p:dialog header="Tree Node Detail" showEffect="fade" widgetVar="nodeDialog" modal="true">
+            <p:outputPanel id="dialogPanel">
+                <h:panelGrid  columns="2" cellpadding="5" rendered="#{not empty treeDataController.selectedNode}">
+                    <h:outputLabel for="name" value="Value: " />
+                    <h:outputText id="name" value="#{treeDataController.selectedNode.data}" />
+                </h:panelGrid>
+            </p:outputPanel>
+        </p:dialog>
+
+        <p:commandButton id="display" value="Display Selected Nodes" update="growl"
+                         actionListener="#{treeDataController.displaySelected}" />
+
     </ui:define>
 </ui:composition>

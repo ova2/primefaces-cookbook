@@ -55,6 +55,14 @@ public class TreeTableController implements Serializable {
         MessageUtil.addInfoMessageWithoutKey("Unselected", event.getTreeNode().toString());
     }
 
+    public void deleteNode() {
+        selectedItem.getChildren().clear();
+        selectedItem.getParent().getChildren().remove(selectedItem);
+        selectedItem.setParent(null);
+
+        selectedItem = null;
+    }
+
     public TreeNode getRoot() {
         return root;
     }

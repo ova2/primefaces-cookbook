@@ -21,6 +21,8 @@ public class PickListController implements Serializable {
 
     private DualListModel<String> countries;
 
+    private DualListModel<Car> cars;
+
     private List<String> countriesSource = new ArrayList<String>();
     private List<String> countriesTarget = new ArrayList<String>();
 
@@ -31,9 +33,18 @@ public class PickListController implements Serializable {
         countriesSource.add("Turkey");
 
         countries = new DualListModel<String>(countriesSource, countriesTarget);
+
+        List<Car> carsSource = new ArrayList<Car>(CarConverter.cars.values());
+        List<Car> carsTarget = new ArrayList<Car>();
+
+        cars = new DualListModel<Car>(carsSource, carsTarget);
     }
 
     public DualListModel<String> getCountries() {
         return countries;
+    }
+
+    public DualListModel<Car> getCars() {
+        return cars;
     }
 }

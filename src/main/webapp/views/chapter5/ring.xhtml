@@ -8,10 +8,10 @@
         <h3 style="margin-top:0">Visualizing data with Ring</h3>
         <p:growl id="growl" showDetail="true"/>
 
-        <h:panelGrid columns="2" cellpadding="5" width="600px">
+        <h:panelGrid columns="2" cellpadding="5" width="700px">
 
             <h:outputText value="Simple" style="width:80px" />
-            <p:ring id="simple" value="#{ringController.cars}" var="car" style="width:100%">
+            <p:ring id="simple" value="#{ringController.cars}" var="car" style="width:600px">
                 <p:column>
                     <p:outputPanel style="text-align:center;" layout="block">
                         #{car.name}
@@ -20,16 +20,13 @@
             </p:ring>
 
             <h:outputText value="With Easing" style="width:80px" />
-            <p:ring id="withEasing" value="#{ringController.cars}" var="car" style="width:100%">
-                <p:column>
-                    <p:outputPanel style="text-align:center;" layout="block">
-                        #{car.name}
-                        <br/>
-                        <p:commandButton icon="ui-icon-search" title="View">
-                            <f:setPropertyActionListener value="#{car}" target="#{ringController.selectedCar}" />
-                        </p:commandButton>
-                    </p:outputPanel>
-                </p:column>
+            <p:ring id="withEasing1" value="#{ringController.cars}" var="car" style="width:600px" rows="5">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
+            </p:ring>
+
+            <h:outputText value="With Easing" style="width:80px" />
+            <p:ring id="withEasing" value="#{ringController.cars}" var="car" style="width:600px" easing="easeInOutExpo">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
             </p:ring>
 
         </h:panelGrid>
