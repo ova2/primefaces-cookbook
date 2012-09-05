@@ -24,11 +24,6 @@
                 <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
             </p:ring>
 
-            <h:outputText value="With Easing" style="width:80px" />
-            <p:ring id="withEasing" value="#{ringController.cars}" var="car" style="width:600px" easing="easeInOutExpo">
-                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
-            </p:ring>
-
         </h:panelGrid>
     </ui:define>
 </ui:composition>

@@ -26,7 +26,7 @@ public class DataTableController implements Serializable {
     private Car[] selectedCars;
     private SelectItem[] carNamesOptions;
 
-    public Collection<Car> getCars() {
+    public List<Car> getCars() {
         return new ArrayList<Car>(CarConverter.cars.values());
     }
 

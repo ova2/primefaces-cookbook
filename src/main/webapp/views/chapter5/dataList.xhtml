@@ -19,7 +19,47 @@
             </p:dataList>
 
             <h:outputText value="With Roman Alphabet" />
-            <p:dataList id="withItemType" value="#{dataListController.countriesShort}" var="country" itemType="i">
+            <p:dataList id="withItemType1" value="#{dataListController.countriesShort}" var="country" itemType="i">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Item Type: A" />
+            <p:dataList id="withItemType2" value="#{dataListController.countriesShort}" var="country" itemType="A">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Item Type: a" />
+            <p:dataList id="withItemType2" value="#{dataListController.countriesShort}" var="country" itemType="a">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Item Type: circle" />
+            <p:dataList id="withItemType2" value="#{dataListController.countriesShort}" var="country" itemType="circle">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Item Type: square" />
+            <p:dataList id="withItemType3" value="#{dataListController.countriesShort}" var="country" itemType="square">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                #{country}
+            </p:dataList>
+
+            <h:outputText value="With Item Type: decimal" />
+            <p:dataList id="withItemType4" value="#{dataListController.countriesShort}" var="country" itemType="decimal">
                 <f:facet name="header">
                     Countries starting with 'A'
                 </f:facet>
@@ -47,7 +87,7 @@
             <h:outputText value="With Paginator" />
             <p:dataList id="withPaginator" value="#{dataListController.countries}" var="country" rows="10" paginator="true">
                 <f:facet name="header">
-                    Countries starting with 'A'
+                    Countries
                 </f:facet>
                 #{country}
             </p:dataList>
@@ -57,7 +97,7 @@
                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                     rowsPerPageTemplate="5,10,15">
                 <f:facet name="header">
-                    Countries starting with 'A'
+                    Countries
                 </f:facet>
                 #{country}
             </p:dataList>

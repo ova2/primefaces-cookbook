@@ -19,6 +19,8 @@ import java.util.List;
 @ViewScoped
 public class DataExportController implements Serializable {
 
+    private String[] selectedCountries;
+    
     public List<String> getCountries() {
         return CountryList.countries;
     }
@@ -27,5 +29,13 @@ public class DataExportController implements Serializable {
         Document pdf = (Document) document;
         HeaderFooter footer = new HeaderFooter(new Phrase("This is page: "), true);
         pdf.setFooter(footer);
+    }
+
+    public String[] getSelectedCountries() {
+        return selectedCountries;
+    }
+
+    public void setSelectedCountries(String[] selectedCountries) {
+        this.selectedCountries = selectedCountries;
     }
 }

@@ -25,7 +25,7 @@
             </p:tree>
 
             <h:outputText value="With Custom Node Types" />
-            <p:tree id="simple" value="#{treeDataController.rootWithType}" var="node">
+            <p:tree id="customNodes" value="#{treeDataController.rootWithType}" var="node">
 
                 <p:treeNode type="node"  icon="ui-icon-plusthick">
                     <h:outputText value="#{node}" />
@@ -35,7 +35,6 @@
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
-
 
             <h:outputText value="Single Selection" />
             <p:tree id="single" value="#{treeDataController.root}" var="node"
