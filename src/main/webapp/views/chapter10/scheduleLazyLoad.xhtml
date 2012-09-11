@@ -6,7 +6,9 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <p:schedule value="#{scheduleController.lazyScheduleModel}"/>
+        <h3 style="margin-top:0">Lazy Loading</h3>
+
+        <p:schedule id="lazySchedule" value="#{scheduleController.lazyScheduleModel}"/>
 
     </ui:define>
 </ui:composition>

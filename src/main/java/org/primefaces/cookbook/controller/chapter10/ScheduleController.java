@@ -15,50 +15,48 @@ import org.primefaces.model.ScheduleModel;
 /**
  * ScheduleController
  *
- * @author  Oleg Varaksin / last modified by $Author: $
+ * @author Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
 @ManagedBean
 @ViewScoped
 public class ScheduleController implements Serializable {
 
-	private ScheduleModel lazyEventModel;
+    private ScheduleModel lazyEventModel;
 
-	@PostConstruct
-	public void initialize() {
-		lazyEventModel =
-		    new LazyScheduleModel() {
+    @PostConstruct
+    public void initialize() {
+        lazyEventModel = new LazyScheduleModel() {
 
-				@Override
-				public void loadEvents(Date start, Date end) {
-					/*
-					try {
-					    // simulate a long running task
-					    Thread.sleep(1500);
-					} catch (Exception e) {
-					    // ignore
-					}*/
+            @Override
+            public void loadEvents(Date start, Date end) {
+                try {
+                    // simulate a long running task
+                    Thread.sleep(1500);
+                } catch (Exception e) {
+                    // ignore
+                }
 
-					clear();
+                clear();
 
-					Date random = getRandomDate(start);
-					addEvent(new DefaultScheduleEvent("Lazy Event 1", random, random));
+                Date random = getRandomDate(start);
+                addEvent(new DefaultScheduleEvent("Lazy Event 1", random, random));
 
-					random = getRandomDate(start);
-					addEvent(new DefaultScheduleEvent("Lazy Event 2", random, random));
-				}
-			};
-	}
+                random = getRandomDate(start);
+                addEvent(new DefaultScheduleEvent("Lazy Event 2", random, random));
+            }
+        };
+    }
 
-	public Date getRandomDate(Date base) {
-		Calendar date = Calendar.getInstance();
-		date.setTime(base);
-		date.add(Calendar.DATE, ((int) (Math.random() * 30)) + 1);
+    public Date getRandomDate(Date base) {
+        Calendar date = Calendar.getInstance();
+        date.setTime(base);
+        date.add(Calendar.DATE, ((int) (Math.random() * 30)) + 1);
 
-		return date.getTime();
-	}
+        return date.getTime();
+    }
 
-	public ScheduleModel getLazyScheduleModel() {
-		return lazyEventModel;
-	}
+    public ScheduleModel getLazyScheduleModel() {
+        return lazyEventModel;
+    }
 }
