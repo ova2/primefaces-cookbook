@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html" locale="en">
+    <h:head title="PrimeFaces Cookbook - ShowCase">
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="pragma" content="no-cache"/>
+            <meta http-equiv="cache-control" content="no-cache"/>
+            <meta http-equiv="expires" content="0"/>
+        </f:facet>
+        <ui:insert name="head"/>
+    </h:head>
+    <h:body>
+        <h:panelGroup layout="block" styleClass="slogan">
+            <h:outputText value="Live samples of the first PrimeFaces Book"/>
+        </h:panelGroup>
+
+        <h:form id="mainForm" enctype="multipart/form-data" prependId="false">
+            <h:panelGrid columns="2" columnClasses="chaptersMenuColumn,chaptersContentColumn">
+                <h:panelGroup layout="block">
+                    <h:graphicImage library="images" name="logo.png" styleClass="logo" title="PrimeFaces Cookbook"/>
+                    <p:tree id="bookTree" value="#{bookController.root}" var="node" selectionMode="single"
+                            selection="#{bookController.selectedNode}">
+                        <p:ajax event="select" listener="#{bookController.onNodeSelect}"/>
+                        <p:treeNode expandedIcon="ui-icon-folder-open"
+                                    collapsedIcon="ui-icon-folder-collapsed">
+                            <h:outputText value="#{node.name}"/>
+                        </p:treeNode>
+                        <p:treeNode type="chapteritem" icon="ui-icon-document">
+                            <h:outputText value="#{node.name}"/>
+                        </p:treeNode>
+                    </p:tree>
+                </h:panelGroup>
+                <h:panelGroup layout="block">
+                    <ui:insert name="chapterItem"/>
+                </h:panelGroup>
+            </h:panelGrid>
+        </h:form>
+
+        <h:outputStylesheet library="css" name="layout.css"/>
+        <ui:insert name="appResources"/>
+    </h:body>
+</f:view>
+</html>

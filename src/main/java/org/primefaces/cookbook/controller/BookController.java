@@ -51,6 +51,7 @@ public class BookController implements Serializable {
 		constructChapter4(chapter4);
 		constructChapter5(chapter5);
 		constructChapter6(chapter6);
+		constructChapter7(chapter7);
 		constructChapter8(chapter8);
 		constructChapter10(chapter10);
 	}
@@ -181,6 +182,17 @@ public class BookController implements Serializable {
 		                    chapter6);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dock menu for Mac OS fans", "chapter6/dockMenu.xhtml"), chapter6);
 	}
+
+	private void constructChapter7(TreeNode chapter7) {
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic, Automatic and Multiple File Upload ", "chapter7/fileUpload.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Uploading File with Drag & Drop", "chapter7/fileUploadDND.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Downloading Files", "chapter7/fileDownload.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Cropping Images", "chapter7/cropImage.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying Collection of Images", "chapter7/displayImageCollection.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying Collection of Images2 ", "chapter7/displayImageCollection2.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Capturing Images with PhotoCam", "chapter7/captureImage.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("?Comparing Images", "chapter7/compareImage.xhtml"), chapter7);
+    }
 
 	private void constructChapter8(TreeNode chapter8) {
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Making component Draggable", "chapter8/draggable.xhtml"), chapter8);

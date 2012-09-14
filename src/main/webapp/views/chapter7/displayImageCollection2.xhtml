@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Displaying Collection of Images</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="With Custom Content" />
+            <p:galleria id="withCustomContent" value="#{galleriaController.cars}" var="car" showOverlays="true"
+                        frameWidth="140" frameHeight="80"
+                        panelWidth="400" panelHeight="300">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" title="#{car.name}" />
+
+                <p:galleriaContent>
+                    <h:panelGrid  columns="2" cellpadding="5">
+                        <f:facet name="header">
+                            <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" />
+                        </f:facet>
+
+                        <h:outputText value="Name: " />
+                        <h:outputText id="name" value="#{car.name}"/>
+
+                        <h:outputText value="Year: " />
+                        <h:outputText id="number" value="#{car.year}"/>
+                    </h:panelGrid>
+                </p:galleriaContent>
+            </p:galleria>
+
+            <h:outputText value="With Custom Film Strip with Positioning" />
+            <p:galleria id="withCustomFilmStripPositioning" filmstripPosition="right">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" />
+            </p:galleria>
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Downloading Files</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <script type="text/javascript">
+            function showStatus() {
+                statusDialog.show();
+            }
+            function hideStatus() {
+                statusDialog.hide();
+            }
+        </script>
+
+        <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false">
+            <p:graphicImage value="/resources/images/ajax-loader.gif" />
+        </p:dialog>
+
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Download PDF File" />
+            <p:commandButton value="Download" ajax="false">
+                <p:fileDownload value="#{fileController.downloadFile}" />
+            </p:commandButton>
+
+            <h:outputText value="Download and Monitor" />
+            <p:panel header="With Monitoring">
+                <h:commandLink onclick="PrimeFaces.monitorDownload(showStatus, hideStatus)">
+                    <p:graphicImage value="/resources/images/download/fileDownload.png" />
+                    <p:fileDownload value="#{fileController.downloadFile}" />
+                </h:commandLink>
+            </p:panel>
+
+        </h:panelGrid>
+
+    </ui:define>
+</ui:composition>

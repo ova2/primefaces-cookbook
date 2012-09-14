@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Cropping Images</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <h:panelGrid columns="2">
+                <p:imageCropper value="#{imageCropController.croppedImage}"
+                                image="/resources/images/crop/primefaces.jpg" />
+
+                <p:graphicImage id="localCroppedImage"
+                                value="#{imageCropController.graphicText}" />
+
+                <p:commandButton value="Crop"
+                                 action="#{imageCropController.crop}"
+                                 update="localCroppedImage" />
+            </h:panelGrid>
+
+            <h:outputText value="With Initial Coordinates" />
+            <h:panelGrid columns="2">
+                <p:imageCropper value="#{imageCropController.croppedImage}"
+                                image="/resources/images/crop/primefaces.jpg"
+                                initialCoords="255,10,435,160" />
+
+                <p:graphicImage id="localCroppedImageWithInitialCoords"
+                                value="#{imageCropController.graphicText}" />
+
+                <p:commandButton value="Crop"
+                                 action="#{imageCropController.crop}"
+                                 update="localCroppedImageWithInitialCoords" />
+            </h:panelGrid>
+
+            <h:outputText value="With Aspect Ratio" />
+            <h:panelGrid columns="2">
+                <p:imageCropper value="#{imageCropController.croppedImage}" aspectRatio="1.5"
+                                image="/resources/images/crop/primefaces.jpg" />
+
+                <p:graphicImage id="localCroppedImageWithAspectRatio"
+                                value="#{imageCropController.graphicText}" />
+
+                <p:commandButton value="Crop"
+                                 action="#{imageCropController.crop}"
+                                 update="localCroppedImageWithAspectRatio" />
+            </h:panelGrid>
+
+            <h:outputText value="With Min and Max Sizes" />
+            <h:panelGrid columns="2">
+                <p:imageCropper value="#{imageCropController.croppedImage}"
+                                image="/resources/images/crop/primefaces.jpg"
+                                initialCoords="255,10,435,160"
+                                minSize="50,50"
+                                maxSize="120,120"/>
+
+                <p:graphicImage id="localCroppedImageWithMinMaxSize"
+                                value="#{imageCropController.graphicText}" />
+
+                <p:commandButton value="Crop"
+                                 action="#{imageCropController.crop}"
+                                 update="localCroppedImageWithMinMaxSize" />
+            </h:panelGrid>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
