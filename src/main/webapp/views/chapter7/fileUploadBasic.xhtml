@@ -5,20 +5,18 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayoutMultipart.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">Basic, Automatic and Multiple File Upload</h3>
+        <h3 style="margin-top:0">Basic File Upload</h3>
         <p:growl id="growl" showDetail="true"/>
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple Upload" />
-            <h:panelGrid columns="2">
+            <h:panelGrid columns="1">
                 <p:fileUpload value="#{fileController.file}" mode="simple" />
                 <p:commandButton actionListener="#{fileController.handleFileUpload}" value="Upload" ajax="false"/>
             </h:panelGrid>
 
             <h:outputText value="Advanced Upload" />
-            <h:panelGrid columns="2">
-                <p:fileUpload value="#{fileController.file}" fileUploadListener="#{fileController.handleFileUpload}" />
-            </h:panelGrid>
+            <p:fileUpload value="#{fileController.file}" fileUploadListener="#{fileController.handleFileUpload}" />
 
         </h:panelGrid>
     </ui:define>

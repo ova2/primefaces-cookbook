@@ -11,9 +11,8 @@
 
             <h:outputText value="Simple" />
             <h:panelGrid columns="2">
-                <p:photoCam widgetVar="pc" listener="#{photoCamController.onCapture}" update="capturedImage"/>
-                <p:graphicImage id="capturedImage"
-                                value="#{photoCamController.capturedImage}" />
+                <p:photoCam id="photoCam" widgetVar="pc" listener="#{photoCamController.onCapture}" update="capturedImage"/>
+                <p:graphicImage id="capturedImage" value="#{photoCamController.capturedImage}" />
 
                 <p:commandButton type="button" value="Capture" onclick="pc.capture()"/>
             </h:panelGrid>

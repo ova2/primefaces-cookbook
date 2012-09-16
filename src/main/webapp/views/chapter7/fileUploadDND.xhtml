@@ -10,9 +10,11 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="File Upload with Drag and Drop" />
-            <h:panelGrid columns="2">
-                <p:fileUpload value="#{fileController.file}" dragDropSupport="true" />
-                <p:commandButton action="#{fileController.upload}" value="Upload" ajax="false"/>
+            <h:panelGrid columns="1" width="600px">
+                <p:fileUpload id="upload" value="#{fileController.file}"
+                              dragDropSupport="true"
+                              update="growl"
+                              fileUploadListener="#{fileController.handleFileUpload}" />
             </h:panelGrid>
 
         </h:panelGrid>

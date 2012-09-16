@@ -15,7 +15,9 @@
                                 image="/resources/images/crop/primefaces.jpg" />
 
                 <p:graphicImage id="localCroppedImage"
-                                value="#{imageCropController.graphicText}" />
+                                value="#{imageCropController.graphicText}">
+                    <f:param name="id" value="1" />
+                </p:graphicImage>
 
                 <p:commandButton value="Crop"
                                  action="#{imageCropController.crop}"

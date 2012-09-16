@@ -184,14 +184,18 @@ public class BookController implements Serializable {
 	}
 
 	private void constructChapter7(TreeNode chapter7) {
-		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic, Automatic and Multiple File Upload ", "chapter7/fileUpload.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic File Upload", "chapter7/fileUploadBasic.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Multiple File Upload", "chapter7/fileUploadMultiple.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Filtering File Types for File Upload", "chapter7/fileUploadFiltering.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Limiting File Size for File Upload", "chapter7/fileUploadSizeLimit.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Client Side Callback for File Upload", "chapter7/fileUploadCallback.xhtml"), chapter7);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Uploading File with Drag & Drop", "chapter7/fileUploadDND.xhtml"), chapter7);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Downloading Files", "chapter7/fileDownload.xhtml"), chapter7);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Cropping Images", "chapter7/cropImage.xhtml"), chapter7);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying Collection of Images", "chapter7/displayImageCollection.xhtml"), chapter7);
-		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying Collection of Images2 ", "chapter7/displayImageCollection2.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Displaying Collection of Images 2 ", "chapter7/displayImageCollection2.xhtml"), chapter7);
 		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Capturing Images with PhotoCam", "chapter7/captureImage.xhtml"), chapter7);
-		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("?Comparing Images", "chapter7/compareImage.xhtml"), chapter7);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Comparing Images", "chapter7/compareImage.xhtml"), chapter7);
     }
 
 	private void constructChapter8(TreeNode chapter8) {

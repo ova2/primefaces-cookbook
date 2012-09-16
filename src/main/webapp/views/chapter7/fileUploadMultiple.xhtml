@@ -3,17 +3,16 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
-                template="/templates/masterLayout.xhtml">
+                template="/templates/masterLayoutMultipart.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">Several Ways to Compare Images</h3>
+        <h3 style="margin-top:0">Multiple File Upload</h3>
         <p:growl id="growl" showDetail="true"/>
         <h:panelGrid columns="2" cellpadding="5">
 
-            <h:outputText value="Basic Image Compare" />
-            <p:imageCompare leftImage="/resources/images/compare/istanbulMap.png"
-                            rightImage="/resources/images/compare/istanbulSatellite.png"
-                            width="700"
-                            height="400" />
+            <h:outputText value="Multiple File Upload" />
+            <p:fileUpload id="multipleUpload" value="#{fileController.file}" multiple="true"
+                          fileUploadListener="#{fileController.handleFileUpload}" />
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

@@ -23,8 +23,7 @@ public class ImageCropController implements Serializable {
     private StreamedContent graphicText;
 
     public String crop() throws IOException {
-        graphicText = new DefaultStreamedContent(new ByteArrayInputStream(croppedImage.getBytes()), "image/png", "croppedImage.png");
-
+        graphicText = new DefaultStreamedContent(new ByteArrayInputStream(croppedImage.getBytes()), "image/png");
         return null;
     }
 

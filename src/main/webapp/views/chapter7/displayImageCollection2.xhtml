@@ -10,7 +10,7 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="With Custom Content" />
-            <p:galleria id="withCustomContent" value="#{galleriaController.cars}" var="car" showOverlays="true"
+            <p:galleria id="withCustomContent" value="#{galleriaController.cars}" var="car"
                         frameWidth="140" frameHeight="80"
                         panelWidth="400" panelHeight="300">
                 <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" title="#{car.name}" />
