@@ -11,22 +11,20 @@
 
             <h:outputText value="Simple" />
             <h:panelGrid columns="2">
-                <p:imageCropper value="#{imageCropController.croppedImage}"
+                <p:imageCropper value="#{imageCropController.croppedImageSimple}"
                                 image="/resources/images/crop/primefaces.jpg" />
 
                 <p:graphicImage id="localCroppedImage"
-                                value="#{imageCropController.graphicText}">
-                    <f:param name="id" value="1" />
-                </p:graphicImage>
+                                value="#{imageCropController.graphicText}" />
 
                 <p:commandButton value="Crop"
-                                 action="#{imageCropController.crop}"
+                                 action="#{imageCropController.cropSimple}"
                                  update="localCroppedImage" />
             </h:panelGrid>
 
             <h:outputText value="With Initial Coordinates" />
             <h:panelGrid columns="2">
-                <p:imageCropper value="#{imageCropController.croppedImage}"
+                <p:imageCropper value="#{imageCropController.croppedImageCoordinates}"
                                 image="/resources/images/crop/primefaces.jpg"
                                 initialCoords="255,10,435,160" />
 
@@ -34,26 +32,26 @@
                                 value="#{imageCropController.graphicText}" />
 
                 <p:commandButton value="Crop"
-                                 action="#{imageCropController.crop}"
+                                 action="#{imageCropController.cropCoordinates}"
                                  update="localCroppedImageWithInitialCoords" />
             </h:panelGrid>
 
             <h:outputText value="With Aspect Ratio" />
             <h:panelGrid columns="2">
-                <p:imageCropper value="#{imageCropController.croppedImage}" aspectRatio="1.5"
+                <p:imageCropper value="#{imageCropController.croppedImageAspectRatio}" aspectRatio="1.5"
                                 image="/resources/images/crop/primefaces.jpg" />
 
                 <p:graphicImage id="localCroppedImageWithAspectRatio"
                                 value="#{imageCropController.graphicText}" />
 
                 <p:commandButton value="Crop"
-                                 action="#{imageCropController.crop}"
+                                 action="#{imageCropController.cropAspectRatio}"
                                  update="localCroppedImageWithAspectRatio" />
             </h:panelGrid>
 
             <h:outputText value="With Min and Max Sizes" />
             <h:panelGrid columns="2">
-                <p:imageCropper value="#{imageCropController.croppedImage}"
+                <p:imageCropper value="#{imageCropController.croppedImageMinMaxSize}"
                                 image="/resources/images/crop/primefaces.jpg"
                                 initialCoords="255,10,435,160"
                                 minSize="50,50"
@@ -63,7 +61,7 @@
                                 value="#{imageCropController.graphicText}" />
 
                 <p:commandButton value="Crop"
-                                 action="#{imageCropController.crop}"
+                                 action="#{imageCropController.cropMinMaxSize}"
                                  update="localCroppedImageWithMinMaxSize" />
             </h:panelGrid>
         </h:panelGrid>

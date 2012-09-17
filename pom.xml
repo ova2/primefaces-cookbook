@@ -273,6 +273,12 @@
                     <scanIntervalSeconds>1</scanIntervalSeconds>
                     <stopPort>9966</stopPort>
                     <stopKey>foo</stopKey>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>org.eclipse.jetty.server.Request.maxFormContentSize</name>
+                            <value>-1</value>
+                        </systemProperty>
+                    </systemProperties>
                 </configuration>
                 <dependencies>
                     <dependency>

@@ -5,7 +5,7 @@ import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 import java.io.ByteArrayInputStream;
 import java.io.Serializable;
 
@@ -14,7 +14,7 @@ import java.io.Serializable;
  * Date: 9/10/12
  */
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class PhotoCamController implements Serializable {
 
     private StreamedContent capturedImage;
@@ -29,6 +29,6 @@ public class PhotoCamController implements Serializable {
 
     public void onCapture(CaptureEvent captureEvent) {
         byte[] data = captureEvent.getData();
-        capturedImage = new DefaultStreamedContent(new ByteArrayInputStream(data), "image/png", "croppedImage.png");
+        capturedImage = new DefaultStreamedContent(new ByteArrayInputStream(data));
     }
 }
