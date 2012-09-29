@@ -31,7 +31,7 @@
             </p:galleria>
 
             <h:outputText value="With Overlays and Captions" />
-            <p:galleria id="withOverlayCaption" value="#{galleriaController.cars}" var="car">
+            <p:galleria id="withOverlayCaption" value="#{galleriaController.cars}" var="car" showCaptions="true" showOverlays="true">
                 <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" title="#{car.name}" />
                 <p:galleriaOverlay title="#{car.name}">
                     Model #{car.name}, Year: #{car.year}

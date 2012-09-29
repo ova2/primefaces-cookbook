@@ -24,6 +24,14 @@ public class Car implements Serializable {
         return year;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     @Override
     public String toString() {
         return "Car{" +

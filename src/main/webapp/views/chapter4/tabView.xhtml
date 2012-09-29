@@ -25,10 +25,9 @@
                 </p:tab>
             </p:tabView>
 
-            <!-- Weird on update TBD
             <h:outputText value="Closable Panels" />
             <p:tabView id="tabView2">
-                <p:ajax event="tabClose" listener="#{tabViewController.onTabClose}" update="growl" />
+                <p:ajax event="tabClose" listener="#{tabViewController.onTabClose}" update="_mainForm_growl" />
 
                 <p:tab id="tab3" title="Volkswagen CC" closable="true">
                     <h:panelGrid columns="2" cellpadding="5">
@@ -43,7 +42,6 @@
                     </h:panelGrid>
                 </p:tab>
             </p:tabView>
-            -->
 
             <h:outputText value="Dynamic Content Loading" />
             <p:tabView id="tabView3" dynamic="true" cache="true">
