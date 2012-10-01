@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<facelet-taglib version="2.0"
+                xmlns="http://java.sun.com/xml/ns/javaee"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
+
+    <namespace>http://primefaces.org/ui/cookbook</namespace>
+
+    <tag>
+        <description>
+            <![CDATA[Page Layout component. Client behavior events: open - fires after a layout pane gets opened (org.primefaces.extensions.event.OpenEvent), close - fires after a layout pane gets closed (org.primefaces.extensions.event.CloseEvent), resize - fires after a layout pane gets resized (org.primefaces.extensions.event.ResizeEvent).]]>
+        </description>
+        <tag-name>layout</tag-name>
+        <component>
+            <component-type>org.primefaces.cookbook.component.Layout</component-type>
+            <renderer-type>org.primefaces.cookbook.component.LayoutRenderer</renderer-type>
+        </component>
+        <attribute>
+            <description><![CDATA[Unique identifier of the component in a namingContainer.]]></description>
+            <name>id</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                <![CDATA[Boolean value to specify the rendering of the component, when set to false component will not be rendered.]]>
+            </description>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[An EL expression referring to a server side UIComponent instance in a backing bean.]]></description>
+            <name>binding</name>
+            <required>false</required>
+            <type>javax.faces.component.UIComponent</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[Name of the client side widget.]]></description>
+            <name>widgetVar</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[Specifies whether layout should span all page or not. Default value is true.]]></description>
+            <name>fullPage</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[Layout options as instance of the class LayoutOptions]]></description>
+            <name>options</name>
+            <required>false</required>
+            <type>java.lang.Object</type>
+        </attribute>        
+        <attribute>
+            <description><![CDATA[Style of the main Layout container element. Default value is null.]]></description>
+            <name>style</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[Style class of the main Layout container element. Default value is null.]]></description>
+            <name>styleClass</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            <![CDATA[Layout pane within Layout component. 5 regions are supported: 'north', 'south', 'center', 'west' und 'east'.]]>
+        </description>
+        <tag-name>layoutPane</tag-name>
+        <component>
+            <component-type>org.primefaces.cookbook.component.LayoutPane</component-type>
+            <renderer-type>org.primefaces.cookbook.component.LayoutPaneRenderer</renderer-type>
+        </component>
+        <attribute>
+            <description><![CDATA[Unique identifier of the component in a namingContainer.]]></description>
+            <name>id</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                <![CDATA[Boolean value to specify the rendering of the component, when set to false component will not be rendered.]]>
+            </description>
+            <name>rendered</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[An EL expression referring to a server side UIComponent instance in a backing bean.]]></description>
+            <name>binding</name>
+            <required>false</required>
+            <type>javax.faces.component.UIComponent</type>
+        </attribute>
+        <attribute>
+            <description>
+                <![CDATA[Position of a pane. Possible values are 'north', 'south', 'west', 'east', 'center'. Default value is 'center'.]]>
+            </description>
+            <name>position</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+</facelet-taglib>

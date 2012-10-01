@@ -452,19 +452,15 @@
             <version>2.4</version>
         </dependency>
 
-        <!--
-        TODO Oleg
-        artifact will be out soon.
-        <dependency>
-            <groupId>org.primefaces.extensions</groupId>
-            <artifactId>primefaces-extensions</artifactId>
-            <version>0.5.0</version>
-        </dependency>
-        -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>primefaces-extensions</artifactId>
+            <version>0.6.0</version>
         </dependency>
 
         <dependency>
