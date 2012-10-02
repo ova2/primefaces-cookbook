@@ -44,7 +44,7 @@ public class LayoutRenderer extends CoreRenderer {
 	}
 
 	@Override
-	public void encodeEnd(final FacesContext fc, final UIComponent component) throws IOException {
+	public void encodeEnd(FacesContext fc, UIComponent component) throws IOException {
 		ResponseWriter writer = fc.getResponseWriter();
 		Layout layout = (Layout) component;
 
@@ -64,7 +64,7 @@ public class LayoutRenderer extends CoreRenderer {
 
 		startScript(writer, clientId);
 		writer.write("$(function() {");
-		writer.write("PrimeFacesExt.cw('Layout', '" + layout.resolveWidgetVar() + "',{");
+		writer.write("PrimeFaces.cw('Layout', '" + layout.resolveWidgetVar() + "',{");
 		writer.write("id:'" + clientId + "'");
 
 		if (layout.isFullPage()) {

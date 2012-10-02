@@ -29,6 +29,7 @@ import org.primefaces.util.Constants;
                           @ResourceDependency(library = "primefaces", name = "jquery/jquery.js"),
                           @ResourceDependency(library = "primefaces", name = "primefaces.js"),
                           @ResourceDependency(library = "css", name = "chapter11/layout.css"),
+                          @ResourceDependency(library = "js", name = "chapter11/jquery.layout.js"),
                           @ResourceDependency(library = "js", name = "chapter11/layout.js")
                       })
 public class Layout extends UIComponentBase implements Widget, ClientBehaviorHolder {
@@ -40,9 +41,9 @@ public class Layout extends UIComponentBase implements Widget, ClientBehaviorHol
 
 	public static final String POSITION_SEPARATOR = "_";
 	public static final String STYLE_CLASS_PANE = "ui-widget-content ui-corner-all";
-	public static final String STYLE_CLASS_PANE_WITH_SUBPANES = "ui-corner-all pe-layout-pane-withsubpanes";
-	public static final String STYLE_CLASS_PANE_HEADER = "ui-widget-header ui-corner-top pe-layout-pane-header";
-	public static final String STYLE_CLASS_PANE_CONTENT = "pe-layout-pane-content";
+	public static final String STYLE_CLASS_PANE_WITH_SUBPANES = "ui-corner-all ui-layout-pane-withsubpanes";
+	public static final String STYLE_CLASS_PANE_HEADER = "ui-widget-header ui-corner-top ui-layout-pane-header";
+	public static final String STYLE_CLASS_PANE_CONTENT = "ui-layout-pane-content";
 
 	private static final Collection<String> EVENT_NAMES =
 	    Collections.unmodifiableCollection(Arrays.asList("open", "close", "resize"));
