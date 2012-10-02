@@ -53,6 +53,7 @@ public class BookController implements Serializable {
 		constructChapter6(chapter6);
 		constructChapter7(chapter7);
 		constructChapter8(chapter8);
+		constructChapter9(chapter9);
 		constructChapter10(chapter10);
 		constructChapter11(chapter11);
 	}
@@ -226,6 +227,12 @@ public class BookController implements Serializable {
 		new DefaultTreeNode(NODE_TYPE,
 		                    new BookTreeNode("Integrating drag & drop with data iteration components",
 		                                     "chapter8/dragDropIntegration.xhtml"), chapter8);
+	}
+
+	private void constructChapter9(TreeNode chapter9) {
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Line", "chapter9/lineChart.xhtml"), chapter9);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bar", "chapter9/barChart.xhtml"), chapter9);
+		new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Pie", "chapter9/pieChart.xhtml"), chapter9);
 	}
 
 	private void constructChapter10(TreeNode chapter10) {

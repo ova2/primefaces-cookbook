@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Charting with Bar</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" title="Company Performance" />
+
+            <h:outputText value="With Legends" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" legendPosition="nw" />
+
+            <h:outputText value="With Orientation" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" orientation="horizontal" />
+
+            <h:outputText value="With Labels on Axes" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" xaxisLabel="Year" yaxisLabel="Amount" />
+
+            <h:outputText value="With Angles on Axes" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" xaxisAngle="45" yaxisAngle="45"  />
+
+            <h:outputText value="With Series Colors" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" seriesColors="FF0000,00FF00" legendPosition="nw" />
+
+            <h:outputText value="With Zooming - Select Region" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" animate="true" zoom="true" />
+
+            <h:outputText value="With Customized Data Tips" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" showDatatip="true" datatipFormat="#{barChartController.datatipFormat}" />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
