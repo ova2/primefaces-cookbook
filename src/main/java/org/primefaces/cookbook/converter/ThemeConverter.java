@@ -1,12 +1,12 @@
 package org.primefaces.cookbook.converter;
 
+import org.primefaces.cookbook.model.chapter2.AvailableThemes;
+import org.primefaces.cookbook.model.chapter2.Theme;
+
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
-
-import org.primefaces.cookbook.model.chapter2.AvailableThemes;
-import org.primefaces.cookbook.model.chapter2.Theme;
 
 /**
  * ThemeConverter

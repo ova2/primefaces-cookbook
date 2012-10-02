@@ -1,10 +1,9 @@
 package org.primefaces.cookbook.utils;
 
-import java.text.MessageFormat;
-import java.util.ResourceBundle;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import java.text.MessageFormat;
+import java.util.ResourceBundle;
 
 /**
  * MessageUtil

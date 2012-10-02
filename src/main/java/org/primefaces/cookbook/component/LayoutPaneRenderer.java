@@ -1,12 +1,11 @@
 package org.primefaces.cookbook.component;
 
-import java.io.IOException;
+import org.primefaces.renderkit.CoreRenderer;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
-
-import org.primefaces.renderkit.CoreRenderer;
+import java.io.IOException;
 
 /**
  * LayoutPaneRenderer

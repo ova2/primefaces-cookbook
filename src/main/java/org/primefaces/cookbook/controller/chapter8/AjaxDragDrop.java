@@ -1,8 +1,7 @@
 package org.primefaces.cookbook.controller.chapter8;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import org.primefaces.component.datalist.DataList;
+import org.primefaces.event.DragDropEvent;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -12,9 +11,9 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.html.HtmlGraphicImage;
 import javax.faces.component.html.HtmlPanelGroup;
 import javax.faces.context.FacesContext;
-
-import org.primefaces.component.datalist.DataList;
-import org.primefaces.event.DragDropEvent;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * AjaxDragDrop

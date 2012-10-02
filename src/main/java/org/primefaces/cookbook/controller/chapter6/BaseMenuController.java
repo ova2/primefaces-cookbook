@@ -1,10 +1,9 @@
 package org.primefaces.cookbook.controller.chapter6;
 
-import java.io.Serializable;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import java.io.Serializable;
 
 /**
  * BaseMenuController

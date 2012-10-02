@@ -1,14 +1,13 @@
 package org.primefaces.cookbook.controller.chapter5;
 
-import com.lowagie.text.*;
+import com.lowagie.text.Document;
+import com.lowagie.text.HeaderFooter;
+import com.lowagie.text.Phrase;
 import org.primefaces.cookbook.model.chapter5.CountryList;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**

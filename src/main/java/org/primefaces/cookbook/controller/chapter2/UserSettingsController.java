@@ -1,17 +1,16 @@
 package org.primefaces.cookbook.controller.chapter2;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import org.primefaces.cookbook.model.chapter2.AvailableThemes;
+import org.primefaces.cookbook.model.chapter2.Theme;
+import org.primefaces.cookbook.model.chapter2.UserPreferences;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
-import org.primefaces.cookbook.model.chapter2.AvailableThemes;
-import org.primefaces.cookbook.model.chapter2.Theme;
-import org.primefaces.cookbook.model.chapter2.UserPreferences;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * UserSettingsController

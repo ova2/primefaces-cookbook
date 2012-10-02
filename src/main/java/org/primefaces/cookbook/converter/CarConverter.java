@@ -8,7 +8,6 @@ package org.primefaces.cookbook.converter;
 import org.apache.commons.lang3.StringUtils;
 import org.primefaces.cookbook.model.chapter3.Car;
 
-import javax.annotation.PostConstruct;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;

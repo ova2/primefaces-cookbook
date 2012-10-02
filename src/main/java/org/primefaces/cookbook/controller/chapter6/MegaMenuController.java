@@ -1,9 +1,8 @@
 package org.primefaces.cookbook.controller.chapter6;
 
-import java.io.Serializable;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import java.io.Serializable;
 
 /**
  * SlideMenuController

@@ -1,7 +1,7 @@
 package org.primefaces.cookbook.converter;
 
-import java.io.Serializable;
-import java.util.Locale;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -9,9 +9,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
-
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
+import java.io.Serializable;
+import java.util.Locale;
 
 /**
  * LocaleConverter

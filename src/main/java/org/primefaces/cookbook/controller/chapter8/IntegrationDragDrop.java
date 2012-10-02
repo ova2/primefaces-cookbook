@@ -1,19 +1,13 @@
 package org.primefaces.cookbook.controller.chapter8;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Random;
+import org.primefaces.cookbook.model.chapter8.Document;
+import org.primefaces.event.DragDropEvent;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-
-import org.primefaces.cookbook.model.chapter8.Document;
-import org.primefaces.event.DragDropEvent;
+import java.io.Serializable;
+import java.util.*;
 
 /**
  * IntegrationDragDrop

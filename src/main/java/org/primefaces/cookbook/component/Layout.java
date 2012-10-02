@@ -1,10 +1,7 @@
 package org.primefaces.cookbook.component;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.logging.Logger;
+import org.primefaces.component.api.Widget;
+import org.primefaces.util.Constants;
 
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
@@ -15,9 +12,11 @@ import javax.faces.component.behavior.ClientBehaviorHolder;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.FacesEvent;
-
-import org.primefaces.component.api.Widget;
-import org.primefaces.util.Constants;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * Layout

@@ -1,16 +1,15 @@
 package org.primefaces.cookbook.controller.chapter6;
 
-import java.io.Serializable;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-import javax.faces.event.ActionEvent;
-
 import org.primefaces.component.menuitem.MenuItem;
 import org.primefaces.component.submenu.Submenu;
 import org.primefaces.cookbook.utils.FacesUtil;
 import org.primefaces.model.DefaultMenuModel;
 import org.primefaces.model.MenuModel;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
+import java.io.Serializable;
 
 /**
  * ProgrammaticMenuController

@@ -1,7 +1,6 @@
 package org.primefaces.cookbook.controller.chapter3;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
 

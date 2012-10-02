@@ -10,7 +10,6 @@ import org.primefaces.model.TreeNode;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import java.awt.event.ActionEvent;
 import java.io.Serializable;
 
 /**

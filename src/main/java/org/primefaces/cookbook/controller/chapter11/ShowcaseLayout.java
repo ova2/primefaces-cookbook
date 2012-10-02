@@ -1,10 +1,10 @@
 package org.primefaces.cookbook.controller.chapter11;
 
+import org.primefaces.cookbook.component.LayoutOptions;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-
-import org.primefaces.cookbook.component.LayoutOptions;
 
 /**
  * ShowcaseLayout

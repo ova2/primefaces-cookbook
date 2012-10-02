@@ -1,12 +1,11 @@
 package org.primefaces.cookbook.controller.chapter2;
 
-import java.io.Serializable;
+import org.primefaces.model.DefaultTreeNode;
+import org.primefaces.model.TreeNode;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-
-import org.primefaces.model.DefaultTreeNode;
-import org.primefaces.model.TreeNode;
+import java.io.Serializable;
 
 /**
  * TreeController

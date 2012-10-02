@@ -1,11 +1,10 @@
 package org.primefaces.cookbook.controller.chapter1;
 
-import java.io.Serializable;
+import org.primefaces.cookbook.utils.MessageUtil;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-
-import org.primefaces.cookbook.utils.MessageUtil;
+import java.io.Serializable;
 
 /**
  * LocalizationController

@@ -1,16 +1,15 @@
 package org.primefaces.cookbook.controller.chapter10;
 
-import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
+import org.primefaces.model.DefaultScheduleEvent;
+import org.primefaces.model.LazyScheduleModel;
+import org.primefaces.model.ScheduleModel;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-
-import org.primefaces.model.DefaultScheduleEvent;
-import org.primefaces.model.LazyScheduleModel;
-import org.primefaces.model.ScheduleModel;
+import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * ScheduleController
