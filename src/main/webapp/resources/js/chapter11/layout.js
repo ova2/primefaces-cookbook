@@ -1,9 +1,4 @@
-/**
- * PrimeFaces Extensions Layout Widget.
- *
- * @author Oleg Varaksin
- */
-PrimeFacesExt.widget.Layout = PrimeFaces.widget.BaseWidget.extend({
+PrimeFaces.widget.Layout = PrimeFaces.widget.BaseWidget.extend({
     /**
      * Initializes the widget.
      *
