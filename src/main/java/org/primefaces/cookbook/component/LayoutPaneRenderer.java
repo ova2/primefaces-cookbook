@@ -1,11 +1,12 @@
 package org.primefaces.cookbook.component;
 
-import org.primefaces.renderkit.CoreRenderer;
+import java.io.IOException;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
-import java.io.IOException;
+
+import org.primefaces.renderkit.CoreRenderer;
 
 /**
  * LayoutPaneRenderer
@@ -103,7 +104,7 @@ public class LayoutPaneRenderer extends CoreRenderer {
 	}
 
 	@Override
-	public void encodeEnd(final FacesContext fc, final UIComponent component) throws IOException {
+	public void encodeEnd(FacesContext fc, UIComponent component) throws IOException {
 		ResponseWriter writer = fc.getResponseWriter();
 
 		writer.endElement("div");
@@ -115,7 +116,7 @@ public class LayoutPaneRenderer extends CoreRenderer {
 	}
 
 	@Override
-	public void encodeChildren(final FacesContext fc, final UIComponent component) throws IOException {
+	public void encodeChildren(FacesContext fc, UIComponent component) throws IOException {
 		// nothing to do
 	}
 }
