@@ -12,7 +12,7 @@
             <p:inputText id="name" value="#{tooltipsController.name}" required="true"
                          title="#{component.valid ? '' : tooltipsController.getErrorMessage(component.clientId)}"/>
         
-            <p:outputLabel for="date" value="Birth Date (date dd.MM.yyyy)"/>
+            <p:outputLabel for="date" value="Birth Date (date)"/>
             <p:inputText id="date" value="#{tooltipsController.birthDate}"
                          title="#{component.valid ? '' : tooltipsController.getErrorMessage(component.clientId)}">
                 <f:convertDateTime pattern="dd.MM.yyyy"/>
