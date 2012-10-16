@@ -24,7 +24,7 @@ public class PieChartController implements Serializable {
         model = new PieChartModel();
 
         model.set("Work", 11);
-        model.set("Ear", 2);
+        model.set("Eat", 2);
         model.set("Commute", 2);
         model.set("Watch TV", 2);
         model.set("Sleep", 7);

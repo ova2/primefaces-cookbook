@@ -12,6 +12,21 @@
             <h:outputText value="Simple" />
             <p:pieChart value="#{pieChartController.model}" style="height:250px" title="Hours per Day" />
 
+            <h:outputText value="With Legends" />
+            <p:pieChart value="#{pieChartController.model}" style="height:250px" legendPosition="nw" />
+
+            <h:outputText value="With Series Colors" />
+            <p:pieChart value="#{pieChartController.model}" style="height:250px" seriesColors="FF0000,00FF00,0000FF,F0F0F0,0F0F0F" legendPosition="nw" />
+
+            <h:outputText value="With Data Labels" />
+            <p:pieChart value="#{pieChartController.model}" style="height:250px" showDataLabels="true" dataFormat="percent" />
+
+            <h:outputText value="With Adjusted Slices" />
+            <p:pieChart value="#{pieChartController.model}" style="height:250px" showDataLabels="true" dataFormat="percent" />
+
+            <h:outputText value="With Adjusted Visual" />
+            <p:pieChart value="#{pieChartController.model}" style="height:250px" sliceMargin="5" diameter="200" fill="false" />
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>
