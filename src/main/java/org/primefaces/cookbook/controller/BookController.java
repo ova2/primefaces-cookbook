@@ -246,6 +246,10 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Line", "chapter9/lineChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bar", "chapter9/barChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Pie", "chapter9/pieChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bubble", "chapter9/bubbleChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Donut", "chapter9/donutChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Interacting with charts by AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mapping with Google Maps", "chapter9/map.xhtml"), chapter9);
     }
 
     private void constructChapter10(TreeNode chapter10) {

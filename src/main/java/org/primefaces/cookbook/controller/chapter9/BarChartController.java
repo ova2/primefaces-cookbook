@@ -1,5 +1,7 @@
 package org.primefaces.cookbook.controller.chapter9;
 
+import org.primefaces.cookbook.utils.MessageUtil;
+import org.primefaces.event.ItemSelectEvent;
 import org.primefaces.model.chart.CartesianChartModel;
 import org.primefaces.model.chart.ChartSeries;
 
@@ -16,14 +18,11 @@ import java.io.Serializable;
 public class BarChartController implements Serializable {
 
     private CartesianChartModel model;
-    private CartesianChartModel modelWithNull;
 
     public BarChartController() {
         model = new CartesianChartModel();
-        modelWithNull = new CartesianChartModel();
 
         createModel();
-        createModelWithNull();
     }
 
     private void createModel() {
@@ -45,34 +44,16 @@ public class BarChartController implements Serializable {
         model.addSeries(expenses);
     }
 
-    private void createModelWithNull() {
-        ChartSeries sales = new ChartSeries();
-        sales.setLabel("Sales");
-        sales.set("2004", 1000);
-        sales.set("2005", null);
-        sales.set("2006", null);
-        sales.set("2007", 1030);
-
-        ChartSeries expenses = new ChartSeries();
-        expenses.setLabel("Expenses");
-        expenses.set("2004", 400);
-        expenses.set("2005", null);
-        expenses.set("2006", 1120);
-        expenses.set("2007", 540);
-
-        modelWithNull.addSeries(sales);
-        modelWithNull.addSeries(expenses);
-    }
-
     public String getDatatipFormat() {
         return "<span style=\"display:none;\">%s</span><span>%s</span>";
     }
 
-    public CartesianChartModel getModel() {
-        return model;
+    public void itemSelect(ItemSelectEvent event) {
+        MessageUtil.addInfoMessageWithoutKey("Item selected",
+                "Series Index:" + event.getSeriesIndex() + ", Item Index: " + event.getItemIndex());
     }
 
-    public CartesianChartModel getModelWithNull() {
-        return modelWithNull;
+    public CartesianChartModel getModel() {
+        return model;
     }
 }

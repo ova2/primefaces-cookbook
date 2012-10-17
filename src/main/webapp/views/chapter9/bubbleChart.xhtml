@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Charting with Bubble</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:bubbleChart value="#{bubbleChartController.model}" style="height:250px"
+                           xaxisLabel="Number of Fatal Crashes" yaxisLabel="Public Road Mileage" />
+
+            <h:outputText value="With Angles on Axes" />
+            <p:bubbleChart value="#{bubbleChartController.model}" style="height:250px" xaxisAngle="45" yaxisAngle="45" />
+
+            <h:outputText value="With Gradient and Alpha" />
+            <p:bubbleChart value="#{bubbleChartController.model}" style="height:250px" bubbleGradients="true" bubbleAlpha="0.7" />
+
+            <h:outputText value="With Series Colors" />
+            <p:bubbleChart value="#{bubbleChartController.model}" style="height:250px" seriesColors="FF0000,00FF00,0000FF,F0F0F0,0F0F0F" />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
