@@ -1,6 +1,5 @@
 package org.primefaces.cookbook.controller.chapter12;
 
-import org.primefaces.extensions.event.ImageAreaSelectEvent;
 import org.primefaces.extensions.event.ResizeEvent;
 import org.primefaces.extensions.event.RotateEvent;
 
