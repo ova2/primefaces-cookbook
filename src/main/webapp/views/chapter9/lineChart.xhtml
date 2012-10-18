@@ -40,7 +40,10 @@
             <p:lineChart value="#{lineChartController.model}" style="height:250px" showDatatip="true" datatipFormat="#{lineChartController.datatipFormat}" />
 
             <h:outputText value="With Filled Under lines" />
-            <p:lineChart value="#{lineChartController.model}" style="height:250px" fill="true" stacked="true" />
+            <p:lineChart value="#{lineChartController.model}" style="height:250px" fill="true" />
+
+            <h:outputText value="With Stacked lines" />
+            <p:lineChart value="#{lineChartController.model}" style="height:250px" stacked="true" />
 
         </h:panelGrid>
     </ui:define>

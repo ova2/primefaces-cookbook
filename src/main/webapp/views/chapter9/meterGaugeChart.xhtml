@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Charting with Meter Gauge</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:meterGaugeChart id="simple" value="#{meterGaugeController.model}" style="height:250px" label="km/h" title="Title" />
+
+            <h:outputText value="Custom" />
+            <p:meterGaugeChart id="custom" value="#{meterGaugeController.model}" style="height:250px"
+                                label="tons" title="Metric Tons Per Year"
+                                showTickLabels="false" labelHeightAdjust="-20"
+                                intervalOuterRadius="60" />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

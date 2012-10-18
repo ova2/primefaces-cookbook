@@ -2,11 +2,14 @@ package org.primefaces.cookbook.controller.chapter9;
 
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.map.OverlaySelectEvent;
+import org.primefaces.model.chart.MeterGaugeChartModel;
 import org.primefaces.model.map.*;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: mertcaliskan
@@ -24,8 +27,8 @@ public class MapController implements Serializable {
     private Marker selectedMarker;
 
     public MapController() {
-        markerModel.addOverlay(new Marker(new LatLng(41.073399, 29.051971), "Bosphorus"));
-        markerModel.addOverlay(new Marker(new LatLng(41.118418, 29.134026), "Bosphorus"));
+        markerModel.addOverlay(new Marker(new LatLng(41.073399, 29.051971), "Bosphorus", "bosphorus.jpg"));
+        markerModel.addOverlay(new Marker(new LatLng(41.118418, 29.134026), "Bosphorus", "bosphorus.jpg"));
 
         Polyline polyline = new Polyline();
         polyline.getPaths().add(new LatLng(41.073399, 29.051971));

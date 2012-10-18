@@ -12,6 +12,12 @@
             <h:outputText value="Simple" />
             <p:barChart value="#{barChartController.model}" style="height:250px" title="Company Performance" />
 
+            <h:outputText value="With Animation" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" animate="true" />
+
+            <h:outputText value="With Zooming - Select Region" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" zoom="true" />
+
             <h:outputText value="With Legends" />
             <p:barChart value="#{barChartController.model}" style="height:250px" legendPosition="nw" />
 
@@ -27,11 +33,11 @@
             <h:outputText value="With Series Colors" />
             <p:barChart value="#{barChartController.model}" style="height:250px" seriesColors="FF0000,00FF00" legendPosition="nw" />
 
-            <h:outputText value="With Zooming - Select Region" />
-            <p:barChart value="#{barChartController.model}" style="height:250px" animate="true" zoom="true" />
-
             <h:outputText value="With Customized Data Tips" />
             <p:barChart value="#{barChartController.model}" style="height:250px" showDatatip="true" datatipFormat="#{barChartController.datatipFormat}" />
+
+            <h:outputText value="With Stacked Bars" />
+            <p:barChart value="#{barChartController.model}" style="height:250px" title="Company Performance" stacked="true" />
 
         </h:panelGrid>
     </ui:define>

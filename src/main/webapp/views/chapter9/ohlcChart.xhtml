@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Charting with OHLC</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Simple" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" />
+
+            <h:outputText value="With Animation" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" animate="true" />
+
+            <h:outputText value="With Candle Stick" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" candleStick="true" />
+
+            <h:outputText value="With Labels on Axes" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" xaxisLabel="Day" yaxisLabel="$" />
+
+            <h:outputText value="With Angles on Axes" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" xaxisAngle="45" yaxisAngle="45" />
+
+            <h:outputText value="With Series Colors" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" seriesColors="FF0000,00FF00" />
+
+            <h:outputText value="With Customized Data Tips" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" showDatatip="true" datatipFormat="#{ohlcChartController.datatipFormat}" />
+
+            <h:outputText value="With Zooming - Select Region" />
+            <p:ohlcChart value="#{ohlcChartController.model}" style="height:250px" zoom="true" />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

@@ -40,18 +40,20 @@
             </p:gmap>
 
             <h:outputText value="With Information Window" />
-            <p:gmap center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px" model="#{mapController.markerModel}">
-                <p:ajax event="overlaySelect" listener="#{mapController.selectMarker}" update="growl" />
+            <p:gmap id="withInformation" center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px" model="#{mapController.markerModel}">
+                <p:ajax event="overlaySelect" listener="#{mapController.selectMarker}" />
 
-                <p:gmapInfoWindow>
-                    <p:graphicImage value="/images/#{mapController.selectMarker.data.image}" />
-                    <h:outputText value="#{mapBean.marker.selectMarker.title}" />
+                <p:gmapInfoWindow id="infoWindow">
+                    <p:graphicImage value="/resources/images/map/#{mapController.selectedMarker.data}" />
                 </p:gmapInfoWindow>
             </p:gmap>
 
             <h:outputText value="Without Controls" />
             <p:gmap center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px"
-                    model="#{mapController.markerModel}" mapTypeControl="true" navigationControl="true" disableDefaultUI="false" />
+                    model="#{mapController.markerModel}" mapTypeControl="false" navigationControl="false" />
+
+            <h:outputText value="With Street View" />
+            <p:gmap center="40.759011,-73.984472" type="roadmap" zoom="15" style="width:600px;height:400px" streetView="true" />
 
         </h:panelGrid>
     </ui:define>

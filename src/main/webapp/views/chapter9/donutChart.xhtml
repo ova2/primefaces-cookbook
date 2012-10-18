@@ -10,7 +10,13 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple" />
-            <p:donutChart value="#{donutChartController.model}" style="height:250px" title="Stocks by Year"  />
+            <p:donutChart value="#{donutChartController.model}" style="height:250px" title="Stocks by Year" legendPosition="nw" />
+
+            <h:outputText value="With Series Colors" />
+            <p:donutChart value="#{donutChartController.model}" style="height:250px" seriesColors="FF0000,00FF00,0000FF,F0F0F0,0F0F0F" legendPosition="nw" />
+
+            <h:outputText value="With Adjusted Visual" />
+            <p:donutChart value="#{donutChartController.model}" style="height:250px" sliceMargin="5" fill="false" />
 
         </h:panelGrid>
     </ui:define>
