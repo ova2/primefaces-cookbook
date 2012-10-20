@@ -246,13 +246,19 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Line", "chapter9/lineChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bar", "chapter9/barChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Pie", "chapter9/pieChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bubble", "chapter9/bubbleChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bubble", "chapter9/bubbleChart.xhtml"),
+            chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Donut", "chapter9/donutChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Meter Gauge", "chapter9/meterGaugeChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Meter Gauge", "chapter9/meterGaugeChart.xhtml"),
+            chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with OHLC", "chapter9/ohlcChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Live Data updating of charts with polling", "chapter9/pollingChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Interacting with charts by AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Creating dynamic image streaming programmatically", "chapter9/dynaImage.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE,
+            new BookTreeNode("Live Data updating of charts with polling", "chapter9/pollingChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE,
+            new BookTreeNode("Interacting with charts by AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE,
+            new BookTreeNode("Creating dynamic image streaming programmatically", "chapter9/dynaImage.xhtml"),
+            chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mapping with Google Maps", "chapter9/map.xhtml"), chapter9);
     }
 
@@ -312,9 +318,6 @@ public class BookController implements Serializable {
             chapter12);
         new DefaultTreeNode(NODE_TYPE,
             new BookTreeNode("Building dynamic form described by model", "chapter12/dynaForm.xhtml"), chapter12);
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Grouping in levels with multipurpose MasterDetail", "chapter12/masterDetail.xhtml"),
-            chapter12);
         new DefaultTreeNode(NODE_TYPE,
             new BookTreeNode("Timeline - displaying events in chronological order", "chapter12/timeline.xhtml"),
             chapter12);
