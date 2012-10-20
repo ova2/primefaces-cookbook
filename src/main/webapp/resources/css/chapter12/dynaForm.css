@@ -1,0 +1,21 @@
+/* note: trick with colspan is needed for IE8 */
+.pe-dynaform-cell input,
+.pe-dynaform-cell textarea,
+.pe-dynaform-cell[colspan="1"] input,
+.pe-dynaform-cell[colspan="1"] textarea {
+    width: 150px;
+}
+
+/* note: trick with colspan is needed for IE8 */
+.pe-dynaform-cell.calendar input,
+.pe-dynaform-cell[colspan="1"].calendar input {
+    width: 120px;
+}
+
+.pe-dynaform-cell.select .ui-selectonemenu {
+    width: 157px !important;
+}
+
+.pe-dynaform-cell.select .ui-selectonemenu .ui-selectonemenu-label {
+    width: 130px !important;
+}
