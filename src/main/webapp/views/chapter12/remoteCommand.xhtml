@@ -8,8 +8,9 @@
     <ui:define name="chapterItem">
 
         <p:growl id="growl" showDetail="true"/>
-
-        <pe:remoteCommand id="applyDataCommand" name="applyData" process="@this" update="growl"
+        
+        <pe:remoteCommand id="applyDataCommand" name="applyData"
+                          process="@this" update="growl"
                           actionListener="#{remoteCommandController.printMethodParams}">
             <pe:methodSignature parameters="java.lang.String,
                                             java.util.Date,
@@ -22,7 +23,7 @@
                 <pe:convertJson/>
             </pe:methodParam>
         </pe:remoteCommand>
-
+        
         <script type="text/javascript">
             circle = {
                 radius:50,
@@ -37,7 +38,7 @@
                 scaleFactor:1.6
             };
         </script>
-
+        
         <p:commandButton value="Apply Data" type="button"
                          onclick="applyData('hello world', '5/14/07 12:55:42 PM', JSON.stringify(circle))"/>
         <p:commandButton value="Apply Second Data" type="button"
