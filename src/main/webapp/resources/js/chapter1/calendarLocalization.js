@@ -1,30 +1,3 @@
-PrimeFaces.locales['tr'] = {
-    closeText: 'kapat',
-    prevText: 'geri',
-    nextText: 'ileri',
-    currentText: 'bugün',
-    monthNames: ['Ocak','?ubat','Mart','Nisan','May?s','Haziran','Temmuz','A?ustos','Eylül','Ekim','Kas?m','Aral?k'],
-    monthNamesShort: ['Oca','?ub','Mar','Nis','May','Haz', 'Tem','A?u','Eyl','Eki','Kas','Ara'],
-    dayNames: ['Pazar','Pazartesi','Sal?','Çar?amba','Per?embe','Cuma','Cumartesi'],
-    dayNamesShort: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
-    dayNamesMin: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
-    weekHeader: 'Hf',
-    firstDay: 1,
-    isRTL: false,
-    showMonthAfterYear: false,
-    yearSuffix: '',
-    timeOnlyTitle: 'Zaman Seçiniz',
-    timeText: 'Zaman',
-    hourText: 'Saat',
-    minuteText: 'Dakika',
-    secondText: 'Saniye',
-    ampm: false,
-    month: 'Ay',
-    week: 'Hafta',
-    day: 'Gün',
-    allDayText : 'Tüm Gün'
-    };
-
 PrimeFaces.locales['de'] = {
     closeText: 'Schließen',
     prevText: 'Zurück',
