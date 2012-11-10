@@ -9,6 +9,28 @@
         <p:growl id="growl" showDetail="true"/>
         <h:panelGrid columns="2" cellpadding="5">
 
+            <p:layout id="elementLayout" style="min-width:600px;min-height:400px;">
+                <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="Layout content for North" />
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="Layout content for South" />
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <p:layout>
+                        <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                            <h:outputText value="Layout content for Top of Center" />
+                        </p:layoutUnit>
+
+                        <p:layoutUnit position="center">
+                            <h:outputText value="Center of Center" />
+                        </p:layoutUnit>
+                    </p:layout>
+                </p:layoutUnit>
+            </p:layout>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>
