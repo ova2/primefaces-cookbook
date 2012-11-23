@@ -15,14 +15,14 @@
 
             <h:outputText value="Clearing Contents of Editor" />
             <h:panelGroup>
-                <p:editor value="#{editorController.text}" widgetVar="editor" />
-                <p:commandButton type="button" value="Clear" onclick="editor.clear()" icon="ui-icon-close" />
+                <p:editor value="#{editorController.text}" widgetVar="editorClear" />
+                <p:commandButton type="button" value="Clear" onclick="editorClear.clear()" icon="ui-icon-close" />
             </h:panelGroup>
 
             <h:outputText value="Selecting all of the text in Editor" />
             <h:panelGroup>
-                <p:editor value="#{editorController.text}" widgetVar="editor" />
-                <p:commandButton type="button" value="Select" onclick="editor.selectAll()" />
+                <p:editor value="#{editorController.text}" widgetVar="editorSelect" />
+                <p:commandButton type="button" value="Select" onclick="editorSelect.selectAll()" />
             </h:panelGroup>
 
             <h:outputText value="Editor inside Dialog Box" />
