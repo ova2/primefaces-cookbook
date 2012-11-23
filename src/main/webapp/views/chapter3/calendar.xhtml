@@ -9,10 +9,10 @@
         <p:growl id="growl"/>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic Selection" />
-            <p:calendar id="default" value="#{calendarController.date}" />
+            <p:calendar value="#{calendarController.date}" />
 
             <h:outputText value="With Inline Mode" />
-            <p:calendar id="inline" value="#{calendarController.date}" mode="inline" />
+            <p:calendar value="#{calendarController.date}" mode="inline" />
 
             <h:outputText value="With Paging" />
             <p:calendar id="paging" value="#{calendarController.date}" pages="3" />
