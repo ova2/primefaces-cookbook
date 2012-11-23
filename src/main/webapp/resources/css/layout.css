@@ -62,7 +62,7 @@ button,
     position: absolute;
     color: #A2A1A1;
     font-weight: bold;
-    top: 30px;
+    bottom: 30px;
     right: 40px;
 }
 

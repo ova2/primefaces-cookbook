@@ -11,7 +11,7 @@
             <h:outputText value="Simple" />
             <p:autoComplete id="simple" value="#{autoCompleteController.txt1}" completeMethod="#{autoCompleteController.complete}" />
 
-            <h:outputText value="POJO Support" />
+            <h:outputText value="POJO Support &lt;br/&gt; (Name cars like: Golf, Jetta, CC, Passat, Polo, Scirocco, Touareg)" escape="false" />
             <p:autoComplete id="carPOJO" value="#{autoCompleteController.selectedCar}" completeMethod="#{autoCompleteController.completeCar}"
                             var="car" itemLabel="#{car.name}" itemValue="#{car}" forceSelection="true">
                 <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
