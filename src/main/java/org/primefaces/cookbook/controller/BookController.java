@@ -183,7 +183,7 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Context menu with nested items", "chapter6/contextMenu.xhtml"),
             chapter6);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Context menu integration", "chapter6/contextMenuIntergration.xhtml"), chapter6);
+            new BookTreeNode("Context menu integration", "chapter6/contextMenuIntegration.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Slide Menu - menu in iPod style", "chapter6/slideMenu.xhtml"),
             chapter6);
         new DefaultTreeNode(NODE_TYPE,
