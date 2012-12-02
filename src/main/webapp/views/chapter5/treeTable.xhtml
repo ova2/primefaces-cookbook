@@ -63,7 +63,7 @@
                 </p:column>
                 <f:facet name="footer">
                     <p:commandButton value="View" icon="ui-icon-search"
-                                     update="_mainForm_display" oncomplete="dialogSingle.show()"/>
+                                     update=":mainForm:display" oncomplete="dialogSingle.show()"/>
                 </f:facet>
             </p:treeTable>
 
@@ -85,17 +85,17 @@
                 </p:column>
                 <f:facet name="footer">
                     <p:commandButton value="View" icon="ui-icon-search"
-                                     update="_mainForm_displayMultiple" oncomplete="dialogMultiple.show()"/>
+                                     update=":mainForm:displayMultiple" oncomplete="dialogMultiple.show()"/>
                 </f:facet>
             </p:treeTable>
 
             <h:outputText value="With Ajax Listeners" />
             <p:treeTable id="withAJAX" value="#{treeTableController.root}" var="element">
 
-                <p:ajax event="expand" listener="#{treeTableController.onNodeExpand}" update="_mainForm_growl" />
-                <p:ajax event="collapse" listener="#{treeTableController.onNodeCollapse}" update="_mainForm_growl" />
-                <p:ajax event="select" listener="#{treeTableController.onNodeSelect}" update="_mainForm_growl" />
-                <p:ajax event="unselect" listener="#{treeTableController.onNodeUnselect}" update="_mainForm_growl" />
+                <p:ajax event="expand" listener="#{treeTableController.onNodeExpand}" update=":mainForm:growl" />
+                <p:ajax event="collapse" listener="#{treeTableController.onNodeCollapse}" update=":mainForm:growl" />
+                <p:ajax event="select" listener="#{treeTableController.onNodeSelect}" update=":mainForm:growl" />
+                <p:ajax event="unselect" listener="#{treeTableController.onNodeUnselect}" update=":mainForm:growl" />
 
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column>

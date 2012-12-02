@@ -34,7 +34,7 @@
                 <f:facet name="buttonBar">
                     <p:commandButton value="Submit" action="#{dynaFormController.submitForm}"
                                      process="dynaForm"
-                                     update="_mainForm_dynaFormGroup _mainForm_inputValues"
+                                     update=":mainForm:dynaFormGroup :mainForm:inputValues"
                                      oncomplete="handleComplete(xhr, status, args)"/>
                     <p:commandButton type="reset" value="Reset" style="margin-left: 5px;"/>
                 </f:facet>

@@ -16,7 +16,7 @@
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <p:column>
-                    <p:commandButton value="Select" update="_mainForm_display" oncomplete="carDialog.show()">
+                    <p:commandButton value="Select" update=":mainForm:display" oncomplete="carDialog.show()">
                         <f:setPropertyActionListener value="#{car}"
                                                      target="#{dataTableController.selectedCar}" />
                     </p:commandButton>
@@ -30,7 +30,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-                                     update="_mainForm_display" oncomplete="carDialog.show()"/>
+                                     update=":mainForm:display" oncomplete="carDialog.show()"/>
                 </f:facet>
             </p:dataTable>
 
@@ -42,7 +42,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-                                     update="_mainForm_display" oncomplete="carDialog.show()"/>
+                                     update=":mainForm:display" oncomplete="carDialog.show()"/>
                 </f:facet>
             </p:dataTable>
 
@@ -53,7 +53,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-                                     update="_mainForm_displayMultiple" oncomplete="carDialogMultiple.show()"/>
+                                     update=":mainForm:displayMultiple" oncomplete="carDialogMultiple.show()"/>
                 </f:facet>
             </p:dataTable>
 
@@ -65,7 +65,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-                                     update="_mainForm_displayMultiple" oncomplete="carDialogMultiple.show()"/>
+                                     update=":mainForm:displayMultiple" oncomplete="carDialogMultiple.show()"/>
                 </f:facet>
             </p:dataTable>
 

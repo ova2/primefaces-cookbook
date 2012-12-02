@@ -13,8 +13,8 @@
             <h:outputText value="In cell editing" />
             <p:dataTable id="inCellEditing" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}" editable="true">
 
-                <p:ajax event="rowEdit" listener="#{dataTableController.onEdit}" update="_mainForm_growl" />
-                <p:ajax event="rowEditCancel" listener="#{dataTableController.onCancel}" update="_mainForm_growl" />
+                <p:ajax event="rowEdit" listener="#{dataTableController.onEdit}" update=":mainForm:growl" />
+                <p:ajax event="rowEditCancel" listener="#{dataTableController.onCancel}" update=":mainForm:growl" />
 
                 <p:column headerText="Year">
                     <p:cellEditor>

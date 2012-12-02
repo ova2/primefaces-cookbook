@@ -143,7 +143,7 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
             new BookTreeNode("Element Layout with AJAX Listeners", "chapter4/elementLayout.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Nested layout ? layout in layout", "chapter4/nestedLayout.xhtml"), chapter4);
+            new BookTreeNode("Nested layout / layout in layout", "chapter4/nestedLayout.xhtml"), chapter4);
     }
 
     private void constructChapter5(TreeNode chapter5) {

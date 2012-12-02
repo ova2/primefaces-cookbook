@@ -68,10 +68,10 @@
                     selectionMode="single"
                     selection="#{treeDataController.selectedNode}">
 
-                <p:ajax event="expand" listener="#{treeDataController.onNodeExpand}" update="_mainForm_growl" />
-                <p:ajax event="collapse" listener="#{treeDataController.onNodeCollapse}" update="_mainForm_growl" />
-                <p:ajax event="select" listener="#{treeDataController.onNodeSelect}" update="_mainForm_growl" />
-                <p:ajax event="unselect" listener="#{treeDataController.onNodeUnselect}" update="_mainForm_growl" />
+                <p:ajax event="expand" listener="#{treeDataController.onNodeExpand}" update=":mainForm:growl" />
+                <p:ajax event="collapse" listener="#{treeDataController.onNodeCollapse}" update=":mainForm:growl" />
+                <p:ajax event="select" listener="#{treeDataController.onNodeSelect}" update=":mainForm:growl" />
+                <p:ajax event="unselect" listener="#{treeDataController.onNodeUnselect}" update=":mainForm:growl" />
 
                 <p:treeNode>
                     <h:outputText value="#{node}" />

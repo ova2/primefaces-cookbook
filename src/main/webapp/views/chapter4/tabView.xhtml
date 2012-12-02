@@ -27,7 +27,7 @@
 
             <h:outputText value="Closable Panels" />
             <p:tabView id="tabView2">
-                <p:ajax event="tabClose" listener="#{tabViewController.onTabClose}" update="_mainForm_growl" />
+                <p:ajax event="tabClose" listener="#{tabViewController.onTabClose}" update=":mainForm:growl" />
 
                 <p:tab id="tab3" title="Volkswagen CC" closable="true">
                     <h:panelGrid columns="2" cellpadding="5">
