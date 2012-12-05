@@ -63,7 +63,7 @@
                 </p:column>
                 <f:facet name="footer">
                     <p:commandButton value="View" icon="ui-icon-search"
-                                     update=":mainForm:display" oncomplete="dialogSingle.show()"/>
+                                     update=":mainForm:displaySingle" oncomplete="dialogSingle.show()"/>
                 </f:facet>
             </p:treeTable>
 
@@ -134,16 +134,18 @@
 
         <p:dialog id="dialog" header="Single Selection Detail" widgetVar="dialogSingle" resizable="false"
                   width="200" showEffect="clip" hideEffect="fold">
-            <h:panelGrid id="display" columns="2" cellpadding="4">
-                <h:outputText value="Name:" />
-                <h:outputText value="#{treeTableController.selectedItem.data.name}" />
+            <p:outputPanel id="displaySingle">
+                <h:panelGrid columns="2" cellpadding="4">
+                    <h:outputText value="Name:" />
+                    <h:outputText value="#{treeTableController.selectedItem.data.name}" />
 
-                <h:outputText value="Column:" />
-                <h:outputText value="#{treeTableController.selectedItem.data.column1}" />
+                    <h:outputText value="Column:" />
+                    <h:outputText value="#{treeTableController.selectedItem.data.column1}" />
 
-                <h:outputText value="Column:" />
-                <h:outputText value="#{treeTableController.selectedItem.data.column2}" />
-            </h:panelGrid>
+                    <h:outputText value="Column:" />
+                    <h:outputText value="#{treeTableController.selectedItem.data.column2}" />
+                </h:panelGrid>
+            </p:outputPanel>
         </p:dialog>
 
         <p:dialog id="dialogMultiple" header="Multiple Selection Detail" widgetVar="dialogMultiple"

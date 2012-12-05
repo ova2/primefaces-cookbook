@@ -27,7 +27,7 @@ public class LazyDataTableController implements Serializable {
     public LazyDataTableController() {
         Collection<Car> cars = CarConverter.cars.values();
         Collection<Car> bulkCars = new ArrayList<Car>();
-        for (int i = 0; i< 1000000; i++) {
+        for (int i = 0; i< 1000; i++) {
             bulkCars.addAll(cars);
         }
         this.cars = new ArrayList<Car>(bulkCars);

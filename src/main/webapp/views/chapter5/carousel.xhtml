@@ -56,7 +56,7 @@
             </p:carousel>
 
             <h:outputText value="With Easing" />
-            <p:carousel id="withEasing" value="#{carouselController.cars}" var="car" easing="easeBothStrong">
+            <p:carousel id="withEasing" value="#{carouselController.cars}" var="car" easing="easeInOutCirc">
                 <f:facet name="header">Cars</f:facet>
                 <h:panelGrid columns="1">
                     <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="100" height="70"/>
@@ -79,6 +79,7 @@
                     </h:panelGrid>
                 </p:tab>
             </p:carousel>
+            <br/>
 
         </h:panelGrid>
     </ui:define>

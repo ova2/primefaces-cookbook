@@ -52,7 +52,7 @@
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
-                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                    <p:commandButton id="viewButtonMultiple" value="View" icon="ui-icon-search"
                                      update=":mainForm:displayMultiple" oncomplete="carDialogMultiple.show()"/>
                 </f:facet>
             </p:dataTable>
@@ -64,7 +64,7 @@
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
-                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                    <p:commandButton id="viewButtonCheckBox" value="View" icon="ui-icon-search"
                                      update=":mainForm:displayMultiple" oncomplete="carDialogMultiple.show()"/>
                 </f:facet>
             </p:dataTable>

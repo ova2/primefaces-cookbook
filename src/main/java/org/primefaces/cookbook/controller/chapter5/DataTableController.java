@@ -20,14 +20,16 @@ import java.util.List;
 @ViewScoped
 public class DataTableController implements Serializable {
 
+    private List<Car> cars;
     private Car selectedCar;
     private Car[] selectedCars;
+    private List<Car> selectedCarsList;
     private SelectItem[] carNamesOptions;
 
-    public List<Car> getCars() {
-        return new ArrayList<Car>(CarConverter.cars.values());
+    public DataTableController() {
+        cars = new ArrayList<Car>(CarConverter.cars.values());
     }
-
+    
     public String[] getCarNames() {
         return CarConverter.cars.keySet().toArray(new String[0]);
     }
@@ -70,5 +72,21 @@ public class DataTableController implements Serializable {
 
     public void setSelectedCars(Car[] selectedCars) {
         this.selectedCars = selectedCars;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
+    public List<Car> getSelectedCarsList() {
+        return selectedCarsList;
+    }
+
+    public void setSelectedCarsList(List<Car> selectedCarsList) {
+        this.selectedCarsList = selectedCarsList;
     }
 }
