@@ -24,6 +24,7 @@ public class TreeTableController implements Serializable {
     private TreeNode root;
 
     private TreeNode selectedItem;
+    private TreeNode selectedItemForContextMenu;
     private TreeNode[] selectedItems;
 
     public TreeTableController() {
@@ -73,6 +74,14 @@ public class TreeTableController implements Serializable {
 
     public void setSelectedItem(TreeNode selectedItem) {
         this.selectedItem = selectedItem;
+    }
+
+    public TreeNode getSelectedItemForContextMenu() {
+        return selectedItemForContextMenu;
+    }
+
+    public void setSelectedItemForContextMenu(TreeNode selectedItemForContextMenu) {
+        this.selectedItemForContextMenu = selectedItemForContextMenu;
     }
 
     public TreeNode[] getSelectedItems() {

@@ -31,15 +31,15 @@
             <p:treeTable id="scrollable" value="#{treeTableController.root}" var="element"
                          scrollable="true" scrollWidth="120">
                 <f:facet name="header">Tree Table</f:facet>
-                <p:column>
+                <p:column width="50">
                     <f:facet name="header">Name</f:facet>
                     <h:outputText value="#{element.name}" />
                 </p:column>
-                <p:column>
+                <p:column width="50">
                     <f:facet name="header">Column 1</f:facet>
                     <h:outputText value="#{element.column1}" />
                 </p:column>
-                <p:column>
+                <p:column width="50">
                     <f:facet name="header">Column 2</f:facet>
                     <h:outputText value="#{element.column2}" />
                 </p:column>
@@ -114,7 +114,7 @@
 
             <h:outputText value="With Context Menu" />
             <p:treeTable id="withContextMenu" value="#{treeTableController.root}" var="element"
-                         selection="#{treeTableController.selectedItem}" selectionMode="single">
+                         selection="#{treeTableController.selectedItemForContextMenu}" selectionMode="single">
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column>
                     <f:facet name="header">Name</f:facet>

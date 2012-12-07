@@ -43,7 +43,15 @@ public class PickListController implements Serializable {
         return countries;
     }
 
+    public void setCountries(DualListModel<String> countries) {
+        this.countries = countries;
+    }
+
     public DualListModel<Car> getCars() {
         return cars;
+    }
+
+    public void setCars(DualListModel<Car> cars) {
+        this.cars = cars;
     }
 }
