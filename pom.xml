@@ -341,7 +341,7 @@
             <plugin>
                 <groupId>org.primefaces.extensions</groupId>
                 <artifactId>resources-optimizer-maven-plugin</artifactId>
-                <version>0.5</version>
+                <version>0.6</version>
                 <executions>
                     <execution>
                         <id>optimize</id>
@@ -460,12 +460,12 @@
         <dependency>
             <groupId>org.primefaces.extensions</groupId>
             <artifactId>primefaces-extensions</artifactId>
-            <version>0.6.1</version>
+            <version>0.6.2</version>
         </dependency>
         <dependency>
             <groupId>org.primefaces.extensions</groupId>
             <artifactId>resources-codemirror</artifactId>
-            <version>0.6.1</version>
+            <version>0.6.2</version>
         </dependency>
 
         <dependency>
@@ -682,7 +682,7 @@
                 <jsf.displayname>MyFaces</jsf.displayname>
                 <jsf.group>org.apache.myfaces.core</jsf.group>
                 <jsf.artifact>myfaces</jsf.artifact>
-                <jsf.version>2.1.9</jsf.version>
+                <jsf.version>2.1.10</jsf.version>
             </properties>
         </profile>
         <profile>
@@ -704,7 +704,7 @@
         <java.version.source>1.6</java.version.source>
         <java.version.target>1.6</java.version.target>
         <project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
-        <primefaces.theme.version>1.0.8</primefaces.theme.version>
+        <primefaces.theme.version>1.0.9</primefaces.theme.version>
     </properties>
 </project>
  
