@@ -47,7 +47,7 @@ public class PartialProcessingController implements Serializable {
     }
 
     public void handleCountryChange() {
-        if(country !=null && !country.equals(""))
+        if (country != null && !country.equals(""))
             cities = citiesData.get(country);
         else
             cities = new HashMap<String, String>();
