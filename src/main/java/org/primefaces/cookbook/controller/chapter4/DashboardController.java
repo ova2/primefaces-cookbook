@@ -7,15 +7,15 @@ import org.primefaces.model.DashboardModel;
 import org.primefaces.model.DefaultDashboardColumn;
 import org.primefaces.model.DefaultDashboardModel;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
  * User: mertcaliskan
  * Date: 8/1/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class DashboardController implements Serializable {
 

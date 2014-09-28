@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 <f:view contentType="text/html" locale="en">
     <h:head title="PrimeFaces Cookbook - ShowCase">
@@ -25,7 +25,7 @@
             <p:layoutUnit position="center">
             
                 <p:dialog header="Dialog in layout" modal="true"
-                          widgetVar="dlgWidget" appendToBody="true">
+                          widgetVar="dlgWidget" appendTo="@(body)">
                     <h:form>
                         <h:inputText/>
                         <p:commandButton value="Save" style="margin:10px;"/>
@@ -33,7 +33,7 @@
                 </p:dialog>
             
                 <p:commandButton value="Show dialog" type="button"
-                                 onclick="dlgWidget.show()"/>
+                                 onclick="PF('dlgWidget').show()"/>
             </p:layoutUnit>
             <p:layoutUnit position="north" size="80" resizable="false">
                 <h:form>

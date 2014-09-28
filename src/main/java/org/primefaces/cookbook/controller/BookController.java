@@ -1,17 +1,14 @@
 package org.primefaces.cookbook.controller;
 
 import org.primefaces.cookbook.model.BookTreeNode;
-
 import org.primefaces.event.NodeSelectEvent;
-
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 
-import java.io.Serializable;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
+import java.io.Serializable;
 
 
 /**
@@ -20,7 +17,7 @@ import javax.faces.context.FacesContext;
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @SessionScoped
 public class BookController implements Serializable {
 
@@ -45,8 +42,6 @@ public class BookController implements Serializable {
         TreeNode chapter8 = new DefaultTreeNode(new BookTreeNode("Drag Me, Drop Me", null), root);
         TreeNode chapter9 = new DefaultTreeNode(new BookTreeNode("Creating Charts and Maps", null), root);
         TreeNode chapter10 = new DefaultTreeNode(new BookTreeNode("Miscellaneous, Advanced Use Cases", null), root);
-        TreeNode chapter11 = new DefaultTreeNode(new BookTreeNode("Writing of Custom Components", null), root);
-        TreeNode chapter12 = new DefaultTreeNode(new BookTreeNode("PrimeFaces Extensions in Action", null), root);
 
         constructChapter1(chapter1);
         constructChapter2(chapter2);
@@ -58,8 +53,6 @@ public class BookController implements Serializable {
         constructChapter8(chapter8);
         constructChapter9(chapter9);
         constructChapter10(chapter10);
-        constructChapter11(chapter11);
-        constructChapter12(chapter12);
     }
 
     private void constructChapter1(TreeNode chapter1) {
@@ -295,34 +288,6 @@ public class BookController implements Serializable {
             chapter10);
         new DefaultTreeNode(NODE_TYPE,
             new BookTreeNode("Leveraging Schedule lazy loading feature", "chapter10/scheduleLazyLoad.xhtml"), chapter10);
-    }
-
-    private void constructChapter11(TreeNode chapter11) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Custom Layout component", "chapter11/customComponent.xhtml"),
-            chapter11);
-    }
-
-    private void constructChapter12(TreeNode chapter12) {
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Showing error messages in tooltips", "chapter12/messagesTooltips.xhtml"), chapter12);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Rotating and resizing images", "chapter12/rotateResize.xhtml"),
-            chapter12);
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Managing states with TriStateCheckbox, -ManyCheckbox",
-                "chapter12/triStateCheckboxes.xhtml"), chapter12);
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Supporting numeric inputs with InputNumber", "chapter12/inputNumber.xhtml"), chapter12);
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Creating pleasant editor interface for code-like content", "chapter12/codeMirror.xhtml"),
-            chapter12);
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Calling Java methods with parameters on client-side", "chapter12/remoteCommand.xhtml"),
-            chapter12);
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Building dynamic form described by model", "chapter12/dynaForm.xhtml"), chapter12);
-        new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Timeline - displaying events in chronological order", "chapter12/timeline.xhtml"),
-            chapter12);
     }
 
     public TreeNode getRoot() {

@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -63,7 +63,7 @@
                 </p:column>
                 <f:facet name="footer">
                     <p:commandButton value="View" icon="ui-icon-search"
-                                     update=":mainForm:displaySingle" oncomplete="dialogSingle.show()"/>
+                                     update=":mainForm:displaySingle" oncomplete="PF('dialogSingle').show()"/>
                 </f:facet>
             </p:treeTable>
 
@@ -85,7 +85,7 @@
                 </p:column>
                 <f:facet name="footer">
                     <p:commandButton value="View" icon="ui-icon-search"
-                                     update=":mainForm:displayMultiple" oncomplete="dialogMultiple.show()"/>
+                                     update=":mainForm:displayMultiple" oncomplete="PF('dialogMultiple').show()"/>
                 </f:facet>
             </p:treeTable>
 
@@ -158,11 +158,11 @@
         </p:dialog>
 
         <p:contextMenu for="withContextMenu" nodeType="node">
-            <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="nodeDialog.show()"/>
+            <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="PF('nodeDialog').show()"/>
         </p:contextMenu>
 
         <p:contextMenu for="withContextMenu" nodeType="leaf">
-            <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="nodeDialog.show()"/>
+            <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="PF('nodeDialog').show()"/>
             <p:menuitem value="Delete" actionListener="#{treeTableController.deleteNode}" update="withContextMenu" icon="ui-icon-close"/>
         </p:contextMenu>
 

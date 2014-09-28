@@ -34,16 +34,15 @@ public class LazyCarDataModel extends LazyDataModel<Car> {
     }
 
     @Override
-    public List<Car> load(int first, int pageSize, final String sortField, final SortOrder sortOrder, Map<String, String> filters) {
+    public List<Car> load(int first, int pageSize, final String sortField, final SortOrder sortOrder, Map<String, Object> filters) {
         List<Car> data = new ArrayList<Car>();
 
         for(Car car : datasource) {
             boolean match = true;
 
-            for(Iterator<String> it = filters.keySet().iterator(); it.hasNext();) {
+            for(String filterProperty : filters.keySet()) {
                 try {
-                    String filterProperty = it.next();
-                    String filterValue = filters.get(filterProperty);
+                    String filterValue = (String)filters.get(filterProperty);
                     String fieldValue = String.valueOf(car.getClass().getField(filterProperty).get(car));
 
                     if(filterValue == null || fieldValue.startsWith(filterValue)) {

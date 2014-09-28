@@ -1,14 +1,14 @@
 package org.primefaces.cookbook.controller.chapter3;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
  * User: mertcaliskan
  * Date: 6/30/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class RadioSelectionController implements Serializable {
 }

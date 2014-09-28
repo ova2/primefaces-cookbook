@@ -8,15 +8,15 @@ import org.primefaces.event.NodeUnselectEvent;
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
  * User: mertcaliskan
  * Date: 8/28/12
  */
-@ManagedBean(name = "treeDataController")
+@Named(value = "treeDataController")
 @ViewScoped
 public class TreeController implements Serializable {
 

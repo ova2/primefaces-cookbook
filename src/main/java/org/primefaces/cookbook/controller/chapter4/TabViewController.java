@@ -3,15 +3,15 @@ package org.primefaces.cookbook.controller.chapter4;
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.TabCloseEvent;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
  * User: mertcaliskan
  * Date: 8/1/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class TabViewController implements Serializable {
 

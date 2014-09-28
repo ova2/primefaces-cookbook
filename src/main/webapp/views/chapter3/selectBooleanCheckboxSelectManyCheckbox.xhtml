@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -17,7 +17,7 @@
             <h:outputText value="Getting Selection via JavaScript" />
             <h:panelGroup>
                 <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}" widgetVar="mySelection" />
-                <p:commandLink value="Alert Selection" onclick="alert(mySelection.isChecked());" />
+                <p:commandLink value="Alert Selection" onclick="alert(PF('mySelection').isChecked());" />
             </h:panelGroup>
 
             <h:outputText value="Selection with Ajax Behavior" />

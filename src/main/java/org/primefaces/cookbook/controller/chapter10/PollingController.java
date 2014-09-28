@@ -1,9 +1,9 @@
 package org.primefaces.cookbook.controller.chapter10;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +14,7 @@ import java.util.Date;
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class PollingController implements Serializable {
 

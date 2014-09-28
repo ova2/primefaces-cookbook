@@ -1,8 +1,8 @@
 package org.primefaces.cookbook.controller.chapter10;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @SessionScoped
 public class NaviController implements Serializable {
 

@@ -1,13 +1,12 @@
 package org.primefaces.cookbook.controller.chapter3;
 
-
 import org.primefaces.cookbook.converter.CarConverter;
 import org.primefaces.cookbook.model.chapter3.Car;
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.SelectEvent;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.Set;
  * User: mertcaliskan
  * Date: 6/11/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class AutoCompleteController implements Serializable {
     

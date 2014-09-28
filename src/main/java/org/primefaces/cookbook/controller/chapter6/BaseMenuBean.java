@@ -6,12 +6,12 @@ import javax.faces.event.ActionEvent;
 import java.io.Serializable;
 
 /**
- * BaseMenuController
+ * BaseMenuBean
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-public abstract class BaseMenuController implements Serializable {
+public abstract class BaseMenuBean implements Serializable {
 
 	public void save(ActionEvent ae) {
 		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", null);

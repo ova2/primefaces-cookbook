@@ -4,10 +4,15 @@ import org.primefaces.cookbook.model.chapter8.Document;
 import org.primefaces.event.DragDropEvent;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Random;
 
 /**
  * IntegrationDragDrop
@@ -15,7 +20,7 @@ import java.util.*;
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class IntegrationDragDrop implements Serializable {
 

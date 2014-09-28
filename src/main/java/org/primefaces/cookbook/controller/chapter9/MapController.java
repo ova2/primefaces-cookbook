@@ -2,20 +2,23 @@ package org.primefaces.cookbook.controller.chapter9;
 
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.map.OverlaySelectEvent;
-import org.primefaces.model.chart.MeterGaugeChartModel;
-import org.primefaces.model.map.*;
+import org.primefaces.model.map.Circle;
+import org.primefaces.model.map.DefaultMapModel;
+import org.primefaces.model.map.LatLng;
+import org.primefaces.model.map.MapModel;
+import org.primefaces.model.map.Marker;
+import org.primefaces.model.map.Polygon;
+import org.primefaces.model.map.Polyline;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * User: mertcaliskan
  * Date: 10/10/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class MapController implements Serializable {
                            

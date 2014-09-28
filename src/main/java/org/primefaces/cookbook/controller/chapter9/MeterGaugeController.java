@@ -2,8 +2,8 @@ package org.primefaces.cookbook.controller.chapter9;
 
 import org.primefaces.model.chart.MeterGaugeChartModel;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * User: mertcaliskan
  * Date: 10/17/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class MeterGaugeController implements Serializable {
 

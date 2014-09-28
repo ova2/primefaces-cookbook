@@ -3,15 +3,15 @@ package org.primefaces.cookbook.controller.chapter9;
 import org.primefaces.model.chart.BubbleChartModel;
 import org.primefaces.model.chart.BubbleChartSeries;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
  * User: mertcaliskan
  * Date: 10/3/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class BubbleChartController implements Serializable {
 

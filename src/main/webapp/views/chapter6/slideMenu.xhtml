@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -13,15 +13,15 @@
         <p:slideMenu overlay="true" trigger="btn" my="left top" at="left bottom"
                      style="width:190px;">
             <p:submenu label="CRUD Operations" icon="ui-icon-play">
-                <p:menuitem value="Save" actionListener="#{slideMenuController.save}"
+                <p:menuitem value="Save" actionListener="#{slideMenuBean.save}"
                             icon="ui-icon-disk" update="growl"/>
-                <p:menuitem value="Update" actionListener="#{slideMenuController.update}"
+                <p:menuitem value="Update" actionListener="#{slideMenuBean.update}"
                             icon="ui-icon-arrowrefresh-1-w" update="growl"/>
-                <p:menuitem value="Delete" actionListener="#{slideMenuController.delete}"
+                <p:menuitem value="Delete" actionListener="#{slideMenuBean.delete}"
                             icon="ui-icon-trash" update="growl"/>
             </p:submenu>
             <p:submenu label="Other Operations" icon="ui-icon-play">
-                <p:menuitem value="Do something" actionListener="#{slideMenuController.doSomething}"
+                <p:menuitem value="Do something" actionListener="#{slideMenuBean.doSomething}"
                             ajax="false" icon="ui-icon-check"/>
                 <p:menuitem value="Go Home" action="/views/home" ajax="false" icon="ui-icon-home"/>                
             </p:submenu>

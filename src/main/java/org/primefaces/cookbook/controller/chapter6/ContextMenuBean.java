@@ -2,27 +2,24 @@ package org.primefaces.cookbook.controller.chapter6;
 
 import org.primefaces.event.NodeSelectEvent;
 import org.primefaces.event.NodeUnselectEvent;
-
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 
 import javax.annotation.PostConstruct;
-
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
 /**
- * ContextMenuController
+ * ContextMenuBean
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @ViewScoped
-public class ContextMenuController extends BaseMenuController {
+public class ContextMenuBean extends BaseMenuBean {
 
     private TreeNode root;
     private TreeNode selectedNode;

@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -16,7 +16,7 @@
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <p:column>
-                    <p:commandButton value="Select" update=":mainForm:display" oncomplete="carDialog.show()">
+                    <p:commandButton value="Select" update=":mainForm:display" oncomplete="PF('carDialog').show()">
                         <f:setPropertyActionListener value="#{car}"
                                                      target="#{dataTableController.selectedCar}" />
                     </p:commandButton>
@@ -30,7 +30,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-                                     update=":mainForm:display" oncomplete="carDialog.show()"/>
+                                     update=":mainForm:display" oncomplete="PF('carDialog').show()"/>
                 </f:facet>
             </p:dataTable>
 
@@ -42,7 +42,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-                                     update=":mainForm:display" oncomplete="carDialog.show()"/>
+                                     update=":mainForm:display" oncomplete="PF('carDialog').show()"/>
                 </f:facet>
             </p:dataTable>
 
@@ -53,7 +53,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButtonMultiple" value="View" icon="ui-icon-search" process="multipleSelection"
-                                     update=":mainForm:displayMultiple" oncomplete="carDialogMultiple.show()"/>
+                                     update=":mainForm:displayMultiple" oncomplete="PF('carDialogMultiple').show()"/>
                 </f:facet>
             </p:dataTable>
 
@@ -65,7 +65,7 @@
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
                     <p:commandButton id="viewButtonCheckBox" value="View" icon="ui-icon-search" process="multipleSelectionCheckbox"
-                                     update=":mainForm:displayMultiple" oncomplete="carDialogMultiple.show()"/>
+                                     update=":mainForm:displayMultiple" oncomplete="PF('carDialogMultiple').show()"/>
                 </f:facet>
             </p:dataTable>
 

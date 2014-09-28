@@ -1,18 +1,17 @@
 package org.primefaces.cookbook.controller.chapter9;
 
-import org.primefaces.model.chart.MeterGaugeChartModel;
 import org.primefaces.model.chart.OhlcChartModel;
 import org.primefaces.model.chart.OhlcChartSeries;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
  * User: mertcaliskan
  * Date: 10/17/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class OhlcChartController implements Serializable {
 

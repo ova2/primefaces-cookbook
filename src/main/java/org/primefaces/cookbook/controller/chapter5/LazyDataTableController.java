@@ -5,8 +5,8 @@ import org.primefaces.cookbook.model.chapter3.Car;
 import org.primefaces.cookbook.model.chapter5.LazyCarDataModel;
 import org.primefaces.model.LazyDataModel;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,7 +16,7 @@ import java.util.List;
  * User: mertcaliskan
  * Date: 9/2/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class LazyDataTableController implements Serializable {
 

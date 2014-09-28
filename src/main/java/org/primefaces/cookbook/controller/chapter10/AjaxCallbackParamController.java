@@ -3,10 +3,10 @@ package org.primefaces.cookbook.controller.chapter10;
 import org.primefaces.context.RequestContext;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
@@ -15,7 +15,7 @@ import java.io.Serializable;
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class AjaxCallbackParamController implements Serializable {
 

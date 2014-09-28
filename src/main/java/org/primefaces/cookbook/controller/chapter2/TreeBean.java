@@ -3,23 +3,23 @@ package org.primefaces.cookbook.controller.chapter2;
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
- * TreeController
+ * TreeBean
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @ViewScoped
-public class TreeController implements Serializable {
+public class TreeBean implements Serializable {
 
 	private TreeNode root;
 
-	public TreeController() {
+	public TreeBean() {
 		root = new DefaultTreeNode("Root", null);
 
 		TreeNode node0 = new DefaultTreeNode("Tree node 0", root);

@@ -2,10 +2,10 @@ package org.primefaces.cookbook.controller.chapter3;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.primefaces.cookbook.utils.MessageUtil;
-import org.primefaces.event.DateSelectEvent;
+import org.primefaces.event.SelectEvent;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,7 +13,7 @@ import java.util.Date;
  * User: mertcaliskan
  * Date: 6/28/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class CalendarController implements Serializable {
 
@@ -35,8 +35,8 @@ public class CalendarController implements Serializable {
         return DateUtils.addDays(new Date(), 1);
     }
 
-    public void onDateSelect(DateSelectEvent event) {
-        Date date = event.getDate();
+    public void onDateSelect(SelectEvent event) {
+        Date date = (Date)event.getObject();
         MessageUtil.addInfoMessage("selected.date", date);
     }
 }

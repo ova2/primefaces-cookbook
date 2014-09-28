@@ -3,8 +3,8 @@ package org.primefaces.cookbook.controller.chapter4;
 import org.primefaces.cookbook.converter.CarConverter;
 import org.primefaces.cookbook.model.chapter3.Car;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * User: mertcaliskan
  * Date: 7/28/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class AccordionPanelController implements Serializable {
 

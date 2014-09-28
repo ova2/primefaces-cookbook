@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -10,13 +10,13 @@
 
         <p:panelMenu style="width:200px">
             <p:submenu label="Ajax Operations">
-                <p:menuitem value="Save" actionListener="#{panelMenuController.save}"
+                <p:menuitem value="Save" actionListener="#{panelMenuBean.save}"
                             icon="ui-icon-disk"/>
-                <p:menuitem value="Update" actionListener="#{panelMenuController.update}"
+                <p:menuitem value="Update" actionListener="#{panelMenuBean.update}"
                             icon="ui-icon-arrowrefresh-1-w"/>
             </p:submenu>
             <p:submenu label="Non-Ajax Operations">
-                <p:menuitem value="Delete" actionListener="#{panelMenuController.delete}"
+                <p:menuitem value="Delete" actionListener="#{panelMenuBean.delete}"
                             ajax="false" icon="ui-icon-close"/>
             </p:submenu>
             <p:separator/>

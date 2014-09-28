@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -79,16 +79,16 @@
                 </p:column>
             </p:submenu>
 
-            <p:menuitem value="Shopping Cart" onclick="wdgtShoppingCart.show();"
+            <p:menuitem value="Shopping Cart" onclick="PF('wdgtShoppingCart').show();"
                         update="shoppingCartGrp" icon="ui-icon-cart"/>
         </p:megaMenu>
 
         <p:dialog id="shoppingCart" header="Shopping Cart" widgetVar="wdgtShoppingCart">
             <h:panelGroup id="shoppingCartGrp" layout="block" style="padding:20px;">
-                <h:outputText value="#{megaMenuController.items}"/>
+                <h:outputText value="#{megaMenuBean.items}"/>
             </h:panelGroup>
             <p:commandButton value="Close" type="button"
-                             onclick="wdgtShoppingCart.hide();"/>
+                             onclick="PF('wdgtShoppingCart').hide();"/>
         </p:dialog>
 
     </ui:define>

@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -14,7 +14,7 @@
                 <p:photoCam id="photoCam" widgetVar="pc" listener="#{photoCamController.onCapture}" update="capturedImage"/>
                 <p:graphicImage id="capturedImage" value="#{photoCamController.capturedImage}" />
 
-                <p:commandButton type="button" value="Capture" onclick="pc.capture()"/>
+                <p:commandButton type="button" value="Capture" onclick="PF('pc').capture()"/>
             </h:panelGrid>
         </h:panelGrid>
     </ui:define>

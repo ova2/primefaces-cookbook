@@ -5,8 +5,8 @@ import com.lowagie.text.HeaderFooter;
 import com.lowagie.text.Phrase;
 import org.primefaces.cookbook.model.chapter5.CountryList;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * User: mertcaliskan
  * Date: 8/28/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class DataExportController implements Serializable {
 

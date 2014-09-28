@@ -5,9 +5,9 @@ import org.primefaces.cookbook.model.chapter3.Car;
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.RowEditEvent;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.model.SelectItem;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * User: mertcaliskan
  * Date: 8/8/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class DataTableController implements Serializable {
 

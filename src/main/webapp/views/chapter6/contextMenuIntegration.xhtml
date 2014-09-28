@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -10,19 +10,19 @@
 
         <p:contextMenu for="fileSystem">
             <p:menuitem value="View" update="growl"
-                        actionListener="#{contextMenuController.viewNode}"
+                        actionListener="#{contextMenuBean.viewNode}"
                         icon="ui-icon-search"/>
             <p:menuitem value="Delete" update="fileSystem"
-                        actionListener="#{contextMenuController.deleteNode}"
+                        actionListener="#{contextMenuBean.deleteNode}"
                         icon="ui-icon-close"/>
         </p:contextMenu>
 
-        <p:tree id="fileSystem" value="#{contextMenuController.root}"
+        <p:tree id="fileSystem" value="#{contextMenuBean.root}"
                 var="node" dynamic="true"
                 cache="false" selectionMode="single"
-                selection="#{contextMenuController.selectedNode}">
-            <p:ajax event="select" listener="#{contextMenuController.onNodeSelect}"/>
-            <p:ajax event="unselect" listener="#{contextMenuController.onNodeUnselect}"/>
+                selection="#{contextMenuBean.selectedNode}">
+            <p:ajax event="select" listener="#{contextMenuBean.onNodeSelect}"/>
+            <p:ajax event="unselect" listener="#{contextMenuBean.onNodeUnselect}"/>
             <p:treeNode>
                 <h:outputText value="#{node}"/>
             </p:treeNode>

@@ -6,8 +6,8 @@ import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 import org.primefaces.model.UploadedFile;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.InputStream;
 import java.io.Serializable;
 
@@ -15,7 +15,7 @@ import java.io.Serializable;
  * User: mertcaliskan
  * Date: 9/5/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class FileController implements Serializable {
 

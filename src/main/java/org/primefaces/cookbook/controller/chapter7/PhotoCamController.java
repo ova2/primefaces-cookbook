@@ -4,8 +4,8 @@ import org.primefaces.event.CaptureEvent;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 import java.io.ByteArrayInputStream;
 import java.io.Serializable;
 
@@ -13,7 +13,7 @@ import java.io.Serializable;
  * User: mertcaliskan
  * Date: 9/10/12
  */
-@ManagedBean
+@Named
 @SessionScoped
 public class PhotoCamController implements Serializable {
 

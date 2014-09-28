@@ -1,18 +1,18 @@
 package org.primefaces.cookbook.controller.chapter6;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
- * SlideMenuController
+ * SlideMenuBean
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @ViewScoped
-public class MegaMenuController implements Serializable {
+public class MegaMenuBean implements Serializable {
 
 	public String getItems() {
 		return "Bought items: ...";

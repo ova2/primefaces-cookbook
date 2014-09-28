@@ -1,7 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -11,35 +11,35 @@
         <p:menubar>
             <p:submenu label="File" icon="ui-icon-document">
                 <p:submenu label="Create New">
-                    <p:menuitem value="Folder" actionListener="#{menubarController.createFolder}"
+                    <p:menuitem value="Folder" actionListener="#{menubarBean.createFolder}"
                                 icon="ui-icon-folder-collapsed" update="growl"/>
-                    <p:menuitem value="Video File" actionListener="#{menubarController.createVideo}"
+                    <p:menuitem value="Video File" actionListener="#{menubarBean.createVideo}"
                                 icon="ui-icon-video" update="growl"/>
-                    <p:menuitem value="HTML File" actionListener="#{menubarController.createHTML}"
+                    <p:menuitem value="HTML File" actionListener="#{menubarBean.createHTML}"
                                 icon="ui-icon-script" update="growl"/>
                 </p:submenu>
                 <p:separator/>
                 <p:menuitem value="Quit" url="#"/>
             </p:submenu>
             <p:submenu label="Edit" icon="ui-icon-pencil">
-                <p:menuitem value="Cut" actionListener="#{menubarController.cut}"
+                <p:menuitem value="Cut" actionListener="#{menubarBean.cut}"
                             icon="ui-icon-scissors" update="growl"/>
-                <p:menuitem value="Copy" actionListener="#{menubarController.copy}"
+                <p:menuitem value="Copy" actionListener="#{menubarBean.copy}"
                             icon="ui-icon-copy" update="growl"/>
-                <p:menuitem value="Paste" actionListener="#{menubarController.paste}"
+                <p:menuitem value="Paste" actionListener="#{menubarBean.paste}"
                             icon="ui-icon-clipboard" update="growl"/>
             </p:submenu>
             <p:submenu label="View" icon="ui-icon-pencil">
-                <p:menuitem value="Zoom In" actionListener="#{menubarController.zoomIn}"
+                <p:menuitem value="Zoom In" actionListener="#{menubarBean.zoomIn}"
                             icon="ui-icon-zoomin" update="growl"/>
-                <p:menuitem value="Zoom Out" actionListener="#{menubarController.zoomOut}"
+                <p:menuitem value="Zoom Out" actionListener="#{menubarBean.zoomOut}"
                             icon="ui-icon-zoomout" update="growl"/>
                 <p:submenu label="View Mode" icon="ui-icon-search">
-                    <p:menuitem value="View Icons" actionListener="#{menubarController.viewIcons}"
+                    <p:menuitem value="View Icons" actionListener="#{menubarBean.viewIcons}"
                                 update="growl"/>
-                    <p:menuitem value="View Compact" actionListener="#{menubarController.viewCompact}"
+                    <p:menuitem value="View Compact" actionListener="#{menubarBean.viewCompact}"
                                 update="growl"/>
-                    <p:menuitem value="View Details" actionListener="#{menubarController.viewDetails}"
+                    <p:menuitem value="View Details" actionListener="#{menubarBean.viewDetails}"
                                 update="growl"/>
                 </p:submenu>
             </p:submenu>
@@ -49,7 +49,7 @@
                 <p:menuitem value="Home" url="http://ova2.github.com/primefaces-cookbook"
                             icon="ui-icon-home"/>
             </p:submenu>
-            <p:menuitem value="Info" action="#{menubarController.info}" ajax="false"
+            <p:menuitem value="Info" action="#{menubarBean.info}" ajax="false"
                         icon="ui-icon-help"/>
         </p:menubar>
 

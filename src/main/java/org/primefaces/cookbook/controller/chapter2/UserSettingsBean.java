@@ -5,22 +5,22 @@ import org.primefaces.cookbook.model.chapter2.Theme;
 import org.primefaces.cookbook.model.chapter2.UserPreferences;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * UserSettingsController
+ * UserSettingsBean
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@ManagedBean
+@Named
 @SessionScoped
-public class UserSettingsController implements Serializable {
+public class UserSettingsBean implements Serializable {
 
 	// Stateful Switcher (AJAX)
 
@@ -90,7 +90,7 @@ public class UserSettingsController implements Serializable {
 	private List<Theme> availableThemes;
 	private Theme currentTheme;
 
-	public UserSettingsController() {
+	public UserSettingsBean() {
 		currentTheme = AvailableThemes.instance().getTheme("home");
 		availableThemes = AvailableThemes.instance().getThemes();
 	}

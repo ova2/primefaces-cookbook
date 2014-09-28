@@ -22,13 +22,13 @@ mvn install
 The demo web application is prepared to run with Jetty 8 server. To run it with JSF MyFaces implementation, type in the console / terminal window
 
 <pre>
-mvn jetty:run
+mvn jetty:run -Pmyfaces,run-jetty
 </pre>
 
 To run it with JSF Mojarra implementation, type
 
 <pre>
-mvn jetty:run -Pmojarra
+mvn jetty:run -Pmojarra,run-jetty
 </pre>
 
 This starts Jetty server and the demo app is available under the following URL in a web browser

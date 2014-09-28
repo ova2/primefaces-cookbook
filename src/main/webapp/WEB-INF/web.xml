@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
 
     <description>PrimeFaces Cookbook Showcase</description>
 
-    <!-- Context parameters -->
+    <!-- Load custom tag into JSF web application -->
     <context-param>
         <param-name>javax.faces.FACELETS_LIBRARIES</param-name>
         <param-value>/WEB-INF/cookbook.taglib.xml</param-value>
-    </context-param>    
+    </context-param>
+
+    <!-- Context parameters - JSF -->
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Production</param-value>
     </context-param>
     <context-param>
         <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
-        <param-value>2</param-value>
-    </context-param>
-    <context-param>
-        <param-name>com.sun.faces.resourceUpdateCheckPeriod</param-name>
-        <param-value>2</param-value>
+        <param-value>-1</param-value>
     </context-param>
     <context-param>
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
@@ -29,6 +28,12 @@
     <context-param>
         <param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
         <param-value>true</param-value>
+    </context-param>
+
+    <!-- Context parameters - Mojarra -->
+    <context-param>
+        <param-name>com.sun.faces.resourceUpdateCheckPeriod</param-name>
+        <param-value>-1</param-value>
     </context-param>
     <context-param>
         <param-name>com.sun.faces.allowTextChildren</param-name>
@@ -42,14 +47,18 @@
         <param-name>com.sun.faces.enableMissingResourceLibraryDetection</param-name>
         <param-value>true</param-value>
     </context-param>
+
+    <!-- Context parameters - Primefaces & Extensions -->
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>#{userSettingsController.currentTheme.name}</param-value>
+        <param-value>#{userSettingsBean.currentTheme.name}</param-value>
     </context-param>
 
+    <!--
     <listener>
-        <listener-class>${jsf.startupListener}</listener-class>
+        <listener-class>${jsf-listener}</listener-class>
     </listener>
+    -->
 
     <!-- Character Encoding Filter -->
     <filter>
@@ -69,18 +78,6 @@
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>*.jsf</url-pattern>
-    </filter-mapping>
-
-    <!-- PrimeFaces FileUpload Filter -->
-    <filter>
-        <filter-name>PrimeFaces FileUpload Filter</filter-name>
-        <filter-class>
-            org.primefaces.webapp.filter.FileUploadFilter
-        </filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>PrimeFaces FileUpload Filter</filter-name>
-        <servlet-name>Faces Servlet</servlet-name>
     </filter-mapping>
 
     <!-- Faces Servlet -->
@@ -108,4 +105,32 @@
         <extension>*</extension>
         <mime-type>image/png</mime-type>
     </mime-mapping>
-</web-app>
+    <mime-mapping>
+        <extension>xhtml</extension>
+        <mime-type>application/xhtml+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>eot</extension>
+        <mime-type>application/vnd.ms-fontobject</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>otf</extension>
+        <mime-type>font/opentype</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ttf</extension>
+        <mime-type>application/x-font-ttf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>woff</extension>
+        <mime-type>application/x-font-woff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ico</extension>
+        <mime-type>image/x-icon</mime-type>
+    </mime-mapping>
+</web-app>        

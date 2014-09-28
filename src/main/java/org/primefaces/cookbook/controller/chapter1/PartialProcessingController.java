@@ -1,8 +1,8 @@
 package org.primefaces.cookbook.controller.chapter1;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.Map;
  * User: mertcaliskan
  * Date: 6/21/12
  */
-@ManagedBean
+@Named
 @ViewScoped
 public class PartialProcessingController implements Serializable {
     
