@@ -19,7 +19,7 @@ You can now explore the source code with samples, compile and run the project. T
 mvn install
 </pre>
 
-The WAR file is located in the project root folder below the <tt>target<tt> folder. The demo web application is prepared to run with PrimeFaces 5.2 and JSF 2.2.
+The WAR file is located in the project root folder below the <tt>target</tt> folder. The demo web application is prepared to run with PrimeFaces 5.2 and JSF 2.2.
 
 You can deploy the WAR file on every Servlet 3.x compatible application server such as [http://wildfly.org JBoss WildFly] or [http://tomee.apache.org/apache-tomee.html Apache TomEE]. 
 
