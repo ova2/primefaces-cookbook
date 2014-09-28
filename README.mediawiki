@@ -1,4 +1,6 @@
-== Getting Started with PrimeFaces Cookbook (Second Edition) ==
+PrimeFaces Cookbook (Second Edition)
+
+== Getting Started ==
 
 === Prerequisites ===
 
