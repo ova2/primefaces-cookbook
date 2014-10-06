@@ -6,13 +6,11 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h3 style="margin-top:0">Stateful Theme Switcher (AJAX)</h3>
+        <h3 style="margin-top:0">Stateless Theme Switcher</h3>
 
-        <p:themeSwitcher id="statefulSwitcher1" value="#{userSettingsBean.theme}"
-                         style="width:165px" effect="fade">
+        <p:themeSwitcher style="width:165px" effect="fade">
             <f:selectItem itemLabel="Choose Theme" itemValue=""/>
             <f:selectItems value="#{userSettingsBean.themes}"/>
-            <p:ajax listener="#{userSettingsBean.saveTheme}"/>
         </p:themeSwitcher>
 
     </ui:define>

@@ -20,7 +20,8 @@
         
         <p:messages id="msgCustomStyles"/>
 
-        <h:panelGrid id="customInputStyles" columns="4" columnClasses="formLabel,formEdit,formLabel,formEdit">
+        <h:panelGrid id="customInputStyles" styleClass="customInputStyles" columns="4"
+                     columnClasses="formLabel,formEdit,formLabel,formEdit">
             <ui:include src="/views/chapter2/formElements.xhtml"/>
             <f:facet name="footer">
                 <p:commandButton value="Submit" process="customInputStyles" update="customInputStyles msgCustomStyles"/>

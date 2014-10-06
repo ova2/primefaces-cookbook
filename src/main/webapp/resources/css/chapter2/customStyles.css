@@ -1,12 +1,12 @@
-#customStyles .ui-selectonemenu {
+.customStyles .ui-selectonemenu {
     width: 157px !important;
 }
 
-#customStyles .ui-selectonemenu .ui-selectonemenu-label {
+.customStyles .ui-selectonemenu .ui-selectonemenu-label {
     width: 130px !important;
 }
 
-#customStyles .ui-tree {
+.customStyles .ui-tree {
     border: none;
     background: none;
 }

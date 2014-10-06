@@ -51,7 +51,7 @@
     <!-- Context parameters - Primefaces & Extensions -->
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>#{userSettingsBean.currentTheme.name}</param-value>
+        <param-value>#{userSettingsBean.theme.name}</param-value>
     </context-param>
 
     <!--

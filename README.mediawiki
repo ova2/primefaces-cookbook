@@ -27,7 +27,7 @@ You can deploy the WAR file on every Servlet 3.x compatible application server s
 The demo application is running under
 
 <pre>
-http://localhost:8080/primefaces-cookbook/
+http://localhost:8080/pf-cookbook/
 </pre>
 
 === Download WAR file ===

@@ -86,7 +86,7 @@
                 <version>9.3.0.M0</version>
                 <configuration>
                     <webAppConfig>
-                        <contextPath>/primefaces-cookbook</contextPath>
+                        <contextPath>/pf-cookbook</contextPath>
                         <overrideDescriptor>src/main/webapp/WEB-INF/web-overwrite.xml</overrideDescriptor>
                     </webAppConfig>
                     <webXml>${project.build.directory}/classes/WEB-INF/web.xml</webXml>

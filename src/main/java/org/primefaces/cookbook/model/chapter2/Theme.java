@@ -3,28 +3,28 @@ package org.primefaces.cookbook.model.chapter2;
 import java.io.Serializable;
 
 /**
- * Theme
+ * Model class for a theme.
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
 public class Theme implements Serializable {
 
-	private static final long serialVersionUID = 20120517L;
+	private static final long serialVersionUID = 20141005L;
 
+	private String displayName;
 	private String name;
-	private String image;
 
-	public Theme(String name, String image) {
+	public Theme(String displayName, String name) {
+		this.displayName = displayName;
 		this.name = name;
-		this.image = image;
 	}
 
-	public final String getName() {
+	public final String getDisplayName() {
+		return displayName;
+	}
+
+	public String getName() {
 		return name;
-	}
-
-	public String getImage() {
-		return image;
 	}
 }

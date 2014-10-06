@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <h3 style="margin-top:0">Stateful Theme Switcher</h3>
+
+        <p:themeSwitcher value="#{userSettingsBean.theme}" var="t"
+                         style="width:170px" effect="fade"
+                         converter="#{themeConverter}"
+                         onchange="$('#mainForm').submit()">
+            <f:selectItems value="#{userSettingsBean.availableThemes}"
+                           var="theme"
+                           itemLabel="#{theme.displayName}"
+                           itemValue="#{theme}"/>
+            <p:column>
+                <h:graphicImage library="images"
+                                name="themes/#{t.name}.png"/>
+            </p:column>
+            <p:column>
+                #{t.displayName}
+            </p:column>
+        </p:themeSwitcher>
+        
+        <style type="text/css">
+            .ui-selectonemenu-panel .ui-selectonemenu-table td {
+                border: none;
+            }
+        </style>
+    </ui:define>
+</ui:composition>

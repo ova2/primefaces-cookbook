@@ -10,18 +10,17 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 
-
 /**
  * BookController
  *
- * @author  Oleg Varaksin / last modified by $Author: $
+ * @author Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
 @Named
 @SessionScoped
 public class BookController implements Serializable {
 
-    private static final long serialVersionUID = 20121705L;
+    private static final long serialVersionUID = 20141005L;
 
     private static final String NODE_TYPE = "chapteritem";
 
@@ -57,184 +56,183 @@ public class BookController implements Serializable {
 
     private void constructChapter1(TreeNode chapter1) {
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Your first page with Primefaces Component", "chapter1/yourFirstPage.xhtml"), chapter1);
+                new BookTreeNode("Your first page with Primefaces Component", "chapter1/yourFirstPage.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
-            chapter1);
+                new BookTreeNode("Internationalization of the Faces Messages", "chapter1/internationalization.xhtml"),
+                chapter1);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic Partial Page Rendering", "chapter1/basicPPR.xhtml"),
-            chapter1);
+                chapter1);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Update Component in Different Naming Container",
-                "chapter1/componentInDifferentNamingContainer.xhtml"), chapter1);
+                new BookTreeNode("Update Component in Different Naming Container",
+                        "chapter1/componentInDifferentNamingContainer.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Partial Processing", "chapter1/partialProcessing.xhtml"),
-            chapter1);
+                chapter1);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"), chapter1);
+                new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Localization with Resources", "chapter1/localizationWithResources.xhtml"), chapter1);
+                new BookTreeNode("Localization with Resources", "chapter1/localizationWithResources.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Improved Resource Ordering", "chapter1/resourceOrdering.xhtml"), chapter1);
+                new BookTreeNode("Improved Resource Ordering", "chapter1/resourceOrdering.xhtml"), chapter1);
     }
 
     private void constructChapter2(TreeNode chapter2) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Customizing theme styles", "chapter2/customThemeStyles.xhtml"),
-            chapter2);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Customizing default theme styles", "chapter2/customThemeStyles.xhtml"),
+                chapter2);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Customizing default styles on input components", "chapter2/customInputStyles.xhtml"),
-            chapter2);
+                new BookTreeNode("Customizing default styles on input components", "chapter2/customInputStyles.xhtml"),
+                chapter2);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Default stateless theme switcher (Client-side)", "chapter2/stdThemeSwitcher.xhtml"),
-            chapter2);
+                new BookTreeNode("Stateless theme switcher", "chapter2/statelessThemeSwitcher.xhtml"),
+                chapter2);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Stateful theme switcher (AJAX)", "chapter2/altThemeSwitcher1.xhtml"), chapter2);
+                new BookTreeNode("Stateful theme switcher", "chapter2/statefulThemeSwitcher.xhtml"), chapter2);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Stateful theme switcher (Full page refresh)", "chapter2/altThemeSwitcher2.xhtml"),
-            chapter2);
+                new BookTreeNode("fontAwesome", "chapter2/fontAwesome.xhtml"), chapter2);
     }
 
     private void constructChapter3(TreeNode chapter3) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Formatted input with InputMask", "chapter3/inputMask.xhtml"),
-            chapter3);
+                chapter3);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Auto Suggestion with AutoComplete", "chapter3/autoComplete.xhtml"), chapter3);
+                new BookTreeNode("Auto Suggestion with AutoComplete", "chapter3/autoComplete.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Usable Features of InputTextArea", "chapter3/inputTextArea.xhtml"), chapter3);
+                new BookTreeNode("Usable Features of InputTextArea", "chapter3/inputTextArea.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("SelectBooleanCheckbox and SelectManyCheckbox",
-                "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"), chapter3);
+                new BookTreeNode("SelectBooleanCheckbox and SelectManyCheckbox",
+                        "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Basic and Advanced Calendar Scenarios", "chapter3/calendar.xhtml"), chapter3);
+                new BookTreeNode("Basic and Advanced Calendar Scenarios", "chapter3/calendar.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Spinner - Different ways to provide input", "chapter3/spinner.xhtml"), chapter3);
+                new BookTreeNode("Spinner - Different ways to provide input", "chapter3/spinner.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Slider - Different ways to provide input", "chapter3/slider.xhtml"), chapter3);
+                new BookTreeNode("Slider - Different ways to provide input", "chapter3/slider.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Rich Text Editing with the Editor", "chapter3/editor.xhtml"),
-            chapter3);
+                chapter3);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Advanced Editing with in-place Editor", "chapter3/inPlaceEditor.xhtml"), chapter3);
+                new BookTreeNode("Advanced Editing with in-place Editor", "chapter3/inPlaceEditor.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Enhanced Password Input", "chapter3/password.xhtml"),
-            chapter3);
+                chapter3);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Star Based Rating Input", "chapter3/rating.xhtml"), chapter3);
     }
 
     private void constructChapter4(TreeNode chapter4) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Grouping content with Standard Panel", "chapter4/panel.xhtml"),
-            chapter4);
+                chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Panel Grid with colspan and rowspan support", "chapter4/panelGrid.xhtml"), chapter4);
+                new BookTreeNode("Panel Grid with colspan and rowspan support", "chapter4/panelGrid.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Vertical Stacked Panels with Accordion", "chapter4/accordionPanel.xhtml"), chapter4);
+                new BookTreeNode("Vertical Stacked Panels with Accordion", "chapter4/accordionPanel.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Displaying overflowed content with ScrollPanel", "chapter4/scrollPanel.xhtml"), chapter4);
+                new BookTreeNode("Displaying overflowed content with ScrollPanel", "chapter4/scrollPanel.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Working with Tabbed Panel", "chapter4/tabView.xhtml"),
-            chapter4);
+                chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Grouping Buttons and More with Toolbar", "chapter4/toolbar.xhtml"), chapter4);
+                new BookTreeNode("Grouping Buttons and More with Toolbar", "chapter4/toolbar.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Simulating Portal Environment with Dashboard", "chapter4/dashboard.xhtml"), chapter4);
+                new BookTreeNode("Simulating Portal Environment with Dashboard", "chapter4/dashboard.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Full Page Layout", "chapter4/fullPageLayout.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Element Layout with AJAX Listeners", "chapter4/elementLayout.xhtml"), chapter4);
+                new BookTreeNode("Element Layout with AJAX Listeners", "chapter4/elementLayout.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Nested layout / layout in layout", "chapter4/nestedLayout.xhtml"), chapter4);
+                new BookTreeNode("Nested layout / layout in layout", "chapter4/nestedLayout.xhtml"), chapter4);
     }
 
     private void constructChapter5(TreeNode chapter5) {
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Selecting rows in DataTable", "chapter5/dataTableSelectRow.xhtml"), chapter5);
+                new BookTreeNode("Selecting rows in DataTable", "chapter5/dataTableSelectRow.xhtml"), chapter5);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Sorting and Filtering data in DataTable", "chapter5/dataTableSortFilter.xhtml"),
-            chapter5);
+                new BookTreeNode("Sorting and Filtering data in DataTable", "chapter5/dataTableSortFilter.xhtml"),
+                chapter5);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("In-cell editing with DataTable", "chapter5/dataTableInCellEdit.xhtml"), chapter5);
+                new BookTreeNode("In-cell editing with DataTable", "chapter5/dataTableInCellEdit.xhtml"), chapter5);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Conditional Coloring in DataTable", "chapter5/dataTableColoring.xhtml"), chapter5);
+                new BookTreeNode("Conditional Coloring in DataTable", "chapter5/dataTableColoring.xhtml"), chapter5);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Handling millions of data - LazyDataModel", "chapter5/dataTableLazyDataModel.xhtml"),
-            chapter5);
+                new BookTreeNode("Handling millions of data - LazyDataModel", "chapter5/dataTableLazyDataModel.xhtml"),
+                chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with DataList", "chapter5/dataList.xhtml"),
-            chapter5);
+                chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with PickList", "chapter5/pickList.xhtml"),
-            chapter5);
+                chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with OrderList", "chapter5/orderList.xhtml"),
-            chapter5);
+                chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Tree", "chapter5/tree.xhtml"), chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with TreeTable", "chapter5/treeTable.xhtml"),
-            chapter5);
+                chapter5);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Exporting data in various formats", "chapter5/dataExport.xhtml"), chapter5);
+                new BookTreeNode("Exporting data in various formats", "chapter5/dataExport.xhtml"), chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Carousel", "chapter5/carousel.xhtml"),
-            chapter5);
+                chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Ring", "chapter5/ring.xhtml"), chapter5);
     }
 
     private void constructChapter6(TreeNode chapter6) {
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"), chapter6);
+                new BookTreeNode("Dynamic and static positioned menus", "chapter6/positionedMenus.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Creating programmatic menu", "chapter6/programmaticMenu.xhtml"), chapter6);
+                new BookTreeNode("Creating programmatic menu", "chapter6/programmaticMenu.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Context menu with nested items", "chapter6/contextMenu.xhtml"),
-            chapter6);
+                chapter6);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Context menu integration", "chapter6/contextMenuIntegration.xhtml"), chapter6);
+                new BookTreeNode("Context menu integration", "chapter6/contextMenuIntegration.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Slide Menu - menu in iPod style", "chapter6/slideMenu.xhtml"),
-            chapter6);
+                chapter6);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Tiered Menu - submenus in nested overlays", "chapter6/tieredMenu.xhtml"), chapter6);
+                new BookTreeNode("Tiered Menu - submenus in nested overlays", "chapter6/tieredMenu.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mega Menu - multi-column menu", "chapter6/megaMenu.xhtml"),
-            chapter6);
+                chapter6);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("PanelMenu - hybrid of accordion and tree", "chapter6/panelMenu.xhtml"), chapter6);
+                new BookTreeNode("PanelMenu - hybrid of accordion and tree", "chapter6/panelMenu.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Accessing commands via Menubar", "chapter6/menubar.xhtml"),
-            chapter6);
+                chapter6);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Displaying checkboxes in overlay menu", "chapter6/checkboxMenu.xhtml"), chapter6);
+                new BookTreeNode("Displaying checkboxes in overlay menu", "chapter6/checkboxMenu.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dock menu for Mac OS fans", "chapter6/dockMenu.xhtml"),
-            chapter6);
+                chapter6);
     }
 
     private void constructChapter7(TreeNode chapter7) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic File Upload", "chapter7/fileUploadBasic.xhtml"),
-            chapter7);
+                chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Multiple File Upload", "chapter7/fileUploadMultiple.xhtml"),
-            chapter7);
+                chapter7);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Filtering File Types for File Upload", "chapter7/fileUploadFiltering.xhtml"), chapter7);
+                new BookTreeNode("Filtering File Types for File Upload", "chapter7/fileUploadFiltering.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Limiting File Size for File Upload", "chapter7/fileUploadSizeLimit.xhtml"), chapter7);
+                new BookTreeNode("Limiting File Size for File Upload", "chapter7/fileUploadSizeLimit.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Client Side Callback for File Upload", "chapter7/fileUploadCallback.xhtml"), chapter7);
+                new BookTreeNode("Client Side Callback for File Upload", "chapter7/fileUploadCallback.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Uploading File with Drag & Drop", "chapter7/fileUploadDND.xhtml"), chapter7);
+                new BookTreeNode("Uploading File with Drag & Drop", "chapter7/fileUploadDND.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Downloading Files", "chapter7/fileDownload.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Cropping Images", "chapter7/cropImage.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Displaying Collection of Images", "chapter7/displayImageCollection.xhtml"), chapter7);
+                new BookTreeNode("Displaying Collection of Images", "chapter7/displayImageCollection.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Displaying Collection of Images 2 ", "chapter7/displayImageCollection2.xhtml"), chapter7);
+                new BookTreeNode("Displaying Collection of Images 2 ", "chapter7/displayImageCollection2.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Capturing Images with PhotoCam", "chapter7/captureImage.xhtml"), chapter7);
+                new BookTreeNode("Capturing Images with PhotoCam", "chapter7/captureImage.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Comparing Images", "chapter7/compareImage.xhtml"), chapter7);
     }
 
     private void constructChapter8(TreeNode chapter8) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Making component Draggable", "chapter8/draggable.xhtml"),
-            chapter8);
+                chapter8);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Restricting dragging by axis, grid and containment", "chapter8/advancedDraggable.xhtml"),
-            chapter8);
+                new BookTreeNode("Restricting dragging by axis, grid and containment", "chapter8/advancedDraggable.xhtml"),
+                chapter8);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Snapping to edges of near elements", "chapter8/snapping.xhtml"), chapter8);
+                new BookTreeNode("Snapping to edges of near elements", "chapter8/snapping.xhtml"), chapter8);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Defining droppable targets", "chapter8/droppable.xhtml"),
-            chapter8);
+                chapter8);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Restricting dropping by tolerance and acceptance", "chapter8/advancedDroppable.xhtml"),
-            chapter8);
+                new BookTreeNode("Restricting dropping by tolerance and acceptance", "chapter8/advancedDroppable.xhtml"),
+                chapter8);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("AJAX enhanced drag & drop", "chapter8/ajaxDragDrop.xhtml"),
-            chapter8);
+                chapter8);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Integrating drag & drop with data iteration components",
-                "chapter8/dragDropIntegration.xhtml"), chapter8);
+                new BookTreeNode("Integrating drag & drop with data iteration components",
+                        "chapter8/dragDropIntegration.xhtml"), chapter8);
     }
 
     private void constructChapter9(TreeNode chapter9) {
@@ -242,52 +240,52 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bar", "chapter9/barChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Pie", "chapter9/pieChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bubble", "chapter9/bubbleChart.xhtml"),
-            chapter9);
+                chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Donut", "chapter9/donutChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Meter Gauge", "chapter9/meterGaugeChart.xhtml"),
-            chapter9);
+                chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with OHLC", "chapter9/ohlcChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Live Data updating of charts with polling", "chapter9/pollingChart.xhtml"), chapter9);
+                new BookTreeNode("Live Data updating of charts with polling", "chapter9/pollingChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Interacting with charts by AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
+                new BookTreeNode("Interacting with charts by AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Creating dynamic image streaming programmatically", "chapter9/dynaImage.xhtml"),
-            chapter9);
+                new BookTreeNode("Creating dynamic image streaming programmatically", "chapter9/dynaImage.xhtml"),
+                chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mapping with Google Maps", "chapter9/map.xhtml"), chapter9);
     }
 
     private void constructChapter10(TreeNode chapter10) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Power of PrimeFaces selectors", "chapter10/pfs.xhtml"),
-            chapter10);
+                chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Programmatic updating and scrolling with RequestContext",
-                "chapter10/requestContext.xhtml"), chapter10);
+                new BookTreeNode("Programmatic updating and scrolling with RequestContext",
+                        "chapter10/requestContext.xhtml"), chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Two ways to trigger JavaScript execution on server side",
-                "chapter10/javaScriptExec.xhtml"), chapter10);
+                new BookTreeNode("Two ways to trigger JavaScript execution on server side",
+                        "chapter10/javaScriptExec.xhtml"), chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Adding AJAX callbacks parameters - validation within dialog",
-                "chapter10/ajaxCallbacks.xhtml"), chapter10);
+                new BookTreeNode("Adding AJAX callbacks parameters - validation within dialog",
+                        "chapter10/ajaxCallbacks.xhtml"), chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Polling - sending of periodical AJAX requests", "chapter10/polling.xhtml"), chapter10);
+                new BookTreeNode("Polling - sending of periodical AJAX requests", "chapter10/polling.xhtml"), chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Blocking page pieces during long-running AJAX calls", "chapter10/blockUI.xhtml"),
-            chapter10);
+                new BookTreeNode("Blocking page pieces during long-running AJAX calls", "chapter10/blockUI.xhtml"),
+                chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Remembering current menu selection", "chapter10/rememberMenu.xhtml"), chapter10);
+                new BookTreeNode("Remembering current menu selection", "chapter10/rememberMenu.xhtml"), chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Controlling form submitting by DefaultCommand", "chapter10/defaultCommand.xhtml"),
-            chapter10);
+                new BookTreeNode("Controlling form submitting by DefaultCommand", "chapter10/defaultCommand.xhtml"),
+                chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Clever focus management in forms", "chapter10/focusManagement.xhtml"), chapter10);
+                new BookTreeNode("Clever focus management in forms", "chapter10/focusManagement.xhtml"), chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Layout pitfalls with menus and dialogs", "chapter10/layoutPitfalls.xhtml"), chapter10);
+                new BookTreeNode("Layout pitfalls with menus and dialogs", "chapter10/layoutPitfalls.xhtml"), chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Targetable messages with severity levels", "chapter10/targetableMessages.xhtml"),
-            chapter10);
+                new BookTreeNode("Targetable messages with severity levels", "chapter10/targetableMessages.xhtml"),
+                chapter10);
         new DefaultTreeNode(NODE_TYPE,
-            new BookTreeNode("Leveraging Schedule lazy loading feature", "chapter10/scheduleLazyLoad.xhtml"), chapter10);
+                new BookTreeNode("Leveraging Schedule lazy loading feature", "chapter10/scheduleLazyLoad.xhtml"), chapter10);
     }
 
     public TreeNode getRoot() {
@@ -317,6 +315,6 @@ public class BookController implements Serializable {
 
         FacesContext fc = FacesContext.getCurrentInstance();
         fc.getApplication().getNavigationHandler().handleNavigation(fc, "null",
-            "/views/" + ((BookTreeNode) event.getTreeNode().getData()).getView() + "?faces-redirect=true");
+                "/views/" + ((BookTreeNode) event.getTreeNode().getData()).getView() + "?faces-redirect=true");
     }
 }

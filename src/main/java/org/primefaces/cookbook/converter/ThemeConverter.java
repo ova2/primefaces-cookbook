@@ -1,12 +1,16 @@
 package org.primefaces.cookbook.converter;
 
-import org.primefaces.cookbook.model.chapter2.AvailableThemes;
+import org.primefaces.cookbook.controller.chapter2.UserSettingsBean;
 import org.primefaces.cookbook.model.chapter2.Theme;
 
+import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
-import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * ThemeConverter
@@ -14,11 +18,22 @@ import javax.faces.convert.FacesConverter;
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
  */
-@FacesConverter("org.primefaces.cookbook.converter.ThemeConverter")
-public class ThemeConverter implements Converter {
+@Named
+@SessionScoped
+public class ThemeConverter implements Serializable, Converter {
+    
+    @Inject
+    private UserSettingsBean userSettingsBean;
 
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
-		return AvailableThemes.instance().getTheme(value);
+        List<Theme> themes = userSettingsBean.getAvailableThemes();
+        for (Theme theme : themes) {
+            if (theme.getName().equals(value)) {
+                return theme;
+            }
+        }
+        
+        return null;
 	}
 
 	public String getAsString(FacesContext context, UIComponent component, Object value) {
