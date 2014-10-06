@@ -87,7 +87,7 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Stateful theme switcher", "chapter2/statefulThemeSwitcher.xhtml"), chapter2);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("fontAwesome", "chapter2/fontAwesome.xhtml"), chapter2);
+                new BookTreeNode("Font Awesome", "chapter2/fontAwesome.xhtml"), chapter2);
     }
 
     private void constructChapter3(TreeNode chapter3) {

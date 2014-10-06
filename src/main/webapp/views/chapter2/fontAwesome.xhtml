@@ -5,9 +5,36 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
+        <h:outputStylesheet name="webjars/font-awesome/4.2.0/css/font-awesome.css"/>
 
         <h3 style="margin-top:0">Integrating FontAwesome with PrimeFaces</h3>
 
+        <p:commandButton value="Area Chart" icon="fa fa-area-chart"
+                         style="margin-right:10px;"/>
+        <p:commandButton value="Bar Chart" icon="fa fa-bar-chart"/>
         
+        <p/>
+        
+        <p:commandLink style="margin-right:15px;">
+            <i class="fa fa-linux"/>
+            <h:outputText value="Linux" style="margin-left:5px;"/>
+        </p:commandLink>
+        <p:commandLink>
+            <i class="fa fa-windows"/>
+            <h:outputText value="Windows" style="margin-left:5px;"/>
+        </p:commandLink>
+        
+        <p/>
+        
+        <p:selectBooleanButton onLabel="Bus" offLabel="Taxi"
+                               onIcon="fa fa-bus" offIcon="fa fa-taxi"
+                               style="width:80px"/>
+
+        <style type="text/css">
+            .ui-icon.fa {
+                text-indent: 0;
+                margin-top: -6px;
+            }
+        </style>
     </ui:define>
 </ui:composition>
