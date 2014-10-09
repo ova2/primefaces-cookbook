@@ -187,8 +187,6 @@ public class BookController implements Serializable {
                 chapter6);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Displaying checkboxes in overlay menu", "chapter6/checkboxMenu.xhtml"), chapter6);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Dock menu for Mac OS fans", "chapter6/dockMenu.xhtml"),
-                chapter6);
     }
 
     private void constructChapter7(TreeNode chapter7) {

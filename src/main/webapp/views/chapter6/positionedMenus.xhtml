@@ -14,20 +14,31 @@
             <p:submenu label="JavaScript Libraries">
                 <p:menuitem value="jQuery" url="http://jquery.com"/>
                 <p:menuitem value="Yahoo UI" url="http://yuilibrary.com"/>
-                <p:menuitem value="Prototype" url="http://prototypejs.org"/>
+                <p:menuitem value="Prototype"
+                            url="http://prototypejs.org"/>
             </p:submenu>
             <p:submenu label="Operations">
-                <p:menuitem value="Save" actionListener="#{positionedMenuBean.save}" update="growl"/>
-                <p:menuitem value="Update" actionListener="#{positionedMenuBean.update}" update="growl"/>
-                <p:menuitem value="Delete" actionListener="#{positionedMenuBean.delete}" update="growl"/>
+                <p:menuitem value="Save"
+                            actionListener="#{positionedMenuBean.save}"
+                            update="growl"/>
+                <p:menuitem value="Update"
+                            actionListener="#{positionedMenuBean.update}"
+                            update="growl"/>
+                <p:menuitem value="Delete"
+                            actionListener="#{positionedMenuBean.delete}"
+                            update="growl"/>
             </p:submenu>
         </p:menu>
 
         <h3 style="margin-top:20px">Dynamic menu</h3>
 
         <p:menu overlay="true" trigger="btn" my="left top" at="bottom left">
-            <p:menuitem value="Do something (ajax)" action="#{positionedMenuBean.doSomething}" update="growl"/>
-            <p:menuitem value="Do something (non ajax)" action="#{positionedMenuBean.doSomething}" ajax="false"/>
+            <p:menuitem value="Do something (ajax)"
+                        action="#{positionedMenuBean.doSomething}"
+                        update="growl"/>
+            <p:menuitem value="Do something (non ajax)"
+                        action="#{positionedMenuBean.doSomething}"
+                        ajax="false"/>
             <p:menuitem value="Navigate" url="http://primefaces.org"/>
         </p:menu>
 
