@@ -67,7 +67,9 @@ public class ContextMenuBean extends BaseMenuBean {
             return;
         }
 
-        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Selected", selectedNode.getData().toString());
+        FacesMessage msg = new FacesMessage(
+            FacesMessage.SEVERITY_INFO,
+            "Selected", selectedNode.getData().toString());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
