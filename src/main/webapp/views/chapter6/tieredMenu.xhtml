@@ -7,25 +7,25 @@
     <ui:define name="chapterItem">
 
         <p:growl id="growl"/>
-        
+
         <h3 style="margin-top:0">Default TieredMenu</h3>
-        
+
         <p:tieredMenu style="width:190px;">
             <ui:include src="/views/chapter6/tieredMenuStructure.xhtml"/>
         </p:tieredMenu>
-        
+
         <h3 style="margin-top:20px">TieredMenu without autoDisplay</h3>
-        
+
         <p:tieredMenu autoDisplay="false" style="width:190px;">
             <ui:include src="/views/chapter6/tieredMenuStructure.xhtml"/>
         </p:tieredMenu>
-        
+
         <h3 style="margin-top:20px">TieredMenu on Overlay</h3>
-        
+
         <p:commandButton id="btn" value="Show Tiered Menu" type="button"/>
-        
-        <p:tieredMenu overlay="true" trigger="btn" my="left top" at="left bottom"
-                      style="width:190px;">
+
+        <p:tieredMenu overlay="true" trigger="btn"
+                      my="left top" at="left bottom" style="width:190px;">
             <ui:include src="/views/chapter6/tieredMenuStructure.xhtml"/>
         </p:tieredMenu>
 

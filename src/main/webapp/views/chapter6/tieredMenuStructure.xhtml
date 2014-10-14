@@ -3,26 +3,33 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <p:submenu label="CRUD Operations" icon="ui-icon-play">
-        <p:menuitem value="Save" actionListener="#{tieredMenuBean.save}"
+        <p:menuitem value="Save"
+                    actionListener="#{tieredMenuBean.save}"
                     icon="ui-icon-disk" update="growl"/>
-        <p:menuitem value="Update" actionListener="#{tieredMenuBean.update}"
+        <p:menuitem value="Update"
+                    actionListener="#{tieredMenuBean.update}"
                     icon="ui-icon-arrowrefresh-1-w" update="growl"/>
-        <p:menuitem value="Delete" actionListener="#{tieredMenuBean.delete}"
+        <p:menuitem value="Delete"
+                    actionListener="#{tieredMenuBean.delete}"
                     icon="ui-icon-trash" update="growl"/>
     </p:submenu>
     <p:submenu label="Other Operations" icon="ui-icon-play">
-        <p:menuitem value="Do something" actionListener="#{tieredMenuBean.doSomething}"
+        <p:menuitem value="Do something"
+                    actionListener="#{tieredMenuBean.doSomething}"
                     ajax="false" icon="ui-icon-check"/>
-        <p:menuitem value="Go Home" action="/views/home" ajax="false" icon="ui-icon-home"/>
+        <p:menuitem value="Go Home" action="/views/home"
+                    ajax="false" icon="ui-icon-home"/>
     </p:submenu>
     <p:submenu label="JSF Links" icon="ui-icon-extlink">
         <p:submenu label="JSF Components">
             <p:menuitem value="PrimeFaces" url="http://primefaces.org"/>
             <p:menuitem value="PrimeFaces Extensions"
-                        url="http://code.google.com/p/primefaces-extensions"/>
-            <p:menuitem value="RichFaces" url="http://jboss.org/richfaces"/>
+                        url="http://primefaces-extensions.github.io"/>
+            <p:menuitem value="RichFaces"
+                        url="http://jboss.org/richfaces"/>
         </p:submenu>
-        <p:menuitem value="JSF API" url="http://javaserverfaces.java.net/nonav/docs/2.1"/>
+        <p:menuitem value="JSF API"
+                    url="http://javaserverfaces.java.net/nonav/docs/2.2"/>
     </p:submenu>
 
 </ui:composition>
