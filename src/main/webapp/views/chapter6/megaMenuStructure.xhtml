@@ -1,0 +1,84 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:megaMenu orientation="#{orientation}">
+        <p:submenu label="Women's Clothing" icon="ui-icon-person">
+            <p:column>
+                <p:submenu label="Shoes">
+                    <p:menuitem value="Size UK 3-5" url="#"/>
+                    <p:menuitem value="Size UK 6-8" url="#"/>
+                </p:submenu>
+                <p:submenu label="Jeans">
+                    <p:menuitem value="Curve" url="#"/>
+                    <p:menuitem value="Maternity" url="#"/>
+                    <p:menuitem value="Petites" url="#"/>
+                </p:submenu>
+                <p:submenu label="Nightwear">
+                    <p:menuitem value="Calvin Klein" url="#"/>
+                    <p:menuitem value="Curvy Kate" url="#"/>
+                </p:submenu>
+            </p:column>
+            <p:column>
+                <p:submenu label="Leggings">
+                    <p:menuitem value="Long Sleeve" url="#"/>
+                    <p:menuitem value="Short Sleeve" url="#"/>
+                </p:submenu>
+                <p:submenu label="Skirts">
+                    <p:menuitem value="American Apparel" url="#"/>
+                    <p:menuitem value="American Vintage" url="#"/>
+                    <p:menuitem value="Aqua" url="#"/>
+                    <p:menuitem value="Dagmar" url="#"/>
+                    <p:menuitem value="Osasis" url="#"/>
+                </p:submenu>
+            </p:column>
+        </p:submenu>
+    
+        <p:submenu label="Men's Clothing" icon="ui-icon-person">
+            <p:column>
+                <p:submenu label="Shoes">
+                    <p:menuitem value="Size UK 3-5" url="#"/>
+                    <p:menuitem value="Size UK 6-8" url="#"/>
+                    <p:menuitem value="Size UK 9-12" url="#"/>
+                </p:submenu>
+                <p:submenu label="T-Shirts">
+                    <p:menuitem value="Addict" url="#"/>
+                    <p:menuitem value="Diesel" url="#"/>
+                    <p:menuitem value="Edwin" url="#"/>
+                    <p:menuitem value="Sol Angeles" url="#"/>
+                    <p:menuitem value="Ted Baker" url="#"/>
+                    <p:menuitem value="The Only Son" url="#"/>
+                </p:submenu>
+            </p:column>
+            <p:column>
+                <p:submenu label="Leather Jackets">
+                    <p:menuitem value="Diesel" url="#"/>
+                    <p:menuitem value="Superdry" url="#"/>
+                </p:submenu>
+                <p:submenu label="Jeans">
+                    <p:menuitem value="Curve" url="#"/>
+                    <p:menuitem value="Maternity" url="#"/>
+                    <p:menuitem value="Petites" url="#"/>
+                </p:submenu>
+                <p:submenu label="Swimwear">
+                    <p:menuitem value="Boss Black" url="#"/>
+                    <p:menuitem value="Fred Perry" url="#"/>
+                    <p:menuitem value="G-Star" url="#"/>
+                    <p:menuitem value="Humor" url="#"/>
+                </p:submenu>
+            </p:column>
+        </p:submenu>
+    
+        <p:submenu label="Color Guide" icon="ui-icon-image">
+            <p:column>
+                <h:graphicImage library="images" name="colors.gif"/>
+            </p:column>
+        </p:submenu>
+    
+        <p:menuitem value="Shopping Cart"
+                    onclick="PF('wdgtShoppingCart').show();"
+                    update="shoppingCartGrp" icon="ui-icon-cart"/>
+    </p:megaMenu>
+
+</ui:composition>
