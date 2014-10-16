@@ -186,6 +186,8 @@ public class BookController implements Serializable {
                 chapter6);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("PanelMenu - hybrid of accordion and tree", "chapter6/panelMenu.xhtml"), chapter6);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("MenuButton - multiple items in popup", "chapter6/menuButton.xhtml"),
+                chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Accessing commands via Menubar", "chapter6/menubar.xhtml"),
                 chapter6);
         new DefaultTreeNode(NODE_TYPE,
