@@ -7,30 +7,32 @@
 
         <h3 style="margin-top:0">Simple SelectCheckboxMenu</h3>
 
-        <p:selectCheckboxMenu value="#{checkboxMenu.selectedColors}"
-                              label="Colors">
-            <f:selectItems value="#{checkboxMenu.colors}"/>
+        <p:selectCheckboxMenu label="Colors"
+                              value="#{checkboxMenuBean.selectedColors}">
+            <f:selectItems value="#{checkboxMenuBean.colors}"/>
         </p:selectCheckboxMenu>
 
         <h3 style="margin-top:20px">
             Advanced SelectCheckboxMenu with filter and converter
         </h3>
 
-        <p:selectCheckboxMenu value="#{checkboxMenu.selectedLanguages}"
-                              label="Languages" filter="true" filterText="Filter languages">
-            <f:selectItems value="#{checkboxMenu.languages}"/>
-            <f:converter converterId="org.primefaces.cookbook.converter.LocaleConverter"/>
+        <p:selectCheckboxMenu label="Languages" filter="true"
+                              value="#{checkboxMenuBean.selectedLanguages}">
+            <f:selectItems value="#{checkboxMenuBean.languages}"/>
+            <f:converter
+                    converterId="org.primefaces.cookbook.converter.LocaleConverter"/>
         </p:selectCheckboxMenu>
 
-        <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()"
+        <p:commandButton value="Submit" update="display"
+                         oncomplete="PF('dlg').show()"
                          style="margin-top:20px; display:block;"/>
 
         <p:dialog header="Selected colors and languages" widgetVar="dlg">
             <h:panelGroup id="display">
-                <p:dataList value="#{checkboxMenu.selectedColors}" var="color">
+                <p:dataList value="#{checkboxMenuBean.selectedColors}" var="color">
                     #{color}
                 </p:dataList>
-                <p:dataList value="#{checkboxMenu.selectedLanguages}" var="lang">
+                <p:dataList value="#{checkboxMenuBean.selectedLanguages}" var="lang">
                     #{lang}
                 </p:dataList>
             </h:panelGroup>

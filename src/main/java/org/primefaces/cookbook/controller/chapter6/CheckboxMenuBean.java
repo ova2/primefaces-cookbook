@@ -18,14 +18,11 @@ import java.util.Map;
  */
 @Named
 @ViewScoped
-public class CheckboxMenu implements Serializable {
+public class CheckboxMenuBean implements Serializable {
 
 	private List<SelectItem> languages;
-
 	private Map<String, String> color;
-
 	private List<Locale> selectedLanguages;
-
 	private List<String> selectedColors;
 
 	public List<SelectItem> getLanguages() {
