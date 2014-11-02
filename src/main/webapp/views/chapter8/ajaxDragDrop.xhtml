@@ -49,14 +49,17 @@
             <h:panelGroup>
                 <h:panelGroup id="order" layout="block" styleClass="ui-widget-content"
                               style="width:350px; padding:1px;">
-                    <p class="ui-widget-header" style="margin:0;padding:5px;">Order</p>
+                    <p class="ui-widget-header" style="margin:0;padding:5px;">
+                        Order
+                    </p>
 
                     <h:panelGroup layout="block" style="padding:10px;"
                                   rendered="#{empty ajaxDragDrop.orderedPizza}">
                         Please drag and drop any available pizza to order it
                     </h:panelGroup>
 
-                    <p:dataList id="orderedPizza" value="#{ajaxDragDrop.orderedPizza}" var="op"
+                    <p:dataList id="orderedPizza"
+                                value="#{ajaxDragDrop.orderedPizza}" var="op"
                                 rendered="#{not empty ajaxDragDrop.orderedPizza}">
                         <h:panelGroup id="op" styleClass="text" layout="block">
                             <f:attribute name="pizza" value="#{op}"/>
@@ -66,23 +69,25 @@
                         <p:draggable for="op" revert="true" cursor="move" scope="trash"/>
                     </p:dataList>
 
-                    <p:droppable id="drop1" for="order" accept=".pizzaimage" tolerance="touch"
-                                 activeStyleClass="ui-state-default" hoverStyleClass="ui-state-hover">
-                        <p:ajax listener="#{ajaxDragDrop.onPizzaOrder}" update="order growl"/>
+                    <p:droppable id="drop1" for="order" accept=".pizzaimage"
+                                 tolerance="touch" activeStyleClass="ui-state-default"
+                                 hoverStyleClass="ui-state-hover">
+                        <p:ajax listener="#{ajaxDragDrop.onPizzaOrder}"
+                                update="order growl"/>
                     </p:droppable>
                 </h:panelGroup>
 
-                <p:commandButton value="Send order" action="#{ajaxDragDrop.sendOrder}" update="growl"
-                                 style="margin:10px 0 20px 0;"/>
+                <p:commandButton value="Send order" action="#{ajaxDragDrop.sendOrder}"
+                                 update="growl" style="margin:10px 0 20px 0;"/>
 
                 <h:panelGroup id="trash" layout="block" styleClass="ui-widget-content"
                               style="width:350px; padding:1px;">
                     <p class="ui-widget-header" style="margin:0;padding:5px;">Trash</p>
-                    
+
                     <h:panelGroup layout="block" style="padding:10px;"
                                   rendered="#{empty ajaxDragDrop.removedPizza}">
                         Drag and drop a pizza from the ordered list to remove it
-                    </h:panelGroup>                    
+                    </h:panelGroup>
 
                     <p:dataList value="#{ajaxDragDrop.removedPizza}" var="rp"
                                 rendered="#{not empty ajaxDragDrop.removedPizza}">
@@ -92,8 +97,10 @@
                     </p:dataList>
 
                     <p:droppable id="drop2" for="trash" scope="trash" tolerance="touch"
-                                 activeStyleClass="ui-state-default" hoverStyleClass="ui-state-hover">
-                        <p:ajax listener="#{ajaxDragDrop.onPizzaRemove}" update="order trash growl"/>
+                                 activeStyleClass="ui-state-default"
+                                 hoverStyleClass="ui-state-hover">
+                        <p:ajax listener="#{ajaxDragDrop.onPizzaRemove}"
+                                update="order trash growl"/>
                     </p:droppable>
                 </h:panelGroup>
             </h:panelGroup>

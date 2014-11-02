@@ -7,13 +7,16 @@
     <ui:define name="chapterItem">
 
         <p:fieldset legend="Available Documents">
-            <p:dataGrid id="availableDocs" var="doc"
-                        value="#{integrationDragDrop.availableDocs}" columns="3">
+            <p:dataGrid id="availableDocs" columns="3" var="doc"
+                        value="#{integrationDragDrop.availableDocs}">
                 <p:column>
-                    <p:panel id="pnl" header="#{doc.title}" style="text-align:center">
-                        <h:graphicImage library="images" name="dragdrop/#{doc.extension}.png"/>
+                    <p:panel id="pnl" header="#{doc.title}"
+                             style="text-align:center">
+                        <h:graphicImage library="images"
+                                        name="dragdrop/#{doc.extension}.png"/>
                     </p:panel>
-                    <p:draggable for="pnl" revert="true" handle=".ui-panel-titlebar"
+                    <p:draggable for="pnl" revert="true"
+                                 handle=".ui-panel-titlebar"
                                  stack=".ui-panel" cursor="move"/>
                 </p:column>
             </p:dataGrid>
@@ -25,7 +28,8 @@
                               rendered="#{empty integrationDragDrop.deletedDocs}"
                               style="font-size:20px;"/>
 
-                <p:dataTable var="doc" value="#{integrationDragDrop.deletedDocs}"
+                <p:dataTable var="doc"
+                             value="#{integrationDragDrop.deletedDocs}"
                              rendered="#{not empty integrationDragDrop.deletedDocs}">
 
                     <p:column headerText="Title">
@@ -38,21 +42,24 @@
                         <h:outputText value="#{doc.creator}"/>
                     </p:column>
                     <p:column headerText="Creation Date">
-                        <h:outputText value="#{doc.creationDate}"/>
+                        <h:outputText value="#{doc.creationDate}">
+                            <f:convertDateTime pattern="dd.MM.yyyy"/>
+                        </h:outputText>
                     </p:column>
                 </p:dataTable>
             </p:outputPanel>
         </p:fieldset>
 
         <p:droppable id="droppable" for="deletedDocs" tolerance="touch"
-                     activeStyleClass="ui-state-highlight" datasource="availableDocs">
+                     activeStyleClass="ui-state-highlight"
+                     datasource="availableDocs">
             <p:ajax listener="#{integrationDragDrop.onDocumentDrop}"
                     update="dropArea availableDocs"/>
         </p:droppable>
 
     </ui:define>
-    
+
     <ui:define name="appResources">
         <h:outputStylesheet library="css" name="chapter8/integrationDragDrop.css"/>
-    </ui:define>    
+    </ui:define>
 </ui:composition>
