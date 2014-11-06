@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/templates/masterLayout.xhtml">
+
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Partial Process and Update with Fragment component</h3>
+
+        <p:panel header="User Registration">
+            <p:fragment autoUpdate="true">
+                <p:fieldset legend="Basic Info">
+                    <h:panelGrid columns="2">
+                        <p:outputLabel for="name" value="Name:" />
+                        <p:inputText id="name" value="#{fragmentController.userName}" required="true" />
+                        <p:commandButton value="Save" actionListener="#{fragmentController.saveUserInfo}" />
+                    </h:panelGrid>
+                </p:fieldset>
+            </p:fragment>
+            <p:fragment autoUpdate="true">
+                <p:fieldset legend="Address">
+                    <h:panelGrid columns="2">
+                        <p:outputLabel for="address" value="Address:" />
+                        <p:inputText id="address" value="#{fragmentController.address}" required="true" />
+                        <p:commandButton value="Save" actionListener="#{fragmentController.saveAddressInfo}" />
+                    </h:panelGrid>
+                </p:fieldset>
+            </p:fragment>
+        </p:panel>
+
+    </ui:define>
+</ui:composition>

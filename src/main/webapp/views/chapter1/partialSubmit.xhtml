@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Partial View Submit</h3>
+        <p:log />
+        <h:panelGrid columns="5" cellpadding="5">
+            <h:outputLabel for="name" value="Name:" style="font-weight:bold" />
+            <p:inputText id="name" />
+            <p:commandButton value="Partial Submit (False)" partialSubmit="false" process="name" />
+            <p:commandButton value="Partial Submit (True)" partialSubmit="true" process="name" />
+        </h:panelGrid>
+        <p:inputText /> <p:inputText /> <p:inputText /><br/>
+        <p:inputText /> <p:inputText /> <p:inputText /><br/>
+        <p:inputText /> <p:inputText /> <p:inputText /><br/>
+    </ui:define>
+</ui:composition>

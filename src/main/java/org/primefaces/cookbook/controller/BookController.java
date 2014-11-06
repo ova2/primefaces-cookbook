@@ -67,6 +67,10 @@ public class BookController implements Serializable {
                         "chapter1/componentInDifferentNamingContainer.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Partial Processing", "chapter1/partialProcessing.xhtml"),
                 chapter1);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Processing with Fragment", "chapter1/fragment.xhtml"),
+                chapter1);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Partial View Submit", "chapter1/partialSubmit.xhtml"),
+                chapter1);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE,

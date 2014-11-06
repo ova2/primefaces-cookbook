@@ -7,10 +7,8 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 /**
- * LocalizationController
- *
- * @author  mertcaliskan Date: 6/9/12 / last modified by $Author: $
- * @version $Revision: 1.0 $
+ * User: mertcaliskan
+ * Date: 6/21/12
  */
 @Named
 @ViewScoped

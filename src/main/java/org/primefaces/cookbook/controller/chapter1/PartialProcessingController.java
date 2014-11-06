@@ -92,28 +92,4 @@ public class PartialProcessingController implements Serializable {
     public void setCities(Map<String, String> cities) {
         this.cities = cities;
     }
-
-    public Map<String, String> getCitiesGermany() {
-        return citiesGermany;
-    }
-
-    public void setCitiesGermany(Map<String, String> citiesGermany) {
-        this.citiesGermany = citiesGermany;
-    }
-
-    public Map<String, String> getCitiesTurkey() {
-        return citiesTurkey;
-    }
-
-    public void setCitiesTurkey(Map<String, String> citiesTurkey) {
-        this.citiesTurkey = citiesTurkey;
-    }
-
-    public Map<String, Map<String, String>> getCitiesData() {
-        return citiesData;
-    }
-
-    public void setCitiesData(Map<String, Map<String, String>> citiesData) {
-        this.citiesData = citiesData;
-    }
 }
