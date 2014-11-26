@@ -1,4 +1,4 @@
-package org.primefaces.cookbook.controller.chapter10;
+package org.primefaces.cookbook.controller.chapter11;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;

@@ -1,4 +1,4 @@
-package org.primefaces.cookbook.controller.chapter10;
+package org.primefaces.cookbook.controller.chapter11;
 
 import org.primefaces.context.RequestContext;
 

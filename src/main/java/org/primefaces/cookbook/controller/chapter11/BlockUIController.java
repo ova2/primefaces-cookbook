@@ -1,4 +1,4 @@
-package org.primefaces.cookbook.controller.chapter10;
+package org.primefaces.cookbook.controller.chapter11;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;

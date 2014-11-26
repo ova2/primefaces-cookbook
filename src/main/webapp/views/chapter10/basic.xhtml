@@ -1,0 +1,82 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <p:messages id="messages"/>
+
+        <h:panelGrid id="grid" columns="2" cellpadding="3"
+                     style="margin-bottom:10px;">
+            <p:outputLabel for="text1" value="Text1"/>
+            <p:inputText id="text1" value="#{basicCsvBean.string1}"
+                         required="true" label="Text1"/>
+
+            <p:outputLabel for="text2" value="Text2"/>
+            <p:inputText id="text2" value="#{basicCsvBean.string2}"
+                         label="Text2">
+                <f:validateLength minimum="5" maximum="8"/>
+            </p:inputText>
+
+            <p:outputLabel for="text3" value="Text3"/>
+            <p:inputText id="text3" value="#{basicCsvBean.string3}"
+                         label="Text3">
+                <f:validateRegex pattern="^[\d]+$"/>
+            </p:inputText>
+
+            <p:outputLabel for="long1" value="Long1"/>
+            <p:inputText id="long1" value="#{basicCsvBean.long1}"
+                         label="Long1">
+                <f:validateLongRange minimum="5" maximum="8"/>
+            </p:inputText>
+
+            <p:outputLabel for="double1" value="Double1"/>
+            <p:inputText id="double1" value="#{basicCsvBean.double1}"
+                         label="Double1">
+                <f:validateDoubleRange minimum="5.5" maximum="8.5"/>
+            </p:inputText>
+
+            <p:outputLabel for="double2" value="Double2"/>
+            <p:inputText id="double2" value="#{basicCsvBean.double2}"
+                         label="Double2">
+                <f:convertNumber type="currency" currencySymbol="$"/>
+            </p:inputText>
+
+            <p:outputLabel for="date1" value="Date1"/>
+            <p:inputText id="date1" value="#{basicCsvBean.date1}"
+                         label="Date1">
+                <f:convertDateTime pattern="dd.MM.yyyy"/>
+            </p:inputText>
+        </h:panelGrid>
+
+        <p:commandButton validateClient="true"
+                         value="Submit (Non-Ajax)" ajax="false"
+                         style="margin-right:5px"
+                         onclick="PF('inputValuesWdgt').hide()"/>
+        <p:commandButton validateClient="true"
+                         value="Submit (Ajax)"
+                         process="grid" update="grid inputValues messages"
+                         onclick="PF('inputValuesWdgt').hide()"
+                         oncomplete="PF('inputValuesWdgt').show()"/>
+
+        <p:dialog header="Input values" closeOnEscape="true"
+                  visible="#{facesContext.postback and !facesContext.validationFailed}"
+                  widgetVar="inputValuesWdgt">
+            <h:panelGrid id="inputValues" columns="1" cellpadding="3">
+                <h:outputText value="#{basicCsvBean.string1}"/>
+                <h:outputText value="#{basicCsvBean.string2}"/>
+                <h:outputText value="#{basicCsvBean.string3}"/>
+                <h:outputText value="#{basicCsvBean.long1}"/>
+                <h:outputText value="#{basicCsvBean.double1}"/>
+                <h:outputText value="#{basicCsvBean.double2}">
+                    <f:convertNumber type="currency" currencySymbol="$"/>
+                </h:outputText>
+                <h:outputText value="#{basicCsvBean.date1}">
+                    <f:convertDateTime pattern="dd.MM.yyyy"/>
+                </h:outputText>
+            </h:panelGrid>
+        </p:dialog>
+    </ui:define>
+</ui:composition>
