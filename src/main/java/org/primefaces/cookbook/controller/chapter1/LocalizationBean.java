@@ -12,7 +12,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class LocalizationController implements Serializable {
+public class LocalizationBean implements Serializable {
 
 	private boolean selectedValue = true;
 

@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class BasicPPRController implements Serializable {
+public class BasicPPRBean implements Serializable {
 
     private String value;
     

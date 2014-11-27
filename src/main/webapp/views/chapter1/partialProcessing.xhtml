@@ -8,19 +8,19 @@
         <h3 style="margin-top:0">Partial Processing</h3>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Country: " />
-            <h:selectOneMenu id="countries" value="#{partialProcessingController.country}">
-                <f:selectItems value="#{partialProcessingController.countries}" />
-                <p:ajax listener="#{partialProcessingController.handleCountryChange}"
+            <h:selectOneMenu id="countries" value="#{partialProcessingBean.country}">
+                <f:selectItems value="#{partialProcessingBean.countries}" />
+                <p:ajax listener="#{partialProcessingBean.handleCountryChange}"
                         event="change" update="cities" process="@this"/>
             </h:selectOneMenu>
 
             <h:outputText value="City: " />
-            <h:selectOneMenu id="cities" value="#{partialProcessingController.city}">
-                <f:selectItems value="#{partialProcessingController.cities}" />
+            <h:selectOneMenu id="cities" value="#{partialProcessingBean.city}">
+                <f:selectItems value="#{partialProcessingBean.cities}" />
             </h:selectOneMenu>
 
             <h:outputText value="Email (Required Field): " />
-            <h:inputText value="#{partialProcessingController.email}" required="true" />
+            <h:inputText value="#{partialProcessingBean.email}" required="true" />
         </h:panelGrid>
     </ui:define>
 </ui:composition>
