@@ -12,7 +12,7 @@ public class BasicCsvBean implements Serializable {
     private String string1;
     private String string2;
     private String string3;
-    private Long long1;
+    private Integer int1;
     private Double double1;
     private Double double2;
     private Date date1;
@@ -41,12 +41,12 @@ public class BasicCsvBean implements Serializable {
         this.string3 = string3;
     }
 
-    public Long getLong1() {
-        return long1;
+    public Integer getInt1() {
+        return int1;
     }
 
-    public void setLong1(Long long1) {
-        this.long1 = long1;
+    public void setInt1(Integer int1) {
+        this.int1 = int1;
     }
 
     public Double getDouble1() {

@@ -26,10 +26,10 @@
                 <f:validateRegex pattern="^[\d]+$"/>
             </p:inputText>
 
-            <p:outputLabel for="long1" value="Long1"/>
-            <p:inputText id="long1" value="#{basicCsvBean.long1}"
-                         label="Long1">
-                <f:validateLongRange minimum="5" maximum="8"/>
+            <p:outputLabel for="int1" value="Integer1"/>
+            <p:inputText id="int1" value="#{basicCsvBean.int1}"
+                         label="Integer1">
+                <f:convertNumber integerOnly="true"/>
             </p:inputText>
 
             <p:outputLabel for="double1" value="Double1"/>
@@ -68,7 +68,7 @@
                 <h:outputText value="#{basicCsvBean.string1}"/>
                 <h:outputText value="#{basicCsvBean.string2}"/>
                 <h:outputText value="#{basicCsvBean.string3}"/>
-                <h:outputText value="#{basicCsvBean.long1}"/>
+                <h:outputText value="#{basicCsvBean.int1}"/>
                 <h:outputText value="#{basicCsvBean.double1}"/>
                 <h:outputText value="#{basicCsvBean.double2}">
                     <f:convertNumber type="currency" currencySymbol="$"/>
@@ -78,5 +78,10 @@
                 </h:outputText>
             </h:panelGrid>
         </p:dialog>
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputScript library="js"
+                        name="chapter10/lang_#{facesContext.viewRoot.locale.language}.js"/>
     </ui:define>
 </ui:composition>
