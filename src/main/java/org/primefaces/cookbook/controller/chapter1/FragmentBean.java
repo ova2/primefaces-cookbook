@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class FragmentController implements Serializable {
+public class FragmentBean implements Serializable {
 
     private String userName;
 

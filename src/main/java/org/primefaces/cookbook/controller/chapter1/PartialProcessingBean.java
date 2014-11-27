@@ -13,7 +13,7 @@ import java.util.Map;
  */
 @Named
 @ViewScoped
-public class PartialProcessingController implements Serializable {
+public class PartialProcessingBean implements Serializable {
     
     private String country;
     private String city;

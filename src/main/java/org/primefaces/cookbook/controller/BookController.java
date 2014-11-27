@@ -74,6 +74,8 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Localization of Calendar Component", "chapter1/localization.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Right to left language support", "chapter1/rightToLeft.xhtml"), chapter1);
+        new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Localization with Resources", "chapter1/localizationWithResources.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Improved Resource Ordering", "chapter1/resourceOrdering.xhtml"), chapter1);

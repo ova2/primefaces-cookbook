@@ -6,10 +6,10 @@
         <h:head />
         <h:body>
             <h:form id="form1">
-                <p:commandButton update=":form2:display" action="#{basicPPRController.updateValue}" value="Update" />
+                <p:commandButton update=":form2:display" action="#{basicPPRBean.updateValue}" value="Update" />
             </h:form>
             <h:form id="form2">
-                <h:outputText id="display" value="#{basicPPRController.value}"/>
+                <h:outputText id="display" value="#{basicPPRBean.value}"/>
             </h:form>
         </h:body>
     </f:view>

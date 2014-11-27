@@ -12,8 +12,8 @@
                 <p:fieldset legend="Basic Info">
                     <h:panelGrid columns="2">
                         <p:outputLabel for="name" value="Name:" />
-                        <p:inputText id="name" value="#{fragmentController.userName}" required="true" />
-                        <p:commandButton value="Save" actionListener="#{fragmentController.saveUserInfo}" />
+                        <p:inputText id="name" value="#{fragmentBean.userName}" required="true" />
+                        <p:commandButton value="Save" actionListener="#{fragmentBean.saveUserInfo}" />
                     </h:panelGrid>
                 </p:fieldset>
             </p:fragment>
@@ -21,8 +21,8 @@
                 <p:fieldset legend="Address">
                     <h:panelGrid columns="2">
                         <p:outputLabel for="address" value="Address:" />
-                        <p:inputText id="address" value="#{fragmentController.address}" required="true" />
-                        <p:commandButton value="Save" actionListener="#{fragmentController.saveAddressInfo}" />
+                        <p:inputText id="address" value="#{fragmentBean.address}" required="true" />
+                        <p:commandButton value="Save" actionListener="#{fragmentBean.saveAddressInfo}" />
                     </h:panelGrid>
                 </p:fieldset>
             </p:fragment>
