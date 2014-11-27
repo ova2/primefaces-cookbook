@@ -57,6 +57,10 @@
         <param-name>primefaces.THEME</param-name>
         <param-value>#{userSettingsBean.theme.name}</param-value>
     </context-param>
+    <context-param>
+        <param-name>primefaces.CLIENT_SIDE_VALIDATION</param-name>
+        <param-value>true</param-value>
+    </context-param>
 
     <!--
     <listener>

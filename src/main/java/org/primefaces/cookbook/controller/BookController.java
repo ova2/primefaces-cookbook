@@ -40,7 +40,8 @@ public class BookController implements Serializable {
         TreeNode chapter7 = new DefaultTreeNode(new BookTreeNode("Working with Files and Images", null), root);
         TreeNode chapter8 = new DefaultTreeNode(new BookTreeNode("Drag Me, Drop Me", null), root);
         TreeNode chapter9 = new DefaultTreeNode(new BookTreeNode("Creating Charts and Maps", null), root);
-        TreeNode chapter10 = new DefaultTreeNode(new BookTreeNode("Miscellaneous, Advanced Use Cases", null), root);
+        TreeNode chapter10 = new DefaultTreeNode(new BookTreeNode("Client Side Validation", null), root);
+        TreeNode chapter11 = new DefaultTreeNode(new BookTreeNode("Miscellaneous, Advanced Use Cases", null), root);
 
         constructChapter1(chapter1);
         constructChapter2(chapter2);
@@ -52,6 +53,7 @@ public class BookController implements Serializable {
         constructChapter8(chapter8);
         constructChapter9(chapter9);
         constructChapter10(chapter10);
+        constructChapter11(chapter11);
     }
 
     private void constructChapter1(TreeNode chapter1) {
@@ -263,38 +265,43 @@ public class BookController implements Serializable {
                 chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mapping with Google Maps", "chapter9/map.xhtml"), chapter9);
     }
-
+    
     private void constructChapter10(TreeNode chapter10) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Power of PrimeFaces selectors", "chapter10/pfs.xhtml"),
-                chapter10);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Getting started with CSV", "chapter10/basic.xhtml"),
+                chapter10);    
+    }
+
+    private void constructChapter11(TreeNode chapter11) {
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Power of PrimeFaces selectors", "chapter11/pfs.xhtml"),
+                chapter11);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Programmatic updating and scrolling with RequestContext",
-                        "chapter10/requestContext.xhtml"), chapter10);
+                        "chapter11/requestContext.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Two ways to trigger JavaScript execution on server side",
-                        "chapter10/javaScriptExec.xhtml"), chapter10);
+                        "chapter11/javaScriptExec.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Adding AJAX callbacks parameters - validation within dialog",
-                        "chapter10/ajaxCallbacks.xhtml"), chapter10);
+                        "chapter11/ajaxCallbacks.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Polling - sending of periodical AJAX requests", "chapter10/polling.xhtml"), chapter10);
+                new BookTreeNode("Polling - sending of periodical AJAX requests", "chapter11/polling.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Blocking page pieces during long-running AJAX calls", "chapter10/blockUI.xhtml"),
-                chapter10);
+                new BookTreeNode("Blocking page pieces during long-running AJAX calls", "chapter11/blockUI.xhtml"),
+                chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Remembering current menu selection", "chapter10/rememberMenu.xhtml"), chapter10);
+                new BookTreeNode("Remembering current menu selection", "chapter11/rememberMenu.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Controlling form submitting by DefaultCommand", "chapter10/defaultCommand.xhtml"),
-                chapter10);
+                new BookTreeNode("Controlling form submitting by DefaultCommand", "chapter11/defaultCommand.xhtml"),
+                chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Clever focus management in forms", "chapter10/focusManagement.xhtml"), chapter10);
+                new BookTreeNode("Clever focus management in forms", "chapter11/focusManagement.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Layout pitfalls with menus and dialogs", "chapter10/layoutPitfalls.xhtml"), chapter10);
+                new BookTreeNode("Layout pitfalls with menus and dialogs", "chapter11/layoutPitfalls.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Targetable messages with severity levels", "chapter10/targetableMessages.xhtml"),
-                chapter10);
+                new BookTreeNode("Targetable messages with severity levels", "chapter11/targetableMessages.xhtml"),
+                chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Leveraging Schedule lazy loading feature", "chapter10/scheduleLazyLoad.xhtml"), chapter10);
+                new BookTreeNode("Leveraging Schedule lazy loading feature", "chapter11/scheduleLazyLoad.xhtml"), chapter11);
     }
 
     public TreeNode getRoot() {
