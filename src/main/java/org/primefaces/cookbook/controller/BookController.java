@@ -267,8 +267,10 @@ public class BookController implements Serializable {
     }
     
     private void constructChapter10(TreeNode chapter10) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Getting started with CSV", "chapter10/basic.xhtml"),
-                chapter10);    
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic validation", "chapter10/basicCsv.xhtml"),
+                chapter10);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Instant validation", "chapter10/instantCsv.xhtml"),
+                chapter10); 
     }
 
     private void constructChapter11(TreeNode chapter11) {

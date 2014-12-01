@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <h:panelGrid columns="3" cellpadding="3">
+            <p:outputLabel for="text" value="Validation on change"/>
+            <p:inputText id="text" value="#{instantCsvBean.value1}">
+                <f:validateLength minimum="2" maximum="4"/>
+                <p:clientValidator/>
+            </p:inputText>
+            <p:message for="text"/>
+
+            <p:outputLabel for="int" value="Validation on keyup"/>
+            <p:inputText id="int" value="#{instantCsvBean.value2}">
+                <p:clientValidator event="keyup"/>
+            </p:inputText>
+            <p:message for="int"/>
+
+            <p:outputLabel for="date" value="Validation on blur"/>
+            <p:inputText id="date" value="#{instantCsvBean.value3}">
+                <f:convertDateTime pattern="dd.MM.yyyy"/>
+                <p:clientValidator event="blur"/>
+            </p:inputText>
+            <p:message for="date"/>
+        </h:panelGrid>
+
+    </ui:define>
+</ui:composition>
