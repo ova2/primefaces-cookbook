@@ -184,7 +184,7 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Context menu integration", "chapter6/contextMenuIntegration.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Breadcrumb - contextual information about page hierarchy", 
+                new BookTreeNode("Breadcrumb - contextual information about page hierarchy",
                         "chapter6/breadcrumb.xhtml"), chapter6);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Slide Menu - menu in iPod style", "chapter6/slideMenu.xhtml"),
                 chapter6);
@@ -265,12 +265,14 @@ public class BookController implements Serializable {
                 chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mapping with Google Maps", "chapter9/map.xhtml"), chapter9);
     }
-    
+
     private void constructChapter10(TreeNode chapter10) {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic validation", "chapter10/basicCsv.xhtml"),
                 chapter10);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Instant validation", "chapter10/instantCsv.xhtml"),
-                chapter10); 
+                chapter10);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Bean validation", "chapter10/bvCsv.xhtml"),
+                chapter10);
     }
 
     private void constructChapter11(TreeNode chapter11) {
