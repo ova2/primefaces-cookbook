@@ -13,5 +13,5 @@ $.extend(PrimeFaces.locales['en'].messages, {
         'Value does not match regex pattern {0}',
     
     'invalid.unicode':
-        '{0} may only contain letters, blanks, hyphen and apostrophe'
+        '{0} may only contain letters, spaces, hyphens and apostrophes'
 });
