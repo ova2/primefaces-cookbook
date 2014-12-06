@@ -10,5 +10,8 @@ $.extend(PrimeFaces.locales['en'].messages, {
     'javax.faces.validator.LengthValidator.MAXIMUM':
         '{1}: Length is greater than allowable maximum of \'{0}\'',
     'javax.faces.validator.RegexValidator.NOT_MATCHED':
-        'Value does not match regex pattern {0}'
+        'Value does not match regex pattern {0}',
+    
+    'invalid.unicode':
+        '{0} may only contain letters, blanks, hyphen and apostrophe'
 });

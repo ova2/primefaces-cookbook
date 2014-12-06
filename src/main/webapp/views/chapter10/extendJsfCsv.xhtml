@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:book="http://primefaces.org/ui/cookbook"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <h:panelGrid columns="3" cellpadding="3"
+                     style="margin-bottom:10px;">
+            <p:outputLabel for="firstName" value="First Name"/>
+            <p:inputText id="firstName"
+                         value="#{extendCsvBean.firstName}">
+                <book:validateUnicode msgparam="firstName"/>
+            </p:inputText>
+            <p:message for="firstName"/>
+        
+            <p:outputLabel for="lastName" value="Last Name"/>
+            <p:inputText id="lastName"
+                         value="#{extendCsvBean.lastName}">
+                <book:validateUnicode msgparam="lastName"/>
+            </p:inputText>
+            <p:message for="lastName"/>
+        </h:panelGrid>
+        
+        <p:commandButton validateClient="true"
+                         value="Submit" ajax="false"/>
+    </ui:define>
+
+    <ui:define name="appResources">
+        <h:outputScript library="js" name="chapter10/lang_en.js"/>
+        <h:outputScript library="js" name="chapter10/xregexp-all.js"/>
+        <h:outputScript library="js" name="chapter10/validators.js"/>
+    </ui:define>
+</ui:composition>
