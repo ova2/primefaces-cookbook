@@ -13,5 +13,7 @@ $.extend(PrimeFaces.locales['en'].messages, {
         'Value does not match regex pattern {0}',
     
     'invalid.unicode':
-        '{0} may only contain letters, spaces, hyphens and apostrophes'
+        '{0} may only contain letters, spaces, hyphens and apostrophes',
+    'invalid.cvc':
+        'Card Validation Code is invalid'
 });
