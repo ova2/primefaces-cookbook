@@ -5,7 +5,8 @@ PrimeFaces.validator['UnicodeValidator'] = {
 
     validate: function (element, value) {
         if (!this.regex.test(value)) {
-            throw PrimeFaces.util.ValidationContext.getMessage(this.MESSAGE_ID, element.data('param'));
+            throw PrimeFaces.util.ValidationContext.
+                getMessage(this.MESSAGE_ID, element.data('param'));
         }
     }
 };
@@ -14,17 +15,6 @@ PrimeFaces.validator['ValidCVC'] = {
     MESSAGE_ID: 'invalid.cvc',
 
     validate: function (element, value) {
-        // trim value
-        var val = (value != null ?
-            value.toString().replace(/^\s+|\s+$/g, "") : "");
-
-        // check if numeric
-        var isNumeric = (val.match(/^[0-9]+$/) !== null);
-        if (!isNumeric) {
-            throw PrimeFaces.util.ValidationContext.
-                getMessage(this.MESSAGE_ID);
-        }
-
         // find out selected menu value
         var forCardMenu = element.data('forcardmenu');
         var selOption = forCardMenu ?
@@ -35,10 +25,10 @@ PrimeFaces.validator['ValidCVC'] = {
         var valid = false;
         if (selOption && selOption === 'MCD') {
             // MasterCard
-            valid = val.length == 3;
+            valid = value > 0 && value.toString().length == 3;
         } else if (selOption && selOption === 'AMEX') {
             // American Express
-            valid = val.length == 4;
+            valid = value > 0 && value.toString().length == 4;
         }
 
         if (!valid) {
