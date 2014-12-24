@@ -10,9 +10,10 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class InputMaskController implements Serializable {
+public class InputMaskBean implements Serializable {
 
     private String phone;
+    private String phone2;
     private String phoneExt;
     private String productKey;
 
@@ -22,6 +23,14 @@ public class InputMaskController implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getPhone2() {
+        return phone2;
+    }
+
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
     }
 
     public String getPhoneExt() {

@@ -1,26 +1,46 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
+        <script type="text/javascript">
+            function setMask() {
+                var c = PF('cbxMask');
+                var i = PF('phoneMask');
+                if (c.isChecked()) {
+                    i.jq.mask('(99)9-9999-9999');
+                    i.jq.focus();
+                } else {
+                    i.jq.mask('(99)9999-9999');
+                    i.jq.focus();
+                }
+
+            }
+        </script>
+
         <h3 style="margin-top:0">Formatted input with InputMask</h3>
         <h:panelGrid columns="2" cellpadding="5">
-            <h:outputText value="Phone number with numeric mask" />
-            <p:inputMask value="#{inputMaskController.phone}" mask="(999) 999-9999" />
+            <h:outputText value="Phone number with numeric mask"/>
+            <p:inputMask value="#{inputMaskBean.phone}" mask="(999) 999-9999"/>
 
-            <h:outputText value="Product key with Alphabetic mask" />
-            <p:inputMask value="#{inputMaskController.productKey}" mask="a999-a9" />
+            <h:outputText value="Product key with Alphabetic mask"/>
+            <p:inputMask value="#{inputMaskBean.productKey}" mask="a999-a9"/>
 
-            <h:outputText value="Phone number with Placeholder" />
-            <p:inputMask value="#{inputMaskController.phone}" mask="(999) 999-9999" placeHolder="X" />
+            <h:outputText value="Phone number with Placeholder"/>
+            <p:inputMask value="#{inputMaskBean.phone}" mask="(999) 999-9999" slotChar="X"/>
 
-            <h:outputText value="Product key with Alphanumeric mask" />
-            <p:inputMask value="#{inputMaskController.productKey}" mask="a*-999-a999" />
+            <h:outputText value="Product key with Alphanumeric mask"/>
+            <p:inputMask value="#{inputMaskBean.productKey}" mask="a*-999-a999"/>
 
-            <h:outputText value="Phone number with optional extension" />
-            <p:inputMask value="#{inputMaskController.phoneExt}" mask="(999) 999-9999? x99999" />
+            <h:outputText value="Phone number with optional extension"/>
+            <p:inputMask value="#{inputMaskBean.phoneExt}" mask="(999) 999-9999? x99999"/>
+
+            <h:outputText value="Dynamically changing mask with a checkbox"/>
+            <h:panelGrid columns="2">
+                <p:inputMask id="phone" widgetVar="phoneMask" value="#{inputMaskBean.phone2}" mask="(99)9999-9999"/>
+                <p:selectBooleanCheckbox itemLabel="Extended Mask" onchange="setMask()" widgetVar="cbxMask"/>
+            </h:panelGrid>
         </h:panelGrid>
     </ui:define>
 </ui:composition>

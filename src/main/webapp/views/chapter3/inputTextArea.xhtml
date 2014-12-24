@@ -8,18 +8,31 @@
         <h3 style="margin-top:0">Usable Features of InputTextArea</h3>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic InputTextArea:" />
-            <p:inputTextarea value="#{inputTextAreaController.value}" />
+            <p:inputTextarea value="#{inputTextAreaBean.value}" autoResize="false" />
 
             <h:outputText value="Text Area with auto resizing:" />
-            <p:inputTextarea value="#{inputTextAreaController.value}" autoResize="true"/>
+            <p:inputTextarea value="#{inputTextAreaBean.value}" autoResize="true"/>
 
             <h:outputText value="Text Area with remaining character count:" />
             <h:panelGroup>
-                <p:inputTextarea value="#{inputTextAreaController.value}" counter="display"
+                <p:inputTextarea value="#{inputTextAreaBean.value}" counter="display"
                                  maxlength="20" counterTemplate="{0} characters remaining" />
                 <br/>
                 <h:outputText id="display" />
             </h:panelGroup>
+
+            <h:outputText value="Text Area with remaining character count: &lt;br/&gt; (with mouse paste disabled)" escape="false" />
+            <h:panelGroup>
+                <p:inputTextarea value="#{inputTextAreaBean.value}" counter="display2"
+                                 maxlength="20" counterTemplate="{0} characters remaining">
+                    <f:passThroughAttribute name="onpaste" value="return false;" />
+                </p:inputTextarea>
+                <br/>
+                <h:outputText id="display2" />
+            </h:panelGroup>
+
+            <h:outputText value="Text Area with auto complete: &lt;br/&gt; Provide at least 4 characters. &lt;br/&gt; Also try typing 'PrimeFaces'." escape="false" />
+            <p:inputTextarea completeMethod="#{inputTextAreaBean.complete}" queryDelay="500" minQueryLength="4" cols="40" />
         </h:panelGrid>
     </ui:define>
 </ui:composition>

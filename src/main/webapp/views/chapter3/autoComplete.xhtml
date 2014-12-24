@@ -9,10 +9,28 @@
         <p:growl id="growl"/>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Simple" />
-            <p:autoComplete id="simple" value="#{autoCompleteController.txt1}" completeMethod="#{autoCompleteController.complete}" />
+            <p:autoComplete id="simple" value="#{autoCompleteBean.txt1}" completeMethod="#{autoCompleteBean.complete}" />
+
+            <h:outputText value="Min Length (3)" />
+            <p:autoComplete id="minLength" value="#{autoCompleteBean.txt2}" completeMethod="#{autoCompleteBean.complete}" minQueryLength="3" />
+
+            <h:outputText value="Delay (2 sec)" />
+            <p:autoComplete id="delay" value="#{autoCompleteBean.txt3}" completeMethod="#{autoCompleteBean.complete}" queryDelay="2000" />
+
+            <h:outputText value="Force Selection" />
+            <p:autoComplete id="forceSelection" value="#{autoCompleteBean.txt4}" completeMethod="#{autoCompleteBean.complete}" forceSelection="true" />
+
+            <h:outputText value="With Drop Down" />
+            <p:autoComplete id="dropDown" value="#{autoCompleteBean.txt5}" completeMethod="#{autoCompleteBean.complete}" dropdown="true" />
+
+            <h:outputText value="Caching" />
+            <p:autoComplete id="caching" value="#{autoCompleteBean.txt6}" completeMethod="#{autoCompleteBean.complete}" cache="true" cacheTimeout="60000" />
+
+            <h:outputText value="Empty Message" />
+            <p:autoComplete id="emptyMessage" value="#{autoCompleteBean.txt7}" completeMethod="#{autoCompleteBean.completeNoFound}" emptyMessage="No item found" />
 
             <h:outputText value="POJO Support &lt;br/&gt; (Name cars like: Golf, Jetta, CC, Passat, Polo, Scirocco, Touareg)" escape="false" />
-            <p:autoComplete id="carPOJO" value="#{autoCompleteController.selectedCar}" completeMethod="#{autoCompleteController.completeCar}"
+            <p:autoComplete id="carPOJO" value="#{autoCompleteBean.selectedCar}" completeMethod="#{autoCompleteBean.completeCar}"
                             var="car" itemLabel="#{car.name}" itemValue="#{car}" forceSelection="true">
                 <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
                 <p:column>
@@ -22,13 +40,36 @@
             </p:autoComplete>
 
             <h:outputText value="Instant AJAX Selection" />
-            <p:autoComplete id="simpleItemSelect" value="#{autoCompleteController.txt1}" completeMethod="#{autoCompleteController.complete}">
-                <p:ajax event="itemSelect" listener="#{autoCompleteController.handleSelect}" update="growl" />
+            <p:autoComplete id="simpleItemSelect" value="#{autoCompleteBean.txt1}" completeMethod="#{autoCompleteBean.complete}">
+                <p:ajax event="itemSelect" listener="#{autoCompleteBean.handleSelect}" update="growl" />
             </p:autoComplete>
 
             <h:outputText value="Multiple Selection" />
-            <p:autoComplete id="multipleSelect" value="#{autoCompleteController.selectedTexts}" completeMethod="#{autoCompleteController.complete}" multiple="true" />
+            <p:autoComplete id="multipleSelect" value="#{autoCompleteBean.selectedTexts}" completeMethod="#{autoCompleteBean.complete}" multiple="true" />
 
+
+            <h:outputText value="Item Tip &lt;br/&gt; (Name cars like: Golf, Jetta, CC, Passat, Polo, Scirocco, Touareg)" escape="false" />
+            <p:autoComplete id="itemTip" value="#{autoCompleteBean.selectedCar2}" completeMethod="#{autoCompleteBean.completeCar}"
+                            var="car" itemLabel="#{car.name}" itemValue="#{car}">
+                <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
+                <f:facet name="itemtip">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="80" height="50"/>
+                        <h:outputText value="#{car.name} &lt;br/&gt; #{car.year}" escape="false" />
+                    </h:panelGrid>
+                </f:facet>
+            </p:autoComplete>
+
+            <h:outputText value="Grouping" />
+            <p:autoComplete id="grouped" value="#{autoCompleteBean.selectedCar}" completeMethod="#{autoCompleteBean.completeCarContains}"
+                            var="car" itemLabel="#{car.name}" itemValue="#{car}" forceSelection="true"
+                            groupBy="#{autoCompleteBean.getGroup(car)}">
+                <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
+                <p:column>
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="80" height="50"/>
+                </p:column>
+                <p:column>#{car.name}</p:column>
+            </p:autoComplete>
         </h:panelGrid>
     </ui:define>
 </ui:composition>
