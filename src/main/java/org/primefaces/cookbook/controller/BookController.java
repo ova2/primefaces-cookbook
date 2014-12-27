@@ -280,8 +280,6 @@ public class BookController implements Serializable {
     }
 
     private void constructChapter11(TreeNode chapter11) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Power of PrimeFaces selectors", "chapter11/pfs.xhtml"),
-                chapter11);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Programmatic updating and scrolling with RequestContext",
                         "chapter11/requestContext.xhtml"), chapter11);

@@ -8,40 +8,44 @@
 
         <h3 style="margin-top:0">RequestContext (update)</h3>
 
-        <p:selectBooleanCheckbox id="checkbox" itemLabel="Update first output"
-                                 value="#{requestContextController.firstOutput}"/>
-        
+        <p:selectBooleanCheckbox id="checkbox"
+                                 itemLabel="Update first output"
+                                 value="#{requestContextBean.firstOutput}"/>
+
         <h:panelGrid columns="2" style="margin-top:10px;">
             <h:outputText value="First Output"/>
-            <h:outputText id="firstOutput" value="#{requestContextController.counter}"/>
-        
+            <h:outputText id="firstOutput"
+                          value="#{requestContextBean.counter}"/>
+
             <h:outputText value="Second Output"/>
-            <h:outputText id="secondOutput" value="#{requestContextController.counter}"/>
-        
+            <h:outputText id="secondOutput"
+                          value="#{requestContextBean.counter}"/>
+
             <f:facet name="footer">
                 <p:commandButton value="Increment counter"
-                                 actionListener="#{requestContextController.incrementWithUpdate}"
+                                 actionListener="#{requestContextBean.incrementWithUpdate}"
                                  process="@form" style="margin:10px 0 10px 0;"/>
             </f:facet>
         </h:panelGrid>
 
         <h3 style="margin-top:20px">RequestContext (scrollTo)</h3>
 
-        <h:panelGrid id="counter" columns="2" style="font-weight:bold;">
+        <h:panelGrid id="counter" columns="2"
+                     style="font-weight:bold;">
             <h:outputText value="Counter"/>
-            <h:outputText value="#{requestContextController.counter}"/>
+            <h:outputText value="#{requestContextBean.counter}"/>
         </h:panelGrid>
-        
+
         <p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p>
         <p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p>
         <p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p>
         <p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p>
         <p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p>
-        <p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p>        
+        <p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p><p>Some text</p>
         
         <p:commandButton value="Increment counter"
                          process="@form" update="counter"
-                         actionListener="#{requestContextController.incrementWithScroll}"
+                         actionListener="#{requestContextBean.incrementWithScroll}"
                          style="margin:10px;"/>
 
     </ui:define>

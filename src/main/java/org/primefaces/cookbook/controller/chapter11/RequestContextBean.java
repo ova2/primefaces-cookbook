@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class RequestContextController implements Serializable {
+public class RequestContextBean implements Serializable {
 
 	private boolean firstOutput = true;
 
@@ -24,7 +24,8 @@ public class RequestContextController implements Serializable {
 	public void incrementWithUpdate(ActionEvent ae) {
 		counter++;
 
-		RequestContext requestContext = RequestContext.getCurrentInstance();
+		RequestContext requestContext =
+                RequestContext.getCurrentInstance();
 
 		if (firstOutput) {
 			requestContext.update("firstOutput");
@@ -36,7 +37,8 @@ public class RequestContextController implements Serializable {
 	public void incrementWithScroll(ActionEvent ae) {
 		counter++;
 
-		RequestContext requestContext = RequestContext.getCurrentInstance();
+		RequestContext requestContext =
+                RequestContext.getCurrentInstance();
 		requestContext.scrollTo("counter");
 	}
 

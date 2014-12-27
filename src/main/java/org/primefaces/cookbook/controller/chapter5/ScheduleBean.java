@@ -1,4 +1,4 @@
-package org.primefaces.cookbook.controller.chapter11;
+package org.primefaces.cookbook.controller.chapter5;
 
 import org.primefaces.model.DefaultScheduleEvent;
 import org.primefaces.model.LazyScheduleModel;
@@ -19,7 +19,7 @@ import java.util.Date;
  */
 @Named
 @ViewScoped
-public class ScheduleController implements Serializable {
+public class ScheduleBean implements Serializable {
 
     private ScheduleModel lazyEventModel;
 
