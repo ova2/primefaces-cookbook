@@ -15,30 +15,30 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class JavaScriptExecController implements Serializable {
+public class JavaScriptExecBean implements Serializable {
 
 	private boolean enabled = true;
 
 	public void toogleMenuitems(ActionEvent ae) {
-		RequestContext requestContext = RequestContext.getCurrentInstance();
+		RequestContext requestContext =
+                RequestContext.getCurrentInstance();
 
 		String script;
 		if (enabled) {
 			script =
 			    "$('#menu a').each(function() {"
-			    + "$(this).attr('data-oldhref', $(this).attr('href'))"
-			    + ".removeAttr('href').addClass('ui-state-disabled');"
-			    + "});";
+			    + "$(this).attr('data-href', $(this).attr('href'))"
+			    + ".removeAttr('href')"
+                + ".addClass('ui-state-disabled');});";
 		} else {
 			script =
 			    "$('#menu a').each(function() {"
-			    + "$(this).attr('href', $(this).attr('data-oldhref'))"
-			    + ".removeAttr('data-oldhref').removeClass('ui-state-disabled');"
-			    + "});";
+			    + "$(this).attr('href', $(this).attr('data-href'))"
+			    + ".removeAttr('data-href')"
+                + ".removeClass('ui-state-disabled');});";
 		}
 
 		requestContext.execute(script);
-
 		enabled = !enabled;
 	}
 

@@ -6,8 +6,8 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
 
-        <h:outputText id="indicator" value="Enabled? - #{javaScriptExecController.enabled}"/>
-        
+        <h:outputText id="indicator" value="Enabled? - #{javaScriptExecBean.enabled}"/>
+
         <p:menu id="menu" style="margin:20px 0 10px 0;">
             <p:submenu label="JavaScript Libraries">
                 <p:menuitem value="jQuery" url="http://jquery.com"/>
@@ -15,33 +15,29 @@
                 <p:menuitem value="Prototype" url="http://prototypejs.org"/>
             </p:submenu>
         </p:menu>
-        
+
         <p:commandButton id="toggle1" value="Toggle Menuitems (server-side)"
                          process="@this" update="indicator"
-                         actionListener="#{javaScriptExecController.toogleMenuitems}"/>
-        
+                         actionListener="#{javaScriptExecBean.toogleMenuitems}"/>
+
         <p:commandButton id="toggle2" value="Toggle Menuitems (client-side)"
                          process="@this" update="indicator toggleScriptWrapper"
-                         actionListener="#{javaScriptExecController.toogleEnabled}"/>
-        
+                         actionListener="#{javaScriptExecBean.toogleEnabled}"/>
+
         <h:panelGroup id="toggleScriptWrapper">
             <script type="text/javascript">
-            /* <![CDATA[ */
                 if (#{facesContext.partialViewContext.ajaxRequest}) {
-                    $('#menu').find('a').each(function() {
+                    $('#menu').find('a').each(function () {
                         var $this = $(this);
                         if ($this.attr('href')) {
                             // disable item
-                            $this.attr('data-oldhref', $this.attr('href'))
-                                   .removeAttr('href').addClass('ui-state-disabled');
+                            $this.attr('data-href', $this.attr('href')).removeAttr('href').addClass('ui-state-disabled');
                         } else {
                             // enable item
-                            $this.attr('href', $this.attr('data-oldhref'))
-                                   .removeAttr('data-oldhref').removeClass('ui-state-disabled');                
+                            $this.attr('href', $this.attr('data-href')).removeAttr('data-href').removeClass('ui-state-disabled');
                         }
                     });
                 }
-            /* ]]> */
             </script>
         </h:panelGroup>
 
