@@ -5,27 +5,28 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        
+
         <p:growl id="growl" autoUpdate="true"/>
-        
-        <p:dialog header="What is the name of this book?" visible="true"
-                  widgetVar="dlgWidget">
-            <h:inputText id="name" value="#{ajaxCallbackParamController.name}"/>
-            
+
+        <p:dialog header="What is the name of this book?"
+                  visible="true" widgetVar="dlgWidget">
+            <p:inputText id="name" value="#{ajaxCallbackParamBean.name}"/>
+
             <p:commandButton id="save" value="Save" style="margin:10px;"
                              process="@this name" update="name"
-                             actionListener="#{ajaxCallbackParamController.save}"
+                             actionListener="#{ajaxCallbackParamBean.save}"
                              oncomplete="handleComplete(xhr, status, args)"/>
         </p:dialog>
-        
+
         <h:outputScript id="handleCompleteScript" target="body">
-        /* <![CDATA[ */
+            /* <![CDATA[ */
             function handleComplete(xhr, status, args) {
-                if(args && args.validName) {
+                if (args && args.validName) {
                     PF('dlgWidget').hide();
                 }
             }
-        /* ]]> */
+
+            /* ]]> */
         </h:outputScript>
 
     </ui:define>
