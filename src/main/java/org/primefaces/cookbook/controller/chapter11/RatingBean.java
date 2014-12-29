@@ -3,13 +3,12 @@ package org.primefaces.cookbook.controller.chapter11;
 import org.primefaces.context.RequestContext;
 import org.primefaces.event.RateEvent;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import java.io.Serializable;
 
 @Named
-@ViewScoped
-public class RatingBean implements Serializable {
+@RequestScoped
+public class RatingBean {
 
     private String bookName;
 
