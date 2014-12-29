@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html" locale="en">
+    <f:metadata>
+        <f:viewParam name="bookName" value="#{ratingBean.bookName}"/>
+    </f:metadata>
+    <h:head>
+        <title>Rate the book!</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            What is your rating for the book <strong>#{ratingBean.bookName}</strong>?
+
+            <p/>
+
+            <p:rating id="rating">
+                <p:ajax event="rate" listener="#{ratingBean.onrate}"/>
+                <p:ajax event="cancel" listener="#{ratingBean.oncancel}"/>
+            </p:rating>
+        </h:form>
+    </h:body>
+</f:view>
+</html>

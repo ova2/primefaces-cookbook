@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <p:messages id="messages" showSummary="true" showDetail="false"/>
+
+        <p:selectOneRadio id="books" value="#{dialogFrameworkBean.bookName}" layout="pageDirection">
+            <f:selectItem itemLabel="PrimeFaces Cookbook" itemValue="PrimeFaces Cookbook"/>
+            <f:selectItem itemLabel="PrimeFaces Starter" itemValue="PrimeFaces Starter"/>
+            <f:selectItem itemLabel="PrimeFaces Beginner's Guide" itemValue="PrimeFaces Beginner's Guide"/>
+            <f:selectItem itemLabel="PrimeFaces Blueprints" itemValue="PrimeFaces Blueprints"/>
+        </p:selectOneRadio>
+
+        <p:commandButton value="Rate the selected book"
+                         process="@this books"
+                         actionListener="#{dialogFrameworkBean.showRatingDialog}"
+                         style="margin-top: 15px">
+            <p:ajax event="dialogReturn" listener="#{dialogFrameworkBean.onDialogReturn}" update="messages"/>
+        </p:commandButton>
+
+    </ui:define>
+</ui:composition>
