@@ -8,22 +8,22 @@
 
         <!-- Panel -->
         <p:panel id="panel" header="Blockable Panel" style="height:90px;">
-        
-            <h:outputText value="Click on Save to block me."/>
-        
-            <p:commandButton id="saveBtn" value="Save" style="margin:10px;"
-                             actionListener="#{blockUIController.doSomething}"/>
+            Click on Save to block me.
+
+            <p:commandButton id="saveBtn" value="Save"
+                             actionListener="#{blockUIBean.doSomething}"
+                             style="margin:10px;"/>
         </p:panel>
-        
+
         <p:blockUI block="panel" trigger="saveBtn"/>
 
         <!-- DataTable -->
-        <p:dataTable id="dataTable" var="message" value="#{blockUIController.messages}"
+        <p:dataTable id="dataTable" var="message" value="#{blockUIBean.messages}"
                      paginator="true" rows="5" rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                      style="margin-top:20px;">
-            <p:ajax event="page" listener="#{blockUIController.doSomething}"/>
-            <p:ajax event="sort" listener="#{blockUIController.doSomething}"/>
+            <p:ajax event="page" listener="#{blockUIBean.doSomething}"/>
+            <p:ajax event="sort" listener="#{blockUIBean.doSomething}"/>
             <p:column sortBy="#{message.subject}">
                 <f:facet name="header">
                     <h:outputText value="Subject"/>
@@ -37,15 +37,22 @@
                 <h:outputText value="#{message.text}"/>
             </p:column>
         </p:dataTable>
-        
+
         <p:blockUI block="dataTable" trigger="dataTable">
-            <h:panelGrid id="blockContent" columns="2">
+            <h:panelGrid id="blockContent" columns="2"
+                         style="table-layout:auto;">
                 <h:graphicImage library="images" name="ajax-loader.gif"
                                 style="margin-right:12px; vertical-align:middle;"/>
                 <h:outputText value="Please wait, data is being processed..."
                               style="white-space:nowrap;"/>
             </h:panelGrid>
         </p:blockUI>
+
+        <style type="text/css">
+            #blockContent tbody td {
+                border: none;
+            }
+        </style>
 
     </ui:define>
 </ui:composition>

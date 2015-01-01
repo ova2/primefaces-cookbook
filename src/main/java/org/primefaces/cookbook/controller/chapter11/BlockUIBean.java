@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class BlockUIController implements Serializable {
+public class BlockUIBean implements Serializable {
 
 	private List<Message> messages;
 
