@@ -1,4 +1,4 @@
-PrimeFaces Cookbook (Second Edition)
+PrimeFaces Cookbook (Second Edition). All examples are compatible with PrimeFaces 5.x.
 
 == Getting Started ==
 
@@ -6,7 +6,7 @@ PrimeFaces Cookbook (Second Edition)
 
 * Install Git as described in the [http://git-scm.com/book/en/Getting-Started-Installing-Git Pro Git book].
 * Install [http://maven.apache.org/ Maven 3] if you don't have it as this project is a Maven based project. You might need a JDK installation instead of a JRE for running Maven.
-* Install [http://wildfly.org/downloads WildFly 8.1.0.Final] if you don't have it installed on your local.
+* Install [http://wildfly.org/downloads WildFly] or [http://tomee.apache.org/downloads.html Apache TomEE] if you don't have it installed on your local.
 
 === Compile and Run Project ===
 
