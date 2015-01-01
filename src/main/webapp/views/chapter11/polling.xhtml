@@ -7,21 +7,24 @@
     <ui:define name="chapterItem">
 
         <p:growl id="growl"/>
-        
-        <p:poll id="poll" listener="#{pollingController.showMessage}"
+
+        <p:poll id="poll" listener="#{pollingBean.showMessage}"
                 update="sportFeed growl" interval="10" widgetVar="pollWidget"/>
-        
+
         <p:commandButton type="button" value="Stop Polling"
-                         style="margin:15px 5px 15px 0;" onclick="PF('pollWidget').stop();"/>
+                         style="margin:15px 5px 15px 0;"
+                         onclick="PF('pollWidget').stop();"/>
         <p:commandButton type="button" value="Start Polling"
-                         style="margin:15px 0 15px 0;" onclick="PF('pollWidget').start();"/>
-        
+                         style="margin:15px 0 15px 0;"
+                         onclick="PF('pollWidget').start();"/>
+
         <h:panelGroup id="sportFeed" layout="block">
             <p:feedReader value="http://rss.news.yahoo.com/rss/sports"
                           var="feed" size="10">
                 <h:outputText value="#{feed.title}" style="font-weight: bold"/>
                 <br/>
-                <h:outputText value="#{feed.description.value}" escape="false"/>
+                <h:outputText value="#{feed.description.value}"
+                              escape="false"/>
                 <p:separator/>
             </p:feedReader>
         </h:panelGroup>
