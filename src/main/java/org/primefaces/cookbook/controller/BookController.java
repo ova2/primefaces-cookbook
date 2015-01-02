@@ -298,8 +298,6 @@ public class BookController implements Serializable {
                 new BookTreeNode("Blocking page pieces during long-running AJAX calls", "chapter11/blockUI.xhtml"),
                 chapter11);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Remembering current menu selection", "chapter11/rememberMenu.xhtml"), chapter11);
-        new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Controlling form submitting by DefaultCommand", "chapter11/defaultCommand.xhtml"),
                 chapter11);
         new DefaultTreeNode(NODE_TYPE,

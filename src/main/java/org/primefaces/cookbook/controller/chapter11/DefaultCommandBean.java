@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class DefaultCommandController implements Serializable {
+public class DefaultCommandBean implements Serializable {
 
 	private String text;
 
