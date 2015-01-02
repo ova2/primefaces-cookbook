@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class TargetableMessagesController implements Serializable {
+public class TargetableMessagesBean implements Serializable {
 
 	public String addSaveMessage() {
 		addMessage("save", FacesMessage.SEVERITY_INFO, "Sample info message", "First data was successfully saved");

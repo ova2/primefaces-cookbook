@@ -15,11 +15,11 @@
         </h:panelGroup>
 
         <p:commandButton value="Save" update="msg1"
-                         action="#{targetableMessagesController.addSaveMessage}"/>
+                         action="#{targetableMessagesBean.addSaveMessage}"/>
         <p:commandButton value="Change" update="@form"
-                         action="#{targetableMessagesController.addChangeMessage}"/>
+                         action="#{targetableMessagesBean.addChangeMessage}"/>
         <p:commandButton value="Delete" update="@form"
-                         action="#{targetableMessagesController.addDeleteMessage}"/>
+                         action="#{targetableMessagesBean.addDeleteMessage}"/>
 
         <h3 style="margin-top:20px">Severity Levels</h3>
 
@@ -30,7 +30,7 @@
         </h:panelGroup>
         
         <p:commandButton value="Generate error message" update="msg2"
-                         action="#{targetableMessagesController.addErrorMessage}"/>
+                         action="#{targetableMessagesBean.addErrorMessage}"/>
 
     </ui:define>
 </ui:composition>

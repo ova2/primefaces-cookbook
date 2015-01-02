@@ -7,7 +7,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 /**
- * DefaultCommandController
+ * DefaultCommandBean
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
