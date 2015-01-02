@@ -307,8 +307,6 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Targetable messages with severity levels", "chapter11/targetableMessages.xhtml"),
                 chapter11);
-        new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Leveraging Schedule lazy loading feature", "chapter11/scheduleLazyLoad.xhtml"), chapter11);
     }
 
     public TreeNode getRoot() {
