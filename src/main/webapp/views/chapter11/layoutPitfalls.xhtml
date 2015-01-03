@@ -5,7 +5,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 <f:view contentType="text/html" locale="en">
-    <h:head title="PrimeFaces Cookbook - ShowCase">
+    <h:head>
+        <title>PrimeFaces Cookbook - ShowCase</title>
         <f:facet name="first">
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <meta http-equiv="pragma" content="no-cache"/>
@@ -23,7 +24,6 @@
     <h:body>
         <p:layout fullPage="true">
             <p:layoutUnit position="center">
-            
                 <p:dialog header="Dialog in layout" modal="true"
                           widgetVar="dlgWidget" appendTo="@(body)">
                     <h:form>
@@ -31,7 +31,7 @@
                         <p:commandButton value="Save" style="margin:10px;"/>
                     </h:form>
                 </p:dialog>
-            
+
                 <p:commandButton value="Show dialog" type="button"
                                  onclick="PF('dlgWidget').show()"/>
             </p:layoutUnit>
