@@ -154,8 +154,6 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("In-cell editing with DataTable", "chapter5/dataTableInCellEdit.xhtml"), chapter5);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Conditional Coloring in DataTable", "chapter5/dataTableColoring.xhtml"), chapter5);
-        new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Handling millions of data - LazyDataModel", "chapter5/dataTableLazyDataModel.xhtml"),
                 chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with DataList", "chapter5/dataList.xhtml"),
@@ -307,6 +305,8 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Targetable messages with severity levels", "chapter11/targetableMessages.xhtml"),
                 chapter11);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Conditional coloring in DataTable", "chapter11/dataTableColoring.xhtml"), chapter11);
     }
 
     public TreeNode getRoot() {

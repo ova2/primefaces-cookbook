@@ -6,7 +6,17 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Conditional Coloring in DataTable</h3>
-        <p:growl id="growl" showDetail="true"/>
+
+        <p:dataTable value="#{dataTableColoringBean.countryGdpList}"
+                     var="countryGdp"
+                     rowStyleClass="#{countryGdp.gdp le 3500000 ? 'colored' : ''}">
+            <p:column headerText="Name" sortBy="#{countryGdp.name}">
+                #{countryGdp.name}
+            </p:column>
+            <p:column headerText="GDP (Millions of US $)">
+                #{countryGdp.gdp}
+            </p:column>
+        </p:dataTable>
 
         <style type="text/css">
             .colored {
@@ -14,16 +24,5 @@
                 color: #FFFFFF;
             }
         </style>
-
-        <h:panelGrid columns="2" cellpadding="5">
-
-            <h:outputText value="Coloring According to year &lt;= 1975" />
-            <p:dataTable id="coloring" var="car" value="#{dataTableController.cars}"
-                         rowStyleClass="#{car.year le 1975 ? 'colored' : null}">
-                <p:column headerText="Year">#{car.year}</p:column>
-                <p:column headerText="Name">#{car.name}</p:column>
-            </p:dataTable>
-
-        </h:panelGrid>
     </ui:define>
 </ui:composition>

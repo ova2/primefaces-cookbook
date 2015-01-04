@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * BlockUIController
+ * BlockUIBean
  *
  * @author  Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
