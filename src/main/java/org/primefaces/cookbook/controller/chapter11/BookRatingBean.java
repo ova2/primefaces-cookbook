@@ -8,7 +8,7 @@ import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class RatingBean {
+public class BookRatingBean {
 
     private String bookName;
 

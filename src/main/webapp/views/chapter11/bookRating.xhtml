@@ -5,20 +5,20 @@
       xmlns:p="http://primefaces.org/ui">
 <f:view contentType="text/html" locale="en">
     <f:metadata>
-        <f:viewParam name="bookName" value="#{ratingBean.bookName}"/>
+        <f:viewParam name="bookName" value="#{bookRatingBean.bookName}"/>
     </f:metadata>
     <h:head>
         <title>Rate the book!</title>
     </h:head>
     <h:body>
         <h:form>
-            What is your rating for the book <strong>#{ratingBean.bookName}</strong>?
+            What is your rating for the book <strong>#{bookRatingBean.bookName}</strong>?
 
             <p/>
 
             <p:rating id="rating">
-                <p:ajax event="rate" listener="#{ratingBean.onrate}"/>
-                <p:ajax event="cancel" listener="#{ratingBean.oncancel}"/>
+                <p:ajax event="rate" listener="#{bookRatingBean.onrate}"/>
+                <p:ajax event="cancel" listener="#{bookRatingBean.oncancel}"/>
             </p:rating>
         </h:form>
     </h:body>
