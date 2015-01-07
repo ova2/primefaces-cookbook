@@ -9,15 +9,21 @@
         <p:growl id="growl"/>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic Rating" />
-            <p:rating value="#{ratingController.rate}" />
+            <p:rating value="#{ratingBean.rate}" />
 
             <h:outputText value="Rating with 10 stars" />
-            <p:rating value="#{ratingController.rate}" stars="10" />
+            <p:rating value="#{ratingBean.rate}" stars="10" />
+
+            <h:outputText value="Rating with read-only" />
+            <p:rating value="3" readonly="true" />
+
+            <h:outputText value="Rating with disabled" />
+            <p:rating value="3" disabled="true" />
 
             <h:outputText value="Instant AJAX Selection" />
-            <p:rating id="instantRating" value="#{ratingController.rate}">
-                <p:ajax event="rate" listener="#{ratingController.handleRate}" update="growl" />
-                <p:ajax event="cancel" listener="#{ratingController.cancelRate}" update="growl" />
+            <p:rating id="instantRating" value="#{ratingBean.rate}">
+                <p:ajax event="rate" listener="#{ratingBean.handleRate}" update="growl" />
+                <p:ajax event="cancel" listener="#{ratingBean.cancelRate}" update="growl" />
             </p:rating>
         </h:panelGrid>
     </ui:define>

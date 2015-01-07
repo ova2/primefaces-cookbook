@@ -15,7 +15,7 @@ import java.util.Date;
  */
 @Named
 @ViewScoped
-public class CalendarController implements Serializable {
+public class CalendarBean implements Serializable {
 
     private Date date;
 

@@ -24,9 +24,9 @@
             <h:panelGrid columns="2" columnClasses="chaptersMenuColumn,chaptersContentColumn">
                 <h:panelGroup layout="block">
                     <h:graphicImage library="images" name="logo.png" styleClass="logo" title="PrimeFaces Cookbook"/>
-                    <p:tree id="bookTree" value="#{bookController.root}" var="node" selectionMode="single"
-                            selection="#{bookController.selectedNode}">
-                        <p:ajax event="select" listener="#{bookController.onNodeSelect}"/>
+                    <p:tree id="bookTree" value="#{bookBean.root}" var="node" selectionMode="single"
+                            selection="#{bookBean.selectedNode}">
+                        <p:ajax event="select" listener="#{bookBean.onNodeSelect}"/>
                         <p:treeNode expandedIcon="ui-icon-folder-open"
                                     collapsedIcon="ui-icon-folder-collapsed">
                             <h:outputText value="#{node.name}"/>

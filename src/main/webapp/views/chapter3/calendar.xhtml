@@ -9,35 +9,41 @@
         <p:growl id="growl"/>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic Selection" />
-            <p:calendar value="#{calendarController.date}" />
+            <p:calendar value="#{calendarBean.date}" />
+
+            <h:outputText value="Using only with mouse" />
+            <p:calendar value="#{calendarBean.date}">
+                <f:passThroughAttribute name="onkeypress" value="return false;" />
+                <f:passThroughAttribute name="onpaste" value="return false;" />
+            </p:calendar>
 
             <h:outputText value="With Inline Mode" />
-            <p:calendar value="#{calendarController.date}" mode="inline" />
+            <p:calendar value="#{calendarBean.date}" mode="inline" />
 
             <h:outputText value="With Paging" />
-            <p:calendar id="paging" value="#{calendarController.date}" pages="3" />
+            <p:calendar id="paging" value="#{calendarBean.date}" pages="3" />
 
             <h:outputText value="With Show on" />
-            <p:calendar id="showOn" value="#{calendarController.date}" showOn="button" />
+            <p:calendar id="showOn" value="#{calendarBean.date}" showOn="button" />
 
             <h:outputText value="Date Selection with Restricted Date Range" />
-            <p:calendar id="restrictedDates" value="#{calendarController.date}" mode="inline"
-                        mindate="#{calendarController.yesterday}"
-                        maxdate="#{calendarController.tomorrow}" />
+            <p:calendar id="restrictedDates" value="#{calendarBean.date}" mode="inline"
+                        mindate="#{calendarBean.yesterday}"
+                        maxdate="#{calendarBean.tomorrow}" />
 
             <h:outputText value="Calendar With Manual Input Disabled" />
-            <p:calendar id="readOnlyInputCalendar" value="#{calendarController.date}" readonlyInput="true" />
+            <p:calendar id="readOnlyInputCalendar" value="#{calendarBean.date}" readonlyInput="true" />
 
             <h:outputText value="With Bounce Effect" />
-            <p:calendar id="effectCalendar" value="#{calendarController.date}" effect="bounce" effectDuration="slow" />
+            <p:calendar id="effectCalendar" value="#{calendarBean.date}" effect="bounce" effectDuration="slow" />
 
             <h:outputText value="AJAX update with Calendar" />
-            <p:calendar id="ajaxCalendar" value="#{calendarController.date}" mode="inline">
-                <p:ajax event="dateSelect" listener="#{calendarController.onDateSelect}" update="growl" />
+            <p:calendar id="ajaxCalendar" value="#{calendarBean.date}" mode="inline">
+                <p:ajax event="dateSelect" listener="#{calendarBean.onDateSelect}" update="growl" />
             </p:calendar>
 
             <h:outputText value="Picking Time with Calendar" />
-            <p:calendar id="timeCalendar" value="#{calendarController.date}" pattern="dd/MM/yyyy HH:mm:ss" />
+            <p:calendar id="timeCalendar" value="#{calendarBean.date}" pattern="dd/MM/yyyy HH:mm:ss" disabledWeekends="" />
 
         </h:panelGrid>
     </ui:define>

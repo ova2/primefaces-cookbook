@@ -13,8 +13,8 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class RatingController implements Serializable {
-    
+public class RatingBean implements Serializable {
+
     private Integer rate;
 
     public Integer getRate() {
@@ -25,7 +25,7 @@ public class RatingController implements Serializable {
         this.rate = rate;
     }
 
-    public void handleRate(RateEvent rateEvent) {
+        public void handleRate(RateEvent rateEvent) {
         Integer rate = (Integer) rateEvent.getRating();
         MessageUtil.addInfoMessage("rating.selected", rate);
     }

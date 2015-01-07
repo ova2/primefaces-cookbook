@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -10,41 +9,62 @@
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic Slider" />
             <h:panelGrid columns="1" cellpadding="3">
-                <h:inputText id="basicSlider" value="#{sliderController.intValue}" />
+                <h:inputText id="basicSlider" value="#{sliderBean.intValue}" />
                 <p:slider for="basicSlider" />
+            </h:panelGrid>
+
+            <h:outputText value="Slider with Minus Value" />
+            <h:panelGrid columns="1" cellpadding="3">
+                <h:inputText id="minusSlider" value="#{sliderBean.intValue}" />
+                <p:slider for="minusSlider" minValue="-50" maxValue="50" />
             </h:panelGrid>
 
             <h:outputText value="Slider with Display" />
             <h:panelGroup>
                 <h:outputText value="Slider Value is: " />
-                <h:outputText id="output" value="#{sliderController.intValue}" />
-                <h:inputHidden id="displaySlider" value="#{sliderController.intValue}" />
+                <h:outputText id="output" value="#{sliderBean.intValue}" />
+                <h:inputHidden id="displaySlider" value="#{sliderBean.intValue}" />
                 <p:slider for="displaySlider" display="output"/>
+            </h:panelGroup>
+
+            <h:outputText value="Slider with Display Template" />
+            <h:panelGroup>
+                <h:outputText id="output2" value="The value is: #{sliderBean.intValue}" />
+                <h:inputHidden id="displaySlider2" value="#{sliderBean.intValue}"  />
+                <p:slider for="displaySlider2" display="output2" displayTemplate="The value is: {value}" />
             </h:panelGroup>
 
             <h:outputText value="Slider without Animation" />
             <h:panelGrid columns="1" cellpadding="3">
-                <h:inputText id="nonAnimatedSlider" value="#{sliderController.intValue}" />
+                <h:inputText id="nonAnimatedSlider" value="#{sliderBean.intValue}" />
                 <p:slider for="nonAnimatedSlider" animate="false" />
             </h:panelGrid>
 
             <h:outputText value="Slider with Stepping Value" />
             <h:panelGrid columns="1" cellpadding="3">
-                <h:inputText id="steppingSlider" value="#{sliderController.intValue}" />
+                <h:inputText id="steppingSlider" value="#{sliderBean.intValue}" />
                 <p:slider for="steppingSlider" step="10" />
             </h:panelGrid>
 
             <h:outputText value="Slider with min-max Value" />
             <h:panelGrid columns="1" cellpadding="3">
-                <h:inputText id="minMaxSlider" value="#{sliderController.intValue}" onfocus="this.readOnly=true;" />
+                <h:inputText id="minMaxSlider" value="#{sliderBean.intValue}" onfocus="this.readOnly=true;" />
                 <p:slider for="minMaxSlider" step="10" minValue="0" maxValue="100"  />
+            </h:panelGrid>
+
+            <h:outputText value="Slider with Range selection" />
+            <h:panelGrid columns="1" cellpadding="3">
+                <h:outputText id="outputRange" value="The selected range: [#{sliderBean.rangeStart}, #{sliderBean.rangeEnd}]" />
+                <p:slider for="rangeStart,rangeEnd" style="width:200px" range="true" display="outputRange" displayTemplate="The selected range: [{min}, {max}]" />
+                <h:inputHidden id="rangeStart" value="#{sliderBean.rangeStart}"  />
+                <h:inputHidden id="rangeEnd" value="#{sliderBean.rangeEnd}"  />
             </h:panelGrid>
 
             <h:outputText value="Slider with AJAX behavior" />
             <h:panelGrid columns="1" cellpadding="3">
-                <h:inputText id="ajaxSliderInput" value="#{sliderController.intValue}" />
+                <h:inputText id="ajaxSliderInput" value="#{sliderBean.intValue}" />
                 <p:slider id="ajaxSlider" for="ajaxSliderInput">
-                    <p:ajax event="slideEnd" listener="#{sliderController.onSlideEnd}" update="growl" />
+                    <p:ajax event="slideEnd" listener="#{sliderBean.onSlideEnd}" update="growl" />
                 </p:slider>
             </h:panelGrid>
 

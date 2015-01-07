@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class SelectCheckboxController implements Serializable {
+public class SelectCheckboxBean implements Serializable {
 
     private boolean selectedValue;
 

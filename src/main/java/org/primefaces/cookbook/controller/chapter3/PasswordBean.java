@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class PasswordController implements Serializable {
+public class PasswordBean implements Serializable {
     
     private String password;
 
