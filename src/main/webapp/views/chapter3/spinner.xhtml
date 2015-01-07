@@ -8,30 +8,32 @@
         <h3 style="margin-top:0">Spinner - Different ways to provide input</h3>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic Spinner" />
-            <p:spinner value="#{spinnerController.intValue}" />
+            <p:spinner value="#{spinnerBean.intValue}" />
 
             <h:outputText value="Spinner with Step Factor" />
-            <p:spinner value="#{spinnerController.doubleValue}" stepFactor="0.5" />
+            <p:spinner value="#{spinnerBean.doubleValue}" stepFactor="0.5" />
 
             <h:outputText value="Spinner with Prefix" />
-            <p:spinner value="#{spinnerController.intValue}" prefix="$" />
+            <p:spinner value="#{spinnerBean.intValue}" prefix="$" />
 
             <h:outputText value="Spinner with Suffix" />
-            <p:spinner value="#{spinnerController.intValue}" suffix="%" />
+            <p:spinner value="#{spinnerBean.intValue}" suffix="%" />
 
-            <h:outputText value="Spinner with min-max values" />
-            <p:spinner value="#{spinnerController.intValue}" suffix="%" min="0" max="100" onkeydown="return false;" />
+            <h:outputText value="Spinner with min-max values &lt;br/&gt; enter value between 1-100" escape="false" />
+            <p:spinner value="#{spinnerBean.intValue}" suffix="%" min="0" max="100">
+                <f:passThroughAttribute name="onkeydown" value="return false;" />
+            </p:spinner>
 
             <h:outputText value="AJAX update with Spinner" />
             <h:panelGrid columns="2" cellpadding="2">
-                <p:spinner id="ajaxSpinner" value="#{spinnerController.intValue2}" >
+                <p:spinner id="ajaxSpinner" value="#{spinnerBean.intValue2}" >
                     <p:ajax update="output" process="@this" />
                 </p:spinner>
-                <h:outputText id="output" value="#{spinnerController.intValue2}" />
+                <h:outputText id="output" value="#{spinnerBean.intValue2}" />
             </h:panelGrid>
 
             <h:outputText value="Defining Size of Spinner" />
-            <p:spinner value="#{spinnerController.intValue}" size="3" />
+            <p:spinner value="#{spinnerBean.intValue}" size="3" />
         </h:panelGrid>
     </ui:define>
 </ui:composition>

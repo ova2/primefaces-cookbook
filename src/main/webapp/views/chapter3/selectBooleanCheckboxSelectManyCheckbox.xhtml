@@ -9,31 +9,31 @@
         <h3 style="margin-top:0">Discovering SelectBooleanCheckbox and SelectManyCheckbox</h3>
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Basic SelectBooleanCheckbox" />
-            <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}" />
+            <p:selectBooleanCheckbox value="#{selectCheckboxBean.selectedValue}" />
 
             <h:outputText value="Selection with Custom Label" />
-            <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}" itemLabel="#{msg['selectBooleanCheckbox.label']}" />
+            <p:selectBooleanCheckbox value="#{selectCheckboxBean.selectedValue}" itemLabel="#{msg['selectBooleanCheckbox.label']}" />
 
             <h:outputText value="Getting Selection via JavaScript" />
             <h:panelGroup>
-                <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}" widgetVar="mySelection" />
+                <p:selectBooleanCheckbox value="#{selectCheckboxBean.selectedValue}" widgetVar="mySelection" />
                 <p:commandLink value="Alert Selection" onclick="alert(PF('mySelection').isChecked());" />
             </h:panelGroup>
 
             <h:outputText value="Selection with Ajax Behavior" />
-            <p:selectBooleanCheckbox value="#{selectCheckboxController.selectedValue}">
-                <p:ajax update="growl" listener="#{selectCheckboxController.addMessage}" />
+            <p:selectBooleanCheckbox value="#{selectCheckboxBean.selectedValue}">
+                <p:ajax update="growl" listener="#{selectCheckboxBean.addMessage}" />
             </p:selectBooleanCheckbox>
 
             <h:outputText value="Basic SelectManyCheckbox" />
-            <p:selectManyCheckbox value="#{selectCheckboxController.selectedCountries}">
+            <p:selectManyCheckbox value="#{selectCheckboxBean.selectedCountries}">
                 <f:selectItem itemLabel="Turkey" itemValue="Turkey" />
                 <f:selectItem itemLabel="Germany" itemValue="Germany" />
                 <f:selectItem itemLabel="Switzerland" itemValue="Switzerland" />
             </p:selectManyCheckbox>
 
             <h:outputText value="SelectManyCheckbox with layout" />
-            <p:selectManyCheckbox value="#{selectCheckboxController.selectedCountries}" layout="pageDirection">
+            <p:selectManyCheckbox value="#{selectCheckboxBean.selectedCountries}" layout="pageDirection">
                 <f:selectItem itemLabel="Turkey" itemValue="Turkey" />
                 <f:selectItem itemLabel="Germany" itemValue="Germany" />
                 <f:selectItem itemLabel="Switzerland" itemValue="Switzerland" />

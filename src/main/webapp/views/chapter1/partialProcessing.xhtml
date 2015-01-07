@@ -12,7 +12,7 @@
                 <f:selectItems value="#{partialProcessingBean.countries}" />
                 <p:ajax listener="#{partialProcessingBean.handleCountryChange}"
                         event="change" update="cities" process="@this"/>
-            </h:selectOneMenu>
+            </h:se  lectOneMenu>
 
             <h:outputText value="City: " />
             <h:selectOneMenu id="cities" value="#{partialProcessingBean.city}">

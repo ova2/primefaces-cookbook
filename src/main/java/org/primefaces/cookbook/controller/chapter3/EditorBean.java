@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class EditorController implements Serializable {
+public class EditorBean implements Serializable {
     
     private String text;
 

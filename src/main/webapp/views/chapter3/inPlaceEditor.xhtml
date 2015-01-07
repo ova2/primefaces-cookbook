@@ -6,6 +6,8 @@
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Advanced Editing with in-place Editor</h3>
+        <p:growl id="growl" showDetail="true"/>
+
         <h:panelGrid columdns="2" cellpadding="5">
 
             <h:outputText value="Basic in-place Editing" />
@@ -49,6 +51,25 @@
 
             <h:outputText value="in-place Editing with slow slide effect" />
             <p:inplace effect="slide" effectSpeed="slow">
+                <h:inputText value="Edit Me!" />
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place editing with facet (Click on the icon for editing)" />
+            <p:inplace editor="true">
+                <f:facet name="output">
+                    <p:graphicImage value="/resources/images/inplace/#{inplaceBean.value}.png" width="30" height="30" />
+                 </f:facet>
+                <f:facet name="input">
+                    <p:selectBooleanCheckbox value="#{inplaceBean.value}" />
+                    <h:outputLabel value="PrimeFaces Rocks!" />
+                </f:facet>
+            </p:inplace>
+            <hr/>
+
+            <h:outputText value="in-place editing with save ajax behavior" />
+            <p:inplace editor="true">
+                <p:ajax event="save" listener="#{inplaceBean.handleSave}" update="growl" />
                 <h:inputText value="Edit Me!" />
             </p:inplace>
             <hr/>

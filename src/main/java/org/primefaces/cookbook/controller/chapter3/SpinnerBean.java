@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class SpinnerController implements Serializable {
+public class SpinnerBean implements Serializable {
 
     private int intValue = 0;
     private int intValue2 = 0;

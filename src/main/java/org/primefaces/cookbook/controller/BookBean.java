@@ -18,7 +18,7 @@ import java.io.Serializable;
  */
 @Named
 @SessionScoped
-public class BookController implements Serializable {
+public class BookBean implements Serializable {
 
     private static final long serialVersionUID = 20141005L;
 
@@ -28,7 +28,7 @@ public class BookController implements Serializable {
 
     private TreeNode selectedNode;
 
-    public BookController() {
+    public BookBean() {
         root = new DefaultTreeNode("Root", null);
 
         TreeNode chapter1 = new DefaultTreeNode(new BookTreeNode("Getting Started with PrimeFaces", null), root);
@@ -108,6 +108,9 @@ public class BookController implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("SelectBooleanCheckbox and SelectManyCheckbox",
                         "chapter3/selectBooleanCheckboxSelectManyCheckbox.xhtml"), chapter3);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Choosing single item with selectOneMenu",
+                        "chapter3/selectOneMenu.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Basic and Advanced Calendar Scenarios", "chapter3/calendar.xhtml"), chapter3);
         new DefaultTreeNode(NODE_TYPE,
