@@ -307,6 +307,8 @@ public class BookController implements Serializable {
                 chapter11);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Conditional coloring in DataTable", "chapter11/dataTableColoring.xhtml"), chapter11);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Sticking component when scrolling", "chapter11/sticking.xhtml"), chapter11);
     }
 
     public TreeNode getRoot() {

@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <h:panelGrid id="langGrid" columns="2" style="box-shadow: none;">
+            <p:outputLabel for="lang" value="Language: "/>
+            <p:selectOneMenu id="lang">
+                <f:selectItem itemLabel="English" itemValue="en"/>
+                <f:selectItem itemLabel="German" itemValue="de"/>
+                <f:selectItem itemLabel="French" itemValue="fr"/>
+            </p:selectOneMenu>
+        </h:panelGrid>
+
+        <div style="height:800px"></div>
+
+        <p:sticky target="langGrid"/>
+
+    </ui:define>
+</ui:composition>
