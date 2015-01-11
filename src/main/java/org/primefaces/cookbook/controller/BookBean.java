@@ -11,7 +11,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 /**
- * BookController
+ * BookBean
  *
  * @author Oleg Varaksin / last modified by $Author: $
  * @version $Revision: 1.0 $
@@ -312,6 +312,8 @@ public class BookBean implements Serializable {
                 new BookTreeNode("Conditional coloring in DataTable", "chapter11/dataTableColoring.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Sticking component when scrolling", "chapter11/sticking.xhtml"), chapter11);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Reducing page load time by content caching", "chapter11/caching.xhtml"), chapter11);
     }
 
     public TreeNode getRoot() {

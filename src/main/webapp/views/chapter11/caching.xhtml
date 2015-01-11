@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/templates/masterLayout.xhtml">
+    
+    <ui:define name="chapterItem">
+
+        <p:cache region="appCache" key="mainNavigation">
+            <p:feedReader value="http://www.jsfcentral.com/resources/jsfcentralpodcasts/?feed=rss"
+                          var="feed" size="10">
+                <h:outputText value="#{feed.title}" style="font-weight: bold"/>
+                <br/>
+                <h:outputText value="#{feed.description.value}"
+                              escape="false"/>
+                <p:separator/>
+            </p:feedReader>
+        </p:cache>
+        
+    </ui:define>
+</ui:composition>
