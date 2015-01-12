@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class PanelController implements Serializable {
+public class PanelBean implements Serializable {
 
     public void handleClose(CloseEvent event) {
         MessageUtil.addInfoMessage("panel.closed", "Closed panel id:'" + event.getComponent().getId());

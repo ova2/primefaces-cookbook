@@ -1,11 +1,15 @@
 package org.primefaces.cookbook.controller.chapter4;
 
+import org.primefaces.cookbook.converter.CarConverter;
+import org.primefaces.cookbook.model.chapter3.Car;
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.TabCloseEvent;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: mertcaliskan
@@ -13,7 +17,11 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class TabViewController implements Serializable {
+public class TabViewBean implements Serializable {
+
+    public List<Car> getCars() {
+        return new ArrayList<Car>(CarConverter.cars.values());
+    }
 
     public void onTabClose(TabCloseEvent event) {
         MessageUtil.addInfoMessage("Tab Closed", "Closed Tab: " + event.getTab().getTitle());

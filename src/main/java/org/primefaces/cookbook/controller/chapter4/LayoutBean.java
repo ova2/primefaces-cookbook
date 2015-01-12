@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class LayoutController implements Serializable {
+public class LayoutBean implements Serializable {
 
     public void handleClose(CloseEvent event) {
         MessageUtil.addInfoMessageWithoutKey("Unit Closed", "Position:'" + ((LayoutUnit) event.getComponent()).getPosition());

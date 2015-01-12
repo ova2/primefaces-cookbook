@@ -8,74 +8,92 @@
         <h3 style="margin-top:0">Panel Grid with colspan and rowspan support</h3>
         <p:growl id="growl"/>
 
-        <h:panelGrid columns="2" cellpadding="5">
+        <h:outputText value="Simple" />
+        <p:panelGrid columns="2">
+            <f:facet name="header">User Information</f:facet>
 
-            <h:outputText value="Simple" />
-            <p:panelGrid columns="2">
-                <f:facet name="header">User Information</f:facet>
+            <h:outputLabel for="firstname" value="First Name" />
+            <p:inputText id="firstname" value="" label="firstname" />
 
-                <h:outputLabel for="firstname" value="First Name" />
-                <p:inputText id="firstname" value="" label="firstname" />
+            <h:outputLabel for="lastname" value="Last Name" />
+            <p:inputText id="lastname" value="" required="true" label="lastname"/>
 
-                <h:outputLabel for="lastname" value="Last Name" />
-                <p:inputText id="lastname" value="" required="true" label="lastname"/>
+            <f:facet name="footer">
+                <p:commandButton type="button" value="Save" icon="ui-icon-check" style="margin:0"/>
+            </f:facet>
+        </p:panelGrid>
+        <br/>
+        <br/>
 
-                <f:facet name="footer">
-                    <p:commandButton type="button" value="Save" icon="ui-icon-check" style="margin:0"/>
-                </f:facet>
-            </p:panelGrid>
+        <h:outputText value="With Responsive Content" />
+        <p:panelGrid columns="3" layout="grid">
+            <h:outputText value="PrimeFaces" />
+            <h:outputText value=" Cookbook" />
+            <h:outputText value=" Rocks!" />
 
-            <h:outputText value="With rowspan and colspan" />
-            <p:panelGrid>
-                <f:facet name="header">
-                    <p:row>
-                        <p:column colspan="6">Time Chart</p:column>
-                    </p:row>
-                    <p:row>
-                        <p:column/>
-                        <p:column>Monday</p:column>
-                        <p:column>Tuesday</p:column>
-                        <p:column>Wednesday</p:column>
-                        <p:column>Thursday</p:column>
-                        <p:column>Friday</p:column>
-                    </p:row>
-                </f:facet>
+            <h:outputText value=" Rocks!" />
+            <h:outputText value="Cookbook" />
+            <h:outputText value="PrimeFaces" />
 
+            <h:outputText value="Cookbook" />
+            <h:outputText value="PrimeFaces" />
+            <h:outputText value="Rocks!" />
+        </p:panelGrid>
+        <br/>
+        <br/>
+
+        <h:outputText value="With rowspan and colspan" />
+        <p:panelGrid>
+            <f:facet name="header">
                 <p:row>
-                    <p:column rowspan="4">Hours</p:column>
-                    <p:column>Science</p:column>
-                    <p:column>Math</p:column>
-                    <p:column rowspan="2" style="text-align:center">Project</p:column>
-                    <p:column>Math</p:column>
-                    <p:column>Arts</p:column>
+                    <p:column colspan="6">Time Chart</p:column>
                 </p:row>
-
                 <p:row>
-                    <p:column>Social</p:column>
-                    <p:column>History</p:column>
-                    <p:column>Sports</p:column>
-                    <p:column>Math</p:column>
+                    <p:column/>
+                    <p:column>Monday</p:column>
+                    <p:column>Tuesday</p:column>
+                    <p:column>Wednesday</p:column>
+                    <p:column>Thursday</p:column>
+                    <p:column>Friday</p:column>
                 </p:row>
+            </f:facet>
 
+            <p:row>
+                <p:column rowspan="4">Hours</p:column>
+                <p:column>Science</p:column>
+                <p:column>Math</p:column>
+                <p:column rowspan="2" style="text-align:center">Project</p:column>
+                <p:column>Math</p:column>
+                <p:column>Arts</p:column>
+            </p:row>
+
+            <p:row>
+                <p:column>Social</p:column>
+                <p:column>History</p:column>
+                <p:column>Sports</p:column>
+                <p:column>Math</p:column>
+            </p:row>
+
+            <p:row>
+                <p:column colspan="6" style="text-align:center">Lunch</p:column>
+            </p:row>
+
+            <p:row>
+                <p:column>Math</p:column>
+                <p:column>History</p:column>
+                <p:column>English</p:column>
+                <p:column>Science</p:column>
+                <p:column>Arts</p:column>
+            </p:row>
+
+            <f:facet name="footer">
                 <p:row>
-                    <p:column colspan="6" style="text-align:center">Lunch</p:column>
+                    <p:column  colspan="6">Duration: 40 minutes</p:column>
                 </p:row>
+            </f:facet>
+        </p:panelGrid>
+        <br/>
+        <br/>
 
-                <p:row>
-                    <p:column>Math</p:column>
-                    <p:column>History</p:column>
-                    <p:column>English</p:column>
-                    <p:column>Science</p:column>
-                    <p:column>Arts</p:column>
-                </p:row>
-
-                <f:facet name="footer">
-                    <p:row>
-                        <p:column  colspan="6">Duration: 40 minutes</p:column>
-                    </p:row>
-                </f:facet>
-            </p:panelGrid>
-
-        </h:panelGrid>
     </ui:define>
 </ui:composition>

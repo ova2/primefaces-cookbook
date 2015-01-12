@@ -17,11 +17,11 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class DashboardController implements Serializable {
+public class DashboardBean implements Serializable {
 
     private DashboardModel model;
 
-    public DashboardController() {
+    public DashboardBean() {
         model = new DefaultDashboardModel();
 
         DashboardColumn column1 = new DefaultDashboardColumn();

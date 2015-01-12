@@ -10,9 +10,9 @@
 
         <h:panelGrid columns="2" cellpadding="5">
             <p:layout id="elementLayout" style="min-width:600px;min-height:400px;">
-                <p:ajax event="toggle" listener="#{layoutController.handleToggle}" update="growl" />
-                <p:ajax event="close" listener="#{layoutController.handleClose}" update="growl" />
-                <p:ajax event="resize" listener="#{layoutController.handleResize}" update="growl" />
+                <p:ajax event="toggle" listener="#{layoutBean.handleToggle}" update="growl" />
+                <p:ajax event="close" listener="#{layoutBean.handleClose}" update="growl" />
+                <p:ajax event="resize" listener="#{layoutBean.handleResize}" update="growl" />
 
                 <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">
                     <h:outputText value="Layout content for North" />
