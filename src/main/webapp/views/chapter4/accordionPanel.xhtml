@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -58,11 +57,28 @@
             </p:accordionPanel>
 
             <h:outputText value="Dynamic Tabbing" />
-            <p:accordionPanel value="#{accordionPanelController.cars}" var="car">
+            <p:accordionPanel value="#{accordionPanelBean.cars}" var="car">
                 <p:tab title="#{car.name}">
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" />
                         <h:outputText value="#{car.name}" />
+                    </h:panelGrid>
+                </p:tab>
+            </p:accordionPanel>
+
+            <h:outputText value="AJAX Call with Accordion" />
+            <p:accordionPanel>
+                <p:ajax event="tabChange" listener="#{accordionPanelBean.onTabChange}" update="growl" />
+                <p:tab title="Volkswagen CC">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:graphicImage library="images" name="autocomplete/CC.png" />
+                        <h:outputText value="The Volkswagen CC (also known as the Volkswagen Passat CC) is a four-door coupé version of the Volkswagen Passat." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="Volkswagen Golf">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:graphicImage library="images" name="autocomplete/Golf.png" />
+                        <h:outputText value="The Volkswagen Golf is a small family car manufactured by Volkswagen since 1974 and marketed worldwide across six generations, in various body configurations and under various nameplates" />
                     </h:panelGrid>
                 </p:tab>
             </p:accordionPanel>

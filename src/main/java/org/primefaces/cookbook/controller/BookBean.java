@@ -140,6 +140,8 @@ public class BookBean implements Serializable {
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Grouping Buttons and More with Toolbar", "chapter4/toolbar.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Multi purpose outputPanel", "chapter4/outputPanel.xhtml"), chapter4);
+        new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Simulating Portal Environment with Dashboard", "chapter4/dashboard.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Full Page Layout", "chapter4/fullPageLayout.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,

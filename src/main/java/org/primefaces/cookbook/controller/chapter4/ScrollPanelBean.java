@@ -11,11 +11,11 @@ import java.util.List;
 
 /**
  * User: mertcaliskan
- * Date: 7/28/12
+ * Date: 7/30/12
  */
 @Named
 @ViewScoped
-public class AccordionPanelController implements Serializable {
+public class ScrollPanelBean implements Serializable {
 
     public List<Car> getCars() {
         return new ArrayList<Car>(CarConverter.cars.values());

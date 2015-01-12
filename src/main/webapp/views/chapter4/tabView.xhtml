@@ -8,7 +8,6 @@
         <h3 style="margin-top:0">Working with Tabbed Panel</h3>
         <p:growl id="growl" />
 
-        <h:panelGrid columns="2" cellpadding="5">
             <h:outputText value="Simple" />
             <p:tabView id="tabView1">
                 <p:tab id="tab1" title="Volkswagen CC">
@@ -24,10 +23,12 @@
                     </h:panelGrid>
                 </p:tab>
             </p:tabView>
+            <br/>
+            <br/>
 
             <h:outputText value="Closable Panels" />
             <p:tabView id="tabView2">
-                <p:ajax event="tabClose" listener="#{tabViewController.onTabClose}" update=":mainForm:growl" />
+                <p:ajax event="tabClose" listener="#{tabViewBean.onTabClose}" update=":mainForm:growl" />
 
                 <p:tab id="tab3" title="Volkswagen CC" closable="true">
                     <h:panelGrid columns="2" cellpadding="5">
@@ -42,6 +43,8 @@
                     </h:panelGrid>
                 </p:tab>
             </p:tabView>
+            <br/>
+            <br/>
 
             <h:outputText value="Dynamic Content Loading" />
             <p:tabView id="tabView3" dynamic="true" cache="true">
@@ -58,65 +61,97 @@
                     </h:panelGrid>
                 </p:tab>
             </p:tabView>
+            <br/>
+            <br/>
 
             <h:outputText value="With Disabled Tab" />
             <p:tabView id="tabView4">
-                <p:tab id="tab5" title="Volkswagen CC">
-                    <h:panelGrid columns="2" cellpadding="5">
-                        <h:graphicImage library="images" name="autocomplete/CC.png" />
-                        <h:outputText value="The Volkswagen CC (also known as the Volkswagen Passat CC) is a four-door coupé version of the Volkswagen Passat." />
-                    </h:panelGrid>
-                </p:tab>
-                <p:tab id="tab6" title="Volkswagen Golf" disabled="true">
-                    <h:panelGrid columns="2" cellpadding="5">
-                        <h:graphicImage library="images" name="autocomplete/Golf.png" />
-                        <h:outputText value="The Volkswagen Golf is a small family car manufactured by Volkswagen since 1974 and marketed worldwide across six generations, in various body configurations and under various nameplates" />
-                    </h:panelGrid>
-                </p:tab>
-            </p:tabView>
-
-            <h:outputText value="With Transition Effect" />
-            <p:tabView id="tabView5" effect="fade" effectDuration="slow">
                 <p:tab id="tab7" title="Volkswagen CC">
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:graphicImage library="images" name="autocomplete/CC.png" />
                         <h:outputText value="The Volkswagen CC (also known as the Volkswagen Passat CC) is a four-door coupé version of the Volkswagen Passat." />
                     </h:panelGrid>
                 </p:tab>
-                <p:tab id="tab8" title="Volkswagen Golf">
+                <p:tab id="tab8" title="Volkswagen Golf" disabled="true">
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:graphicImage library="images" name="autocomplete/Golf.png" />
                         <h:outputText value="The Volkswagen Golf is a small family car manufactured by Volkswagen since 1974 and marketed worldwide across six generations, in various body configurations and under various nameplates" />
                     </h:panelGrid>
                 </p:tab>
             </p:tabView>
+            <br/>
+            <br/>
+
+            <h:outputText value="Scrollable Tabs" />
+            <p:tabView id="tab9" scrollable="true" style="width:800px;">
+                <p:tab title="Tab 1">Tab 1</p:tab>
+                <p:tab title="Tab 2">Tab 2</p:tab>
+                <p:tab title="Tab 3">Tab 3</p:tab>
+                <p:tab title="Tab 4">Tab 4</p:tab>
+                <p:tab title="Tab 5">Tab 5</p:tab>
+                <p:tab title="Tab 6">Tab 6</p:tab>
+                <p:tab title="Tab 7">Tab 7</p:tab>
+                <p:tab title="Tab 8">Tab 8</p:tab>
+                <p:tab title="Tab 9">Tab 9</p:tab>
+                <p:tab title="Tab 10">Tab 10</p:tab>
+                <p:tab title="Tab 11">Tab 11</p:tab>
+                <p:tab title="Tab 12">Tab 12</p:tab>
+                <p:tab title="Tab 13">Tab 13</p:tab>
+                <p:tab title="Tab 14">Tab 14</p:tab>
+                <p:tab title="Tab 15">Tab 15</p:tab>
+                <p:tab title="Tab 16">Tab 16</p:tab>
+                <p:tab title="Tab 17">Tab 17</p:tab>
+                <p:tab title="Tab 18">Tab 18</p:tab>
+                <p:tab title="Tab 19">Tab 19</p:tab>
+                <p:tab title="Tab 20">Tab 20</p:tab>
+            </p:tabView>
+            <br/>
+            <br/>
+
+            <h:outputText value="With Transition Effect" />
+            <p:tabView id="tabView5" effect="fade" effectDuration="slow">
+                <p:tab id="tab10" title="Volkswagen CC">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:graphicImage library="images" name="autocomplete/CC.png" />
+                        <h:outputText value="The Volkswagen CC (also known as the Volkswagen Passat CC) is a four-door coupé version of the Volkswagen Passat." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="tab11" title="Volkswagen Golf">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:graphicImage library="images" name="autocomplete/Golf.png" />
+                        <h:outputText value="The Volkswagen Golf is a small family car manufactured by Volkswagen since 1974 and marketed worldwide across six generations, in various body configurations and under various nameplates" />
+                    </h:panelGrid>
+                </p:tab>
+            </p:tabView>
+            <br/>
+            <br/>
 
             <h:outputText value="Dynamic Tabbing" />
-            <p:tabView id="tabView6" value="#{accordionPanelController.cars}" var="car">
+            <p:tabView id="tab12" value="#{tabViewBean.cars}" var="car">
                 <p:tab title="#{car.name}">
                     <h:panelGrid columns="1">
                         <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" />
                     </h:panelGrid>
                 </p:tab>
             </p:tabView>
+            <br/>
+            <br/>
 
             <h:outputText value="Orientation Left" />
             <p:tabView id="tabView7" orientation="left">
-                <p:tab id="tab1" title="Volkswagen CC">
+                <p:tab id="tab13" title="Volkswagen CC">
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:graphicImage library="images" name="autocomplete/CC.png" />
                         <h:outputText value="The Volkswagen CC (also known as the Volkswagen Passat CC) is a four-door coupé version of the Volkswagen Passat." />
                     </h:panelGrid>
                 </p:tab>
-                <p:tab id="tab2" title="Volkswagen Golf">
+                <p:tab id="tab14" title="Volkswagen Golf">
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:graphicImage library="images" name="autocomplete/Golf.png" />
                         <h:outputText value="The Volkswagen Golf is a small family car manufactured by Volkswagen since 1974 and marketed worldwide across six generations, in various body configurations and under various nameplates" />
                     </h:panelGrid>
                 </p:tab>
             </p:tabView>
-
-        </h:panelGrid>
 
     </ui:define>
 </ui:composition>

@@ -17,8 +17,8 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple" />
-            <p:dashboard id="board" model="#{dashboardController.model}">
-                <p:ajax event="reorder" listener="#{dashboardController.handleReorder}" update="growl" />
+            <p:dashboard id="board" model="#{dashboardBean.model}">
+                <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" />
 
                 <p:panel id="calculator" header="Calculator">
                     <h:outputText value="Content for Calculator" />
@@ -44,6 +44,13 @@
                     <h:outputText value="Content for Translation" />
                 </p:panel>
             </p:dashboard>
+
+            <h:outputText value="Template Widget" />
+            <p:panel id="newWidget" style="width: 200px">
+                <h:outputText value="Drag me and create a new widget" />
+            </p:panel>
+            <p:draggable for="newWidget" helper="clone" dashboard="board" />
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>
