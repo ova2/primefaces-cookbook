@@ -27,6 +27,5 @@
             maxEntriesLocalDisk="10000000"
             diskExpiryThreadIntervalSeconds="120"
             memoryStoreEvictionPolicy="LRU">
-        <persistence strategy="localTempSwap"/>
     </cache>    
 </ehcache>
