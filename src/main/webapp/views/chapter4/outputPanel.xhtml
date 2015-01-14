@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Multi purpose outputPanel</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Simple (Renders div)" />
+            <p:outputPanel layout="block">
+                <h3>The Volkswagen CC (also known as the Volkswagen Passat CC)</h3>
+                <p>is a four-door coupe version of the Volkswagen Passat.</p>
+            </p:outputPanel>
+
+            <h:outputText value="As Inline (Renders span)" />
+            <p:outputPanel layout="inline">
+                <h3>The Volkswagen CC (also known as the Volkswagen Passat CC)</h3>
+                <p>is a four-door coupe version of the Volkswagen Passat.</p>
+            </p:outputPanel>
+
+            <h:outputText value="With Deferred Loading" />
+            <p:outputPanel deferred="true">
+                <h3>The Volkswagen CC (also known as the Volkswagen Passat CC)</h3>
+                <p>is a four-door coupe version of the Volkswagen Passat.</p>
+            </p:outputPanel>
+
+            <h:outputText value="With Deferred Loading and Delay (3000ms)" />
+            <p:outputPanel deferred="true" delay="3000">
+                <h3>The Volkswagen CC (also known as the Volkswagen Passat CC)</h3>
+                <p>is a four-door coupe version of the Volkswagen Passat.</p>
+            </p:outputPanel>
+
+            <p:spacer/>
+            <div style="height:1000px"></div>
+
+            <h:outputText value="With Deferred Loading and Loaded when visible" />
+            <p:outputPanel deferred="true" deferredMode="visible">
+                <h3>Loaded after the panel becomes visible on page scroll.</h3>
+                <p>The Volkswagen CC is a four-door coupe version of the Volkswagen Passat.</p>
+            </p:outputPanel>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

@@ -148,6 +148,10 @@ public class BookBean implements Serializable {
                 new BookTreeNode("Element Layout with AJAX Listeners", "chapter4/elementLayout.xhtml"), chapter4);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Nested layout / layout in layout", "chapter4/nestedLayout.xhtml"), chapter4);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Responsive layout with Grid CSS", "chapter4/gridCSS.xhtml"), chapter4);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Responsive layout with Grid CSS / Nested", "chapter4/gridCSSNested.xhtml"), chapter4);
     }
 
     private void constructChapter5(TreeNode chapter5) {

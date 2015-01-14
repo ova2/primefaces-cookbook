@@ -68,7 +68,8 @@
 
             <h:outputText value="AJAX Call with Accordion" />
             <p:accordionPanel>
-                <p:ajax event="tabChange" listener="#{accordionPanelBean.onTabChange}" update="growl" />
+                <p:ajax event="tabChange" listener="#{accordionPanelBean.onTabChange}" update=":mainForm:growl" />
+                <p:ajax event="tabClose" listener="#{accordionPanelBean.onTabClose}" update=":mainForm:growl" />
                 <p:tab title="Volkswagen CC">
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:graphicImage library="images" name="autocomplete/CC.png" />

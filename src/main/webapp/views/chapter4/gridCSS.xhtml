@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="head">
+        <style type="text/css">
+            .ui-grid .ui-grid-row div {
+                background-color: #cccccc;
+                border: 1px solid #dddddd;
+                padding: 10px 0;
+                text-align: center;
+            }
+        </style>
+    </ui:define>
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Responsive layout with Grid CSS</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+                <div class="ui-grid-col-1">1</div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-6">6</div>
+                <div class="ui-grid-col-6">6</div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-4">4</div>
+                <div class="ui-grid-col-8">8</div>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

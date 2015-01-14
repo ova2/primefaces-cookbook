@@ -4,6 +4,7 @@ import org.primefaces.cookbook.converter.CarConverter;
 import org.primefaces.cookbook.model.chapter3.Car;
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.TabChangeEvent;
+import org.primefaces.event.TabCloseEvent;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -27,5 +28,9 @@ public class AccordionPanelBean implements Serializable {
 
     public void onTabChange(TabChangeEvent event) {
         MessageUtil.addInfoMessage("tab.changed", "Title: " + event.getTab().getTitle());
+    }
+
+    public void onTabClose(TabCloseEvent event) {
+        MessageUtil.addInfoMessage("tab.closed", "Closed Tab: " + event.getTab().getTitle());
     }
 }
