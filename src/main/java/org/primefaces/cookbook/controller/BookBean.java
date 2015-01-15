@@ -320,6 +320,8 @@ public class BookBean implements Serializable {
                 new BookTreeNode("Sticking component when scrolling", "chapter11/sticking.xhtml"), chapter11);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Reducing page load time by content caching", "chapter11/caching.xhtml"), chapter11);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Possibilities for exception handling", "chapter11/exceptionHandling.xhtml"), chapter11);
     }
 
     public TreeNode getRoot() {
