@@ -26,10 +26,10 @@
                          action="#{exceptionHandlerBean.throwViewExpiredException}"/>
 
         <p:ajaxExceptionHandler type="javax.faces.application.ViewExpiredException"
-                                update="exceptionDialog"
+                                update="expDialog"
                                 onexception="PF('exceptionDialog').show();"/>
 
-        <p:dialog id="exceptionDialog" header="#{pfExceptionHandler.type} occured!"
+        <p:dialog id="expDialog" header="#{pfExceptionHandler.type} occured!"
                   widgetVar="exceptionDialog" height="500px">
             Message: #{pfExceptionHandler.message}
             <br/>
