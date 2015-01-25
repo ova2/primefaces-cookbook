@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayoutMultipart.xhtml">
     <ui:define name="chapterItem">
@@ -11,12 +10,12 @@
 
             <h:outputText value="Simple Upload" />
             <h:panelGrid columns="1">
-                <p:fileUpload value="#{fileController.file}" mode="simple" />
-                <p:commandButton actionListener="#{fileController.handleFileUpload}" value="Upload" ajax="false"/>
+                <p:fileUpload value="#{fileBean.file}" mode="simple" />
+                <p:commandButton value="Upload" ajax="false"/>
             </h:panelGrid>
 
             <h:outputText value="Advanced Upload" />
-            <p:fileUpload value="#{fileController.file}" fileUploadListener="#{fileController.handleFileUpload}" />
+            <p:fileUpload value="#{fileBean.file}" fileUploadListener="#{fileBean.handleFileUpload}" update="growl" />
 
         </h:panelGrid>
     </ui:define>

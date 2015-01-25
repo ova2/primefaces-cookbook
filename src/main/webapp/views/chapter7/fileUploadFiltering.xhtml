@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayoutMultipart.xhtml">
     <ui:define name="chapterItem">
@@ -10,7 +9,7 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="File Type Filtering" />
-            <p:fileUpload fileUploadListener="#{fileController.handleFileUpload}"
+            <p:fileUpload fileUploadListener="#{fileBean.handleFileUpload}"
                           allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
         </h:panelGrid>
     </ui:define>

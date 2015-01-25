@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 @Named
 @SessionScoped
-public class PhotoCamController implements Serializable {
+public class PhotoCamBean implements Serializable {
 
     private StreamedContent capturedImage;
 

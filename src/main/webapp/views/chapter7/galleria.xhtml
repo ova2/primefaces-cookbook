@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Displaying Collection of Images with Galleria</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+            <h:outputText value="Simple Galleria component" />
+            <p:galleria id="simple" panelWidth="380" panelHeight="220">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" />
+            </p:galleria>
+            <br/>
+            <br/>
+
+            <h:outputText value="Without filmstrip" />
+            <p:galleria id="withoutFilmstrip" panelWidth="380" panelHeight="220" showFilmstrip="false">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" />
+            </p:galleria>
+            <br/>
+            <br/>
+
+            <h:outputText value="With List of Cars" />
+            <p:galleria id="withData" value="#{galleriaBean.cars}" var="car" panelWidth="380" panelHeight="220">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" />
+            </p:galleria>
+            <br/>
+            <br/>
+
+            <h:outputText value="With List of Cars and Caption" />
+            <p:galleria id="withDataAndCaption" value="#{galleriaBean.cars}" var="car"
+                        panelWidth="380" panelHeight="220" showCaption="true"
+                        alt="Detail about #{car.name}" title="#{car.name}">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" />
+            </p:galleria>
+            <br/>
+            <br/>
+
+            <h:outputText value="With effect and effectDuration Attributes" />
+            <p:galleria id="withEffect" effect="pulse" effectSpeed="2000" panelWidth="380" panelHeight="220">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" />
+            </p:galleria>
+            <br/>
+            <br/>
+
+    </ui:define>
+</ui:composition>

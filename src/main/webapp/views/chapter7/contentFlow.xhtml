@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Displaying collection of images with Content Flow</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+            <h:outputText value="Simple ImageSwitch component" />
+            <p:contentFlow id="simple" style="width: 600px; height: 300px">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" styleClass="content" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" styleClass="content" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" styleClass="content" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" styleClass="content" />
+            </p:contentFlow>
+            <br/>
+            <br/>
+            <h:outputText value="With List of Cars" />
+            <p:contentFlow id="withData" value="#{contentFlowBean.cars}" var="car" style="width: 600px; height: 300px">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" styleClass="content" />
+            </p:contentFlow>
+            <br/>
+            <br/>
+            <h:outputText value="With Caption" />
+            <p:contentFlow id="withCaption" value="#{contentFlowBean.cars}" var="car" style="width: 600px; height: 300px">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" styleClass="content" />
+                <div class="caption">#{car.name}</div>
+            </p:contentFlow>
+            <br/>
+            <br/>
+    </ui:define>
+</ui:composition>

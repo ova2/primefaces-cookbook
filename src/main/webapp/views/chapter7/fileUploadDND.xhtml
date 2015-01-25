@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -11,10 +10,10 @@
 
             <h:outputText value="File Upload with Drag and Drop" />
             <h:panelGrid columns="1" width="600px">
-                <p:fileUpload id="upload" value="#{fileController.file}"
+                <p:fileUpload id="upload" value="#{fileBean.file}"
                               dragDropSupport="true"
                               update="growl"
-                              fileUploadListener="#{fileController.handleFileUpload}" />
+                              fileUploadListener="#{fileBean.handleFileUpload}" />
             </h:panelGrid>
 
         </h:panelGrid>

@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 @Named
 @SessionScoped
-public class ImageCropController implements Serializable {
+public class ImageCropBean implements Serializable {
 
     private CroppedImage croppedImageSimple;
     private CroppedImage croppedImageCoordinates;

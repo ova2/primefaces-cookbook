@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Displaying Collection of Images with ImageSwitch</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+            <h:outputText value="Simple ImageSwitch component" />
+            <p:imageSwitch id="simple">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" />
+            </p:imageSwitch>
+            <br/>
+            <br/>
+            <h:outputText value="With Shuffle Effect" />
+            <p:imageSwitch id="withEffect" effect="shuffle">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" />
+            </p:imageSwitch>
+            <br/>
+            <br/>
+            <h:outputText value="With Manual Transition" />
+            <br/>
+            <p:commandButton type="button" onclick="PF('manualSwitch').previous();"
+                             icon="ui-icon-circle-triangle-w" id="prev"/>
+            <p:commandButton type="button" onclick="PF('manualSwitch').next();"
+                             icon="ui-icon-circle-triangle-e" id="next"/>
+            <p:imageSwitch id="manual" widgetVar="manualSwitch" slideshowAuto="false">
+                <p:graphicImage value="/resources/images/autocomplete/CC.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Golf.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Polo.png" />
+                <p:graphicImage value="/resources/images/autocomplete/Touareg.png" />
+            </p:imageSwitch>
+            <br/>
+            <br/>
+            <h:outputText value="With List of Cars" />
+            <p:imageSwitch id="withData">
+                <ui:repeat value="#{imageSwitchBean.cars}" var="car">
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" />
+                </ui:repeat>
+            </p:imageSwitch>
+            <br/>
+            <br/>
+    </ui:define>
+</ui:composition>

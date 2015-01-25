@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * User: mertcaliskan
- * Date: 9/11/12
+ * Created by mertcaliskan
+ * on 25/01/15.
  */
 @Named
 @ViewScoped
-public class GalleriaController implements Serializable {
+public class ContentFlowBean implements Serializable {
 
     public List<Car> getCars() {
         return new ArrayList<Car>(CarConverter.cars.values());

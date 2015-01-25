@@ -4,12 +4,11 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayoutMultipart.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">Limiting File Size for File Upload</h3>
+        <h3 style="margin-top:0">Basic File Upload</h3>
         <p:growl id="growl" showDetail="true"/>
-        <h:panelGrid columns="2" cellpadding="5">
-
-            <h:outputText value="Size Limit" />
-            <p:fileUpload fileUploadListener="#{fileBean.handleFileUpload}" sizeLimit="10240" />
+        <h:panelGrid columns="1" cellpadding="5">
+            <p:fileUpload value="#{fileBean.file1}" fileUploadListener="#{fileBean.handleFileUpload}" update="growl" />
+            <p:fileUpload value="#{fileBean.file2}" fileUploadListener="#{fileBean.handleFileUpload}" update="growl" />
         </h:panelGrid>
     </ui:define>
 </ui:composition>

@@ -10,6 +10,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * User: mertcaliskan
@@ -17,13 +18,16 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class FileController implements Serializable {
+public class FileBean implements Serializable {
 
     private UploadedFile file;
 
+    private UploadedFile file1;
+    private UploadedFile file2;
+
     private StreamedContent downloadFile;
 
-    public FileController() {
+    public FileBean() {
         InputStream stream = this.getClass().getResourceAsStream("/chapter7/PFSamplePDF.pdf");
         downloadFile = new DefaultStreamedContent(stream, "application/pdf", "PFSample.pdf");
     }
@@ -34,6 +38,22 @@ public class FileController implements Serializable {
 
     public void setFile(UploadedFile file) {
         this.file = file;
+    }
+
+    public UploadedFile getFile1() {
+        return file1;
+    }
+
+    public void setFile1(UploadedFile file1) {
+        this.file1 = file1;
+    }
+
+    public UploadedFile getFile2() {
+        return file2;
+    }
+
+    public void setFile2(UploadedFile file2) {
+        this.file2 = file2;
     }
 
     public void handleFileUpload(FileUploadEvent event) {

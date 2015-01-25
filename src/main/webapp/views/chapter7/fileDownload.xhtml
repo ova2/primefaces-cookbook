@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -25,14 +24,14 @@
 
             <h:outputText value="Download PDF File" />
             <p:commandButton value="Download" ajax="false">
-                <p:fileDownload value="#{fileController.downloadFile}" />
+                <p:fileDownload value="#{fileBean.downloadFile}" />
             </p:commandButton>
 
             <h:outputText value="Download and Monitor" />
             <p:panel header="With Monitoring">
                 <h:commandLink onclick="PrimeFaces.monitorDownload(showStatus, hideStatus)">
                     <p:graphicImage value="/resources/images/download/fileDownload.png" />
-                    <p:fileDownload value="#{fileController.downloadFile}" />
+                    <p:fileDownload value="#{fileBean.downloadFile}" />
                 </h:commandLink>
             </p:panel>
 

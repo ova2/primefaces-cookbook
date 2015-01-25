@@ -37,7 +37,7 @@ public class BookBean implements Serializable {
         TreeNode chapter4 = new DefaultTreeNode(new BookTreeNode("Grouping Content with Panels", null), root);
         TreeNode chapter5 = new DefaultTreeNode(new BookTreeNode("Data Iteration Components", null), root);
         TreeNode chapter6 = new DefaultTreeNode(new BookTreeNode("Endless Menu Variations", null), root);
-        TreeNode chapter7 = new DefaultTreeNode(new BookTreeNode("Working with Files and Images", null), root);
+        TreeNode chapter7 = new DefaultTreeNode(new BookTreeNode("Working with Files, Images and Multimedia", null), root);
         TreeNode chapter8 = new DefaultTreeNode(new BookTreeNode("Drag Me, Drop Me", null), root);
         TreeNode chapter9 = new DefaultTreeNode(new BookTreeNode("Creating Charts and Maps", null), root);
         TreeNode chapter10 = new DefaultTreeNode(new BookTreeNode("Client Side Validation", null), root);
@@ -210,7 +210,7 @@ public class BookBean implements Serializable {
     }
 
     private void constructChapter7(TreeNode chapter7) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic File Upload", "chapter7/fileUploadBasic.xhtml"),
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic File Upload", "chapter7/fileUpload.xhtml"),
                 chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Multiple File Upload", "chapter7/fileUploadMultiple.xhtml"),
                 chapter7);
@@ -222,12 +222,16 @@ public class BookBean implements Serializable {
                 new BookTreeNode("Client Side Callback for File Upload", "chapter7/fileUploadCallback.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Uploading File with Drag & Drop", "chapter7/fileUploadDND.xhtml"), chapter7);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Multiple advanced file uploads in one form", "chapter7/multipleFileUploadInOneForm.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Downloading Files", "chapter7/fileDownload.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Cropping Images", "chapter7/cropImage.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Displaying Collection of Images", "chapter7/displayImageCollection.xhtml"), chapter7);
+                new BookTreeNode("Displaying Collection of Images with Galleria", "chapter7/galleria.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Displaying Collection of Images 2 ", "chapter7/displayImageCollection2.xhtml"), chapter7);
+                new BookTreeNode("Displaying Collection of Images with Image Switch", "chapter7/imageSwitch.xhtml"), chapter7);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Displaying collection of images with Content Flow", "chapter7/contentFlow.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Capturing Images with PhotoCam", "chapter7/captureImage.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Comparing Images", "chapter7/compareImage.xhtml"), chapter7);
