@@ -2,10 +2,31 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
         <h3 style="margin-top:0">Embedding multimedia content in JSF pages</h3>
         <p:growl id="growl" showDetail="true"/>
 
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Simple" />
+            <p:media value="/resources/media/sample_iTunes.mov" width="700" height="500" />
+
+            <h:outputText value="With URL" />
+            <p:media value="http://www.youtube.com/v/5aTFiNxzXF4" player="flash" />
+
+            <h:outputText value="With parameters"/>
+            <p:media value="/resources/media/sample_iTunes.mov" player="quicktime" width="700" height="500">
+                <f:param name="autoPlay" value="false" />
+                <f:param name="controller" value="true" />
+                <f:param name="volume" value="20" />
+            </p:media>
+
+            <h:outputText value="Dynamic Streaming" />
+            <p:media value="#{mediaBean.media}" player="quicktime" />
+
+            <h:outputText value="PDF Viewer" />
+            <p:media value="/resources/media/PFSamplePDF.pdf" />
+        </h:panelGrid>
     </ui:define>
 </ui:composition>

@@ -227,14 +227,18 @@ public class BookBean implements Serializable {
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Downloading Files", "chapter7/fileDownload.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Cropping Images", "chapter7/cropImage.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Creating dynamic image streaming programmatically", "chapter7/dynaImage.xhtml"),
+                chapter7);
+        new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Displaying Collection of Images with Galleria", "chapter7/galleria.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Displaying Collection of Images with Image Switch", "chapter7/imageSwitch.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Displaying collection of images with Content Flow", "chapter7/contentFlow.xhtml"), chapter7);
         new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Embedding multimedia content in JSF pages", "chapter7/media.xhtml"), chapter7);
+        new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Capturing Images with PhotoCam", "chapter7/captureImage.xhtml"), chapter7);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Comparing Images", "chapter7/compareImage.xhtml"), chapter7);
     }
 
     private void constructChapter8(TreeNode chapter8) {
@@ -271,9 +275,6 @@ public class BookBean implements Serializable {
                 new BookTreeNode("Live Data updating of charts with polling", "chapter9/pollingChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Interacting with charts by AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Creating dynamic image streaming programmatically", "chapter9/dynaImage.xhtml"),
-                chapter9);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mapping with Google Maps", "chapter9/map.xhtml"), chapter9);
     }
 

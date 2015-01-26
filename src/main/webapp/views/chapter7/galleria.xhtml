@@ -36,9 +36,9 @@
 
             <h:outputText value="With List of Cars and Caption" />
             <p:galleria id="withDataAndCaption" value="#{galleriaBean.cars}" var="car"
-                        panelWidth="380" panelHeight="220" showCaption="true"
-                        alt="Detail about #{car.name}" title="#{car.name}">
-                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" />
+                        panelWidth="380" panelHeight="220" showCaption="true">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png"
+                            alt="Detail about #{car.name}" title="#{car.name}" />
             </p:galleria>
             <br/>
             <br/>
@@ -52,6 +52,5 @@
             </p:galleria>
             <br/>
             <br/>
-
     </ui:define>
 </ui:composition>

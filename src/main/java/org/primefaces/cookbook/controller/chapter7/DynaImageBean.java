@@ -1,4 +1,4 @@
-package org.primefaces.cookbook.controller.chapter9;
+package org.primefaces.cookbook.controller.chapter7;
 
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
@@ -15,10 +15,10 @@ import java.io.Serializable;
  */
 @Named
 @SessionScoped
-public class DynaImageController implements Serializable {
+public class DynaImageBean implements Serializable {
 
     public StreamedContent getGraphicText() throws IOException {
-        InputStream stream = this.getClass().getResourceAsStream("/chapter9/primefaces.jpg");
+        InputStream stream = this.getClass().getResourceAsStream("/chapter7/primefaces.jpg");
         return new DefaultStreamedContent(stream);
     }
 }
