@@ -29,5 +29,10 @@
             </p:contentFlow>
             <br/>
             <br/>
+            <h:outputText value="With Linked Caption" />
+            <p:contentFlow id="withCaptionLink" value="#{contentFlowBean.cars}" var="car" style="width: 600px; height: 300px">
+                <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" styleClass="content" />
+                <div class="caption"><p:commandLink action="#{contentFlowBean.showMessage}" update="growl">#{car.name}</p:commandLink></div>
+            </p:contentFlow>
     </ui:define>
 </ui:composition>
