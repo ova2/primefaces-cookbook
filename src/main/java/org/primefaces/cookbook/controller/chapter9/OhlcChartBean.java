@@ -13,11 +13,11 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class OhlcChartController implements Serializable {
+public class OhlcChartBean implements Serializable {
 
     private OhlcChartModel model;
 
-    public OhlcChartController() {
+    public OhlcChartBean() {
         model = new OhlcChartModel();
 
         model.add(new OhlcChartSeries(1, 136.01, 139.5, 134.53, 139.48));

@@ -14,11 +14,11 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class MeterGaugeController implements Serializable {
+public class MeterGaugeBean implements Serializable {
 
     private MeterGaugeChartModel model;
 
-    public MeterGaugeController() {
+    public MeterGaugeBean() {
         List<Number> intervals = new ArrayList<Number>(){{
             add(22000);
             add(55000);

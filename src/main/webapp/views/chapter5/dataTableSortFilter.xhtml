@@ -11,7 +11,7 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Sorting" />
-            <p:dataTable id="sorting" var="car" value="#{dataTableController.cars}">
+            <p:dataTable id="sorting" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
                 <p:column headerText="Year" sortBy="#{car.year}">
                     <h:outputText value="#{car.year}" />
                 </p:column>
@@ -21,7 +21,7 @@
             </p:dataTable>
 
             <h:outputText value="Filtering" />
-            <p:dataTable id="filtering" var="car" value="#{dataTableController.cars}">
+            <p:dataTable id="filtering" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
                 <p:column headerText="Year" filterBy="#{car.year}">
                     <h:outputText value="#{car.year}" />
                 </p:column>
@@ -30,9 +30,9 @@
                 </p:column>
             </p:dataTable>
 
-            <h:outputText value="Filtering With Max Length" />
-            <p:dataTable id="filteringWithMaxLength" var="car" value="#{dataTableController.cars}">
-                <p:column headerText="Name" filterBy="#{car.name}">
+            <h:outputText value="Filtering With Max Length (Max 2 chars)" />
+            <p:dataTable id="filteringWithMaxLength" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
+                <p:column headerText="Name" filterBy="#{car.name}" filterMaxLength="2">
                     <h:outputText value="#{car.name}" />
                 </p:column>
                 <p:column headerText="Year" filterBy="#{car.year}" filterMaxLength="2">
@@ -41,27 +41,27 @@
             </p:dataTable>
 
             <h:outputText value="With Filter Options" />
-            <p:dataTable id="withFilterOptions" var="car" value="#{dataTableController.cars}">
+            <p:dataTable id="withFilterOptions" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
                     <p:column headerText="Year" filterBy="#{car.year}" filterMatchMode="startsWith">
                         <h:outputText value="#{car.year}" />
                     </p:column>
-                    <p:column headerText="Name" filterBy="#{car.name}" filterOptions="#{dataTableController.carNamesAsOptions}">
+                    <p:column headerText="Name" filterBy="#{car.name}" filterOptions="#{dataTableBean.carNamesAsOptions}">
                         <h:outputText value="#{car.name}" />
                     </p:column>
             </p:dataTable>
 
             <h:outputText value="With Filter Options Above Header Text" />
-            <p:dataTable id="withFilterOptionsPositioned" var="car" value="#{dataTableController.cars}">
+            <p:dataTable id="withFilterOptionsPositioned" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
                     <p:column headerText="Year" filterBy="#{car.year}" filterMatchMode="startsWith">
                         <h:outputText value="#{car.year}" />
                     </p:column>
-                    <p:column headerText="Name" filterBy="#{car.name}" filterOptions="#{dataTableController.carNamesAsOptions}" filterPosition="top">
+                    <p:column headerText="Name" filterBy="#{car.name}" filterOptions="#{dataTableBean.carNamesAsOptions}" filterPosition="top">
                         <h:outputText value="#{car.name}" />
                     </p:column>
             </p:dataTable>
 
             <h:outputText value="With Global Filter" />
-            <p:dataTable id="withGlobalFilter" widgetVar="carsTable" var="car" value="#{dataTableController.cars}">
+            <p:dataTable id="withGlobalFilter" widgetVar="carsTable" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
                 <f:facet name="header">
                     <p:outputPanel>
                         <h:outputText value="Search all fields:" />

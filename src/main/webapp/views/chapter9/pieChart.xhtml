@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -10,19 +9,19 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple" />
-            <p:pieChart value="#{pieChartController.model}" style="height:250px" title="Hours per Day" />
+            <p:chart type="pie" model="#{pieChartBean.model1}" style="height:250px" title="Hours per Day" />
 
             <h:outputText value="With Legends" />
-            <p:pieChart value="#{pieChartController.model}" style="height:250px" legendPosition="nw" />
+            <p:chart type="pie" model="#{pieChartBean.model2}" style="height:250px" />
 
             <h:outputText value="With Series Colors" />
-            <p:pieChart value="#{pieChartController.model}" style="height:250px" seriesColors="FF0000,00FF00,0000FF,F0F0F0,0F0F0F" legendPosition="nw" />
+            <p:chart type="pie" model="#{pieChartBean.model3}" style="height:250px" />
 
             <h:outputText value="With Data Labels" />
-            <p:pieChart value="#{pieChartController.model}" style="height:250px" showDataLabels="true" dataFormat="percent" />
+            <p:chart type="pie" model="#{pieChartBean.model4}" style="height:250px" />
 
             <h:outputText value="With Adjusted Visual" />
-            <p:pieChart value="#{pieChartController.model}" style="height:250px" sliceMargin="5" diameter="200" fill="false" />
+            <p:chart type="pie" model="#{pieChartBean.model5}" style="height:250px" />
 
         </h:panelGrid>
     </ui:define>

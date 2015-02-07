@@ -14,11 +14,11 @@ import java.util.Map;
  */
 @Named
 @ViewScoped
-public class DonutChartController implements Serializable {
+public class DonutChartBean implements Serializable {
 
     private DonutChartModel model;
 
-    public DonutChartController() {
+    public DonutChartBean() {
         createDonutChart();
     }
 

@@ -13,11 +13,11 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class BubbleChartController implements Serializable {
+public class BubbleChartBean implements Serializable {
 
     private BubbleChartModel model;
 
-    public BubbleChartController() {
+    public BubbleChartBean() {
         createBubbleChart();
     }
 

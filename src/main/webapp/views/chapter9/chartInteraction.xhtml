@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -10,9 +9,9 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="With AJAX Behavior Event" />
-            <p:barChart id="withAjax" value="#{barChartController.model}" style="height:250px">
-                <p:ajax event="itemSelect" listener="#{barChartController.itemSelect}" update="growl" />
-            </p:barChart>
+            <p:chart type="bar" id="withAjax" value="#{barChartBean.model}" style="height:250px">
+                <p:ajax event="itemSelect" listener="#{barChartBean.itemSelect}" update="growl" />
+            </p:chart>
 
         </h:panelGrid>
     </ui:define>

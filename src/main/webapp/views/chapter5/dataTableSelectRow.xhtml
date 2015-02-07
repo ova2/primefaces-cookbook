@@ -11,21 +11,42 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Single Selection with a Command Component" />
-            <p:dataTable id="withCommand" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
-                         selection="#{dataTableController.selectedCar}">
+            <p:dataTable id="withCommand" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCar}">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <p:column>
                     <p:commandButton value="Select" update=":mainForm:display" oncomplete="PF('carDialog').show()">
                         <f:setPropertyActionListener value="#{car}"
-                                                     target="#{dataTableController.selectedCar}" />
+                                                     target="#{dataTableBean.selectedCar}" />
                     </p:commandButton>
                 </p:column>
             </p:dataTable>
 
+            <h:outputText value="Single Selection with a EL Parameter" />
+            <p:dataTable id="withELParam" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCar}">
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <p:column>
+                    <p:commandButton value="Select" update=":mainForm:display" oncomplete="PF('carDialog').show()" action="#{dataTableBean.selectCar(car)}" />
+                </p:column>
+            </p:dataTable>
+
             <h:outputText value="Single Selection with Row Click" />
-            <p:dataTable id="singleSelection" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
-                         selection="#{dataTableController.selectedCars}" selectionMode="single">
+            <p:dataTable id="singleSelection" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCars}" selectionMode="single">
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <f:facet name="footer">
+                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                                     update=":mainForm:display" oncomplete="PF('carDialog').show()"/>
+                </f:facet>
+            </p:dataTable>
+
+            <h:outputText value="Single Selection with Row Click" />
+            <p:dataTable id="singleSelection" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCars}" selectionMode="single">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
@@ -35,8 +56,8 @@
             </p:dataTable>
 
             <h:outputText value="Single Selection with Radio Button" />
-            <p:dataTable id="withRadioButton" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
-                         selection="#{dataTableController.selectedCar}">
+            <p:dataTable id="withRadioButton" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCar}">
                 <p:column selectionMode="single"/>
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
@@ -47,8 +68,8 @@
             </p:dataTable>
 
             <h:outputText value="Multiple Selection with Row Click" />
-            <p:dataTable id="multipleSelection" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
-                         selection="#{dataTableController.selectedCars}" selectionMode="multiple">
+            <p:dataTable id="multipleSelection" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCarsList}" selectionMode="multiple">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
@@ -57,9 +78,20 @@
                 </f:facet>
             </p:dataTable>
 
+            <h:outputText value="Multiple Selection with Row Click With Add Edit Mode" />
+            <p:dataTable id="multipleSelectionEditMode" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCarsList}" selectionMode="multiple" rowSelectMode="add">
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <f:facet name="footer">
+                    <p:commandButton id="viewButtonMultipleEditMode" value="View" icon="ui-icon-search" process="multipleSelection"
+                                     update=":mainForm:displayMultiple" oncomplete="PF('carDialogMultiple').show()"/>
+                </f:facet>
+            </p:dataTable>
+
             <h:outputText value="Multiple Selection with Checkbox" />
-            <p:dataTable id="multipleSelectionCheckbox" var="car" value="#{dataTableController.cars}" rowKey="#{car.name}"
-                         selection="#{dataTableController.selectedCars}">
+            <p:dataTable id="multipleSelectionCheckbox" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCars}">
                 <p:column selectionMode="multiple" />
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
@@ -75,20 +107,20 @@
                   width="200" showEffect="clip" hideEffect="fold">
             <h:panelGrid id="display" columns="2" cellpadding="4">
                 <f:facet name="header">
-                    <p:graphicImage value="/resources/images/autocomplete/#{dataTableController.selectedCar.name}.png" width="60" height="40" />
+                    <p:graphicImage value="/resources/images/autocomplete/#{dataTableBean.selectedCar.name}.png" width="60" height="40" />
                 </f:facet>
 
                 <h:outputText value="Name:" />
-                <h:outputText value="#{dataTableController.selectedCar.name}" />
+                <h:outputText value="#{dataTableBean.selectedCar.name}" />
 
                 <h:outputText value="Year:" />
-                <h:outputText value="#{dataTableController.selectedCar.year}" />
+                <h:outputText value="#{dataTableBean.selectedCar.year}" />
             </h:panelGrid>
         </p:dialog>
 
         <p:dialog id="dialogMultiple" header="Car Detail" widgetVar="carDialogMultiple" showEffect="clip" hideEffect="fold">
             <p:dataList id="displayMultiple"
-                        value="#{dataTableController.selectedCars}"
+                        value="#{dataTableBean.selectedCars}"
                         var="selectedCar" type="definition">
                 <p:graphicImage value="/resources/images/autocomplete/#{selectedCar.name}.png" width="60" height="40" />
                 <br/>

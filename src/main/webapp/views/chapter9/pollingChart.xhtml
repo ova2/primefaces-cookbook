@@ -1,7 +1,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
@@ -12,7 +11,7 @@
 
             <h:outputText value="Live Update" />
             <p:poll interval="3" update="live" />
-            <p:pieChart id="live" value="#{pieChartController.livePieModel}" style="height:250px" />
+            <p:chart id="live" type="pie" model="#{pieChartBean.livePieModel}" style="height:250px" />
 
         </h:panelGrid>
 

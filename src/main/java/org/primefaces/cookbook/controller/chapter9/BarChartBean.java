@@ -2,6 +2,7 @@ package org.primefaces.cookbook.controller.chapter9;
 
 import org.primefaces.cookbook.utils.MessageUtil;
 import org.primefaces.event.ItemSelectEvent;
+import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.CartesianChartModel;
 import org.primefaces.model.chart.ChartSeries;
 
@@ -15,12 +16,12 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class BarChartController implements Serializable {
+public class BarChartBean implements Serializable {
 
-    private CartesianChartModel model;
+    private BarChartModel model;
 
-    public BarChartController() {
-        model = new CartesianChartModel();
+    public BarChartBean() {
+        model = new BarChartModel();
 
         createModel();
     }
@@ -53,7 +54,7 @@ public class BarChartController implements Serializable {
                 "Series Index:" + event.getSeriesIndex() + ", Item Index: " + event.getItemIndex());
     }
 
-    public CartesianChartModel getModel() {
+    public BarChartModel getModel() {
         return model;
     }
 }

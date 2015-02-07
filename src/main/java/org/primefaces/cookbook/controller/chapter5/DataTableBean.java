@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class DataTableController implements Serializable {
+public class DataTableBean implements Serializable {
 
     private List<Car> cars;
     private Car selectedCar;
@@ -26,7 +26,7 @@ public class DataTableController implements Serializable {
     private List<Car> selectedCarsList;
     private SelectItem[] carNamesOptions;
 
-    public DataTableController() {
+    public DataTableBean() {
         cars = new ArrayList<Car>(CarConverter.cars.values());
     }
     
@@ -48,6 +48,11 @@ public class DataTableController implements Serializable {
         }
 
         return options;
+    }
+
+    public String selectCar(Car car) {
+        this.selectedCar = car;
+        return null;
     }
 
     public void onEdit(RowEditEvent event) {
