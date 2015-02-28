@@ -16,11 +16,11 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class OrderListController implements Serializable {
+public class OrderListBean implements Serializable {
 
     private List<String> countries;
 
-    public OrderListController() {
+    public OrderListBean() {
         countries = new ArrayList<String>();
 
         countries.add("England");

@@ -2,6 +2,8 @@ package org.primefaces.cookbook.controller.chapter5;
 
 import org.primefaces.cookbook.converter.CarConverter;
 import org.primefaces.cookbook.model.chapter3.Car;
+import org.primefaces.cookbook.utils.MessageUtil;
+import org.primefaces.event.TransferEvent;
 import org.primefaces.model.DualListModel;
 
 import javax.faces.view.ViewScoped;
@@ -16,7 +18,7 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class PickListController implements Serializable {
+public class PickListBean implements Serializable {
 
     private DualListModel<String> countries;
 
@@ -25,7 +27,7 @@ public class PickListController implements Serializable {
     private List<String> countriesSource = new ArrayList<String>();
     private List<String> countriesTarget = new ArrayList<String>();
 
-    public PickListController() {
+    public PickListBean() {
         countriesSource.add("England");
         countriesSource.add("Germany");
         countriesSource.add("Switzerland");
@@ -40,7 +42,11 @@ public class PickListController implements Serializable {
     }
 
     public DualListModel<String> getCountries() {
-        return countries;
+        DualListModel<String> d = new DualListModel<String>();
+        for (int i = 0; i < 250; i++) {
+            d.getSource().addAll(countriesSource);
+        }
+        return d;
     }
 
     public void setCountries(DualListModel<String> countries) {
@@ -53,5 +59,11 @@ public class PickListController implements Serializable {
 
     public void setCars(DualListModel<Car> cars) {
         this.cars = cars;
+    }
+
+    public void handleTransfer(TransferEvent event) {
+        MessageUtil.addInfoMessage("items.transferred", event.getItems());
+        MessageUtil.addInfoMessage("is.added", event.isAdd());
+        MessageUtil.addInfoMessage("is.removed", event.isRemove());
     }
 }

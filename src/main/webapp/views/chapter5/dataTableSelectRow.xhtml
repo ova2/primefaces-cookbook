@@ -11,7 +11,7 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Single Selection with a Command Component" />
-            <p:dataTable id="withCommand" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+            <p:dataTable id="withCommand" var="car" value="#{dataTableBean.cars}" style="width: 300px;"
                          selection="#{dataTableBean.selectedCar}">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
@@ -23,36 +23,35 @@
                 </p:column>
             </p:dataTable>
 
-            <h:outputText value="Single Selection with a EL Parameter" />
-            <p:dataTable id="withELParam" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+            <h:outputText value="Single Selection with an EL Parameter" />
+            <p:dataTable id="withELParam" var="car" value="#{dataTableBean.cars}" style="width: 300px;"
                          selection="#{dataTableBean.selectedCar}">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <p:column>
-                    <p:commandButton value="Select" update=":mainForm:display" oncomplete="PF('carDialog').show()" action="#{dataTableBean.selectCar(car)}" />
+                    <p:commandButton value="Select" update=":mainForm:display" oncomplete="PF('carDialog').show()"
+                                     action="#{dataTableBean.selectCar(car)}" />
                 </p:column>
             </p:dataTable>
 
             <h:outputText value="Single Selection with Row Click" />
             <p:dataTable id="singleSelection" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
-                         selection="#{dataTableBean.selectedCars}" selectionMode="single">
+                         selection="#{dataTableBean.selectedCar}" selectionMode="single">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
-                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                    <p:commandButton id="viewButton1" value="View" icon="ui-icon-search" process="singleSelection"
                                      update=":mainForm:display" oncomplete="PF('carDialog').show()"/>
                 </f:facet>
             </p:dataTable>
 
-            <h:outputText value="Single Selection with Row Click" />
-            <p:dataTable id="singleSelection" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
-                         selection="#{dataTableBean.selectedCars}" selectionMode="single">
+            <h:outputText value="Single Selection with AJAX Events" />
+            <p:dataTable id="ajaxBehaviour" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCar}" selectionMode="single">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
-                <f:facet name="footer">
-                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
-                                     update=":mainForm:display" oncomplete="PF('carDialog').show()"/>
-                </f:facet>
+                <p:ajax event="rowSelect" listener="#{dataTableBean.onRowSelect}" update=":mainForm:growl"/>
+                <p:ajax event="rowUnselect" listener="#{dataTableBean.onRowUnselect}" update=":mainForm:growl"/>
             </p:dataTable>
 
             <h:outputText value="Single Selection with Radio Button" />
@@ -62,14 +61,14 @@
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
-                    <p:commandButton id="viewButton" value="View" icon="ui-icon-search"
+                    <p:commandButton id="viewButton2" value="View" icon="ui-icon-search"
                                      update=":mainForm:display" oncomplete="PF('carDialog').show()"/>
                 </f:facet>
             </p:dataTable>
 
             <h:outputText value="Multiple Selection with Row Click" />
             <p:dataTable id="multipleSelection" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
-                         selection="#{dataTableBean.selectedCarsList}" selectionMode="multiple">
+                         selection="#{dataTableBean.selectedCars}" selectionMode="multiple">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
@@ -80,11 +79,11 @@
 
             <h:outputText value="Multiple Selection with Row Click With Add Edit Mode" />
             <p:dataTable id="multipleSelectionEditMode" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
-                         selection="#{dataTableBean.selectedCarsList}" selectionMode="multiple" rowSelectMode="add">
+                         selection="#{dataTableBean.selectedCars}" selectionMode="multiple" rowSelectMode="add">
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <f:facet name="footer">
-                    <p:commandButton id="viewButtonMultipleEditMode" value="View" icon="ui-icon-search" process="multipleSelection"
+                    <p:commandButton id="viewButtonMultipleEditMode" value="View" icon="ui-icon-search" process="multipleSelectionEditMode"
                                      update=":mainForm:displayMultiple" oncomplete="PF('carDialogMultiple').show()"/>
                 </f:facet>
             </p:dataTable>

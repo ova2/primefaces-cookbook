@@ -18,13 +18,13 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class LazyDataTableController implements Serializable {
+public class LazyDataTableBean implements Serializable {
 
     private List<Car> cars;
 
     private LazyDataModel<Car> lazyModel;
 
-    public LazyDataTableController() {
+    public LazyDataTableBean() {
         Collection<Car> cars = CarConverter.cars.values();
         Collection<Car> bulkCars = new ArrayList<Car>();
         for (int i = 0; i< 1000; i++) {

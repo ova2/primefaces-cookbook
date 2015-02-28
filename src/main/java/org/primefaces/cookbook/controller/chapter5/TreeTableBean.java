@@ -2,10 +2,7 @@ package org.primefaces.cookbook.controller.chapter5;
 
 import org.primefaces.cookbook.model.chapter5.TreeTableElement;
 import org.primefaces.cookbook.utils.MessageUtil;
-import org.primefaces.event.NodeCollapseEvent;
-import org.primefaces.event.NodeExpandEvent;
-import org.primefaces.event.NodeSelectEvent;
-import org.primefaces.event.NodeUnselectEvent;
+import org.primefaces.event.*;
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 
@@ -19,7 +16,7 @@ import java.io.Serializable;
  */
 @Named
 @ViewScoped
-public class TreeTableController implements Serializable {
+public class TreeTableBean implements Serializable {
 
     private TreeNode root;
 
@@ -27,33 +24,37 @@ public class TreeTableController implements Serializable {
     private TreeNode selectedItemForContextMenu;
     private TreeNode[] selectedItems;
 
-    public TreeTableController() {
+    public TreeTableBean() {
         root = new DefaultTreeNode("root", null);
 
-        TreeNode node1 = new DefaultTreeNode("node", new TreeTableElement("Node1", "1st Column", "2nd Column"), root);
-        TreeNode node2 = new DefaultTreeNode("node", new TreeTableElement("Node2", "1st Column", "2nd Column"), root);
+        TreeNode node1 = new DefaultTreeNode("node", new TreeTableElement("Node1", "N1 1st Column", "N1 2nd Column"), root);
+        TreeNode node2 = new DefaultTreeNode("node", new TreeTableElement("Node2", "N2 1st Column", "N2 2nd Column"), root);
 
-        TreeNode node11 = new DefaultTreeNode("leaf", new TreeTableElement("Node1.1", "1st Column", "2nd Column"), node1);
-        TreeNode node12 = new DefaultTreeNode("leaf", new TreeTableElement("Node1.2", "1st Column", "2nd Column"), node1);
+        TreeNode node11 = new DefaultTreeNode("leaf", new TreeTableElement("Node1.1", "N11 1st Column", "N11 2nd Column"), node1);
+        TreeNode node12 = new DefaultTreeNode("leaf", new TreeTableElement("Node1.2", "N12 1st Column", "N12 2nd Column"), node1);
 
-        TreeNode node21 = new DefaultTreeNode("node", new TreeTableElement("Node2.1", "1st Column", "2nd Column"), node2);
-        TreeNode node211 = new DefaultTreeNode("leaf", new TreeTableElement("Node2.1.1", "1st Column", "2nd Column"), node21);
+        TreeNode node21 = new DefaultTreeNode("node", new TreeTableElement("Node2.1", "N21 1st Column", "N21 2nd Column"), node2);
+        TreeNode node211 = new DefaultTreeNode("leaf", new TreeTableElement("Node2.1.1", "N211 1st Column", "N211 2nd Column"), node21);
     }
 
     public void onNodeExpand(NodeExpandEvent event) {
-        MessageUtil.addInfoMessageWithoutKey("Expanded", event.getTreeNode().toString());
+        MessageUtil.addInfoMessageWithoutKey("Expanded", event.getTreeNode().getData().toString());
     }
 
     public void onNodeCollapse(NodeCollapseEvent event) {
-        MessageUtil.addInfoMessageWithoutKey("Collapsed", event.getTreeNode().toString());
+        MessageUtil.addInfoMessageWithoutKey("Collapsed", event.getTreeNode().getData().toString());
     }
 
     public void onNodeSelect(NodeSelectEvent event) {
-        MessageUtil.addInfoMessageWithoutKey("Selected", event.getTreeNode().toString());
+        MessageUtil.addInfoMessageWithoutKey("Selected", event.getTreeNode().getData().toString());
     }
 
     public void onNodeUnselect(NodeUnselectEvent event) {
-        MessageUtil.addInfoMessageWithoutKey("Unselected", event.getTreeNode().toString());
+        MessageUtil.addInfoMessageWithoutKey("Unselected", event.getTreeNode().getData().toString());
+    }
+
+    public void onColResize(ColumnResizeEvent event) {
+        MessageUtil.addInfoMessageWithoutKey("Resized", event.getColumn().toString());
     }
 
     public void deleteNode() {

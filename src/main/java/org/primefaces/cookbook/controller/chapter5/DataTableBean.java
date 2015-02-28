@@ -3,8 +3,9 @@ package org.primefaces.cookbook.controller.chapter5;
 import org.primefaces.cookbook.converter.CarConverter;
 import org.primefaces.cookbook.model.chapter3.Car;
 import org.primefaces.cookbook.utils.MessageUtil;
-import org.primefaces.event.RowEditEvent;
+import org.primefaces.event.*;
 
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -23,13 +24,25 @@ public class DataTableBean implements Serializable {
     private List<Car> cars;
     private Car selectedCar;
     private Car[] selectedCars;
-    private List<Car> selectedCarsList;
     private SelectItem[] carNamesOptions;
+    private List<Car> filteredValues;
 
     public DataTableBean() {
         cars = new ArrayList<Car>(CarConverter.cars.values());
     }
-    
+
+    public void onResize(ColumnResizeEvent event) {
+        MessageUtil.addInfoMessage("column.resized", "W:" + event.getWidth() + " - H:" + event.getHeight());
+    }
+
+    public void onRowReorder(ReorderEvent event) {
+        MessageUtil.addInfoMessage("row.reordered", "From:" + event.getFromIndex() + " - To:" + event.getToIndex());
+    }
+
+    public void onColReorder(AjaxBehaviorEvent event) {
+        MessageUtil.addInfoMessage("col.reordered", "Component ID:" + event.getComponent().getId());
+    }
+
     public String[] getCarNames() {
         return CarConverter.cars.keySet().toArray(new String[0]);
     }
@@ -42,7 +55,6 @@ public class DataTableBean implements Serializable {
     private SelectItem[] createFilterOptions(String[] data) {
         SelectItem[] options = new SelectItem[data.length + 1];
 
-        options[0] = new SelectItem("", "Select");
         for(int i = 0; i < data.length; i++) {
             options[i + 1] = new SelectItem(data[i], data[i]);
         }
@@ -53,6 +65,14 @@ public class DataTableBean implements Serializable {
     public String selectCar(Car car) {
         this.selectedCar = car;
         return null;
+    }
+
+    public void onRowSelect(SelectEvent event) {
+        MessageUtil.addInfoMessage("car.selected", ((Car) event.getObject()).getName());
+    }
+
+    public void onRowUnselect(UnselectEvent event) {
+        MessageUtil.addInfoMessage("car.unselected", ((Car) event.getObject()).getName());
     }
 
     public void onEdit(RowEditEvent event) {
@@ -87,11 +107,11 @@ public class DataTableBean implements Serializable {
         this.cars = cars;
     }
 
-    public List<Car> getSelectedCarsList() {
-        return selectedCarsList;
+    public List<Car> getFilteredValues() {
+        return filteredValues;
     }
 
-    public void setSelectedCarsList(List<Car> selectedCarsList) {
-        this.selectedCarsList = selectedCarsList;
+    public void setFilteredValues(List<Car> filteredValues) {
+        this.filteredValues = filteredValues;
     }
 }

@@ -9,10 +9,20 @@
         <p:growl id="growl" showDetail="true"/>
 
         <script type="text/javascript">
+            function objToString(obj) {
+                var str = '';
+                for (var p in obj) {
+                    if (obj.hasOwnProperty(p)) {
+                        str += p + '::' + obj[p] + '\n';
+                    }
+                }
+                return str;
+            }
+
             function handleTransfer(e) {
-                alert(e.items);
-                alert(e.from);
-                alert(e.to);
+                alert(e.item);
+                alert(objToString(e.from));
+                alert(objToString(e.to));
                 alert(e.type);
             }
         </script>
@@ -20,24 +30,24 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple" />
-            <p:pickList id="simple" value="#{pickListController.countries}"
+            <p:pickList id="simple" value="#{pickListBean.countries}"
                         var="country" itemLabel="#{country}" itemValue="#{country}" />
 
             <h:outputText value="With Caption" />
-            <p:pickList id="withCaption" value="#{pickListController.countries}"
+            <p:pickList id="withCaption" value="#{pickListBean.countries}"
                         var="country" itemLabel="#{country}" itemValue="#{country}">
                 <f:facet name="sourceCaption">Available</f:facet>
                 <f:facet name="targetCaption">Selected</f:facet>
             </p:pickList>
 
             <h:outputText value="With Animation and Controls" />
-            <p:pickList id="withAnimation" value="#{pickListController.countries}"
+            <p:pickList id="withAnimation" value="#{pickListBean.countries}"
                         showSourceControls="true" showTargetControls="true"
                         effect="explode" effectSpeed="slow"
                         var="country" itemLabel="#{country}" itemValue="#{country}" />
 
             <h:outputText value="With POJO Support" />
-            <p:pickList id="pojoSupport" value="#{pickListController.cars}"
+            <p:pickList id="pojoSupport" value="#{pickListBean.cars}" addLabel=""
                         var="car" itemLabel="#{car.name}" itemValue="#{car}">
                 <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
                 <p:column>
@@ -49,10 +59,14 @@
             </p:pickList>
 
             <h:outputText value="With Custom Javascript" />
-            <p:pickList id="withCustomScript" value="#{pickListController.countries}" onTransfer="handleTransfer(e)"
+            <p:pickList id="withCustomScript" value="#{pickListBean.countries}" onTransfer="handleTransfer(e)"
                         var="country" itemLabel="#{country}" itemValue="#{country}" />
 
-            <p:commandButton value="hebele" ajax="false" />
+            <h:outputText value="With AJAX event" />
+            <p:pickList id="withAJAX" value="#{pickListBean.countries}" var="country"
+                        itemLabel="#{country}" itemValue="#{country}">
+                <p:ajax event="transfer" listener="#{pickListBean.handleTransfer}" update="growl" />
+            </p:pickList>
         </h:panelGrid>
     </ui:define>
 </ui:composition>

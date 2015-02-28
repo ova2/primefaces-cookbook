@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Resizing, Reordering and Toggling of columns in dataTable</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Resizing of Columns" />
+            <p:dataTable id="resizing" var="car" value="#{dataTableBean.cars}" resizableColumns="true" style="width: 500px;">
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Resizing of Columns in Live mode" />
+            <p:dataTable id="resizingLive" var="car" value="#{dataTableBean.cars}" resizableColumns="true"
+                         liveResize="true" style="width: 500px;">
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Resizing of Columns with AJAX listener" />
+            <p:dataTable id="resizingAJAX" var="car" value="#{dataTableBean.cars}" resizableColumns="true" style="width: 500px;">
+                <p:ajax event="colResize" update=":mainForm:growl" listener="#{dataTableBean.onResize}" />
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Reordering of Rows and Columns" />
+            <p:dataTable id="reordering" var="car" value="#{dataTableBean.cars}" style="width: 500px;" draggableRows="true" draggableColumns="true">
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Reordering of Rows with AJAX Listener" />
+            <p:dataTable id="reorderingAJAX" var="car" value="#{dataTableBean.cars}" style="width: 500px;" draggableRows="true" draggableColumns="true">
+                <p:ajax event="rowReorder" update=":mainForm:growl" listener="#{dataTableBean.onRowReorder}" />
+                <p:ajax event="colReorder" update=":mainForm:growl" listener="#{dataTableBean.onColReorder}" />
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

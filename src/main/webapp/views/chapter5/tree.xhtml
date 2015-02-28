@@ -11,21 +11,21 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple Tree" />
-            <p:tree id="simple" value="#{treeDataController.root}" var="node">
+            <p:tree id="simple" value="#{treeDataBean.root}" var="node">
                 <p:treeNode>
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
 
             <h:outputText value="Dynamic Tree" />
-            <p:tree id="dynamic" value="#{treeDataController.root}" var="node" dynamic="true" cache="true">
+            <p:tree id="dynamic" value="#{treeDataBean.root}" var="node" dynamic="true" cache="true">
                 <p:treeNode>
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
 
             <h:outputText value="With Custom Node Types" />
-            <p:tree id="customNodes" value="#{treeDataController.rootWithType}" var="node">
+            <p:tree id="customNodes" value="#{treeDataBean.rootWithType}" var="node">
 
                 <p:treeNode type="node"  icon="ui-icon-plusthick">
                     <h:outputText value="#{node}" />
@@ -37,41 +37,64 @@
             </p:tree>
 
             <h:outputText value="Single Selection" />
-            <p:tree id="single" value="#{treeDataController.root}" var="node"
+            <p:tree id="single" value="#{treeDataBean.root}" var="node"
                     selectionMode="single"
-                    selection="#{treeDataController.selectedNode}">
+                    selection="#{treeDataBean.selectedNode}">
                 <p:treeNode>
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
 
             <h:outputText value="Multiple Selection" />
-            <p:tree id="multiple" value="#{treeDataController.root}" var="node"
+            <p:tree id="multiple" value="#{treeDataBean.root}" var="node"
                     selectionMode="multiple"
-                    selection="#{treeDataController.selectedNodes}">
+                    selection="#{treeDataBean.selectedNodes}">
                 <p:treeNode>
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
 
             <h:outputText value="Checkbox Selection" />
-            <p:tree id="checkbox" value="#{treeDataController.root}" var="node"
+            <p:tree id="checkbox" value="#{treeDataBean.root}" var="node"
                     selectionMode="checkbox"
-                    selection="#{treeDataController.selectedNodes}">
+                    selection="#{treeDataBean.selectedNodes}">
                 <p:treeNode>
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
 
-            <h:outputText value="With AJAX Listeners" />
-            <p:tree id="withAJAX" value="#{treeDataController.root}" var="node"
-                    selectionMode="single"
-                    selection="#{treeDataController.selectedNode}">
+            <h:outputText value="Drag and Drop" />
+            <p:tree id="dnd" value="#{treeDataBean.root}" var="node" draggable="true" droppable="true">
+                <p:treeNode>
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
 
-                <p:ajax event="expand" listener="#{treeDataController.onNodeExpand}" update=":mainForm:growl" />
-                <p:ajax event="collapse" listener="#{treeDataController.onNodeCollapse}" update=":mainForm:growl" />
-                <p:ajax event="select" listener="#{treeDataController.onNodeSelect}" update=":mainForm:growl" />
-                <p:ajax event="unselect" listener="#{treeDataController.onNodeUnselect}" update=":mainForm:growl" />
+            <h:outputText value="Drag and Drop with Multiple Trees" />
+            <h:panelGrid columns="2">
+                <p:tree id="dndSource" value="#{treeDataBean.root}" var="node"
+                        draggable="true" droppable="false" dragdropScope="treeScope">
+                    <p:treeNode>
+                        <h:outputText value="#{node}" />
+                    </p:treeNode>
+                </p:tree>
+                <p:tree id="dndTarget" value="#{treeDataBean.root2}" var="node"
+                        draggable="true" droppable="true" dragdropScope="treeScope">
+                    <p:treeNode>
+                        <h:outputText value="#{node}" />
+                    </p:treeNode>
+                </p:tree>
+            </h:panelGrid>
+
+            <h:outputText value="With AJAX Listeners" />
+            <p:tree id="withAJAX" value="#{treeDataBean.root}" var="node"
+                    selectionMode="single"
+                    selection="#{treeDataBean.selectedNode}">
+
+                <p:ajax event="expand" listener="#{treeDataBean.onNodeExpand}" update=":mainForm:growl" />
+                <p:ajax event="collapse" listener="#{treeDataBean.onNodeCollapse}" update=":mainForm:growl" />
+                <p:ajax event="select" listener="#{treeDataBean.onNodeSelect}" update=":mainForm:growl" />
+                <p:ajax event="unselect" listener="#{treeDataBean.onNodeUnselect}" update=":mainForm:growl" />
 
                 <p:treeNode>
                     <h:outputText value="#{node}" />
@@ -79,15 +102,22 @@
             </p:tree>
 
             <h:outputText value="With Context Menu" />
-            <p:tree id="withContextMenu" value="#{treeDataController.rootWithType}" var="node"
+            <p:tree id="withContextMenu" value="#{treeDataBean.rootWithType}" var="node"
                     selectionMode="single"
-                    selection="#{treeDataController.selectedNode}">
+                    selection="#{treeDataBean.selectedNode}">
 
                 <p:treeNode type="node">
                     <h:outputText value="#{node}" />
                 </p:treeNode>
 
                 <p:treeNode type="leaf">
+                    <h:outputText value="#{node}" />
+                </p:treeNode>
+            </p:tree>
+
+            <h:outputText value="Horizontal Layout" />
+            <p:tree id="layout" value="#{treeDataBean.root}" var="node" orientation="horizontal">
+                <p:treeNode>
                     <h:outputText value="#{node}" />
                 </p:treeNode>
             </p:tree>
@@ -100,20 +130,20 @@
 
         <p:contextMenu for="withContextMenu" nodeType="leaf">
             <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="PF('nodeDialog').show()"/>
-            <p:menuitem value="Delete" actionListener="#{treeTableController.deleteNode}" update="withContextMenu" icon="ui-icon-close"/>
+            <p:menuitem value="Delete" actionListener="#{treeDataBean.deleteNode}" update="withContextMenu" icon="ui-icon-close"/>
         </p:contextMenu>
 
         <p:dialog header="Tree Node Detail" showEffect="fade" widgetVar="nodeDialog" modal="true">
             <p:outputPanel id="dialogPanel">
-                <h:panelGrid  columns="2" cellpadding="5" rendered="#{not empty treeDataController.selectedNode}">
+                <h:panelGrid  columns="2" cellpadding="5" rendered="#{not empty treeDataBean.selectedNode}">
                     <h:outputLabel for="name" value="Value: " />
-                    <h:outputText id="name" value="#{treeDataController.selectedNode.data}" />
+                    <h:outputText id="name" value="#{treeDataBean.selectedNode.data}" />
                 </h:panelGrid>
             </p:outputPanel>
         </p:dialog>
 
         <p:commandButton id="display" value="Display Selected Nodes" update="growl"
-                         actionListener="#{treeDataController.displaySelected}" />
+                         actionListener="#{treeDataBean.displaySelected}" />
 
     </ui:define>
 </ui:composition>

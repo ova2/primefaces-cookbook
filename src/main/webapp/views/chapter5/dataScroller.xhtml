@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Visualizing data with DataScroller</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <h:panelGrid columns="2" cellpadding="5" width="850px">
+            <h:outputText value="Scroll by 3 items" />
+            <p:dataScroller value="#{dataScrollerBean.cars}" var="car" chunkSize="3">
+                <p:column>
+                    <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="400" height="250"/>
+                </p:column>
+                <p:column>
+                    <h:outputText value="#{car.name}" style="font-size: 80px" />
+                </p:column>
+                <f:facet name="loader">
+                    <p:commandButton type="button" value="View More" />
+                </f:facet>
+            </p:dataScroller>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

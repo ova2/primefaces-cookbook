@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class DataExportController implements Serializable {
+public class DataExportBean implements Serializable {
 
     private String[] selectedCountries;
     

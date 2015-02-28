@@ -11,7 +11,7 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple" />
-            <p:treeTable id="simple" value="#{treeTableController.root}" var="element">
+            <p:treeTable id="simple" value="#{treeTableBean.root}" var="element" style="width: 400px;">
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column>
                     <f:facet name="header">Name</f:facet>
@@ -28,8 +28,8 @@
             </p:treeTable>
 
             <h:outputText value="Scrollable" />
-            <p:treeTable id="scrollable" value="#{treeTableController.root}" var="element"
-                         scrollable="true" scrollWidth="120">
+            <p:treeTable id="scrollable" value="#{treeTableBean.root}" var="element" style="width: 400px;"
+                         scrollable="true" scrollWidth="120" scrollHeight="100">
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column width="50">
                     <f:facet name="header">Name</f:facet>
@@ -45,9 +45,27 @@
                 </p:column>
             </p:treeTable>
 
+            <h:outputText value="With Sorting" />
+            <p:treeTable id="sorted" value="#{treeTableBean.root}" var="element" style="width: 400px;">
+                <f:facet name="header">Tree Table</f:facet>
+                <p:column sortBy="#{element.name}">
+                    <f:facet name="header">Name</f:facet>
+                    <h:outputText value="#{element.name}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Column 1</f:facet>
+                    <h:outputText value="#{element.column1}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Column 2</f:facet>
+                    <h:outputText value="#{element.column2}" />
+                </p:column>
+            </p:treeTable>
+
+
             <h:outputText value="Single Selection" />
-            <p:treeTable id="singleSelection" value="#{treeTableController.root}" var="element"
-                         selection="#{treeTableController.selectedItem}" selectionMode="single">
+            <p:treeTable id="singleSelection" value="#{treeTableBean.root}" var="element" style="width: 400px;"
+                         selection="#{treeTableBean.selectedItem}" selectionMode="single">
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column>
                     <f:facet name="header">Name</f:facet>
@@ -68,8 +86,8 @@
             </p:treeTable>
 
             <h:outputText value="Multiple Selection" />
-            <p:treeTable id="multipleSelection" value="#{treeTableController.root}" var="element"
-                         selection="#{treeTableController.selectedItems}" selectionMode="multiple">
+            <p:treeTable id="multipleSelection" value="#{treeTableBean.root}" var="element" style="width: 400px;"
+                         selection="#{treeTableBean.selectedItems}" selectionMode="multiple">
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column>
                     <f:facet name="header">Name</f:facet>
@@ -90,12 +108,14 @@
             </p:treeTable>
 
             <h:outputText value="With Ajax Listeners" />
-            <p:treeTable id="withAJAX" value="#{treeTableController.root}" var="element">
+            <p:treeTable id="withAJAX" value="#{treeTableBean.root}" var="element" style="width: 400px;"
+                         resizableColumns="true" selection="#{treeTableBean.selectedItem}" selectionMode="single">
 
-                <p:ajax event="expand" listener="#{treeTableController.onNodeExpand}" update=":mainForm:growl" />
-                <p:ajax event="collapse" listener="#{treeTableController.onNodeCollapse}" update=":mainForm:growl" />
-                <p:ajax event="select" listener="#{treeTableController.onNodeSelect}" update=":mainForm:growl" />
-                <p:ajax event="unselect" listener="#{treeTableController.onNodeUnselect}" update=":mainForm:growl" />
+                <p:ajax event="expand" listener="#{treeTableBean.onNodeExpand}" update=":mainForm:growl" />
+                <p:ajax event="collapse" listener="#{treeTableBean.onNodeCollapse}" update=":mainForm:growl" />
+                <p:ajax event="select" listener="#{treeTableBean.onNodeSelect}" update=":mainForm:growl" />
+                <p:ajax event="unselect" listener="#{treeTableBean.onNodeUnselect}" update=":mainForm:growl" />
+                <p:ajax event="colResize" listener="#{treeTableBean.onColResize}" update=":mainForm:growl" />
 
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column>
@@ -113,8 +133,8 @@
             </p:treeTable>
 
             <h:outputText value="With Context Menu" />
-            <p:treeTable id="withContextMenu" value="#{treeTableController.root}" var="element"
-                         selection="#{treeTableController.selectedItemForContextMenu}" selectionMode="single">
+            <p:treeTable id="withContextMenu" value="#{treeTableBean.root}" var="element" style="width: 400px;"
+                         selection="#{treeTableBean.selectedItemForContextMenu}" selectionMode="single">
                 <f:facet name="header">Tree Table</f:facet>
                 <p:column>
                     <f:facet name="header">Name</f:facet>
@@ -137,13 +157,13 @@
             <p:outputPanel id="displaySingle">
                 <h:panelGrid columns="2" cellpadding="4">
                     <h:outputText value="Name:" />
-                    <h:outputText value="#{treeTableController.selectedItem.data.name}" />
+                    <h:outputText value="#{treeTableBean.selectedItem.data.name}" />
 
                     <h:outputText value="Column:" />
-                    <h:outputText value="#{treeTableController.selectedItem.data.column1}" />
+                    <h:outputText value="#{treeTableBean.selectedItem.data.column1}" />
 
                     <h:outputText value="Column:" />
-                    <h:outputText value="#{treeTableController.selectedItem.data.column2}" />
+                    <h:outputText value="#{treeTableBean.selectedItem.data.column2}" />
                 </h:panelGrid>
             </p:outputPanel>
         </p:dialog>
@@ -151,7 +171,7 @@
         <p:dialog id="dialogMultiple" header="Multiple Selection Detail" widgetVar="dialogMultiple"
                   showEffect="clip" hideEffect="fold">
             <p:dataList id="displayMultiple"
-                        value="#{treeTableController.selectedItems}"
+                        value="#{treeTableBean.selectedItems}"
                         var="element" type="definition">
                 Name: #{element.data.name}, Column: #{element.data.column1}, Column: #{element.data.column2}
             </p:dataList>
@@ -163,20 +183,20 @@
 
         <p:contextMenu for="withContextMenu" nodeType="leaf">
             <p:menuitem value="View" update="dialogPanel" icon="ui-icon-search" oncomplete="PF('nodeDialog').show()"/>
-            <p:menuitem value="Delete" actionListener="#{treeTableController.deleteNode}" update="withContextMenu" icon="ui-icon-close"/>
+            <p:menuitem value="Delete" actionListener="#{treeTableBean.deleteNode}" update="withContextMenu" icon="ui-icon-close"/>
         </p:contextMenu>
 
         <p:dialog header="Tree Element Detail" showEffect="fade" widgetVar="nodeDialog" modal="true">
             <p:outputPanel id="dialogPanel">
-                <h:panelGrid  columns="2" cellpadding="5" rendered="#{not empty treeTableController.selectedItem}">
+                <h:panelGrid  columns="2" cellpadding="5" rendered="#{not empty treeTableBean.selectedItem}">
                     <h:outputLabel for="name" value="Name: " />
-                    <h:outputText id="name" value="#{treeTableController.selectedItem.data.name}" />
+                    <h:outputText id="name" value="#{treeTableBean.selectedItem.data.name}" />
 
                     <h:outputLabel for="column1" value="Column1 " />
-                    <h:outputText id="column1" value="#{treeTableController.selectedItem.data.column1}" />
+                    <h:outputText id="column1" value="#{treeTableBean.selectedItem.data.column1}" />
 
                     <h:outputLabel for="column2" value="Column2 " />
-                    <h:outputText id="column2" value="#{treeTableController.selectedItem.data.column2}" />
+                    <h:outputText id="column2" value="#{treeTableBean.selectedItem.data.column2}" />
                 </h:panelGrid>
             </p:outputPanel>
         </p:dialog>

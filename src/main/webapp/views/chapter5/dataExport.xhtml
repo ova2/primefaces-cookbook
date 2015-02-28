@@ -26,9 +26,9 @@
             <h:outputText value="Data Export" />
             <h:panelGrid columns="1">
 
-                <p:dataTable id="countriesTable" var="country" value="#{dataExportController.countries}"
-                             rowKey="#{country}" rows="10" paginator="true"
-                        selectionMode="multiple" selection="#{dataExportController.selectedCountries}">
+                <p:dataTable id="countriesTable" var="country" value="#{dataExportBean.countries}"
+                             rowKey="#{country}" rows="10" paginator="true" style="width: 400px"
+                             selectionMode="multiple" selection="#{dataExportBean.selectedCountries}">
                     <p:column headerText="Name">
                         <h:outputText value="#{country}" />
                     </p:column>
@@ -112,7 +112,7 @@
                             <h:commandLink>
                                 <p:graphicImage value="/resources/images/export/pdf.png" />
                                 <p:dataExporter type="pdf" target="countriesTable" fileName="countries"
-                                                preProcessor="#{dataExportController.preProcessPDF}" />
+                                                preProcessor="#{dataExportBean.preProcessPDF}" />
                             </h:commandLink>
                         </p:panel>
                     </h:panelGrid>

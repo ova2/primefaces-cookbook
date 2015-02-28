@@ -10,19 +10,27 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="Simple" />
-            <p:orderList id="simple" value="#{orderListController.countries}"
+            <p:orderList id="simple" value="#{orderListBean.countries}"
                          var="country" itemLabel="#{country}" itemValue="#{country}" />
 
+            <h:outputText value="With Caption" />
+            <p:orderList id="withCaption" value="#{orderListBean.countries}"
+                         var="country" itemLabel="#{country}" itemValue="#{country}">
+                <f:facet name="caption">
+                    Countries
+                </f:facet>
+            </p:orderList>
+
             <h:outputText value="With Controls on the Right" />
-            <p:orderList id="controls" value="#{orderListController.countries}" controlsLocation="right"
+            <p:orderList id="controls" value="#{orderListBean.countries}" controlsLocation="right"
                          var="country" itemLabel="#{country}" itemValue="#{country}" />
 
             <h:outputText value="With Effect" />
-            <p:orderList id="withEffect" value="#{orderListController.countries}" effect="explode"
+            <p:orderList id="withEffect" value="#{orderListBean.countries}" effect="explode"
                          var="country" itemLabel="#{country}" itemValue="#{country}" />
 
             <h:outputText value="POJO Support" />
-            <p:orderList id="pojo" value="#{orderListController.cars}" var="car"
+            <p:orderList id="pojo" value="#{orderListBean.cars}" var="car"
                          itemValue="#{car}">
                 <f:converter converterId="org.primefaces.cookbook.converter.CarConverter" />
                 <f:facet name="caption">Cars</f:facet>

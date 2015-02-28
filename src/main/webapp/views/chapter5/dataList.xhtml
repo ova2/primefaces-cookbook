@@ -10,73 +10,72 @@
 
         <h:panelGrid columns="2" cellpadding="5">
 
-            <h:outputText value="Simple" />
-            <p:dataList id="simple" value="#{dataListController.countriesShort}" var="country" itemType="disc">
+            <h:outputText value="Simple (Unordered Type w/ default item type: disc)" />
+            <p:dataList id="simple" value="#{dataListBean.countriesShort}" var="country">
                 <f:facet name="header">
                     Countries starting with 'A'
                 </f:facet>
-                #{country}
-            </p:dataList>
-
-            <h:outputText value="With Roman Alphabet" />
-            <p:dataList id="withItemType1" value="#{dataListController.countriesShort}" var="country" itemType="i">
-                <f:facet name="header">
-                    Countries starting with 'A'
-                </f:facet>
-                #{country}
-            </p:dataList>
-
-            <h:outputText value="With Item Type: A" />
-            <p:dataList id="withItemType2" value="#{dataListController.countriesShort}" var="country" itemType="A">
-                <f:facet name="header">
-                    Countries starting with 'A'
-                </f:facet>
-                #{country}
-            </p:dataList>
-
-            <h:outputText value="With Item Type: a" />
-            <p:dataList id="withItemType3" value="#{dataListController.countriesShort}" var="country" itemType="a">
-                <f:facet name="header">
-                    Countries starting with 'A'
-                </f:facet>
-                #{country}
+                <h:outputText value="#{country}" />
             </p:dataList>
 
             <h:outputText value="With Item Type: circle" />
-            <p:dataList id="withItemType4" value="#{dataListController.countriesShort}" var="country" itemType="circle">
+            <p:dataList id="withItemType2" value="#{dataListBean.countriesShort}" var="country" itemType="circle">
                 <f:facet name="header">
                     Countries starting with 'A'
                 </f:facet>
-                #{country}
+                <h:outputText value="#{country}" />
             </p:dataList>
 
             <h:outputText value="With Item Type: square" />
-            <p:dataList id="withItemType5" value="#{dataListController.countriesShort}" var="country" itemType="square">
+            <p:dataList id="withItemType3" value="#{dataListBean.countriesShort}" var="country" itemType="square">
                 <f:facet name="header">
                     Countries starting with 'A'
                 </f:facet>
-                #{country}
+                <h:outputText value="#{country}" />
             </p:dataList>
 
-            <h:outputText value="With Item Type: decimal" />
-            <p:dataList id="withItemType6" value="#{dataListController.countriesShort}" var="country" itemType="decimal">
+            <h:outputText value="Ordered (w/ default item type: 1" />
+            <p:dataList id="withOrder" value="#{dataListBean.countriesShort}" var="country" type="ordered">
                 <f:facet name="header">
                     Countries starting with 'A'
                 </f:facet>
-                #{country}
+                <h:outputText value="#{country}" />
             </p:dataList>
 
-            <h:outputText value="Numbered" />
-            <p:dataList id="orderedNumbered" value="#{dataListController.countriesShort}"
-                        type="ordered" var="country">
+            <h:outputText value="Ordered With Type: a" />
+            <p:dataList id="withOrderType1" value="#{dataListBean.countriesShort}" var="country" type="ordered" itemType="a">
                 <f:facet name="header">
                     Countries starting with 'A'
                 </f:facet>
-                #{country}
+                <h:outputText value="#{country}" />
+            </p:dataList>
+
+            <h:outputText value="Ordered With Type: A" />
+            <p:dataList id="withOrderType2" value="#{dataListBean.countriesShort}" var="country" type="ordered" itemType="A">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                <h:outputText value="#{country}" />
+            </p:dataList>
+
+            <h:outputText value="Ordered With Type: i" />
+            <p:dataList id="withOrderType3" value="#{dataListBean.countriesShort}" var="country" type="ordered" itemType="i">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                <h:outputText value="#{country}" />
+            </p:dataList>
+
+            <h:outputText value="Ordered With Type: I" />
+            <p:dataList id="withOrderType4" value="#{dataListBean.countriesShort}" var="country" type="ordered" itemType="I">
+                <f:facet name="header">
+                    Countries starting with 'A'
+                </f:facet>
+                <h:outputText value="#{country}" />
             </p:dataList>
 
             <h:outputText value="With Description" />
-            <p:dataList id="withDescription" value="#{dataListController.cars}" var="car"
+            <p:dataList id="withDescription" value="#{dataListBean.cars}" var="car"
                     type="definition">
                 Name: #{car.name}
                 <f:facet name="description">
@@ -85,21 +84,33 @@
             </p:dataList>
 
             <h:outputText value="With Paginator" />
-            <p:dataList id="withPaginator" value="#{dataListController.countries}" var="country" rows="10" paginator="true">
+            <p:dataList id="withPaginator" value="#{dataListBean.countries}" var="country" rows="10" paginator="true">
                 <f:facet name="header">
                     Countries
                 </f:facet>
-                #{country}
+                <h:outputText value="#{country}" />
             </p:dataList>
 
             <h:outputText value="With Paginator defined with template" />
-            <p:dataList id="withPaginatorTemplate" value="#{dataListController.countries}" var="country" rows="10" paginator="true" pageLinks="3"
+            <p:dataList id="withPaginatorTemplate" value="#{dataListBean.countries}" var="country" rows="10" paginator="true" pageLinks="3"
                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                     rowsPerPageTemplate="5,10,15">
                 <f:facet name="header">
                     Countries
                 </f:facet>
-                #{country}
+                <h:outputText value="#{country}" />
+            </p:dataList>
+
+            <h:outputText value="With Custom Content in Paginator" />
+            <p:dataList id="withCustomContentInPagination" value="#{dataListBean.countries}" var="country" rows="10" paginator="true"
+                        paginatorTemplate="{CurrentPageReport} {CustomContent}">
+                <f:facet name="{CustomContent}">
+                    Countries in total: #{dataListBean.countriesSize}
+                </f:facet>
+                <f:facet name="header">
+                    Countries
+                </f:facet>
+                <h:outputText value="#{country}" />
             </p:dataList>
 
         </h:panelGrid>

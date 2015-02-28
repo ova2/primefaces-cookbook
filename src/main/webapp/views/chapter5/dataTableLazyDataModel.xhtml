@@ -11,7 +11,7 @@
         <h:panelGrid columns="2" cellpadding="5">
 
             <h:outputText value="With Lazy Data Model" />
-            <p:dataTable id="lazyModel" var="car" value="#{lazyDataTableController.lazyModel}"
+            <p:dataTable id="lazyModel" var="car" value="#{lazyDataTableBean.lazyModel}" style="width: 300px;"
                          paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
                          paginator="true" rows="10" lazy="true">
 

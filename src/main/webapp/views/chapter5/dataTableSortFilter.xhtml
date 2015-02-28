@@ -30,6 +30,17 @@
                 </p:column>
             </p:dataTable>
 
+            <h:outputText value="With Filtered Values Collected" />
+            <p:dataTable id="filteringWithValues" var="car" value="#{dataTableBean.cars}" style="width: 300px;"
+                    filteredValue="#{dataTableBean.filteredValues}">
+                <p:column headerText="Year" filterBy="#{car.year}">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name" filterBy="#{car.name}">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
             <h:outputText value="Filtering With Max Length (Max 2 chars)" />
             <p:dataTable id="filteringWithMaxLength" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
                 <p:column headerText="Name" filterBy="#{car.name}" filterMaxLength="2">

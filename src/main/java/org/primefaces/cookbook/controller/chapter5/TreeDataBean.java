@@ -16,17 +16,18 @@ import java.io.Serializable;
  * User: mertcaliskan
  * Date: 8/28/12
  */
-@Named(value = "treeDataController")
+@Named
 @ViewScoped
-public class TreeController implements Serializable {
+public class TreeDataBean implements Serializable {
 
     private TreeNode root;
+    private TreeNode root2;
     private TreeNode rootWithType;
 
     private TreeNode selectedNode;
     private TreeNode[] selectedNodes;
 
-    public TreeController() {
+    public TreeDataBean() {
         root = new DefaultTreeNode("Root", null);
         TreeNode node1 = new DefaultTreeNode("Node1", root);
         TreeNode node2 = new DefaultTreeNode("Node2", root);
@@ -36,6 +37,17 @@ public class TreeController implements Serializable {
 
         TreeNode node21 = new DefaultTreeNode("Node2.1", node2);
         TreeNode node211 = new DefaultTreeNode("Node2.1.1", node21);
+
+        //root2
+        root2 = new DefaultTreeNode("Root", null);
+        TreeNode t2_node1 = new DefaultTreeNode("Node1", root2);
+        TreeNode t2_node2 = new DefaultTreeNode("Node2", root2);
+
+        TreeNode t2_node11 = new DefaultTreeNode("Node1.1", t2_node1);
+        TreeNode t2_node12 = new DefaultTreeNode("Node1.2", t2_node1);
+
+        TreeNode t2_node21 = new DefaultTreeNode("Node2.1", t2_node2);
+        TreeNode t2_node211 = new DefaultTreeNode("Node2.1.1", t2_node21);
 
         // tree with node types
         rootWithType = new DefaultTreeNode("node", "Root", null);
@@ -95,6 +107,10 @@ public class TreeController implements Serializable {
 
     public TreeNode getRoot() {
         return root;
+    }
+
+    public TreeNode getRoot2() {
+        return root2;
     }
 
     public TreeNode getRootWithType() {
