@@ -81,6 +81,40 @@
                 </p:column>
             </p:dataTable>
 
+            <h:outputText value="With Editing Row mode" />
+            <p:dataTable id="editingRowMode" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}"
+                         editable="true" style="width: 300px;" editingRow="#{car.year > 2000}">
+
+                <p:column headerText="Year">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{car.year}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{car.year}" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column headerText="Name">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{car.name}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <h:selectOneMenu value="#{car.name}" >
+                                <f:selectItems value="#{dataTableBean.carNames}"
+                                               var="name"
+                                               itemLabel="#{name}"
+                                               itemValue="#{name}" />
+                            </h:selectOneMenu>
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column headerText="Actions">
+                    <p:rowEditor />
+                </p:column>
+            </p:dataTable>
+
         </h:panelGrid>
     </ui:define>
 </ui:composition>

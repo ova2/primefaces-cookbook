@@ -162,13 +162,16 @@ public class BookBean implements Serializable {
                 chapter5);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("In-cell editing with DataTable", "chapter5/dataTableInCellEdit.xhtml"), chapter5);
-
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Resizing, Reordering and Toggling of columns in dataTable", "chapter5/dataTableResizeReorderToggle.xhtml"), chapter5);
-
-
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Handling millions of data - LazyDataModel", "chapter5/dataTableLazyDataModel.xhtml"),
+                new BookTreeNode("Making dataTable Responsive", "chapter5/responsiveDataTable.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Using subTable for grouping", "chapter5/subTable.xhtml"),
+                chapter5);
+        new DefaultTreeNode(NODE_TYPE,
+                new BookTreeNode("Handling tons of data - LazyDataModel", "chapter5/dataTableLazyDataModel.xhtml"),
                 chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Listing data with DataList", "chapter5/dataList.xhtml"),
                 chapter5);
@@ -181,8 +184,6 @@ public class BookBean implements Serializable {
                 chapter5);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Exporting data in various formats", "chapter5/dataExport.xhtml"), chapter5);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Carousel", "chapter5/carousel.xhtml"),
-                chapter5);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Data Scroller", "chapter5/dataScroller.xhtml"), chapter5);
     }
 

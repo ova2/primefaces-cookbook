@@ -52,10 +52,67 @@
                 </p:column>
             </p:dataTable>
 
-            <h:outputText value="Reordering of Rows with AJAX Listener" />
+            <h:outputText value="Reordering of Rows and Columns with AJAX Listener" />
             <p:dataTable id="reorderingAJAX" var="car" value="#{dataTableBean.cars}" style="width: 500px;" draggableRows="true" draggableColumns="true">
                 <p:ajax event="rowReorder" update=":mainForm:growl" listener="#{dataTableBean.onRowReorder}" />
                 <p:ajax event="colReorder" update=":mainForm:growl" listener="#{dataTableBean.onColReorder}" />
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Row Toggling" />
+            <p:dataTable id="rowToggle" var="car" value="#{dataTableBean.cars}" style="width: 500px;">
+                <p:column style="width: 20px">
+                    <p:rowToggler />
+                </p:column>
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+
+                <p:rowExpansion>
+                    <h:panelGrid id="display" columns="2" cellpadding="4">
+                        <f:facet name="header">
+                            <p:graphicImage value="/resources/images/autocomplete/#{car.name}.png" width="60" height="40" />
+                        </f:facet>
+
+                        <h:outputText value="Name:" />
+                        <h:outputText value="#{car.name}" />
+
+                        <h:outputText value="Year:" />
+                        <h:outputText value="#{car.year}" />
+                    </h:panelGrid>
+                </p:rowExpansion>
+            </p:dataTable>
+
+            <h:outputText value="Column Toggling" />
+            <p:dataTable id="colToggle" var="car" value="#{dataTableBean.cars}" style="width: 500px;">
+                <f:facet name="header">
+                    <p:commandButton id="toggler" type="button" value="Columns" />
+                    <p:columnToggler datasource="colToggle" trigger="toggler" />
+                </f:facet>
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Column Toggling with AJAX listener" />
+            <p:dataTable id="colToggleAJAX" var="car" value="#{dataTableBean.cars}" style="width: 500px;">
+                <f:facet name="header">
+                    <p:commandButton id="togglerAJAX" type="button" value="Columns" />
+                    <p:columnToggler datasource="colToggleAJAX" trigger="togglerAJAX">
+                        <p:ajax event="toggle" listener="#{dataTableBean.onColumnToggle}" update=":mainForm:growl" />
+                    </p:columnToggler>
+                </f:facet>
                 <p:column headerText="Year">
                     <h:outputText value="#{car.year}" />
                 </p:column>

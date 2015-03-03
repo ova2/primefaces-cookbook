@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Using subTable for grouping</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Grouping " />
+            <p:dataTable value="#{dataTableBean.boxers}" var="boxer" style="width: 300px">
+                <f:facet name="header">
+                    Boxers
+                </f:facet>
+
+                <p:columnGroup type="header">
+                    <p:row>
+                        <p:column rowspan="2" headerText="Boxer" />
+                        <p:column colspan="2" headerText="Stats" />
+                    </p:row>
+                    <p:row>
+                        <p:column headerText="Wins" />
+                        <p:column headerText="Losses" />
+                    </p:row>
+                </p:columnGroup>
+
+                <p:subTable var="stats" value="#{boxer.stats}">
+                    <f:facet name="header">
+                        <h:outputText value="#{boxer.name}" />
+                    </f:facet>
+                    <p:column>
+                        <h:outputText value="#{stats.match}" />
+                    </p:column>
+                    <p:column>
+                        <h:outputText value="#{stats.win}" />
+                    </p:column>
+                    <p:column>
+                        <h:outputText value="#{stats.loss}" />
+                    </p:column>
+                    <p:columnGroup type="footer">
+                        <p:row>
+                            <p:column footerText="Totals: " style="text-align:right"/>
+                            <p:column footerText="#{boxer.allWins}" />
+                            <p:column footerText="#{boxer.allLosses}" />
+                        </p:row>
+                    </p:columnGroup>
+                </p:subTable>
+            </p:dataTable>
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

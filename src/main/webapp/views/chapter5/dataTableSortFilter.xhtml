@@ -61,6 +61,16 @@
                     </p:column>
             </p:dataTable>
 
+            <h:outputText value="With Filter Match Mode" />
+            <p:dataTable id="filterMatchMode" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
+                <p:column headerText="Year" filterBy="#{car.year}" filterMatchMode="endsWith">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name" filterBy="#{car.name}" filterMatchMode="endsWith">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+            </p:dataTable>
+
             <h:outputText value="With Filter Options Above Header Text" />
             <p:dataTable id="withFilterOptionsPositioned" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
                     <p:column headerText="Year" filterBy="#{car.year}" filterMatchMode="startsWith">
@@ -85,6 +95,19 @@
                     <p:column headerText="Name" filterBy="#{car.name}">
                         <h:outputText value="#{car.name}" />
                     </p:column>
+            </p:dataTable>
+
+            <h:outputText value="Post Processing on Sort/Filter" />
+            <p:dataTable id="withPostEvents" var="car" value="#{dataTableBean.cars}" style="width: 300px;">
+                <f:event type="org.primefaces.event.data.PostSortEvent" listener="#{dataTableBean.postSort}" />
+                <f:event type="org.primefaces.event.data.PostFilterEvent" listener="#{dataTableBean.postFilter}" />
+
+                <p:column headerText="Year" sortBy="#{car.year}" filterBy="#{car.year}">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Name" sortBy="#{car.name}" filterBy="#{car.name}">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
             </p:dataTable>
 
         </h:panelGrid>

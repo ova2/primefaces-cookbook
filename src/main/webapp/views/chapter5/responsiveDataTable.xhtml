@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html" locale="en">
+    <h:head title="PrimeFaces Cookbook - ShowCase">
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="pragma" content="no-cache"/>
+            <meta http-equiv="cache-control" content="no-cache"/>
+            <meta http-equiv="expires" content="0"/>
+        </f:facet>
+        <ui:insert name="head"/>
+    </h:head>
+    <h:body>
+
+            <h:outputText value="Responsive with Priority of Columns" />
+            <br/><br/>
+            <p:dataTable id="withPriority" var="car" value="#{dataTableBean.detailedCars}">
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+                <p:column headerText="Year" priority="1">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Color" priority="3">
+                    <h:outputText value="#{car.color}" />
+                </p:column>
+                <p:column headerText="Seat Number" priority="2">
+                    <h:outputText value="#{car.seatNumber}" />
+                </p:column>
+            </p:dataTable>
+            <br/><br/>
+            <h:outputText value="Responsive with Reflow Mode" />
+            <br/><br/>
+            <p:dataTable id="withReflow" var="car" value="#{dataTableBean.detailedCars}" reflow="true">
+                <p:column headerText="Name">
+                    <h:outputText value="#{car.name}" />
+                </p:column>
+                <p:column headerText="Year">
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+                <p:column headerText="Color">
+                    <h:outputText value="#{car.color}" />
+                </p:column>
+                <p:column headerText="Seat Number">
+                    <h:outputText value="#{car.seatNumber}" />
+                </p:column>
+            </p:dataTable>
+    </h:body>
+</f:view>
+</html>

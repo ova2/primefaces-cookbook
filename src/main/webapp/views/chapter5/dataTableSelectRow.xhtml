@@ -54,6 +54,15 @@
                 <p:ajax event="rowUnselect" listener="#{dataTableBean.onRowUnselect}" update=":mainForm:growl"/>
             </p:dataTable>
 
+            <h:outputText value="Single Selection with Selectable Data Model" />
+            <p:dataTable id="selectableDataModel" var="car" value="#{dataTableBean.carDataModel}" style="width: 300px;"
+                         selection="#{dataTableBean.selectedCar}" selectionMode="single">
+                <p:column headerText="Year">#{car.year}</p:column>
+                <p:column headerText="Name">#{car.name}</p:column>
+                <p:ajax event="rowSelect" listener="#{dataTableBean.onRowSelect}" update=":mainForm:growl"/>
+                <p:ajax event="rowUnselect" listener="#{dataTableBean.onRowUnselect}" update=":mainForm:growl"/>
+            </p:dataTable>
+
             <h:outputText value="Single Selection with Radio Button" />
             <p:dataTable id="withRadioButton" var="car" value="#{dataTableBean.cars}" rowKey="#{car.name}" style="width: 300px;"
                          selection="#{dataTableBean.selectedCar}">
