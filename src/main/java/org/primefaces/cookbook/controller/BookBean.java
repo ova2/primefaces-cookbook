@@ -184,6 +184,8 @@ public class BookBean implements Serializable {
                 chapter5);
         new DefaultTreeNode(NODE_TYPE,
                 new BookTreeNode("Exporting data in various formats", "chapter5/dataExport.xhtml"), chapter5);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Managing events with schedule by leveraging lazy loading", "chapter5/scheduleLazyLoad.xhtml"), chapter5);
+
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Visualizing data with Data Scroller", "chapter5/dataScroller.xhtml"), chapter5);
     }
 

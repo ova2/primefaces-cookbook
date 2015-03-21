@@ -5,10 +5,44 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Managing events with schedule by leveraging lazy loading</h3>
+        <p:growl id="growl" showDetail="true"/>
 
-        <h3 style="margin-top:0">Lazy Loading</h3>
 
-        <p:schedule id="lazySchedule" value="#{scheduleBean.lazyScheduleModel}"/>
+        <h:outputText value="Default"/>
+        <br/>
+        <p:schedule id="month" value="#{scheduleBean.lazyScheduleModel}" style="width:600px"/>
+        <br/>
+        <br/>
+        <h:outputText value="View: AgendaWeek"/>
+        <br/>
+        <p:schedule id="agendaWeek" value="#{scheduleBean.lazyScheduleModel}" view="agendaWeek" style="width:600px"/>
+        <br/>
+        <br/>
+        <h:outputText value="View: AgendaDay"/>
+        <br/>
+        <p:schedule id="agendaDay" value="#{scheduleBean.lazyScheduleModel}" view="agendaDay" style="width:600px"/>
+        <br/>
+        <br/>
+        <h:outputText value="View: BasicWeek"/>
+        <br/>
+        <p:schedule id="basicWeek" value="#{scheduleBean.lazyScheduleModel}" view="basicWeek" style="width:600px"/>
+        <br/>
+        <br/>
+        <h:outputText value="View: BasicDay"/>
+        <br/>
+        <p:schedule id="basicDay" value="#{scheduleBean.lazyScheduleModel}" view="basicDay" style="width:600px"/>
+        <br/>
+        <br/>
+        <h:outputText value="With AJAX Event Listeners"/>
+        <br/>
+        <p:schedule id="lazySchedule" value="#{scheduleBean.lazyScheduleModel}" style="width:600px">
+            <p:ajax event="dateSelect" listener="#{scheduleBean.onDateSelect}" update=":mainForm:growl" />
+            <p:ajax event="eventSelect" listener="#{scheduleBean.onEventSelect}" update=":mainForm:growl" />
+            <p:ajax event="eventMove" listener="#{scheduleBean.onEventMove}" update=":mainForm:growl" />
+            <p:ajax event="eventResize" listener="#{scheduleBean.onEventResize}" update=":mainForm:growl" />
+            <p:ajax event="viewChange" listener="#{scheduleBean.onViewChange}" update=":mainForm:growl" />
+        </p:schedule>
 
     </ui:define>
 </ui:composition>

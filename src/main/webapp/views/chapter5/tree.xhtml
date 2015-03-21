@@ -55,7 +55,7 @@
             </p:tree>
 
             <h:outputText value="Checkbox Selection" />
-            <p:tree id="checkbox" value="#{treeDataBean.root}" var="node"
+            <p:tree id="checkbox" value="#{treeDataBean.root}" var="node" propagateSelectionDown=""
                     selectionMode="checkbox"
                     selection="#{treeDataBean.selectedNodes}">
                 <p:treeNode>
@@ -73,12 +73,14 @@
             <h:outputText value="Drag and Drop with Multiple Trees" />
             <h:panelGrid columns="2">
                 <p:tree id="dndSource" value="#{treeDataBean.root}" var="node"
-                        draggable="true" droppable="false" dragdropScope="treeScope">
+                        selectionMode="single" selection="#{treeDataBean.selectedNode1}"
+                        draggable="true" droppable="true" dragdropScope="treeScope">
                     <p:treeNode>
                         <h:outputText value="#{node}" />
                     </p:treeNode>
                 </p:tree>
                 <p:tree id="dndTarget" value="#{treeDataBean.root2}" var="node"
+                        selectionMode="single" selection="#{treeDataBean.selectedNode2}"
                         draggable="true" droppable="true" dragdropScope="treeScope">
                     <p:treeNode>
                         <h:outputText value="#{node}" />

@@ -25,6 +25,8 @@ public class TreeDataBean implements Serializable {
     private TreeNode rootWithType;
 
     private TreeNode selectedNode;
+    private TreeNode selectedNode1;
+    private TreeNode selectedNode2;
     private TreeNode[] selectedNodes;
 
     public TreeDataBean() {
@@ -123,6 +125,22 @@ public class TreeDataBean implements Serializable {
 
     public void setSelectedNode(TreeNode selectedNode) {
         this.selectedNode = selectedNode;
+    }
+
+    public TreeNode getSelectedNode1() {
+        return selectedNode1;
+    }
+
+    public void setSelectedNode1(TreeNode selectedNode1) {
+        this.selectedNode1 = selectedNode1;
+    }
+
+    public TreeNode getSelectedNode2() {
+        return selectedNode2;
+    }
+
+    public void setSelectedNode2(TreeNode selectedNode2) {
+        this.selectedNode2 = selectedNode2;
     }
 
     public TreeNode[] getSelectedNodes() {

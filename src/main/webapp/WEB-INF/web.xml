@@ -26,7 +26,7 @@
         <param-value>true</param-value>
     </context-param>
     <context-param>
-        <param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
+        <param-name>javax.faces.VALIDATE_EMPTfaeY_FIELDS</param-name>
         <param-value>true</param-value>
     </context-param>
     <context-param>
