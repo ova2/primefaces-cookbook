@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="chapterItem">
+
+        <p:messages id="messages" autoUpdate="true"/>
+
+        <p:panel id="panel1" header="First panel" style="margin-bottom:10px;">
+            <h:panelGrid columns="2">
+                <p:outputLabel for="name" value="Name"/>
+                <p:inputText id="name" required="true"/>
+
+                <p:outputLabel for="food" value="Favorite food"/>
+                <h:selectOneMenu id="food" required="true" style="padding:3px;">
+                    <f:selectItem itemLabel="" itemValue=""/>
+                    <f:selectItem itemLabel="Pizza" itemValue="Pizza"/>
+                    <f:selectItem itemLabel="Pasta" itemValue="Pasta"/>
+                </h:selectOneMenu>
+
+                <p:outputLabel for="married" value="Married?"/>
+                <p:selectBooleanCheckbox id="married" required="true" label="Married?">
+                    <f:validator validatorId="org.primefaces.cookbook.validator.RequiredCheckboxValidator"/>
+                </p:selectBooleanCheckbox>
+            </h:panelGrid>
+        </p:panel>
+
+        <p:panel id="panel2" header="Second panel">
+            <h:panelGrid columns="2">
+                <p:outputLabel for="address" value="Address"/>
+                <p:inputText id="address" required="true"/>
+
+                <p:outputLabel for="pet" value="Favorite pet"/>
+                <h:selectOneMenu id="pet" required="true" style="padding:3px;">
+                    <f:selectItem itemLabel="" itemValue=""/>
+                    <f:selectItem itemLabel="Cat" itemValue="Cat"/>
+                    <f:selectItem itemLabel="Dog" itemValue="Dog"/>
+                </h:selectOneMenu>
+
+                <p:outputLabel for="gender" value="Male?"/>
+                <p:selectBooleanCheckbox id="gender" required="true" label="Male?">
+                    <f:validator validatorId="org.primefaces.cookbook.validator.RequiredCheckboxValidator"/>
+                </p:selectBooleanCheckbox>
+            </h:panelGrid>
+        </p:panel>
+
+        <h:panelGrid columns="5" style="margin-top:20px;">
+            <p:commandButton process="@(form)" update="@(form)"
+                             value="Process and update all in form"/>
+
+            <p:commandButton process="@(.ui-panel)" update="@(.ui-panel)"
+                             value="Process and update all panels"/>
+
+            <p:commandButton process="@(.ui-panel :input:not(select))"
+                             update="@(.ui-panel)"
+                             value="Process inputs except selects in all panels"/>
+
+            <p:commandButton process="@(#panel2 :checkbox)"
+                             update="@(#panel2)"
+                             value="Process checkboxes in second panel"/>
+        </h:panelGrid>
+
+    </ui:define>
+</ui:composition>

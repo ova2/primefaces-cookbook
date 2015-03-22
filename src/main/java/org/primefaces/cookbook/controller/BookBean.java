@@ -69,6 +69,8 @@ public class BookBean implements Serializable {
                         "chapter1/componentInDifferentNamingContainer.xhtml"), chapter1);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Partial Processing", "chapter1/partialProcessing.xhtml"),
                 chapter1);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("PrimeFaces Selectors", "chapter11/pfs.xhtml"),
+                chapter1);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Processing with Fragment", "chapter1/fragment.xhtml"),
                 chapter1);
         new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Partial View Submit", "chapter1/partialSubmit.xhtml"),
