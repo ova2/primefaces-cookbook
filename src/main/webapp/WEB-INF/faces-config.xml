@@ -5,7 +5,6 @@
               version="2.2">
 
     <application>
-
         <locale-config>
             <default-locale>en</default-locale>
             <supported-locale>tr_TR</supported-locale>
