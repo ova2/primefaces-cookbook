@@ -1,6 +1,5 @@
 package org.primefaces.cookbook.controller.chapter5;
 
-import com.sun.org.glassfish.external.statistics.Stats;
 import org.primefaces.component.datatable.DataTable;
 import org.primefaces.cookbook.converter.CarConverter;
 import org.primefaces.cookbook.converter.DetailedCarConverter;
