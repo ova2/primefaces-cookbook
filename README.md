@@ -26,7 +26,7 @@ mvn install
 
 The WAR file is located in the <tt>target</tt> folder below project root. The demo web application is prepared to run with PrimeFaces 5.2 and JSF 2.2.
 
-You can deploy the WAR file on every Servlet 3.x compatible application server such as [http://wildfly.org JBoss WildFly] or [http://tomee.apache.org/apache-tomee.html Apache TomEE].
+You can deploy the WAR file on every Servlet 3.x compatible application server such as [WildFly][WildFly] or [Apache TomEE][Apache-TomEE].
 The demo application is running under
 
 <pre>
@@ -40,5 +40,5 @@ We use Jenkins as continuous integration tool. It builds the project after each 
 
 [Pro-Git-book]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Maven-3]: http://maven.apache.org/
-[WildFly] http://wildfly.org/downloads
-[Apache-TomEE] http://tomee.apache.org/downloads.html
+[WildFly]: http://wildfly.org/downloads
+[Apache-TomEE]: http://tomee.apache.org/downloads.html
