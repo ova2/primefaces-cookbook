@@ -1,6 +1,6 @@
 PrimeFaces Cookbook (Second Edition). All examples are compatible with PrimeFaces 5.x.
 
-[[Image:https://travis-ci.org/ova2/primefaces-cookbook.svg]]
+[[https://travis-ci.org/ova2/primefaces-cookbook.svg]]
 
 == Getting Started ==
 
