@@ -2,15 +2,12 @@ PrimeFaces Cookbook (Second Edition). All examples are compatible with PrimeFace
 
 [![Build Status](https://travis-ci.org/ova2/primefaces-cookbook.svg)](https://travis-ci.org/ova2/primefaces-cookbook)
 
-Getting Started
-===============
-
 Prerequisites
 -------------
 
-* Install Git as described in the [http://git-scm.com/book/en/Getting-Started-Installing-Git Pro Git book].
-* Install [http://maven.apache.org/ Maven 3] if you don't have it as this project is a Maven based project. You might need a JDK installation instead of a JRE for running Maven.
-* Install [http://wildfly.org/downloads WildFly] or [http://tomee.apache.org/downloads.html Apache TomEE] if you don't have it installed on your local.
+* Install Git as described in the [Pro Git book][Pro-Git-book].
+* Install [Maven 3][Maven-3] if you don't have it as this project is a Maven based project. You might need a JDK installation instead of a JRE for running Maven.
+* Install [WildFly][WildFly] or [Apache TomEE][Apache-TomEE] if you don't have it installed on your local.
 
 Compile and Run Project
 -----------------------
@@ -40,3 +37,8 @@ Download WAR file
 -----------------
 
 We use Jenkins as continuous integration tool. It builds the project after each commit. You can download the runnable showcase from the [https://buildhive.cloudbees.com/view/Dashboard/job/ova2/job/primefaces-cookbook/lastBuild/org.primefaces.cookbook$showcase/ Jenkins' last build].
+
+[Pro-Git-book]: http://git-scm.com/book/en/Getting-Started-Installing-Git
+[Maven-3]: http://maven.apache.org/
+[WildFly] http://wildfly.org/downloads
+[Apache-TomEE] http://tomee.apache.org/downloads.html
