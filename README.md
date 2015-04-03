@@ -1,16 +1,19 @@
 PrimeFaces Cookbook (Second Edition). All examples are compatible with PrimeFaces 5.x.
 
-[[https://travis-ci.org/ova2/primefaces-cookbook.svg]]
+[![Build Status](https://travis-ci.org/ova2/primefaces-cookbook.svg)](https://travis-ci.org/ova2/primefaces-cookbook)
 
-== Getting Started ==
+Getting Started
+===============
 
-=== Prerequisites ===
+Prerequisites
+-------------
 
 * Install Git as described in the [http://git-scm.com/book/en/Getting-Started-Installing-Git Pro Git book].
 * Install [http://maven.apache.org/ Maven 3] if you don't have it as this project is a Maven based project. You might need a JDK installation instead of a JRE for running Maven.
 * Install [http://wildfly.org/downloads WildFly] or [http://tomee.apache.org/downloads.html Apache TomEE] if you don't have it installed on your local.
 
-=== Compile and Run Project ===
+Compile and Run Project
+-----------------------
 
 Open your console / terminal window and clone the repository with
 
@@ -33,6 +36,7 @@ The demo application is running under
 http://localhost:8080/pf-cookbook/
 </pre>
 
-=== Download WAR file ===
+Download WAR file
+-----------------
 
 We use Jenkins as continuous integration tool. It builds the project after each commit. You can download the runnable showcase from the [https://buildhive.cloudbees.com/view/Dashboard/job/ova2/job/primefaces-cookbook/lastBuild/org.primefaces.cookbook$showcase/ Jenkins' last build].
