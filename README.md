@@ -36,9 +36,12 @@ http://localhost:8080/pf-cookbook/
 Download WAR file
 -----------------
 
-We use Jenkins as continuous integration tool. It builds the project after each commit. You can download the runnable showcase from the [https://buildhive.cloudbees.com/view/Dashboard/job/ova2/job/primefaces-cookbook/lastBuild/org.primefaces.cookbook$showcase/ Jenkins' last build].
+We use [Travis][Travis-CI] and [Jenkins][Jenkins-CI] as continuous integration tools. They builds the project after each commit. You can download the runnable showcase from the [Jenkins' last build][Jenkins-WAR].
 
 [Pro-Git-book]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Maven-3]: http://maven.apache.org/
 [WildFly]: http://wildfly.org/downloads
 [Apache-TomEE]: http://tomee.apache.org/downloads.html
+[Travis-CI]: https://travis-ci.org/
+[Jenkins-CI]: https://jenkins-ci.org/
+[Jenkins-WAR]: https://buildhive.cloudbees.com/view/Dashboard/job/ova2/job/primefaces-cookbook/lastBuild/org.primefaces.cookbook$showcase/ 
