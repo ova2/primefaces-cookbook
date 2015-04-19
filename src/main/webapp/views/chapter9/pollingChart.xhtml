@@ -4,14 +4,14 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/templates/masterLayout.xhtml">
     <ui:define name="chapterItem">
-        <h3 style="margin-top:0">Live Data updating of charts with polling</h3>
+        <h3 style="margin-top:0">Updating live data in charts with polling</h3>
         <p:growl id="growl" showDetail="true"/>
 
         <h:panelGrid columns="3" cellpadding="5">
 
             <h:outputText value="Live Update" />
-            <p:poll interval="3" update="live" />
-            <p:chart id="live" type="pie" model="#{pieChartBean.livePieModel}" style="height:250px" />
+            <p:poll interval="2" update="live" />
+            <p:chart id="live" type="pie" model="#{chartBean.livePieModel}" style="height:250px" />
 
         </h:panelGrid>
 

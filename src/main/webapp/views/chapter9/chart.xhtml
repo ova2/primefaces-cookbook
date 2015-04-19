@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+    <ui:define name="head">
+        <script type="text/javascript">
+        function chart() {
+            this.cfg.axes.xaxis.tickOptions = {
+                formatString : '%d'
+            };
+        }
+        </script>
+    </ui:define>
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Charting with Line</h3>
+        <p:growl id="growl" showDetail="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="Line Chart" />
+            <p:chart type="line" model="#{chartBean.lineModel}" style="height:250px" />
+
+            <h:outputText value="Area Chart" />
+            <p:chart type="line" model="#{chartBean.areaModel}" style="height:250px" />
+
+            <h:outputText value="Bar Chart" />
+            <p:chart type="bar" model="#{chartBean.barModel}" style="height:250px" />
+
+            <h:outputText value="Pie Chart" />
+            <p:chart type="pie" model="#{chartBean.pieModel}" style="height:250px" />
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+
+    <ui:define name="head">
+        <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+    </ui:define>
+
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Creating Rectangles, Circles, Polylines and Polygons in Maps</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="With Rectangle" />
+            <p:gmap center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px"
+                    model="#{mapBean.rectangleModel}" />
+
+            <h:outputText value="With Circle" />
+            <p:gmap center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px"
+                    model="#{mapBean.circleModel}" />
+
+            <h:outputText value="With Polylines" />
+            <p:gmap center="41.106261, 29.057465" zoom="11" type="roadmap" style="width:600px;height:400px"
+                    model="#{mapBean.polylineModel}" />
+
+            <h:outputText value="With Polygons" />
+            <p:gmap center="41.106261, 29.057465" zoom="11" type="roadmap" style="width:600px;height:400px"
+                    model="#{mapBean.polygonModel}" />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

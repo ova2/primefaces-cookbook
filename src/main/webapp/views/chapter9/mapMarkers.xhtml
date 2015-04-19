@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/masterLayout.xhtml">
+
+    <ui:define name="head">
+        <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+    </ui:define>
+
+    <ui:define name="chapterItem">
+        <h3 style="margin-top:0">Adding, Selecting and Dragging Markers in Maps</h3>
+        <p:growl id="growl" showDetail="true"/>
+
+        <h:panelGrid columns="2" cellpadding="5">
+
+            <h:outputText value="With Markers" />
+            <p:gmap center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px"
+                    model="#{mapBean.markerModel}" />
+
+            <h:outputText value="With Selection" />
+            <p:gmap center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px"
+                    model="#{mapBean.markerModel}" >
+                <p:ajax event="overlaySelect" listener="#{mapBean.onMarkerSelect}" update="growl" />
+            </p:gmap>
+
+            <h:outputText value="With Drag and Drop" />
+            <p:gmap center="41.106261, 29.057465" zoom="10" type="roadmap" style="width:600px;height:400px"
+                    model="#{mapBean.draggableMarkerModel}" >
+                <p:ajax event="markerDrag" listener="#{mapBean.onMarkerDrag}" update="growl" />
+            </p:gmap>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

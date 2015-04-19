@@ -8,10 +8,8 @@
         <p:growl id="growl" showDetail="true" />
         <h:panelGrid columns="2" cellpadding="5">
 
-            <h:outputText value="With AJAX Behavior Event" />
-            <p:chart type="bar" id="withAjax" model="#{chartBean.barModel}" style="height:250px">
-                <p:ajax event="itemSelect" listener="#{chartBean.itemSelect}" update="growl" />
-            </p:chart>
+            <h:outputText value="Line and Bar Chart combined" />
+            <p:chart type="bar" id="combined" model="#{chartBean.combinedModel}" style="height:250px" />
 
         </h:panelGrid>
     </ui:define>

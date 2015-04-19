@@ -272,20 +272,17 @@ public class BookBean implements Serializable {
     }
 
     private void constructChapter9(TreeNode chapter9) {
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Line", "chapter9/lineChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bar", "chapter9/barChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Pie", "chapter9/pieChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Bubble", "chapter9/bubbleChart.xhtml"),
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Creating a line, area, bar and pie chart", "chapter9/chart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Creating combined chart", "chapter9/combinedChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Updating live data in charts with polling", "chapter9/pollingChart.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Interacting with charts via AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Basic Mapping with GMaps", "chapter9/map.xhtml"),
                 chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Donut", "chapter9/donutChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with Meter Gauge", "chapter9/meterGaugeChart.xhtml"),
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Adding, Selecting and Dragging Markers in Maps", "chapter9/mapMarkers.xhtml"), chapter9);
+        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Creating Rectangles, Circles, Polylines and Polygons in Maps", "chapter9/mapDrawings.xhtml"),
                 chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Charting with OHLC", "chapter9/ohlcChart.xhtml"), chapter9);
         new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Live Data updating of charts with polling", "chapter9/pollingChart.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE,
-                new BookTreeNode("Interacting with charts by AJAX", "chapter9/chartInteraction.xhtml"), chapter9);
-        new DefaultTreeNode(NODE_TYPE, new BookTreeNode("Mapping with Google Maps", "chapter9/map.xhtml"), chapter9);
+                new BookTreeNode("Enabling InfoView and Street View on Maps", "chapter9/mapInfoView.xhtml"), chapter9);
     }
 
     private void constructChapter10(TreeNode chapter10) {
