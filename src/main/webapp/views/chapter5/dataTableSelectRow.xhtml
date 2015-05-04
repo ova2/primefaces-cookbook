@@ -56,7 +56,7 @@
 
             <h:outputText value="Single Selection with Selectable Data Model" />
             <p:dataTable id="selectableDataModel" var="car" value="#{dataTableBean.carDataModel}" style="width: 300px;"
-                         selection="#{dataTableBean.selectedCar}" selectionMode="single">
+                         selection="#{dataTableBean.selectedCar}" selectionMode="single" rowKey="#{car.name}"   >
                 <p:column headerText="Year">#{car.year}</p:column>
                 <p:column headerText="Name">#{car.name}</p:column>
                 <p:ajax event="rowSelect" listener="#{dataTableBean.onRowSelect}" update=":mainForm:growl"/>

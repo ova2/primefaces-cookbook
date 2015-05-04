@@ -81,7 +81,8 @@
                 </p:column>
                 <f:facet name="footer">
                     <p:commandButton value="View" icon="ui-icon-search"
-                                     update=":mainForm:displaySingle" oncomplete="PF('dialogSingle').show()"/>
+                                     update=":mainForm:displaySingle" oncomplete="PF('dialogSingle').show()">
+                     </p:commandButton>
                 </f:facet>
             </p:treeTable>
 
@@ -109,7 +110,7 @@
 
             <h:outputText value="With Ajax Listeners" />
             <p:treeTable id="withAJAX" value="#{treeTableBean.root}" var="element" style="width: 400px;"
-                         resizableColumns="true" selection="#{treeTableBean.selectedItem}" selectionMode="single">
+                         resizableColumns="true" selectionMode="single">
 
                 <p:ajax event="expand" listener="#{treeTableBean.onNodeExpand}" update=":mainForm:growl" />
                 <p:ajax event="collapse" listener="#{treeTableBean.onNodeCollapse}" update=":mainForm:growl" />

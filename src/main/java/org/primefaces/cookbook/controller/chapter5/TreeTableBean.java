@@ -21,6 +21,7 @@ public class TreeTableBean implements Serializable {
     private TreeNode root;
 
     private TreeNode selectedItem;
+    private TreeNode selectedItem2;
     private TreeNode selectedItemForContextMenu;
     private TreeNode[] selectedItems;
 
@@ -75,6 +76,14 @@ public class TreeTableBean implements Serializable {
 
     public void setSelectedItem(TreeNode selectedItem) {
         this.selectedItem = selectedItem;
+    }
+
+    public TreeNode getSelectedItem2() {
+        return selectedItem2;
+    }
+
+    public void setSelectedItem2(TreeNode selectedItem2) {
+        this.selectedItem2 = selectedItem2;
     }
 
     public TreeNode getSelectedItemForContextMenu() {
